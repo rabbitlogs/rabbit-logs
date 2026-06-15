@@ -103,6 +103,21 @@ const home = lang === 'en' ? '/en/' : '/';
       /* 핵심 키워드 색강조 (브랜드 청록, 과하지 않게) */
       .prose strong.key { color: var(--primary); font-weight: 700; }
 
+      /* 목차 (본문 [[TOC]] 자리) */
+      .prose .toc {
+        margin: 2rem 0;
+        padding: 1.1rem 1.4rem;
+        background: var(--color-bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .prose .toc-title { margin: 0 0 0.6rem; font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+      .prose .toc ul { margin: 0; padding-left: 1.1rem; }
+      .prose .toc li { margin: 0.25rem 0; font-size: 0.92rem; line-height: 1.5; }
+      .prose .toc li.sub { padding-left: 0.9rem; list-style: circle; }
+      .prose .toc a { color: var(--ink); text-decoration: none; }
+      .prose .toc a:hover { color: var(--accent); text-decoration: underline; }
+
       /* 하이라이트 ==중요== */
       .prose mark.hl {
         background: #fdebc8; color: inherit;

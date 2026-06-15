@@ -1,9 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import AdSense from '../components/AdSense.astro';
-import TableOfContents from '../components/TableOfContents.astro';
 
-const { title, description, pubDate, category, lang = 'ko', headings = [] } = Astro.props;
+const { title, description, pubDate, category, lang = 'ko' } = Astro.props;
 
 const catName = {
   ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' },
@@ -22,9 +21,6 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
     </div>
     <h1>{title}</h1>
 
-    <!-- 목차: 도입부 앞, 3줄 요약 다음 자리 -->
-    <TableOfContents headings={headings} lang={lang} />
-
     <div class="prose">
       <slot />
     </div>
@@ -42,7 +38,7 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
       });
     </script>
 
-    <!-- 광고: 마무리 뒤 (나가는 지점) -->
+    <!-- 광고: 마무리 뒤 -->
     <AdSense />
   </article>
 
