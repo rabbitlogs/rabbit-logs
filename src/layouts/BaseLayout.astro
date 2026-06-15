@@ -1,0 +1,115 @@
+---
+// 모든 페이지가 공유하는 기본 틀(헤더, 폰트, 색, 푸터)
+const { title, description, lang = 'ko' } = Astro.props;
+
+// 언어별 메뉴 라벨
+const nav = {
+  ko: {
+    tagline: '코드는 쓰지 않지만, 시스템을 움직이는 사람의 시선으로',
+    project: 'SAP 프로젝트',
+    operations: 'SAP 실무운영',
+    study: 'SAP 학습자료',
+    about: '소개 & 문의',
+    other: 'English',
+    otherHref: '/en/',
+  },
+  en: {
+    tagline: "Not a coder — the view of someone who runs the system.",
+    project: 'SAP Projects',
+    operations: 'SAP Operations',
+    study: 'SAP Study Notes',
+    about: 'About & Contact',
+    other: '한국어',
+    otherHref: '/',
+  },
+};
+const t = nav[lang];
+const home = lang === 'en' ? '/en/' : '/';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- 애드센스 전역 스크립트 (한 번만 로드) -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a href={home} class="brand">
+          <span class="brand-mark">🐇</span>
+          <span class="brand-name">Rabbit Logs</span>
+        </a>
+        <nav class="nav">
+          <a href={`${home}category/project`}>{t.project}</a>
+          <a href={`${home}category/operations`}>{t.operations}</a>
+          <a href={`${home}category/study`}>{t.study}</a>
+          <a href={`${home}about`}>{t.about}</a>
+          <a href={t.otherHref} class="lang-switch">{t.other}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>🐇 Hop! Log! Repeat! · © 2026 Rabbit Logs</p>
+      </div>
+    </footer>
+
+    <style is:global>
+      :root {
+        --paper: #faf8f3;
+        --ink: #20251f;
+        --primary: #2c5f57;   /* 시스템·차분함 (slate teal) */
+        --accent: #d99441;    /* hop! 에너지 (marigold) */
+        --muted: #7c7a72;
+        --line: #e3dfd4;
+        --font-display: 'Fraunces', Georgia, serif;
+        --font-body: 'Pretendard', -apple-system, system-ui, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--font-body);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+
+      .site-header { border-bottom: 1px solid var(--line); background: var(--paper); }
+      .header-inner {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; flex-wrap: wrap;
+      }
+      .brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--ink); }
+      .brand-mark { font-size: 1.4rem; }
+      .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.01em; }
+      .nav { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; }
+      .nav a { text-decoration: none; color: var(--muted); font-size: 0.9rem; transition: color 0.15s; }
+      .nav a:hover { color: var(--primary); }
+      .lang-switch {
+        border: 1px solid var(--line); border-radius: 999px;
+        padding: 0.15rem 0.7rem; color: var(--primary) !important;
+      }
+
+      .site-footer {
+        margin-top: 4rem; border-top: 1px solid var(--line);
+        padding: 2rem 0; color: var(--muted); font-size: 0.85rem; text-align: center;
+      }
+    </style>
+  </body>
+</html>

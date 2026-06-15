@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { cat: 'project' } },
+    { params: { cat: 'operations' } },
+    { params: { cat: 'study' } },
+  ];
+}
+
+const { cat } = Astro.params;
+const catName = { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' };
+
+const posts = (await getCollection('blog'))
+  .filter((p) => p.id.startsWith('ko/') && p.data.category === cat)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={`${catName[cat]} 카테고리 글 목록`} lang="ko">
+  <section style="padding: 2.5rem 0;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem;">{catName[cat]}</h1>
+    {posts.map((post) => (
+      <PostCard
+        href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
+        title={post.data.title}
+        description={post.data.description}
+        category={post.data.category}
+        pubDate={post.data.pubDate}
+        lang="ko"
+      />
+    ))}
+  </section>
+</BaseLayout>

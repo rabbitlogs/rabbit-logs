@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import AdSense from '../components/AdSense.astro';
+
+// content/blog/ko/ 안의 글만 가져오기
+const posts = (await getCollection('blog'))
+  .filter((p) => p.id.startsWith('ko/'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Rabbit Logs — SAP PP·PI 구축과 운영 기록"
+  description="코드는 쓰지 않지만, 시스템을 움직이는 사람의 시선으로. SAP PP와 PI 구축·운영을 기록합니다."
+  lang="ko"
+>
+  <section class="hero">
+    <p class="eyebrow">SAP PP · PI · S/4HANA</p>
+    <h1>코드는 쓰지 않지만,<br />시스템을 움직이는 사람의 시선으로.</h1>
+    <p class="hero-sub">SAP 구축과 운영의 현장을, 김밥처럼 쉽게 풀어 기록합니다.</p>
+  </section>
+
+  <AdSense />
+
+  <section class="latest">
+    <h2 class="section-title">최신 글</h2>
+    {posts.map((post) => (
+      <PostCard
+        href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
+        title={post.data.title}
+        description={post.data.description}
+        category={post.data.category}
+        pubDate={post.data.pubDate}
+        lang="ko"
+      />
+    ))}
+  </section>
+
+  <style>
+    .hero { padding: 3.5rem 0 2.5rem; }
+    .eyebrow { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 1rem; }
+    .hero h1 { font-family: var(--font-display); font-size: 2.6rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 1rem; }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); margin: 0; }
+    .section-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; display: inline-block; }
+  </style>
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+// ─────────────────────────────────────────────
+//  애드센스 광고 자리
+//  여기 client 값만 본인 것으로 바꾸면 모든 글에 자동 적용됩니다.
+//  (기존 블로그에서 쓰던: ca-host-pub-2644536267352236 형태)
+// ─────────────────────────────────────────────
+const AD_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← 본인 애드센스 ID로 교체
+const { slot = 'XXXXXXXXXX' } = Astro.props;
+---
+
+<div class="ad-slot" aria-label="광고">
+  <span class="ad-label">광고</span>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client={AD_CLIENT}
+    data-ad-slot={slot}
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  ></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<style>
+  .ad-slot {
+    margin: 2.5rem 0;
+    padding: 0.75rem;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    text-align: center;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ad-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+</style>
