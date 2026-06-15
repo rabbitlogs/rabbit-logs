@@ -1,13 +1,23 @@
 import { defineConfig } from 'astro/config';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
+import { remarkHighlight, remarkStripToc } from './src/plugins/markdown.mjs';
 
-// 사이트 주소와 한국어/영어 다국어(i18n) 설정
 export default defineConfig({
   site: 'https://rabbitlogs.com',
   i18n: {
-    defaultLocale: 'ko',          // 기본은 한국어 → rabbitlogs.com/...
-    locales: ['ko', 'en'],        // 영어는 rabbitlogs.com/en/...
-    routing: {
-      prefixDefaultLocale: false, // 한국어 글엔 /ko 안 붙임
-    },
+    defaultLocale: 'ko',
+    locales: ['ko', 'en'],
+    routing: { prefixDefaultLocale: false },
+  },
+  markdown: {
+    remarkPlugins: [remarkHighlight, remarkStripToc],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      // 외부 링크는 새 탭 + 보안 속성 자동 적용
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+    ],
   },
 });
