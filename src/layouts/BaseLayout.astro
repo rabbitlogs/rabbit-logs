@@ -145,6 +145,28 @@ const home = lang === 'en' ? '/en/' : '/';
       .prose ul, .prose ol { padding-left: 1.4rem; }
       .prose li { margin: 0.4rem 0; }
       .prose img { max-width: 100%; border-radius: 8px; margin: 1.5rem 0; }
+
+      /* 표 스타일 (또렷한 테두리 + 헤더 배경) */
+      .prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 0.95rem;
+        border: 1px solid var(--primary);
+      }
+      .prose th, .prose td {
+        border: 1px solid #cfc9ba;
+        padding: 0.6rem 0.8rem;
+        text-align: left;
+      }
+      .prose thead th {
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+        border-color: var(--primary);
+      }
+      .prose tbody tr:nth-child(even) { background: rgba(44, 95, 87, 0.04); }
+      .prose tbody tr:hover { background: rgba(217, 148, 65, 0.08); }
       .prose a { color: var(--primary); }
       .prose hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
 
