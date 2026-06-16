@@ -29,6 +29,9 @@ The system that ties an entire company together like this is <strong class="key"
 
 Normally, each part of a company uses different tools — paper tickets out front, an accounting app at the register, the kitchen's own notes. When they don't talk to each other, the same data gets entered twice, stock goes out of sync, and mistakes pile up. SAP removes that waste by linking every station, so an order entered out front flows automatically to the kitchen, storeroom, and register.
 
+![A restaurant-analogy diagram showing the hall, storeroom, kitchen, and register connected to a central SAP system in real time](/images/sap-what-is-sap-01.png)
+*Figure 1. One entry connects every department — the core structure of SAP (restaurant-kitchen analogy)*
+
 ## If ERP is new to you
 
 Talk about SAP and the word ERP always follows. ERP stands for **Enterprise Resource Planning**.

@@ -94,9 +94,16 @@ const home = lang === 'en' ? '/en/' : '/';
       .prose blockquote p:last-child { margin-bottom: 0; }
       .prose ul, .prose ol { padding-left: 1.4rem; }
       .prose li { margin: 0.4rem 0; }
-      .prose img { max-width: 100%; border-radius: 8px; margin: 1.5rem 0; }
-      .prose a { color: var(--primary); }
+      .prose img { max-width: 100%; border-radius: 8px; display: block; margin: 1.5rem auto 0.4rem; }
+
+      /* 이미지 캡션 (이미지 바로 뒤 기울임 줄) */
       .prose em { color: var(--muted); }
+      .prose p:has(img) { margin-bottom: 0.3rem; text-align: center; }
+      .prose p:has(img) + p > em:only-child {
+        display: block; text-align: center; font-size: 0.88rem;
+        color: var(--muted); margin-top: 0.2rem;
+      }
+      .prose a { color: var(--primary); }
 
       /* 표 — 헤더 칸 구분(밝은 세로선) + 또렷한 테두리 */
       .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; border: 1px solid var(--primary); border-radius: 8px; overflow: hidden; }
