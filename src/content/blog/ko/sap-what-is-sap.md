@@ -5,6 +5,7 @@ pubDate: 2025-07-02
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"
+tags: ["SAP프로젝트", "SAP입문", "ERP", "SAP모듈"]
 ---
 
 안녕하세요, Rabbit입니다! 🐰

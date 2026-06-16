@@ -5,6 +5,7 @@ pubDate: 2025-07-02
 category: "project"
 series: "SAP, Explained Like a Restaurant"
 level: "beginner"
+tags: ["SAP-Projects", "SAP-basics", "ERP", "SAP-modules"]
 ---
 
 Hi, this is Rabbit! 🐰
