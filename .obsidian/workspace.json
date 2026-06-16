@@ -25,12 +25,14 @@
             "id": "b1c6269cd9160b68",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "public/images/sap-what-is-sap-01.jpg"
+                "file": "src/content/blog/ko/sap-what-is-sap.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "sap-what-is-sap-01"
+              "icon": "lucide-file",
+              "title": "sap-what-is-sap"
             }
           }
         ],
@@ -199,8 +201,8 @@
   },
   "active": "b1c6269cd9160b68",
   "lastOpenFiles": [
-    "public/about-logo.png",
     "public/images/sap-what-is-sap-01.jpg",
+    "public/about-logo.png",
     "src/content/blog/ko/sap-what-is-sap.md",
     "public/images/output/sap-what-is-sap-01.jpg",
     "public/images/output",
