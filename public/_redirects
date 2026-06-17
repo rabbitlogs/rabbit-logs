@@ -9,6 +9,13 @@
 /sap-%ec%b4%88%eb%b3%b4-%ea%b0%9c%eb%85%90-%ec%a0%95%eb%a6%ac/   /blog/sap-what-is-sap   301
 /sap-초보-개념-정리/   /blog/sap-what-is-sap   301
 
+# SAP 자격증 (예전: sap-자격증-비용-자격-유지방법-총정리 → 새 글 2개로 분리, 메인은 취득 가이드로)
+/sap-%ec%9e%90%ea%b2%a9%ec%a6%9d-%eb%b9%84%ec%9a%a9-%ec%9e%90%ea%b2%a9-%ec%9c%a0%ec%a7%80%eb%b0%a9%eb%b2%95-%ec%b4%9d%ec%a0%95%eb%a6%ac/   /blog/sap-certification   301
+/sap-자격증-비용-자격-유지방법-총정리/   /blog/sap-certification   301
+
+# CPIM (예전 주소 그대로 → 새 blog 경로)
+/sap-cpim/   /blog/sap-cpim   301
+
 # 예전 고정 페이지 → 새 페이지
 /about-contact/   /about   301
 /%ec%9d%b4%ec%9a%a9%ec%95%bd%ea%b4%80/   /terms   301

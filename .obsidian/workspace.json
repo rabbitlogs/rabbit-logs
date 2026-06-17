@@ -11,12 +11,14 @@
             "id": "a486458ee0037310",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "public/images/hero-rabbit.png"
+                "file": "src/content/blog/ko/sap-certification.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "hero-rabbit"
+              "icon": "lucide-file",
+              "title": "sap-certification"
             }
           }
         ]
@@ -184,6 +186,13 @@
   },
   "active": "a486458ee0037310",
   "lastOpenFiles": [
+    "public/images/sap-cpim-01.jpg",
+    "src/content/blog/en/sap-cpim.md",
+    "src/content/blog/en/en_sap-cpim.md",
+    "src/content/blog/ko/sap-cpim.md",
+    "src/content/blog/ko/sap-exam-format.md",
+    "src/content/blog/ko/sap-what-is-sap.md",
+    "public/images/hero-rabbit.png",
     "src/pages/en/about.astro",
     "src/pages/en/en_about.astro",
     "src/pages/about.astro",
@@ -191,10 +200,8 @@
     "public/images/sap-what-is-sap-01.png",
     "src/content/blog/en/sap-what-is-sap.md",
     "TOC.md",
-    "src/content/blog/ko/sap-exam-format.md",
     "src/content/blog/ko/sap-certification.md",
     "public/_redirects",
-    "src/content/blog/ko/sap-what-is-sap.md",
     "src/content/blog/en/en_sap-what-is-sap.md",
     "src/pages/en/terms.astro",
     "src/pages/en/privacy.astro",
@@ -205,7 +212,6 @@
     "src/layouts/BaseLayout (1).astro",
     "public/images/_raw/sap-what-is-sap-01.jpg",
     "public/images/_raw",
-    "process-images.py",
     "src/content/blog/ko/sap-what-is-sap_KO.md",
     "src/content/blog/en/sap-what-is-sap_EN.md",
     "images/sap-what-is-sap-01..md",
@@ -216,7 +222,6 @@
     "public/images/Gemini_Generated_Image_gvy9kpgvy9kpgvy9 (1).png",
     "public/about-logo.png",
     "public/images/output/sap-what-is-sap-01.jpg",
-    "public/images/sap-what-is-sap-01.jpg.png",
     "무제.md"
   ]
 }
