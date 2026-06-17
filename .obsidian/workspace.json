@@ -184,9 +184,9 @@
   },
   "active": "a486458ee0037310",
   "lastOpenFiles": [
-    "src/pages/about.astro",
     "src/pages/en/about.astro",
     "src/pages/en/en_about.astro",
+    "src/pages/about.astro",
     "public/images/sap-what-is-sap-01.jpg",
     "public/images/sap-what-is-sap-01.png",
     "src/content/blog/en/sap-what-is-sap.md",
