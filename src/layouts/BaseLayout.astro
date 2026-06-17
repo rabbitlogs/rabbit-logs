@@ -110,11 +110,10 @@ const home = lang === 'en' ? '/en/' : '/';
       }
       .prose a { color: var(--primary); }
 
-      /* 표 — 헤더 칸 구분(밝은 세로선) + 또렷한 테두리 */
-      .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 0; font-size: 0.95rem; border: 1px solid var(--primary); border-radius: 8px; overflow: hidden; }
-      .prose th, .prose td { padding: 0.6rem 0.85rem; text-align: left; }
-      .prose td { border: 1px solid #d8d2c4; }
-      .prose thead th { background: var(--primary); color: #fff; font-weight: 700; border-right: 1px solid rgba(255,255,255,0.35); }
+      /* 표 — 모든 칸(헤더 포함)에 또렷한 사방 테두리 */
+      .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 0; font-size: 0.95rem; }
+      .prose th, .prose td { padding: 0.6rem 0.85rem; text-align: left; border: 1px solid #d8d2c4; }
+      .prose thead th { background: var(--primary); color: #fff; font-weight: 700; border-color: var(--primary); }
       .prose tbody tr:nth-child(even) { background: rgba(44, 95, 87, 0.04); }
       .prose tbody tr:hover { background: rgba(217, 148, 65, 0.08); }
 
