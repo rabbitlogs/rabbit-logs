@@ -96,24 +96,38 @@ const home = lang === 'en' ? '/en/' : '/';
       .prose li { margin: 0.4rem 0; }
       .prose img { max-width: 100%; border-radius: 8px; display: block; margin: 1.5rem auto 0; }
 
-      /* 캡션 (이미지/표 바로 뒤 기울임 한 줄) — 둘 다 가운데 정렬, 간격 통일 */
+      /* 캡션 (이미지/표 뒤 기울임 한 줄) — 그림·표 캡션 크기·정렬·간격 완전 통일 */
       .prose em { color: var(--muted); }
-      .prose p:has(img) { margin: 0 0 0.4rem; text-align: center; }
+
+      /* 이미지가 든 문단 자체를 가운데 정렬 (이미지+캡션이 한 문단이어도 적용) */
+      .prose p:has(img) { margin: 1.5rem 0 1.6rem; text-align: center; }
+      .prose p:has(img) img { margin-bottom: 0.4rem; }
+
+      /* 이미지 문단 안의 캡션(em) + 표 다음 문단의 캡션(em) → 같은 스타일 */
+      .prose p:has(img) em,
+      .prose p:has(img) + p:has(> em:only-child) em,
+      .prose table + p:has(> em:only-child) em {
+        display: inline-block;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      /* 별도 문단으로 떨어진 캡션의 간격/정렬 */
       .prose p:has(img) + p:has(> em:only-child),
       .prose table + p:has(> em:only-child) {
         margin: 0.4rem 0 1.6rem;
         text-align: center;
       }
-      .prose p:has(img) + p:has(> em:only-child) em,
-      .prose table + p:has(> em:only-child) em {
-        font-size: 0.88rem;
-      }
       .prose a { color: var(--primary); }
 
-      /* 표 — 모든 칸(헤더 포함)에 또렷한 사방 테두리 */
+      /* 표 — 안쪽 칸 구분선만 (바깥 좌우 세로줄 없음), 헤더는 밝은 칸 구분선 */
       .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 0; font-size: 0.95rem; }
-      .prose th, .prose td { padding: 0.6rem 0.85rem; text-align: left; border: 1px solid #d8d2c4; }
-      .prose thead th { background: var(--primary); color: #fff; font-weight: 700; border-color: var(--primary); }
+      .prose th, .prose td { padding: 0.6rem 0.85rem; text-align: left; }
+      /* 칸 사이 세로 구분선만: 첫 칸 빼고 왼쪽 선 */
+      .prose th + th, .prose td + td { border-left: 1px solid #d8d2c4; }
+      /* 행 사이 가로 구분선 */
+      .prose tbody td { border-top: 1px solid #d8d2c4; }
+      .prose thead th { background: var(--primary); color: #fff; font-weight: 700; }
+      .prose thead th + th { border-left: 1px solid rgba(255,255,255,0.4); }
       .prose tbody tr:nth-child(even) { background: rgba(44, 95, 87, 0.04); }
       .prose tbody tr:hover { background: rgba(217, 148, 65, 0.08); }
 

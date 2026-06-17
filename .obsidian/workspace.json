@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "IMAGE_GUIDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "IMAGE_GUIDE"
             }
           }
         ]
@@ -186,6 +186,8 @@
   },
   "active": "9cb3cd03fa9e16ce",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "src/layouts/BaseLayout (1).astro",
     "src/content/blog/en/sap-what-is-sap.md",
     "src/content/blog/ko/sap-what-is-sap.md",
     "public/images/sap-what-is-sap-01.png",
@@ -194,7 +196,6 @@
     "process-images.py",
     "IMAGE_GUIDE.md",
     "src/content/blog/ko/sap-what-is-sap_KO.md",
-    "conflict-files-obsidian-git.md",
     "src/content/blog/en/sap-what-is-sap_EN.md",
     "images/sap-what-is-sap-01..md",
     "images",
