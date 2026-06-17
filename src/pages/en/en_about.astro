@@ -1,31 +1,31 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="소개 & 문의 — Rabbit Logs"
-  description="코드는 쓰지 않지만, 시스템을 움직이는 사람의 시선으로. 현업 실무자의 눈으로 SAP의 흐름을 기록하는 공간입니다."
-  lang="ko"
+  title="About & Contact — Rabbit Logs"
+  description="Not a coder — the view of someone who runs the system. Field notes on SAP from a practitioner's eyes."
+  lang="en"
 >
   <article class="prose page about">
     <div class="about-hero">
-      <img src="/about-logo.png" alt="Rabbit Logs 마스코트" class="about-logo" />
-      <h1>Rabbit Logs에 오신 걸 환영합니다</h1>
-      <p class="tagline">코드는 쓰지 않지만, 시스템을 움직이는 사람의 시선으로.</p>
+      <img src="/about-logo.png" alt="Rabbit Logs mascot" class="about-logo" />
+      <h1>Welcome to Rabbit Logs</h1>
+      <p class="tagline">Not a coder — the view of someone who runs the system.</p>
     </div>
 
-    <p class="lead">생산관리 실무자로서 생산 PI 프로젝트와 SAP PP 구축,<br />그리고 안정화·보완 프로젝트까지 수행했고,<br />지금은 그 경험을 현업 실무에 녹여내고 있습니다.</p>
+    <p class="lead">As a production-management practitioner,<br />I worked on a production PI project and an SAP PP build,<br />carried it through stabilization and enhancement projects,<br />and today I bring that experience into day-to-day operations.</p>
 
-    <p class="lead">개발자의 언어가 아닌 <strong>'현업 실무자의 눈'</strong>으로<br />SAP의 흐름을 기록하고 정리하는 공간입니다.</p>
+    <p class="lead">This is a space where SAP is recorded and organized<br />through <strong>a practitioner's eyes</strong>, not a developer's language.</p>
 
     <div class="motto">
-      <p class="motto-main">기능보다 프로세스, 화면보다 사람.</p>
-      <p class="motto-sub">실제 업무에 도움이 되는 내용을 공유합니다.</p>
+      <p class="motto-main">Process over features, people over screens.</p>
+      <p class="motto-sub">Sharing what actually helps in real work.</p>
     </div>
 
-    <h2>📬 문의</h2>
+    <h2>📬 Contact</h2>
 
-    <p>궁금한 점이나 나누고 싶은 이야기가 있다면 편하게 메일 주세요. 보통 며칠 안에 답장 드립니다.</p>
+    <p>Have a question or something to share? Feel free to email me — I usually reply within a few days.</p>
 
     <p class="contact-box">
       <span class="contact-label">E-mail</span>
@@ -40,11 +40,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .about-hero h1 { font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
     .tagline { color: var(--muted); font-size: 1rem; margin: 0; }
 
-    /* 본문 — 한 문단 한 흐름(줄바꿈은 브라우저가 자동) */
     .about .lead { font-size: 1.02rem; line-height: 1.8; color: var(--ink); margin: 1.2rem 0; text-align: center; }
     .about .lead strong { color: var(--primary); font-weight: 700; }
 
-    /* 핵심 모토 — 위아래 구분선 + 가운데 정렬 + 청록 강조 */
     .motto { text-align: center; margin: 1.8rem 0; padding: 1.3rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .motto-main { font-size: 1.2rem; font-weight: 700; color: var(--primary); line-height: 1.6; margin: 0; letter-spacing: -0.01em; }
     .motto-sub { font-size: 0.96rem; color: var(--muted); margin: 0.6rem 0 0; }

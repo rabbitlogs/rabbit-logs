@@ -2,8 +2,8 @@
 const { title, description, lang = 'ko' } = Astro.props;
 
 const nav = {
-  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', about: '소개 & 문의', other: 'English', otherHref: '/en/' },
-  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', about: 'About & Contact', other: '한국어', otherHref: '/' },
+  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', about: '소개 & 문의', other: 'English', otherHref: '/en/', privacy: '개인정보처리방침', terms: '이용약관' },
+  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', about: 'About & Contact', other: '한국어', otherHref: '/', privacy: 'Privacy Policy', terms: 'Terms of Use' },
 };
 const t = nav[lang];
 const home = lang === 'en' ? '/en/' : '/';
@@ -45,9 +45,9 @@ const home = lang === 'en' ? '/en/' : '/';
 
     <footer class="site-footer"><div class="wrap">
       <nav class="footer-links">
-        <a href="/about">소개 & 문의</a>
-        <a href="/privacy">개인정보처리방침</a>
-        <a href="/terms">이용약관</a>
+        <a href={`${home}about`}>{t.about}</a>
+        <a href={`${home}privacy`}>{t.privacy}</a>
+        <a href={`${home}terms`}>{t.terms}</a>
       </nav>
       <p>🐇 Hop! Log! Repeat! · © 2026 Rabbit Logs</p>
     </div></footer>
