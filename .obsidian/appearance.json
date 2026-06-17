@@ -1,1 +1,8 @@
-{}
+{
+  "cssTheme": "Minimal",
+  "theme": "system",
+  "interfaceFontFamily": "Pretendard",
+  "textFontFamily": "Pretendard",
+  "monospaceFontFamily": "Pretendard",
+  "baseFontSizeAction": false
+}

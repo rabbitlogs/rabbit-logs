@@ -29,7 +29,7 @@ The system that ties an entire company together like this is <strong class="key"
 
 Normally, each part of a company uses different tools — paper tickets out front, an accounting app at the register, the kitchen's own notes. When they don't talk to each other, the same data gets entered twice, stock goes out of sync, and mistakes pile up. SAP removes that waste by linking every station, so an order entered out front flows automatically to the kitchen, storeroom, and register.
 
-![A restaurant-analogy diagram showing the hall, storeroom, kitchen, and register connected to a central SAP system in real time](/images/sap-what-is-sap-01.jpg)
+![A restaurant-analogy diagram showing the hall, storeroom, kitchen, and register connected to a central SAP system in real time](/images/sap-what-is-sap-01.png)
 *Figure 1. One entry connects every department — the core structure of SAP (restaurant-kitchen analogy)*
 
 ## If ERP is new to you
@@ -54,13 +54,14 @@ A big strength of SAP is that it delivers features as building blocks called mod
 
 > 💡 **Key**: Modules aren't separate — they connect. An order in Sales (SD) flows automatically into the kitchen (PP) and storeroom (MM).
 
-## Rabbit's Note
+## Rabbit's Takeaway
 
 The first SAP screen overwhelms everyone, with its cryptic codes and buttons. But remember one thing: SAP is ultimately **a system for people**.
 
 It gathers scattered work into one kitchen so we can work more accurately and with less strain. Tour this restaurant one station at a time, and SAP gets a lot friendlier. 😎
 
-We'll go deeper in the next posts:
+**Read more**
+
 - [Where did SAP come from? The story that began in 1972 Germany](/en/blog/sap-history)
 - [The complete guide to all 10 SAP modules (FI to PM)](/en/blog/sap-modules-guide)
 
