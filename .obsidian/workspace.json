@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "56701f4eb3a1a458",
+        "id": "ff953bca7888ff94",
         "type": "tabs",
         "children": [
           {
-            "id": "0910b638d7c60142",
+            "id": "a486458ee0037310",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "src/content/blog/ko/sap-exam-format.md",
-                "mode": "source",
-                "source": false
+                "file": "public/images/sap-what-is-sap-01.jpg"
               },
-              "icon": "lucide-file",
-              "title": "sap-exam-format"
+              "icon": "lucide-image",
+              "title": "sap-what-is-sap-01"
             }
           }
         ]
@@ -184,13 +182,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0910b638d7c60142",
+  "active": "07250d982faf3117",
   "lastOpenFiles": [
-    "public/_redirects",
-    "src/content/blog/ko/sap-certification.md",
-    "src/content/blog/ko/sap-exam-format.md",
-    "src/content/blog/ko/sap-what-is-sap.md",
+    "public/images/sap-what-is-sap-01.jpg",
+    "public/images/sap-what-is-sap-01.png",
     "src/content/blog/en/sap-what-is-sap.md",
+    "TOC.md",
+    "src/content/blog/ko/sap-exam-format.md",
+    "src/content/blog/ko/sap-certification.md",
+    "public/_redirects",
+    "src/content/blog/ko/sap-what-is-sap.md",
     "src/content/blog/en/en_sap-what-is-sap.md",
     "src/pages/en/terms.astro",
     "src/pages/en/privacy.astro",
@@ -201,15 +202,12 @@
     "IMAGE_GUIDE.md",
     "conflict-files-obsidian-git.md",
     "src/layouts/BaseLayout (1).astro",
-    "public/images/sap-what-is-sap-01.png",
     "public/images/_raw/sap-what-is-sap-01.jpg",
     "public/images/_raw",
     "process-images.py",
     "src/content/blog/ko/sap-what-is-sap_KO.md",
     "src/content/blog/en/sap-what-is-sap_EN.md",
     "images/sap-what-is-sap-01..md",
-    "images",
-    "public/images/sap-what-is-sap-01.jpg",
     "src/content/blog/en/sap-what-is-sap-en.md",
     "public/images/_raw/sap-what-is-sap-01.png",
     "public/images/_raw/sap-what-is-sap-01 (2).png",

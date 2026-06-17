@@ -16,9 +16,11 @@ const posts = (await getCollection('blog'))
   lang="ko"
 >
   <section class="hero">
-    <p class="eyebrow">SAP PP · PI · S/4HANA</p>
-    <h1>코드는 쓰지 않지만,<br />시스템을 움직이는 사람의 시선으로.</h1>
-    <p class="hero-sub">SAP PI와 PP 구축과 운영을 기록합니다.</p>
+    <div class="hero-img"><img src="/images/hero-rabbit.png" alt="노트북으로 작업하는 Rabbit Logs 토끼 캐릭터" /></div>
+    <div class="hero-text">
+      <h1>코드는 쓰지 않지만,<br />시스템을 움직이는 사람의 시선으로.</h1>
+      <p class="hero-sub">SAP PI와 PP 구축과 운영을 기록합니다.</p>
+    </div>
   </section>
 
 
@@ -37,10 +39,18 @@ const posts = (await getCollection('blog'))
   </section>
 
   <style>
-    .hero { padding: 3.5rem 0 2.5rem; }
-    .eyebrow { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 1rem; }
-    .hero h1 { font-weight: 800; font-size: 2.4rem; line-height: 1.25; letter-spacing: -0.03em; margin: 0 0 1rem; }
+    .hero { display: flex; align-items: center; gap: 2.5rem; padding: 3rem 0 2.5rem; }
+    .hero-img { flex: 0 0 230px; }
+    .hero-img img { width: 100%; height: auto; display: block; }
+    .hero-text { flex: 1; }
+    .hero h1 { font-weight: 800; font-size: 2.2rem; line-height: 1.25; letter-spacing: -0.03em; margin: 0 0 1rem; }
     .hero-sub { font-size: 1.15rem; color: var(--muted); margin: 0; }
     .section-title { font-weight: 800; font-size: 1.1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; display: inline-block; }
+
+    @media (max-width: 640px) {
+      .hero { flex-direction: column; text-align: center; gap: 1.2rem; padding: 2rem 0 1.5rem; }
+      .hero-img { flex: none; width: 180px; }
+      .hero h1 { font-size: 1.85rem; }
+    }
   </style>
 </BaseLayout>
