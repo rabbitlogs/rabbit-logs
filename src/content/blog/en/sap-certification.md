@@ -84,5 +84,3 @@ So change the question. Instead of "should I get it or not," ask "am I at a stag
 - [Why a senior consultant told me to study CPIM before SAP](/en/blog/sap-cpim)
 
 <!-- 관련글: sap-exam-format, sap-cpim -->
-
-#SAP-Study-Notes #SAP-certification #SAP-training #StayCertified

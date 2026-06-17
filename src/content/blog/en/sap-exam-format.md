@@ -80,5 +80,3 @@ It shifted from a test you memorize and guess at, to a test that people who've a
 - [Why a senior consultant told me to study CPIM before SAP](/en/blog/sap-cpim)
 
 <!-- 관련글: sap-certification, sap-cpim -->
-
-#SAP-Study-Notes #SAP-certification #SAP-exam #S4HANA

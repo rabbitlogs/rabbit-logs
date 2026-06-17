@@ -80,5 +80,3 @@ SAP 자격증 시험도 이렇게 바뀌었습니다. 헷갈리게 꼬아낸 객
 - [SAP 자격증 vs CPIM 자격증, 뭐가 더 나을까?](/blog/sap-cpim)
 
 <!-- 관련글: sap-certification, sap-cpim -->
-
-#SAP학습자료 #SAP자격증 #SAP시험 #S4HANA

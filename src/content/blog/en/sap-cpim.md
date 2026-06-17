@@ -87,5 +87,3 @@ Honestly, I plan to attempt it myself someday. The time and cost are steep, so I
 - [How the SAP certification exam works after the practical shift](/en/blog/sap-exam-format)
 
 <!-- 관련글: sap-certification, sap-exam-format -->
-
-#SAP-Study-Notes #CPIM #SAP-certification #SCM
