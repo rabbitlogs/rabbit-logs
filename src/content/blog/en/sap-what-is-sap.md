@@ -1,5 +1,5 @@
 ---
-title: "What Is SAP? Understanding It Like a Restaurant Kitchen"
+title: "What is SAP? Understanding it through a restaurant kitchen"
 description: "A beginner-friendly guide to SAP — the system that ties a whole company together — explained through running a restaurant."
 pubDate: 2025-07-02
 category: "project"
@@ -10,7 +10,7 @@ tags: ["SAP-Projects", "SAP-basics", "ERP", "SAP-modules"]
 
 Hi, this is Rabbit! 🐰
 
-You've probably heard SAP mentioned at work as if everyone just knows what it is. But the moment someone asks "so what exactly *is* SAP?", it gets surprisingly hard to explain.
+You've probably heard SAP mentioned at work as if everyone already knows what it is. But the moment someone asks "so what exactly is SAP?", it turns out to be surprisingly hard to explain.
 
 Today, let's pin it down using one simple idea: a well-run restaurant.
 
@@ -21,26 +21,26 @@ Today, let's pin it down using one simple idea: a well-run restaurant.
 
 [[TOC]]
 
-## SAP, seen as a restaurant
+## Seeing SAP as a restaurant
 
-In a well-run restaurant, an order taken out front goes straight to the kitchen, the storeroom checks stock and restocks, and the register tallies sales. Nobody is calling another station to ask what's happening. Everyone sees the same information in real time and moves as one body.
+In a well-run restaurant, an order taken out front goes straight to the kitchen, the storeroom checks stock and restocks, and the register tallies sales. Nobody calls another station to ask what's happening. Everyone sees the same information in real time and moves as one.
 
 The system that ties an entire company together like this is <strong class="key">SAP</strong>.
 
 Normally, each part of a company uses different tools — paper tickets out front, an accounting app at the register, the kitchen's own notes. When they don't talk to each other, the same data gets entered twice, stock goes out of sync, and mistakes pile up. SAP removes that waste by linking every station, so an order entered out front flows automatically to the kitchen, storeroom, and register.
 
-![A restaurant-analogy diagram showing the hall, storeroom, kitchen, and register connected to a central SAP system in real time](/images/sap-what-is-sap-01.png)
+![A restaurant-analogy diagram showing the hall, storeroom, kitchen, and register connected to a central SAP system in real time](/images/sap-what-is-sap-01.jpg)
 *Figure 1. One entry connects every department — the core structure of SAP (restaurant-kitchen analogy)*
 
-## If ERP is new to you
+## Starting with ERP
 
 Talk about SAP and the word ERP always follows. ERP stands for **Enterprise Resource Planning**.
 
-It's easier through the restaurant again: knowing how much stock is left (inventory), how many orders came in (sales), and how much you spent on ingredients (accounting) — all on one screen. The tool that unifies this is ERP, and <strong class="key">SAP is the world's leading ERP brand</strong>.
+It's easier to grasp through the restaurant again: knowing how much stock is left (inventory), how many orders came in (sales), and how much you spent on ingredients (accounting) — all on one screen. The tool that unifies this is ERP, and <strong class="key">SAP is the world's leading ERP brand</strong>.
 
-## Modules you pick like LEGO
+## A modular structure you pick like LEGO
 
-A big strength of SAP is that it delivers features as building blocks called modules. Like LEGO, you bring in only the stations your company needs, and expand later.
+A key strength of SAP is that it delivers features as building blocks called modules. Like LEGO, you bring in only the stations your company needs, and expand later.
 
 | Code | Name | In this restaurant |
 | --- | --- | --- |
@@ -56,9 +56,9 @@ A big strength of SAP is that it delivers features as building blocks called mod
 
 ## Rabbit's Takeaway
 
-The first SAP screen overwhelms everyone, with its cryptic codes and buttons. But remember one thing: SAP is ultimately **a system for people**.
+The first SAP screen overwhelms everyone, with its cryptic codes and buttons. But remember one thing: SAP is, in the end, **a system for people**.
 
-It gathers scattered work into one kitchen so we can work more accurately and with less strain. Tour this restaurant one station at a time, and SAP gets a lot friendlier. 😎
+It gathers scattered work into one kitchen so we can work more accurately and with less strain. Tour this restaurant one station at a time, and SAP becomes far more approachable. 😎
 
 **Read more**
 
