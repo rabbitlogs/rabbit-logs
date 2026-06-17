@@ -186,6 +186,9 @@
   },
   "active": "07250d982faf3117",
   "lastOpenFiles": [
+    "src/pages/en/terms.astro",
+    "src/pages/en/privacy.astro",
+    "src/pages/en/about.astro",
     "src/pages/en/en_terms.astro",
     "src/pages/en/en_privacy.astro",
     "src/pages/en/en_about.astro",
@@ -209,11 +212,8 @@
     "public/images/_raw/Gemini_Generated_Image_2puhlx2puhlx2puh.png",
     "public/images/새 폴더",
     "public/images/Gemini_Generated_Image_gvy9kpgvy9kpgvy9 (1).png",
-    "public/images/Raw",
     "public/about-logo.png",
     "public/images/output/sap-what-is-sap-01.jpg",
-    "public/images/output",
-    "public/images/photothumb.db",
     "public/images/sap-what-is-sap-01.jpg.png",
     "무제.md"
   ]
