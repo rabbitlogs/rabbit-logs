@@ -122,12 +122,15 @@ const home = lang === 'en' ? '/en/' : '/';
       /* 표 — 안쪽 칸 구분선만 (바깥 좌우 세로줄 없음), 헤더는 밝은 칸 구분선 */
       .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 0; font-size: 0.95rem; }
       .prose th, .prose td { padding: 0.6rem 0.85rem; text-align: left; }
-      /* 칸 사이 세로 구분선만: 첫 칸 빼고 왼쪽 선 */
-      .prose th + th, .prose td + td { border-left: 1px solid #d8d2c4; }
-      /* 행 사이 가로 구분선 */
-      .prose tbody td { border-top: 1px solid #d8d2c4; }
+      /* 세로 구분선: 첫 칸 빼고 모든 칸 왼쪽에 선 (공백 노드 영향 없는 방식) */
+      .prose tr th:not(:first-child),
+      .prose tr td:not(:first-child) { border-left: 1px solid #d8d2c4; }
+      /* 가로 구분선: 모든 행 아래에 선 (마지막 행 포함) */
+      .prose tbody tr { border-bottom: 1px solid #d8d2c4; }
+      /* 헤더 */
       .prose thead th { background: var(--primary); color: #fff; font-weight: 700; }
-      .prose thead th + th { border-left: 1px solid rgba(255,255,255,0.4); }
+      .prose thead tr th:not(:first-child) { border-left: 1px solid rgba(255,255,255,0.4); }
+      /* 줄무늬 + 호버 */
       .prose tbody tr:nth-child(even) { background: rgba(44, 95, 87, 0.04); }
       .prose tbody tr:hover { background: rgba(217, 148, 65, 0.08); }
 
