@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="소개 & 문의 — Rabbit Logs"
+  description="코드는 쓰지 않지만, 시스템을 움직이는 사람의 시선으로. 현업 실무자의 눈으로 SAP의 흐름을 기록하는 공간입니다."
+  lang="ko"
+>
+  <article class="prose page about">
+    <div class="about-hero">
+      <img src="/about-logo.png" alt="Rabbit Logs 마스코트" class="about-logo" />
+      <h1>Rabbit Logs에 오신 걸 환영합니다</h1>
+      <p class="tagline">코드는 쓰지 않지만, 시스템을 움직이는 사람의 시선으로.</p>
+    </div>
+
+    <p class="lead">
+      생산관리 실무자로서 SAP 생산 PI 프로젝트와<br />
+      PP 구축, 그리고 안정화·보완 프로젝트까지 수행했고,<br />
+      지금은 그 경험을 현업 실무에 녹여내고 있습니다.
+    </p>
+
+    <p class="lead">
+      개발자의 언어가 아닌 <strong>'현업 실무자의 눈'</strong>으로<br />
+      SAP의 흐름을 기록하고 정리하는 공간입니다.
+    </p>
+
+    <div class="motto">
+      <p class="motto-main">기능보다 프로세스,<br />화면보다 사람.</p>
+      <p class="motto-sub">실제 업무에 도움이 되는 내용을 공유합니다.</p>
+    </div>
+
+    <h2>📬 문의</h2>
+
+    <p>궁금한 점이나 나누고 싶은 이야기가 있다면 편하게 메일 주세요. 보통 며칠 안에 답장 드립니다.</p>
+
+    <p class="contact-box">
+      <span class="contact-label">E-mail</span>
+      <a href="mailto:contact@rabbitlogs.com" class="contact-mail">contact@rabbitlogs.com</a>
+    </p>
+  </article>
+
+  <style>
+    .about { max-width: 640px; }
+    .about-hero { text-align: center; margin: 1rem 0 2.8rem; }
+    .about-logo { width: 150px; height: auto; margin: 0 auto 1.3rem; display: block; }
+    .about-hero h1 { font-weight: 800; font-size: 1.7rem; letter-spacing: -0.02em; margin: 0 0 0.6rem; }
+    .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
+
+    /* 본문 — 호흡 살린 줄간격 */
+    .about .lead { font-size: 1.05rem; line-height: 1.95; color: var(--ink); margin: 1.6rem 0; }
+    .about .lead strong { color: var(--primary); font-weight: 700; }
+
+    /* 핵심 모토 — 위아래 구분선 + 가운데 정렬 + 청록 강조 */
+    .motto { text-align: center; margin: 2.8rem 0; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .motto-main { font-size: 1.2rem; font-weight: 700; color: var(--primary); line-height: 1.7; margin: 0; letter-spacing: -0.01em; }
+    .motto-sub { font-size: 0.98rem; color: var(--muted); margin: 0.7rem 0 0; }
+
+    .about h2 { font-size: 1.25rem; margin-top: 2.6rem; }
+    .contact-box {
+      display: flex; align-items: center; gap: 0.9rem;
+      background: var(--color-bg-soft); border: 1px solid var(--line);
+      border-radius: 10px; padding: 1rem 1.25rem; margin: 1.2rem 0;
+    }
+    .contact-label {
+      font-size: 0.78rem; font-weight: 700; color: #fff; background: var(--primary);
+      padding: 0.22rem 0.6rem; border-radius: 6px; letter-spacing: 0.03em; white-space: nowrap;
+    }
+    .contact-mail { font-weight: 600; font-size: 1.05rem; }
+  </style>
+</BaseLayout>

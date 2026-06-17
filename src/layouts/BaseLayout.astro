@@ -43,7 +43,14 @@ const home = lang === 'en' ? '/en/' : '/';
 
     <main class="wrap"><slot /></main>
 
-    <footer class="site-footer"><div class="wrap"><p>🐇 Hop! Log! Repeat! · © 2026 Rabbit Logs</p></div></footer>
+    <footer class="site-footer"><div class="wrap">
+      <nav class="footer-links">
+        <a href="/about">소개 & 문의</a>
+        <a href="/privacy">개인정보처리방침</a>
+        <a href="/terms">이용약관</a>
+      </nav>
+      <p>🐇 Hop! Log! Repeat! · © 2026 Rabbit Logs</p>
+    </div></footer>
 
     <style is:global>
       :root {
@@ -67,6 +74,9 @@ const home = lang === 'en' ? '/en/' : '/';
       .lang-switch { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; }
 
       .site-footer { margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.85rem; text-align: center; }
+      .footer-links { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.9rem; }
+      .footer-links a { color: var(--muted); text-decoration: none; font-weight: 500; }
+      .footer-links a:hover { color: var(--primary); }
 
       /* ── 본문(prose) — 전체 Pretendard, 굵기로 위계 ── */
       .prose { font-size: 17px; line-height: 1.85; }
