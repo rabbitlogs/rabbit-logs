@@ -66,17 +66,18 @@ const home = lang === 'en' ? '/en/' : '/';
 
       .site-header { border-bottom: 1px solid var(--line); }
       .header-inner { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; flex-wrap: wrap; }
-      .brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--ink); margin-right: auto; }
+      .brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--ink); margin-right: auto; order: 1; }
       .brand-logo { height: 40px; width: auto; display: block; }
       .brand-name { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
-      .nav { display: flex; gap: 1.1rem; align-items: center; }
+      .nav { display: flex; gap: 1.1rem; align-items: center; order: 2; }
       .nav a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
       .nav a:hover { color: var(--primary); }
-      .lang-switch { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+      .lang-switch { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; font-size: 0.85rem; font-weight: 600; text-decoration: none; order: 3; }
 
       /* 모바일: 브랜드+언어토글 윗줄, 카테고리 메뉴는 아랫줄 전체폭 균등 분배 */
       @media (max-width: 640px) {
         .header-inner { gap: 0.6rem 0.5rem; }
+        .lang-switch { order: 2; }
         .nav { order: 3; flex: 1 0 100%; justify-content: space-between; gap: 0.3rem; border-top: 1px solid var(--line); padding-top: 0.7rem; }
         .nav a { font-size: 0.82rem; flex: 1; text-align: center; }
       }

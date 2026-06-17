@@ -13,10 +13,10 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "public/images/sap-what-is-sap-01.jpg"
+                "file": "public/images/hero-rabbit.png"
               },
               "icon": "lucide-image",
-              "title": "sap-what-is-sap-01"
+              "title": "hero-rabbit"
             }
           }
         ]
@@ -182,7 +182,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "07250d982faf3117",
+  "active": "a486458ee0037310",
   "lastOpenFiles": [
     "public/images/sap-what-is-sap-01.jpg",
     "public/images/sap-what-is-sap-01.png",
