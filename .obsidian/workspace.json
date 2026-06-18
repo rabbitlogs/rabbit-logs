@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "ff953bca7888ff94",
+        "id": "8f5664d691f1b97e",
         "type": "tabs",
         "children": [
           {
-            "id": "a486458ee0037310",
+            "id": "0d5d9b8cc52adba5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/blog/ko/sap-tcode-basics.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "sap-tcode-basics"
+              "title": "새 탭"
             }
           }
         ]
@@ -184,25 +180,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a486458ee0037310",
+  "active": "07250d982faf3117",
   "lastOpenFiles": [
+    "TOC.md",
+    "public/images/sap-tcode-favorites_en.jpg",
+    "src/content/blog/ko/sap-signature-theme.md",
+    "src/content/blog/ko/sap-tcode-basics.md",
     "public/images/sap-history-timeline.jpg",
     "public/images/sap-pp-flow.jpg",
     "public/images/sap-modules-map.jpg",
     "public/images/sap-tcode-technical-names_en.jpg",
     "public/images/sap-tcode-favorites.jpg",
-    "public/images/sap-tcode-favorites_en.jpg",
     "public/images/sap-tcode-command-field.jpg",
     "public/images/sap-tcode-command-field_en.jpg",
     "public/images/스크린샷 2026-06-18 145347.jpg",
     "public/images/스크린샷 2026-06-18 145325.jpg",
-    "public/images/sap-tcode-technical-names.jpg",
     "src/content/blog/ko/sap-pp-tcode.md",
     "src/content/blog/ko/sap-what-is-sap.md",
     "src/content/blog/ko/sap-modules-guide.md",
     "src/content/blog/ko/sap-history.md",
-    "src/content/blog/ko/sap-tcode-basics.md",
-    "src/content/blog/ko/sap-signature-theme.md",
     "src/content/blog/ko/sap-font-readability.md",
     "src/content/blog/ko/sap-exam-format.md",
     "src/content/blog/ko/sap-cpim.md",
@@ -215,7 +211,6 @@
     "blog",
     "blog/sap-cpim.md",
     "IMAGE_GUIDE.md",
-    "TOC.md",
     "en/blog/sap-exam-format.md",
     "en/blog",
     "en",
