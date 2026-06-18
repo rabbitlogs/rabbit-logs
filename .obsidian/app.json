@@ -1,5 +1,6 @@
 {
   "strictLineBreaks": true,
   "showLineNumber": true,
-  "readableLineLength": true
+  "readableLineLength": true,
+  "promptDelete": false
 }

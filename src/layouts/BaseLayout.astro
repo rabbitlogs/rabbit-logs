@@ -77,7 +77,8 @@ const home = lang === 'en' ? '/en/' : '/';
       /* 모바일: 브랜드+언어토글 윗줄, 카테고리 메뉴는 아랫줄 전체폭 균등 분배 */
       @media (max-width: 640px) {
         .header-inner { gap: 0.6rem 0.5rem; }
-        .lang-switch { order: 2; }
+        .brand { margin-left: 0.5rem; }
+        .lang-switch { order: 2; margin-right: 0.5rem; }
         .nav { order: 3; flex: 1 0 100%; justify-content: space-between; gap: 0.3rem; border-top: 1px solid var(--line); padding-top: 0.7rem; }
         .nav a { font-size: 0.82rem; flex: 1; text-align: center; }
       }
@@ -120,7 +121,7 @@ const home = lang === 'en' ? '/en/' : '/';
 
       /* 이미지가 든 문단 자체를 가운데 정렬 (이미지+캡션이 한 문단이어도 적용) */
       .prose p:has(img) { margin: 1.5rem 0 1.6rem; text-align: center; }
-      .prose p:has(img) img { margin-bottom: 0.4rem; }
+      .prose p:has(img) img { margin-bottom: 0.1rem; }
 
       /* 이미지 문단 안의 캡션(em) + 표 다음 문단의 캡션(em) → 같은 스타일 */
       .prose p:has(img) em,

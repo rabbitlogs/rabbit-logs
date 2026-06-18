@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/ko/sap-what-is-sap.md",
+                "file": "src/content/blog/en/sap-certification.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sap-what-is-sap"
+              "title": "sap-certification"
             }
           }
         ]
@@ -41,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:SAP프로젝트",
+                "query": "tag:#SAP모듈",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -184,17 +184,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a486458ee0037310",
+  "active": "07250d982faf3117",
   "lastOpenFiles": [
-    "src/content/blog/ko/sap-exam-format.md",
-    "src/content/blog/ko/sap-cpim.md",
     "src/content/blog/ko/sap-certification.md",
-    "src/content/blog/en/sap-what-is-sap.md",
-    "src/content/blog/en/sap-exam-format.md",
-    "src/content/blog/en/sap-cpim.md",
     "src/content/blog/en/sap-certification.md",
+    "src/content/blog/en/sap-cpim.md",
+    "src/content/blog/en/sap-exam-format.md",
+    "blog/sap-cpim.md",
+    "blog",
+    "src/content/blog/ko/sap-cpim.md",
+    "public/og-thumbnail.jpg",
+    "IMAGE_GUIDE.md",
+    "TOC.md",
     "src/content/blog/ko/sap-what-is-sap.md",
+    "src/content/blog/ko/sap-exam-format.md",
+    "en/blog/sap-exam-format.md",
+    "en/blog",
+    "en",
     "2026-06-17.md",
+    "src/content/blog/en/sap-what-is-sap.md",
     "src/content/blog/en/en_sap-exam-format.md",
     "src/content/blog/en/en_sap-certification.md",
     "public/images/sap-cpim-01.jpg",
@@ -205,18 +213,13 @@
     "src/pages/about.astro",
     "public/images/sap-what-is-sap-01.jpg",
     "public/images/sap-what-is-sap-01.png",
-    "TOC.md",
     "public/_redirects",
     "src/content/blog/en/en_sap-what-is-sap.md",
     "src/pages/en/terms.astro",
     "src/pages/en/privacy.astro",
     "src/pages/en/en_terms.astro",
-    "src/pages/en/en_privacy.astro",
-    "IMAGE_GUIDE.md",
     "conflict-files-obsidian-git.md",
-    "src/layouts/BaseLayout (1).astro",
     "public/images/_raw/sap-what-is-sap-01.jpg",
-    "public/images/_raw",
     "src/content/blog/ko/sap-what-is-sap_KO.md",
     "src/content/blog/en/sap-what-is-sap_EN.md",
     "images/sap-what-is-sap-01..md",
@@ -225,7 +228,6 @@
     "public/images/_raw/sap-what-is-sap-01 (2).png",
     "public/images/_raw/Gemini_Generated_Image_2puhlx2puhlx2puh.png",
     "public/images/Gemini_Generated_Image_gvy9kpgvy9kpgvy9 (1).png",
-    "public/about-logo.png",
     "무제.md"
   ]
 }
