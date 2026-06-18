@@ -1,11 +1,15 @@
 ---
-title: "What is SAP? Understanding it through a restaurant kitchen"
-description: "A beginner-friendly guide to SAP — the system that ties a whole company together — explained through running a restaurant."
-pubDate: 2025-07-02
-category: "project"
-series: "SAP, Explained Like a Restaurant"
-level: "beginner"
-tags: ["SAP-Projects", "SAP-basics", "ERP", "SAP-modules"]
+title: What is SAP? Understanding it through a restaurant kitchen
+description: A beginner-friendly guide to SAP — the system that ties a whole company together — explained through running a restaurant.
+pubDate: 2026-06-02
+category: project
+series: SAP, Explained Like a Restaurant
+level: beginner
+tags:
+  - SAP-Projects
+  - SAP-basics
+  - ERP
+  - SAP-modules
 ---
 
 Hi, this is Rabbit! 🐰

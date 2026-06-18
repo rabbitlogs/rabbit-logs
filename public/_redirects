@@ -16,6 +16,14 @@
 # CPIM (예전 주소 그대로 → 새 blog 경로)
 /sap-cpim/   /blog/sap-cpim   301
 
+# 테마 설정 (예전 주소 → 새 글)
+/sap-%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98-%ED%85%8C%EB%A7%88/   /blog/sap-signature-theme   301
+/sap-시그니처-테마/   /blog/sap-signature-theme   301
+
+# 폰트 가독성 (예전 주소 → 새 글)
+/sap-%EA%B0%80%EB%8F%85%EC%84%B1-%ED%8F%B0%ED%8A%B8-%EC%B6%94%EC%B2%9C/   /blog/sap-font-readability   301
+/sap-가독성-폰트-추천/   /blog/sap-font-readability   301
+
 # 예전 고정 페이지 → 새 페이지
 /about-contact/   /about   301
 /%ec%9d%b4%ec%9a%a9%ec%95%bd%ea%b4%80/   /terms   301

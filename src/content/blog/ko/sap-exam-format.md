@@ -1,11 +1,15 @@
 ---
 title: "SAP 자격증 시험 방식: 실기 전환 후 응시법 (2026)"
-description: "객관식에서 실기로 바뀐 SAP 자격증 시험. 시스템 실습 시험과 AI 시나리오 시험의 차이, 응시 절차, 꼭 알아야 할 실수까지 정리했습니다."
-pubDate: 2026-06-17
-category: "study"
-series: "레스토랑으로 배우는 SAP"
-level: "beginner"
-tags: ["SAP학습자료", "SAP자격증", "SAP시험", "S4HANA"]
+description: 객관식에서 실기로 바뀐 SAP 자격증 시험. 시스템 실습 시험과 AI 시나리오 시험의 차이, 응시 절차, 꼭 알아야 할 실수까지 정리했습니다.
+pubDate: 2026-06-16
+category: study
+series: 레스토랑으로 배우는 SAP
+level: beginner
+tags:
+  - SAP학습자료
+  - SAP자격증
+  - SAP시험
+  - S4HANA
 ---
 
 안녕하세요, Rabbit입니다! 🐰
@@ -76,7 +80,7 @@ SAP 자격증 시험도 이렇게 바뀌었습니다. 헷갈리게 꼬아낸 객
 
 **더 읽어보기**
 
-- [SAP 자격증 취득 가이드: 비용·유지비·필요성](/blog/sap-certification)
-- [SAP 자격증 vs CPIM 자격증, 뭐가 더 나을까?](/blog/sap-cpim)
+- [SAP 자격증 취득 가이드: 비용·유지비·필요성 (2026)](/blog/sap-certification)
+- [SAP 자격증보다 CPIM을 먼저 권한 이유 (Why vs How)](/blog/sap-cpim)
 
 <!-- 관련글: sap-certification, sap-cpim -->
