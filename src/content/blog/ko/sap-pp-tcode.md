@@ -18,6 +18,9 @@ SAP PP(생산관리) 실무자라면 하루에도 수십 번씩 T-CODE를 마주
 
 [[TOC]]
 
+![SAP PP 실무의 주문-생산-자재-출하 업무 흐름과 단계별 대표 T-CODE](/images/sap-pp-flow.jpg)
+*그림 1. PP 실무의 업무 흐름과 단계별 대표 T-CODE*
+
 ## 1. 주문 (Sales Order)
 
 생산의 시작은 고객 주문입니다.
