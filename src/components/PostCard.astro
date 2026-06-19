@@ -26,6 +26,7 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
     transition: transform 0.15s;
   }
   .card:hover { transform: translateX(4px); }
+  .card:last-child { border-bottom: none; }
   .card:hover h3 { color: var(--primary); }
   .card-meta { display: flex; gap: 0.6rem; font-size: 0.8rem; margin-bottom: 0.4rem; }
   .card .cat { color: var(--accent); font-weight: 600; }
