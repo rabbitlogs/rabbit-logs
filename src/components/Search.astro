@@ -4,8 +4,8 @@
 // - 실제 검색 엔진(Pagefind)은 2단계에서 연결한다.
 const { lang = 'ko' } = Astro.props;
 const txt = {
-  ko: { label: '검색', placeholder: '검색어를 입력하세요', empty: '검색어를 입력해 보세요.', soon: '검색 기능을 연결하는 중입니다.' },
-  en: { label: 'Search', placeholder: 'Type to search', empty: 'Type something to search.', soon: 'Search is being connected.' },
+  ko: { label: '검색', placeholder: '검색어를 입력하세요', empty: '검색어를 입력해 보세요.', noResult: '검색 결과가 없습니다.' },
+  en: { label: 'Search', placeholder: 'Type to search', empty: 'Type something to search.', noResult: 'No results found.' },
 };
 const t = txt[lang];
 ---
@@ -33,7 +33,7 @@ const t = txt[lang];
   </div>
 </div>
 
-<script is:inline define:vars={{ soonMsg: t.soon, emptyMsg: t.empty }}>
+<script is:inline define:vars={{ emptyMsg: t.empty, noResultMsg: t.noResult, lang }}>
   (function () {
     const openBtns = document.querySelectorAll('[data-search-open]');
     const modal = document.querySelector('[data-search-modal]');
@@ -42,9 +42,27 @@ const t = txt[lang];
     const results = document.querySelector('[data-search-results]');
     if (!modal || !input) return;
 
+    let pagefind = null;
+    let pagefindLoading = null;
+
+    // Pagefind는 빌드 후에만 /pagefind/pagefind.js 가 생성된다.
+    // 검색창을 처음 열 때 한 번만 불러온다(초기 페이지 로드 속도에 영향 없게).
+    function loadPagefind() {
+      if (pagefind) return Promise.resolve(pagefind);
+      if (pagefindLoading) return pagefindLoading;
+      pagefindLoading = import('/pagefind/pagefind.js')
+        .then((mod) => {
+          pagefind = mod;
+          return pagefind;
+        })
+        .catch(() => null); // 로컬 미리보기 등 색인이 없을 때 조용히 무시
+      return pagefindLoading;
+    }
+
     const open = () => {
       modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
+      loadPagefind();
       setTimeout(() => input.focus(), 50);
     };
     const close = () => {
@@ -56,21 +74,44 @@ const t = txt[lang];
 
     openBtns.forEach((b) => b.addEventListener('click', open));
     if (closeBtn) closeBtn.addEventListener('click', close);
-    // 모달 바깥(어두운 배경) 클릭 시 닫기. 검색박스 내부 클릭은 무시.
     modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
     });
 
-    // 1단계: 실제 검색 대신 안내만. 2단계에서 Pagefind 연결.
+    const render = async (hits) => {
+      if (!hits.length) {
+        results.innerHTML = '<p class="search-hint">' + noResultMsg + '</p>';
+        return;
+      }
+      const items = await Promise.all(hits.slice(0, 8).map((h) => h.data()));
+      results.innerHTML = items.map((d) => {
+        const title = d.meta && d.meta.title ? d.meta.title : d.url;
+        const excerpt = d.excerpt || '';
+        return (
+          '<a class="search-result" href="' + d.url + '">' +
+          '<span class="search-result-title">' + title + '</span>' +
+          '<span class="search-result-excerpt">' + excerpt + '</span>' +
+          '</a>'
+        );
+      }).join('');
+    };
+
     let timer = null;
     input.addEventListener('input', () => {
       clearTimeout(timer);
       const q = input.value.trim();
       if (!q) { results.innerHTML = '<p class="search-hint">' + emptyMsg + '</p>'; return; }
-      timer = setTimeout(() => {
-        results.innerHTML = '<p class="search-hint">' + soonMsg + '</p>';
-      }, 200);
+      timer = setTimeout(async () => {
+        const pf = await loadPagefind();
+        if (!pf) { results.innerHTML = '<p class="search-hint">' + noResultMsg + '</p>'; return; }
+        // 현재 언어 글만 보여준다 (ko 글은 /blog/, en 글은 /en/blog/)
+        const search = await pf.search(q);
+        const filtered = search.results.filter((r) =>
+          lang === 'en' ? r.url.includes('/en/') : !r.url.includes('/en/')
+        );
+        render(filtered);
+      }, 250);
     });
   })();
 </script>
@@ -113,6 +154,19 @@ const t = txt[lang];
     background: none; border: none; font-size: 1.6rem; line-height: 1;
     color: var(--muted); cursor: pointer; padding: 0 0.2rem;
   }
-  .search-results { padding: 1rem 1.1rem; max-height: 50vh; overflow-y: auto; }
+  .search-results { padding: 0.6rem 0.6rem 1rem; max-height: 50vh; overflow-y: auto; }
   .search-hint { color: var(--muted); font-size: 0.95rem; text-align: center; margin: 1rem 0; }
+  .search-result {
+    display: block; padding: 0.7rem 0.6rem; border-radius: 8px;
+    text-decoration: none; color: inherit; transition: background 0.12s;
+  }
+  .search-result:hover { background: rgba(44,95,87,0.07); }
+  .search-result-title {
+    display: block; font-weight: 700; font-size: 0.98rem; color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .search-result-excerpt {
+    display: block; font-size: 0.85rem; color: var(--muted); line-height: 1.5;
+  }
+  .search-result-excerpt mark { background: rgba(217,148,65,0.35); color: inherit; border-radius: 2px; }
 </style>
