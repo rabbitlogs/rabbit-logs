@@ -35,60 +35,63 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
     )}
 
     <!--
-      광고 원본 1칸(숨김). JS가 본문 글자수를 재서 1~3개로 복제·배치한다.
-        ~2,000자  : 1개 (첫 h2 앞)
-        2,000~3,500자: 2개 (첫 h2 앞 + 글 끝)
-        3,500자+  : 3개 (첫 h2 앞 + 중간 h2 앞 + 글 끝)
+      광고 원본 1칸(숨김). JS가 본문 글자수를 재서 2~3개로 복제·배치한다.
+        0~3,500자 : 2개 (첫 소제목 뒤 + 태그 뒤)
+        3,500자+  : 3개 (도입 뒤 + 중간 소제목 뒤 + 태그 뒤)
+      ※ 마지막 광고는 본문(.prose)이 아니라 태그(.post-tags) 다음, article 끝에 둔다.
     -->
     <template id="ad-template"><AdSense /></template>
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
+        const article = document.querySelector('.post');
         const prose = document.querySelector('.prose');
+        const tags = document.querySelector('.post-tags'); // 없을 수도 있음
         const tpl = document.getElementById('ad-template');
-        if (!prose || !tpl) return;
+        if (!article || !prose || !tpl) return;
 
-        // 1) 본문 글자수로 광고 개수 결정
+        // 1) 본문 글자수로 광고 개수 결정 (1개짜리 없음)
         const len = (prose.textContent || '').replace(/\s/g, '').length;
-        let count = 1;
-        if (len >= 3500) count = 3;
-        else if (len >= 2000) count = 2;
+        const count = len >= 3500 ? 3 : 2;
 
-        // 2) 본문 안 h2 목록
-        const h2s = prose.querySelectorAll('h2');
-
-        // 광고 칸 하나를 복제해 특정 노드 '앞'에 삽입
-        const insertBefore = (node) => {
-          const ad = tpl.content.firstElementChild.cloneNode(true);
-          node.parentNode.insertBefore(ad, node);
-          return ad;
-        };
-        // 본문 맨 끝에 삽입
-        const appendEnd = () => {
-          const ad = tpl.content.firstElementChild.cloneNode(true);
-          prose.appendChild(ad);
-          return ad;
-        };
+        // 광고 칸 하나를 복제
+        const makeAd = () => tpl.content.firstElementChild.cloneNode(true);
 
         const placed = [];
 
-        if (count === 1) {
-          if (h2s[0]) placed.push(insertBefore(h2s[0]));
-          else placed.push(appendEnd());
-        } else if (count === 2) {
-          if (h2s[0]) placed.push(insertBefore(h2s[0]));
-          placed.push(appendEnd());
+        // 특정 노드 '앞'(본문 .prose 안)에 삽입
+        const insertBeforeInProse = (node) => {
+          const ad = makeAd();
+          node.parentNode.insertBefore(ad, node);
+          placed.push(ad);
+        };
+        // article 맨 끝(태그 다음)에 삽입
+        const appendAfterTags = () => {
+          const ad = makeAd();
+          if (tags) tags.insertAdjacentElement('afterend', ad);
+          else article.appendChild(ad);
+          placed.push(ad);
+        };
+
+        const h2s = prose.querySelectorAll('h2');
+
+        if (count === 2) {
+          // 첫 소제목 뒤 + 태그 뒤
+          if (h2s[0]) insertBeforeInProse(h2s[0]);
+          appendAfterTags();
         } else {
-          // 3개: 첫 h2 앞 + 중간 h2 앞 + 글 끝
-          if (h2s[0]) placed.push(insertBefore(h2s[0]));
+          // 3개: 도입 뒤(첫 h2 앞) + 중간 소제목 뒤 + 태그 뒤
+          if (h2s[0]) insertBeforeInProse(h2s[0]);
           if (h2s.length >= 3) {
             const mid = h2s[Math.floor(h2s.length / 2)];
-            placed.push(insertBefore(mid));
+            insertBeforeInProse(mid);
+          } else if (h2s[1]) {
+            insertBeforeInProse(h2s[1]);
           }
-          placed.push(appendEnd());
+          appendAfterTags();
         }
 
-        // 3) 삽입된 광고들에 대해 애드센스 렌더 요청
+        // 2) 삽입된 광고들에 대해 애드센스 렌더 요청
         placed.forEach(() => {
           try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
         });

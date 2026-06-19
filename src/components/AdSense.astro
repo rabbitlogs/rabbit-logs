@@ -38,12 +38,13 @@ const AD_SLOT = '3094787370';
     text-transform: uppercase;
     margin-bottom: 0.75rem;    /* '광고' 글자와 광고 사이 여백 */
   }
+  /* ins에 width:100%를 강제하지 않는다.
+     강제하면 모바일 반응형 광고에서 컨테이너 높이가 광고 실제 높이를
+     따라가지 못해 아래에 빈 공간이 남는다. 광고가 스스로 크기를 정하게 둔다. */
   .ad-slot .adsbygoogle {
     display: block;
-    width: 100%;               /* 광고 폭을 박스 안쪽에 맞춤 */
   }
-  /* 광고를 못 채운 칸은 통째로 숨김 (빈 점선 박스 제거).
-     애드센스가 광고를 못 채우면 ins에 data-ad-status="unfilled"를 단다. */
+  /* 광고를 못 채운 칸은 통째로 숨김 (빈 점선 박스 제거). */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {
     display: none;
   }
