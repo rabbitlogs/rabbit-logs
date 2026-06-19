@@ -39,6 +39,7 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
         0~3,500자 : 2개 (첫 소제목 뒤 + 태그 뒤)
         3,500자+  : 3개 (도입 뒤 + 중간 소제목 뒤 + 태그 뒤)
       ※ 마지막 광고는 본문(.prose)이 아니라 태그(.post-tags) 다음, article 끝에 둔다.
+      ※ 광고가 채워진 뒤 iframe 실제 높이를 읽어 ins 높이를 맞춘다(모바일 빈 공간 제거).
     -->
     <template id="ad-template"><AdSense /></template>
 
@@ -54,18 +55,14 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
         const len = (prose.textContent || '').replace(/\s/g, '').length;
         const count = len >= 3500 ? 3 : 2;
 
-        // 광고 칸 하나를 복제
         const makeAd = () => tpl.content.firstElementChild.cloneNode(true);
-
         const placed = [];
 
-        // 특정 노드 '앞'(본문 .prose 안)에 삽입
         const insertBeforeInProse = (node) => {
           const ad = makeAd();
           node.parentNode.insertBefore(ad, node);
           placed.push(ad);
         };
-        // article 맨 끝(태그 다음)에 삽입
         const appendAfterTags = () => {
           const ad = makeAd();
           if (tags) tags.insertAdjacentElement('afterend', ad);
@@ -76,24 +73,60 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
         const h2s = prose.querySelectorAll('h2');
 
         if (count === 2) {
-          // 첫 소제목 뒤 + 태그 뒤
           if (h2s[0]) insertBeforeInProse(h2s[0]);
           appendAfterTags();
         } else {
-          // 3개: 도입 뒤(첫 h2 앞) + 중간 소제목 뒤 + 태그 뒤
           if (h2s[0]) insertBeforeInProse(h2s[0]);
           if (h2s.length >= 3) {
-            const mid = h2s[Math.floor(h2s.length / 2)];
-            insertBeforeInProse(mid);
+            insertBeforeInProse(h2s[Math.floor(h2s.length / 2)]);
           } else if (h2s[1]) {
             insertBeforeInProse(h2s[1]);
           }
           appendAfterTags();
         }
 
-        // 2) 삽입된 광고들에 대해 애드센스 렌더 요청
+        // 2) 애드센스 렌더 요청
         placed.forEach(() => {
           try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+        });
+
+        // 3) 광고가 채워진 뒤, 광고(iframe) 실제 높이를 읽어 ins 높이를 맞춘다.
+        //    반응형 광고에서 ins 컨테이너가 광고 실제 높이를 못 따라가
+        //    아래에 빈 공간이 남는 현상을 없앤다.
+        const fitAdHeight = (ins) => {
+          const status = ins.getAttribute('data-ad-status');
+          if (status === 'unfilled') return true;            // 미충전: 박스 숨김(CSS) → 끝
+          const iframe = ins.querySelector('iframe');
+          if (iframe && iframe.offsetHeight > 0) {
+            ins.style.height = iframe.offsetHeight + 'px';    // 광고 실제 높이로 고정
+            return true;
+          }
+          return false; // 아직 로드 전
+        };
+
+        placed.forEach((slot) => {
+          const ins = slot.querySelector('ins.adsbygoogle');
+          if (!ins) return;
+
+          // 광고가 늦게 들어오므로 일정 시간 관찰하며 높이를 맞춘다.
+          let tries = 0;
+          const timer = setInterval(() => {
+            tries++;
+            const done = fitAdHeight(ins);
+            if (done || tries >= 40) clearInterval(timer); // 최대 약 10초(250ms*40)
+          }, 250);
+        });
+
+        // 화면 회전·리사이즈 시 높이 재보정
+        window.addEventListener('resize', () => {
+          placed.forEach((slot) => {
+            const ins = slot.querySelector('ins.adsbygoogle');
+            if (!ins) return;
+            const iframe = ins.querySelector('iframe');
+            if (iframe && iframe.offsetHeight > 0) {
+              ins.style.height = iframe.offsetHeight + 'px';
+            }
+          });
         });
       });
     </script>
