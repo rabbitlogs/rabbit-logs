@@ -91,47 +91,31 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
           try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
         });
 
-        // 3) 광고(iframe) 실제 높이를 ins 높이에 맞춘다.
-        //    반응형 광고는 처음 예약한 높이보다 실제 광고가 짧게 들어오는 경우가 있어
-        //    아래에 빈 공간이 남는다. iframe 높이를 계속 추적해 ins를 딱 맞춘다.
-        const syncHeight = (ins, iframe) => {
-          if (iframe && iframe.offsetHeight > 0) {
-            ins.style.height = iframe.offsetHeight + 'px';
-          }
-        };
-
+        // 3) fluid(인아티클) 광고는 스스로 콘텐츠 높이만큼만 차지하므로
+        //    높이를 강제하지 않는다(강제하면 오히려 잘리거나 빈칸이 생김).
+        //    대신 일정 시간 안에 광고가 안 채워지면(미충전 또는 광고차단 프로그램)
+        //    빈 박스가 남지 않도록 박스를 통째로 제거한다.
         placed.forEach((slot) => {
           const ins = slot.querySelector('ins.adsbygoogle');
           if (!ins) return;
 
-          let observer = null;
-
-          // iframe(광고)이 들어올 때까지 기다렸다가, 들어오면 ResizeObserver로
-          // 높이 변화를 실시간 추적한다(짧은 광고 → 즉시 박스 축소).
           let tries = 0;
-          const waiter = setInterval(() => {
+          const checker = setInterval(() => {
             tries++;
-            if (ins.getAttribute('data-ad-status') === 'unfilled') {
-              clearInterval(waiter); // 미충전 → 박스 숨김(CSS)
-              return;
-            }
+            const status = ins.getAttribute('data-ad-status');
             const iframe = ins.querySelector('iframe');
-            if (iframe) {
-              clearInterval(waiter);
-              syncHeight(ins, iframe);
-              if ('ResizeObserver' in window) {
-                observer = new ResizeObserver(() => syncHeight(ins, iframe));
-                observer.observe(iframe);
-              }
-              // ResizeObserver 미지원 대비 몇 차례 더 보정
-              let extra = 0;
-              const poll = setInterval(() => {
-                extra++;
-                syncHeight(ins, iframe);
-                if (extra >= 10) clearInterval(poll);
-              }, 400);
+
+            if (status === 'unfilled') {
+              slot.remove();              // 미충전 → 박스 제거
+              clearInterval(checker);
+            } else if (iframe && iframe.offsetHeight > 0) {
+              clearInterval(checker);     // 광고 정상 표시 → 그대로 둠
+            } else if (tries >= 12) {
+              // 약 3초(250ms*12) 지나도 광고(iframe)가 안 생기면
+              // 광고차단 프로그램 등으로 못 뜬 것 → 빈 박스 제거
+              slot.remove();
+              clearInterval(checker);
             }
-            if (tries >= 40) clearInterval(waiter); // 최대 약 10초
           }, 250);
         });
       });
