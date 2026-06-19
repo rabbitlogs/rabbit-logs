@@ -1,13 +1,12 @@
 ---
 // ─────────────────────────────────────────────
 //  애드센스 광고 한 칸
-//  - AD_CLIENT: 본인 애드센스 퍼블리셔 ID (이미 입력됨)
+//  - AD_CLIENT: 본인 애드센스 퍼블리셔 ID
 //  - AD_SLOT  : 애드센스 "디스플레이 광고" 유닛 번호(data-ad-slot).
 //               유닛 1개를 본문 여러 자리에 재사용한다.
-//               유닛을 만든 뒤 아래 AD_SLOT 한 줄만 그 번호로 바꾸면 끝.
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
-const AD_SLOT = '3094787370'; // ← 애드센스 광고 유닛 번호로 교체
+const AD_SLOT = '3094787370';
 ---
 
 <div class="ad-slot" aria-label="광고">
@@ -25,11 +24,11 @@ const AD_SLOT = '3094787370'; // ← 애드센스 광고 유닛 번호로 교체
 <style>
   .ad-slot {
     margin: 2.5rem 0;
-    padding: 0.5rem 0.75rem;
+    padding: 1.25rem;          /* 광고와 박스 테두리 사이 여백 */
     border: 1px dashed var(--line);
     border-radius: 8px;
     text-align: center;
-    overflow: hidden;          /* 광고가 박스 밖으로 삐져나오지 않게 */
+    overflow: hidden;          /* 모바일에서 박스 밖으로 안 삐짐 */
   }
   .ad-label {
     display: block;
@@ -37,13 +36,13 @@ const AD_SLOT = '3094787370'; // ← 애드센스 광고 유닛 번호로 교체
     letter-spacing: 0.15em;
     color: var(--muted);
     text-transform: uppercase;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.75rem;    /* '광고' 글자와 광고 사이 여백 */
   }
   .ad-slot .adsbygoogle {
     display: block;
-    width: 100%;               /* 광고 폭을 박스에 맞춤 */
+    width: 100%;               /* 광고 폭을 박스 안쪽에 맞춤 */
   }
-  /* 광고가 안 채워진 칸은 통째로 숨김 (빈 점선 박스/여백 제거).
+  /* 광고를 못 채운 칸은 통째로 숨김 (빈 점선 박스 제거).
      애드센스가 광고를 못 채우면 ins에 data-ad-status="unfilled"를 단다. */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {
     display: none;
