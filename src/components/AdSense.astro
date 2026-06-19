@@ -38,11 +38,15 @@ const AD_SLOT = '3094787370';
     text-transform: uppercase;
     margin-bottom: 0.75rem;    /* '광고' 글자와 광고 사이 여백 */
   }
-  /* ins에 width:100%를 강제하지 않는다.
-     강제하면 모바일 반응형 광고에서 컨테이너 높이가 광고 실제 높이를
-     따라가지 못해 아래에 빈 공간이 남는다. 광고가 스스로 크기를 정하게 둔다. */
+  /* ins 높이가 광고 실제 높이를 따라가게 한다.
+     PostLayout 스크립트가 광고 로드 후 iframe 높이를 읽어 ins.height를 맞춘다.
+     로드 전 기본 높이를 0으로 둬서 박스가 광고보다 길게 남지 않게 한다. */
   .ad-slot .adsbygoogle {
     display: block;
+    height: auto;
+  }
+  .ad-slot .adsbygoogle iframe {
+    display: block;            /* iframe 아래 인라인 여백 제거 */
   }
   /* 광고를 못 채운 칸은 통째로 숨김 (빈 점선 박스 제거). */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {

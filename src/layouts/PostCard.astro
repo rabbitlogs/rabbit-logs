@@ -1,0 +1,36 @@
+---
+const { href, title, description, category, pubDate, lang = 'ko' } = Astro.props;
+
+const catName = {
+  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' },
+  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes' },
+};
+const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', {
+  year: 'numeric', month: 'short', day: 'numeric',
+});
+---
+
+<a href={href} class="card">
+  <div class="card-meta">
+    <span class="cat">{catName[lang][category]}</span>
+    <span class="date">{dateStr}</span>
+  </div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</a>
+
+<style>
+  .card {
+    display: block; text-decoration: none; color: inherit;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--line);
+    transition: transform 0.15s;
+  }
+  .card:hover { transform: translateX(4px); }
+  .card:last-child { border-bottom: none; }
+  .card:hover h3 { color: var(--primary); }
+  .card-meta { display: flex; gap: 0.6rem; font-size: 0.8rem; margin-bottom: 0.4rem; }
+  .card .cat { color: var(--accent); font-weight: 600; }
+  .card .date { color: var(--muted); }
+  .card h3 {  font-size: 1.3rem; margin: 0 0 0.3rem; transition: color 0.15s; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+</style>
