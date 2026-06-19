@@ -11,20 +11,22 @@ const AD_SLOT = '3094787370';
 
 <div class="ad-slot" aria-label="광고">
   <span class="ad-label">광고</span>
-  <ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client={AD_CLIENT}
-    data-ad-slot={AD_SLOT}
-    data-ad-format="auto"
-    data-full-width-responsive="true"
-  ></ins>
+  <div class="ad-inner">
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={AD_CLIENT}
+      data-ad-slot={AD_SLOT}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+  </div>
 </div>
 
 <style>
   .ad-slot {
     margin: 2.5rem 0;
-    padding: 1.25rem;          /* 광고와 박스 테두리 사이 여백 */
+    padding: 1.25rem;          /* 박스 테두리 안쪽 여백 (상하 + 좌우 기본) */
     border: 1px dashed var(--line);
     border-radius: 8px;
     text-align: center;
@@ -38,15 +40,21 @@ const AD_SLOT = '3094787370';
     text-transform: uppercase;
     margin-bottom: 0.75rem;    /* '광고' 글자와 광고 사이 여백 */
   }
-  /* ins 높이가 광고 실제 높이를 따라가게 한다.
-     PostLayout 스크립트가 광고 로드 후 iframe 높이를 읽어 ins.height를 맞춘다.
-     로드 전 기본 높이를 0으로 둬서 박스가 광고보다 길게 남지 않게 한다. */
+  /* 광고 좌우에 추가 여백.
+     반응형 광고 iframe이 부모 폭 끝까지 늘어나 padding을 무시하므로,
+     안쪽 래퍼에 좌우 여백을 줘서 광고가 테두리에 바짝 붙지 않게 한다. */
+  .ad-inner {
+    padding: 0 0.5rem;
+  }
+  /* ins/iframe 높이가 광고 실제 높이를 따라가게 한다.
+     PostLayout 스크립트가 ResizeObserver로 iframe 높이를 추적해 맞춘다. */
   .ad-slot .adsbygoogle {
     display: block;
     height: auto;
   }
   .ad-slot .adsbygoogle iframe {
     display: block;            /* iframe 아래 인라인 여백 제거 */
+    margin: 0 auto;            /* 짧은 광고는 가운데 정렬 */
   }
   /* 광고를 못 채운 칸은 통째로 숨김 (빈 점선 박스 제거). */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {
