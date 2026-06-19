@@ -2,7 +2,6 @@
 // 검색 UI (1단계: 프론트엔드만)
 // - 헤더의 돋보기 버튼 + 전체화면 검색 모달
 // - 실제 검색 엔진(Pagefind)은 2단계에서 연결한다.
-//   지금은 모달이 열리고 입력칸이 동작하는 것까지 확인용.
 const { lang = 'ko' } = Astro.props;
 const txt = {
   ko: { label: '검색', placeholder: '검색어를 입력하세요', empty: '검색어를 입력해 보세요.', soon: '검색 기능을 연결하는 중입니다.' },
@@ -18,7 +17,7 @@ const t = txt[lang];
   </svg>
 </button>
 
-<div class="search-modal" data-search-modal hidden>
+<div class="search-modal" data-search-modal>
   <div class="search-box">
     <div class="search-input-row">
       <svg class="search-input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -26,7 +25,7 @@ const t = txt[lang];
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
       <input type="text" class="search-input" placeholder={t.placeholder} data-search-input autocomplete="off" />
-      <button class="search-close" aria-label="close" data-search-close>&times;</button>
+      <button class="search-close" type="button" aria-label="close" data-search-close>&times;</button>
     </div>
     <div class="search-results" data-search-results>
       <p class="search-hint">{t.empty}</p>
@@ -44,12 +43,12 @@ const t = txt[lang];
     if (!modal || !input) return;
 
     const open = () => {
-      modal.hidden = false;
+      modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
       setTimeout(() => input.focus(), 50);
     };
     const close = () => {
-      modal.hidden = true;
+      modal.classList.remove('is-open');
       document.body.style.overflow = '';
       input.value = '';
       results.innerHTML = '<p class="search-hint">' + emptyMsg + '</p>';
@@ -57,8 +56,11 @@ const t = txt[lang];
 
     openBtns.forEach((b) => b.addEventListener('click', open));
     if (closeBtn) closeBtn.addEventListener('click', close);
+    // 모달 바깥(어두운 배경) 클릭 시 닫기. 검색박스 내부 클릭은 무시.
     modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+    });
 
     // 1단계: 실제 검색 대신 안내만. 2단계에서 Pagefind 연결.
     let timer = null;
@@ -83,12 +85,16 @@ const t = txt[lang];
   }
   .search-btn:hover { background: rgba(44,95,87,0.08); }
 
+  /* 기본은 숨김. .is-open 일 때만 표시. (hidden 속성 대신 클래스로 확실히 제어) */
   .search-modal {
+    display: none;
     position: fixed; inset: 0; z-index: 1000;
     background: rgba(20,20,20,0.45);
-    display: flex; justify-content: center;
+    justify-content: center;
     padding: 12vh 1rem 1rem;
   }
+  .search-modal.is-open { display: flex; }
+
   .search-box {
     width: 100%; max-width: 600px; height: fit-content;
     background: var(--color-bg, #faf8f3); border-radius: 14px;
