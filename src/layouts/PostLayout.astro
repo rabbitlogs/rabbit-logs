@@ -34,21 +34,66 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
       </div>
     )}
 
-    <!-- 본문 안 첫 소제목 뒤로 광고 1개를 자동 이동 -->
-    <div id="incontent-ad" hidden><AdSense /></div>
+    <!--
+      광고 원본 1칸(숨김). JS가 본문 글자수를 재서 1~3개로 복제·배치한다.
+        ~2,000자  : 1개 (첫 h2 앞)
+        2,000~3,500자: 2개 (첫 h2 앞 + 글 끝)
+        3,500자+  : 3개 (첫 h2 앞 + 중간 h2 앞 + 글 끝)
+    -->
+    <template id="ad-template"><AdSense /></template>
+
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-        const ad = document.getElementById('incontent-ad');
-        const firstH2 = document.querySelector('.prose h2');
-        if (ad && firstH2) {
-          ad.hidden = false;
-          firstH2.parentNode.insertBefore(ad, firstH2.nextSibling);
+        const prose = document.querySelector('.prose');
+        const tpl = document.getElementById('ad-template');
+        if (!prose || !tpl) return;
+
+        // 1) 본문 글자수로 광고 개수 결정
+        const len = (prose.textContent || '').replace(/\s/g, '').length;
+        let count = 1;
+        if (len >= 3500) count = 3;
+        else if (len >= 2000) count = 2;
+
+        // 2) 본문 안 h2 목록
+        const h2s = prose.querySelectorAll('h2');
+
+        // 광고 칸 하나를 복제해 특정 노드 '앞'에 삽입
+        const insertBefore = (node) => {
+          const ad = tpl.content.firstElementChild.cloneNode(true);
+          node.parentNode.insertBefore(ad, node);
+          return ad;
+        };
+        // 본문 맨 끝에 삽입
+        const appendEnd = () => {
+          const ad = tpl.content.firstElementChild.cloneNode(true);
+          prose.appendChild(ad);
+          return ad;
+        };
+
+        const placed = [];
+
+        if (count === 1) {
+          if (h2s[0]) placed.push(insertBefore(h2s[0]));
+          else placed.push(appendEnd());
+        } else if (count === 2) {
+          if (h2s[0]) placed.push(insertBefore(h2s[0]));
+          placed.push(appendEnd());
+        } else {
+          // 3개: 첫 h2 앞 + 중간 h2 앞 + 글 끝
+          if (h2s[0]) placed.push(insertBefore(h2s[0]));
+          if (h2s.length >= 3) {
+            const mid = h2s[Math.floor(h2s.length / 2)];
+            placed.push(insertBefore(mid));
+          }
+          placed.push(appendEnd());
         }
+
+        // 3) 삽입된 광고들에 대해 애드센스 렌더 요청
+        placed.forEach(() => {
+          try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+        });
       });
     </script>
-
-    <!-- 광고: 마무리 뒤 -->
-    <AdSense />
   </article>
 
   <style>

@@ -1,11 +1,13 @@
 ---
 // ─────────────────────────────────────────────
-//  애드센스 광고 자리
-//  여기 client 값만 본인 것으로 바꾸면 모든 글에 자동 적용됩니다.
-//  (기존 블로그에서 쓰던: ca-host-pub-2644536267352236 형태)
+//  애드센스 광고 한 칸
+//  - AD_CLIENT: 본인 애드센스 퍼블리셔 ID (이미 입력됨)
+//  - AD_SLOT  : 애드센스에서 "디스플레이 광고" 유닛 1개 만들면 받는 번호
+//               (data-ad-slot 값). 유닛 1개를 본문 여러 자리에 재사용한다.
+//               유닛을 만든 뒤 아래 AD_SLOT 한 줄만 그 번호로 바꾸면 끝.
 // ─────────────────────────────────────────────
-const AD_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← 본인 애드센스 ID로 교체
-const { slot = 'XXXXXXXXXX' } = Astro.props;
+const AD_CLIENT = 'ca-pub-9488002130804570';
+const AD_SLOT = '3094787370'; // ← 애드센스 광고 유닛 번호로 교체
 ---
 
 <div class="ad-slot" aria-label="광고">
@@ -14,7 +16,7 @@ const { slot = 'XXXXXXXXXX' } = Astro.props;
     class="adsbygoogle"
     style="display:block"
     data-ad-client={AD_CLIENT}
-    data-ad-slot={slot}
+    data-ad-slot={AD_SLOT}
     data-ad-format="auto"
     data-full-width-responsive="true"
   ></ins>
