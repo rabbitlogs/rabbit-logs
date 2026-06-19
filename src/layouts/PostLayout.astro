@@ -65,6 +65,7 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
         };
         const appendAfterTags = () => {
           const ad = makeAd();
+          ad.classList.add('ad-last'); // 글 끝(푸터 직전) 광고 → 아래 여백 줄임
           if (tags) tags.insertAdjacentElement('afterend', ad);
           else article.appendChild(ad);
           placed.push(ad);
@@ -150,5 +151,8 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
       font-size: 1.05rem; color: var(--muted); line-height: 1.6;
       margin: 0 0 1.8rem; font-weight: 400;
     }
+    /* 글 끝(푸터 직전) 광고는 아래 여백을 줄여 푸터와 간격을 좁힌다.
+       (광고 박스 기본 margin 2.5rem + 푸터 margin-top 4rem이 겹쳐 벌어지는 것 보정) */
+    .post :global(.ad-slot.ad-last) { margin-bottom: 0; }
   </style>
 </BaseLayout>
