@@ -20,8 +20,8 @@ const posts = (await getCollection('blog'))
 ---
 
 <BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={`${catName[cat]} 카테고리 글 목록`} lang="ko">
-  <section style="padding: 2.5rem 0;">
-    <h1 style=" font-size: 2rem;">{catName[cat]}</h1>
+  <section style="padding: 1.2rem 0 2.5rem;">
+    <h1 style="font-size: 2rem; margin: 0 0 1.5rem;">{catName[cat]}</h1>
     {posts.map((post) => (
       <PostCard
         href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
