@@ -1,0 +1,112 @@
+---
+// 검색 UI (1단계: 프론트엔드만)
+// - 헤더의 돋보기 버튼 + 전체화면 검색 모달
+// - 실제 검색 엔진(Pagefind)은 2단계에서 연결한다.
+//   지금은 모달이 열리고 입력칸이 동작하는 것까지 확인용.
+const { lang = 'ko' } = Astro.props;
+const txt = {
+  ko: { label: '검색', placeholder: '검색어를 입력하세요', empty: '검색어를 입력해 보세요.', soon: '검색 기능을 연결하는 중입니다.' },
+  en: { label: 'Search', placeholder: 'Type to search', empty: 'Type something to search.', soon: 'Search is being connected.' },
+};
+const t = txt[lang];
+---
+
+<button class="search-btn" aria-label={t.label} data-search-open>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</button>
+
+<div class="search-modal" data-search-modal hidden>
+  <div class="search-box">
+    <div class="search-input-row">
+      <svg class="search-input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" class="search-input" placeholder={t.placeholder} data-search-input autocomplete="off" />
+      <button class="search-close" aria-label="close" data-search-close>&times;</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <p class="search-hint">{t.empty}</p>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ soonMsg: t.soon, emptyMsg: t.empty }}>
+  (function () {
+    const openBtns = document.querySelectorAll('[data-search-open]');
+    const modal = document.querySelector('[data-search-modal]');
+    const closeBtn = document.querySelector('[data-search-close]');
+    const input = document.querySelector('[data-search-input]');
+    const results = document.querySelector('[data-search-results]');
+    if (!modal || !input) return;
+
+    const open = () => {
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => input.focus(), 50);
+    };
+    const close = () => {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      input.value = '';
+      results.innerHTML = '<p class="search-hint">' + emptyMsg + '</p>';
+    };
+
+    openBtns.forEach((b) => b.addEventListener('click', open));
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+
+    // 1단계: 실제 검색 대신 안내만. 2단계에서 Pagefind 연결.
+    let timer = null;
+    input.addEventListener('input', () => {
+      clearTimeout(timer);
+      const q = input.value.trim();
+      if (!q) { results.innerHTML = '<p class="search-hint">' + emptyMsg + '</p>'; return; }
+      timer = setTimeout(() => {
+        results.innerHTML = '<p class="search-hint">' + soonMsg + '</p>';
+      }, 200);
+    });
+  })();
+</script>
+
+<style>
+  .search-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; padding: 0;
+    background: none; border: none; cursor: pointer;
+    color: var(--primary); border-radius: 999px;
+    transition: background 0.15s;
+  }
+  .search-btn:hover { background: rgba(44,95,87,0.08); }
+
+  .search-modal {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(20,20,20,0.45);
+    display: flex; justify-content: center;
+    padding: 12vh 1rem 1rem;
+  }
+  .search-box {
+    width: 100%; max-width: 600px; height: fit-content;
+    background: var(--color-bg, #faf8f3); border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25); overflow: hidden;
+  }
+  .search-input-row {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 1rem 1.1rem; border-bottom: 1px solid var(--line);
+  }
+  .search-input-icon { color: var(--muted); flex-shrink: 0; }
+  .search-input {
+    flex: 1; border: none; background: none; outline: none;
+    font-size: 1.05rem; color: var(--ink); font-family: inherit;
+  }
+  .search-close {
+    background: none; border: none; font-size: 1.6rem; line-height: 1;
+    color: var(--muted); cursor: pointer; padding: 0 0.2rem;
+  }
+  .search-results { padding: 1rem 1.1rem; max-height: 50vh; overflow-y: auto; }
+  .search-hint { color: var(--muted); font-size: 0.95rem; text-align: center; margin: 1rem 0; }
+</style>
