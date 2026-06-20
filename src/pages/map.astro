@@ -66,18 +66,21 @@ const graphJson = JSON.stringify(graphData);
 
 <BaseLayout title="글 지도 — Rabbit Logs" description="레스토랑으로 배우는 SAP, 글들의 관계와 태그를 한눈에 보는 지도" lang="ko">
   <section style="padding-top: 1.2rem;">
-    <h1 style="font-size: 1.7rem; margin: 0 0 0.3rem;">🐰 글 지도</h1>
-    <p style="color:#8a8474; font-size:0.9rem; margin:0 0 1rem;">
-      리빌딩 완료한 글 {postNodes.length}개와 태그 {tagNodes.length}개의 관계예요.
-      한 번 클릭하면 연결만 강조되고, <strong>더블클릭하면 해당 글로 이동</strong>해요.
-    </p>
+    <div id="header-row">
+      <h1 style="font-size: 1.7rem; margin: 0;">🐰 글 지도</h1>
+      <div id="toolbar">
+        <span class="chip active" data-cat="all">전체</span>
+        <span class="chip" data-cat="project">project</span>
+        <span class="chip" data-cat="operations">operations</span>
+        <span class="chip" data-cat="study">study</span>
+        <span class="chip" id="tag-toggle">+ 태그 보기</span>
+      </div>
+    </div>
 
-    <div id="toolbar">
-      <span class="chip active" data-cat="all">전체</span>
-      <span class="chip" data-cat="project">project</span>
-      <span class="chip" data-cat="operations">operations</span>
-      <span class="chip" data-cat="study">study</span>
-      <span class="chip" id="tag-toggle">+ 태그 보기</span>
+    <div id="legend">
+      <span><i class="line solid"></i> 선행 — 먼저 읽으면 좋은 글</span>
+      <span><i class="line dashed"></i> 관련 — 함께 보면 좋은 글</span>
+      <span><i class="line thick"></i> 심화 — 더 깊이 들어가는 글</span>
     </div>
 
     <div id="stage">
@@ -88,8 +91,8 @@ const graphJson = JSON.stringify(graphData);
   </section>
 
   <script type="application/json" id="graph-data" set:html={graphJson} />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-  <script>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script is:inline>
     const RAW = JSON.parse(document.getElementById('graph-data').textContent);
     const catColor = RAW.catColor;
     const allNodes = RAW.nodes;
@@ -201,11 +204,7 @@ const graphJson = JSON.stringify(graphData);
         .on('mouseenter', (ev, d) => {
           tooltip
             .style('opacity', 1)
-            .html(
-              d.isTag
-                ? `<b>#${d.title}</b>`
-                : `<b>${d.title}</b><span class="tagline">${d.category} · 더블클릭하면 이동</span>`
-            )
+            .html(d.isTag ? `#${d.title}` : d.title)
             .style('left', ev.offsetX + 14 + 'px')
             .style('top', ev.offsetY + 10 + 'px');
         })
@@ -326,12 +325,40 @@ const graphJson = JSON.stringify(graphData);
   </script>
 
   <style>
+    #header-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 0.6rem;
+    }
+    #legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 11.5px;
+      color: #6b6555;
+      margin-bottom: 0.8rem;
+    }
+    #legend i.line {
+      display: inline-block;
+      width: 20px;
+      height: 0;
+      vertical-align: middle;
+      margin-right: 4px;
+      border-top: 2px solid #9a9486;
+    }
+    #legend i.line.dashed {
+      border-top: 2px dashed #9a9486;
+    }
+    #legend i.line.thick {
+      border-top: 3px solid #d99441;
+    }
     #toolbar {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 0.8rem;
     }
     .chip {
       border: 1px solid #d8d2c4;

@@ -66,4 +66,4 @@ Fit/Gap 분석은 단순히 기능과 요구사항을 비교하는 작업을 넘
 - [SAP 테스트 5단계, 새 매장을 여는 검증의 여정 (개요)](/blog/sap-test-overview)
 - [SAP 프로토타입 테스트, 짓기 전에 보는 시범 매장](/blog/sap-prototype-test)
 
-<!-- 관련글: sap-test-overview, sap-prototype-test -->
+<!-- 관련글: prerequisite=sap-test-overview -->

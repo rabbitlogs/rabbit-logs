@@ -67,4 +67,4 @@ SAP에서 테마를 맞추는 것은 개인의 취향을 통일하는 일이 아
 - [SAP 가독성을 높이는 폰트 설정 (D2Coding·Pretendard)](/blog/sap-font-readability)
 - [SAP란 무엇인가? 회사를 움직이는 '레스토랑 주방' 이야기](/blog/sap-what-is-sap)
 
-<!-- 관련글: sap-font-readability, sap-what-is-sap -->
+<!-- 관련글: related=sap-font-readability -->

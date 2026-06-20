@@ -107,4 +107,4 @@ SAP PP(생산관리) 실무자라면 하루에도 수십 번씩 T-CODE를 마주
 - [SAP T-CODE 사용법: 입력부터 단축 명령어·즐겨찾기까지](/blog/sap-tcode-basics)
 - [SAP 시그니처 테마를 권하는 이유 (실무자 협업 관점)](/blog/sap-signature-theme)
 
-<!-- 관련글: sap-tcode-basics, sap-signature-theme -->
+<!-- 관련글: prerequisite=sap-tcode-basics; related=sap-signature-theme -->

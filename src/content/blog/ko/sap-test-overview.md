@@ -67,4 +67,4 @@ tags: ["SAP프로젝트", "SAP테스트", "통합테스트", "UAT"]
 - [SAP Fit/Gap 분석, 표준과 우리 회사 사이의 간격 재기](/blog/sap-fit-gap)
 - [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
 
-<!-- 관련글: sap-fit-gap, sap-build-project-difficulty -->
+<!-- 관련글: prerequisite=sap-build-project-difficulty -->

@@ -83,4 +83,4 @@ SAP 자격증 시험도 이렇게 바뀌었습니다. 헷갈리게 꼬아낸 객
 - [SAP 자격증 취득 가이드: 비용·유지비·필요성 (2026)](/blog/sap-certification)
 - [SAP 자격증보다 CPIM을 먼저 권한 이유 (Why vs How)](/blog/sap-cpim)
 
-<!-- 관련글: sap-certification, sap-cpim -->
+<!-- 관련글: prerequisite=sap-certification; related=sap-cpim -->
