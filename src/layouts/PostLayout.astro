@@ -34,6 +34,43 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
       </div>
     )}
 
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 본문(.prose) 안의 "내부 링크"를 새 탭으로 열리게 한다.
+        // 외부 링크는 이미 astro.config의 rehype-external-links가 처리하므로 대상 아님.
+        // 제외 대상: ① 목차(#섹션) 같은 같은 페이지 점프 링크
+        //           ② "더 읽어보기 / Read more" 관련글 목록(같은 탭 유지)
+        const prose = document.querySelector('.prose');
+        if (!prose) return;
+
+        // "더 읽어보기"/"Read more" 단락을 찾아, 그 이후(관련글 목록 등)는 전부 제외 구간으로 본다.
+        const markers = Array.from(prose.querySelectorAll('strong')).filter(
+          (el) => el.textContent.trim() === '더 읽어보기' || el.textContent.trim() === 'Read more'
+        );
+        let excludeFrom = null;
+        if (markers.length) {
+          // 보통 <p><strong>더 읽어보기</strong></p> 형태이므로 그 상위 요소부터 제외 시작.
+          excludeFrom = markers[0].closest('p') || markers[0];
+        }
+
+        const isExcluded = (a) => {
+          if (!excludeFrom) return false;
+          // DOM 순서상 excludeFrom과 같거나 그 뒤에 있는 요소인지 확인.
+          const pos = excludeFrom.compareDocumentPosition(a);
+          return !!(pos & Node.DOCUMENT_POSITION_FOLLOWING) || excludeFrom.contains(a);
+        };
+
+        prose.querySelectorAll('a[href]').forEach((a) => {
+          const href = a.getAttribute('href') || '';
+          if (href.startsWith('#')) return;              // 같은 페이지 점프 링크
+          if (a.target === '_blank') return;              // 이미 새탭 처리된 외부 링크
+          if (isExcluded(a)) return;                       // 더 읽어보기 구간
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        });
+      });
+    </script>
+
     <!--
       광고 원본 1칸(숨김). JS가 본문 글자수를 재서 2~3개로 복제·배치한다.
         0~3,500자 : 2개 (첫 소제목 뒤 + 태그 뒤)
