@@ -164,17 +164,25 @@ const t = txt[lang];
   }
   .search-results { padding: 0.6rem 0.6rem 1rem; max-height: 50vh; overflow-y: auto; }
   .search-hint { color: var(--muted); font-size: 0.95rem; text-align: center; margin: 1rem 0; }
-  .search-result {
+
+  /* 검색 결과는 JS가 런타임에 innerHTML로 주입한다.
+     Astro의 <style>은 기본적으로 scoped(클래스에 해시를 붙임)라
+     이렇게 동적으로 삽입된 요소에는 적용되지 않는다.
+     그래서 결과 카드 관련 스타일만 :global()로 감싸 전역으로 적용한다. */
+  :global(.search-result) {
     display: block; padding: 0.7rem 0.6rem; border-radius: 8px;
     text-decoration: none; color: inherit; transition: background 0.12s;
   }
-  .search-result:hover { background: rgba(44,95,87,0.07); }
-  .search-result-title {
+  :global(.search-result:hover) { background: rgba(44,95,87,0.07); }
+  :global(.search-result-title) {
     display: block; font-weight: 700; font-size: 0.98rem; color: var(--ink);
     margin-bottom: 0.2rem;
   }
-  .search-result-excerpt {
+  :global(.search-result-excerpt) {
     display: block; font-size: 0.85rem; color: var(--muted); line-height: 1.5;
   }
-  .search-result-excerpt mark { background: rgba(217,148,65,0.35); color: inherit; border-radius: 2px; }
+  :global(.search-result-excerpt mark) {
+    background: rgba(217,148,65,0.35); color: inherit; border-radius: 2px;
+    padding: 0 0.1em; font-weight: 600;
+  }
 </style>
