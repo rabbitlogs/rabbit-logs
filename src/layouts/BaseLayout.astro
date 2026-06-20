@@ -26,13 +26,15 @@ const home = lang === 'en' ? '/en/' : '/';
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://rabbitlogs.com/og-thumbnail.jpg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <!-- 다이나믹 서브셋: 페이지에 실제 쓰인 글자만 받아온다 (9개 굵기 전체 3.8MB → 대폭 절감) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9488002130804570" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a href={home} class="brand"><img src="/rabbit-logo.png" alt="Rabbit Logs" class="brand-logo" /><span class="brand-name">Rabbit Logs</span></a>
+        <a href={home} class="brand"><img src="/rabbit-logo.webp" alt="" class="brand-logo" width="69" height="80" /><span class="brand-name">Rabbit Logs</span></a>
         <div class="header-actions">
           <Search lang={lang} />
           <a href={t.otherHref} class="lang-switch">{t.other}</a>
