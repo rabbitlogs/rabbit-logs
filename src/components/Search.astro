@@ -84,7 +84,19 @@ const t = txt[lang];
         results.innerHTML = '<p class="search-hint">' + noResultMsg + '</p>';
         return;
       }
-      const items = await Promise.all(hits.slice(0, 8).map((h) => h.data()));
+      // Pagefind 검색 결과(hits)는 기본적으로 url이 없고 data()를 호출해야 얻을 수 있다.
+      // 그래서 먼저 데이터를 불러온 뒤, 그 안의 url로 언어를 거른다.
+      const allItems = await Promise.all(hits.slice(0, 20).map((h) => h.data()));
+      const items = allItems
+        .filter((d) => d && d.url)
+        .filter((d) => (lang === 'en' ? d.url.includes('/en/') : !d.url.includes('/en/')))
+        .slice(0, 8);
+
+      if (!items.length) {
+        results.innerHTML = '<p class="search-hint">' + noResultMsg + '</p>';
+        return;
+      }
+
       results.innerHTML = items.map((d) => {
         const title = d.meta && d.meta.title ? d.meta.title : d.url;
         const excerpt = d.excerpt || '';
@@ -105,12 +117,8 @@ const t = txt[lang];
       timer = setTimeout(async () => {
         const pf = await loadPagefind();
         if (!pf) { results.innerHTML = '<p class="search-hint">' + noResultMsg + '</p>'; return; }
-        // 현재 언어 글만 보여준다 (ko 글은 /blog/, en 글은 /en/blog/)
         const search = await pf.search(q);
-        const filtered = search.results.filter((r) =>
-          lang === 'en' ? r.url.includes('/en/') : !r.url.includes('/en/')
-        );
-        render(filtered);
+        render(search.results);
       }, 250);
     });
   })();
