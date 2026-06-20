@@ -20,7 +20,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={`${catName[cat]} 카테고리 글 목록`} lang="ko">
-  <section style="padding: 1.2rem 0 2.5rem;">
+  <section style="padding-top: 1.2rem;">
     <h1 style="font-size: 2rem; margin: 0 0 1.5rem;">{catName[cat]}</h1>
     {posts.map((post) => (
       <PostCard
