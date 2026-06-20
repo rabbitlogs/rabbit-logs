@@ -1,7 +1,7 @@
 ---
 title: "SAP CBO, 애증의 Z코드 완벽 해부"
 description: "SAP 표준 기능만으로 안 되는 업무를 위해 회사가 직접 만드는 CBO(Z코드). 정체와 장단점, 그리고 표준 T-CODE와의 현실적인 딜레마를 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2026-01-04
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

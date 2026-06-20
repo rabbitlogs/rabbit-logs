@@ -1,7 +1,7 @@
 ---
 title: SAP 가독성을 높이는 폰트 설정 (D2Coding·Pretendard)
 description: SAP 기본 폰트의 가독성 문제를 D2Coding과 Pretendard 폰트로 해결하는 방법. 다운로드부터 SAP GUI 적용까지 단계별로 정리했습니다.
-pubDate: 2026-06-18
+pubDate: 2025-11-22
 category: operations
 series: 레스토랑으로 배우는 SAP
 level: beginner

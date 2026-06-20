@@ -1,7 +1,7 @@
 ---
 title: "SAP 통합 테스트, 주방과 홀이 하나로 맞물리는가"
 description: "단위 테스트를 통과한 모듈들을 한데 모아, 실제 업무 흐름대로 처음부터 끝까지 막힘없이 이어지는지 검증하는 SAP 통합 테스트를, 주방과 홀이 연동되는 과정에 빗대어 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-10-08
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

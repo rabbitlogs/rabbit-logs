@@ -1,7 +1,7 @@
 ---
 title: "SAP GI·GR·CNF, 재고가 나가고 들어오고 만들어지는 세 순간"
 description: "SAP에서 매일 마주치는 GI(출고)·GR(입고)·CNF(생산실적확정)를 레스토랑의 식자재 흐름에 빗대어 쉽게 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2026-02-18
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

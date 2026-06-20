@@ -1,7 +1,7 @@
 ---
 title: "SAP MRP란? 자재소요량계획을 레스토랑 대량 주문으로 이해하기"
 description: "SAP PP의 핵심 두뇌 MRP. 무엇이·얼마나·언제 필요한지 자동으로 계산하는 원리를, 레스토랑이 단체 주문을 준비하는 과정에 빗대어 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2026-01-22
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

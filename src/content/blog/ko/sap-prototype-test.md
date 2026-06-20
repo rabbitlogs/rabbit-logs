@@ -1,7 +1,7 @@
 ---
 title: "SAP 프로토타입 테스트, 짓기 전에 보는 시범 매장"
 description: "본격 개발 전에 화면과 기능의 시제품을 만들어 사용자가 미리 체험하는 SAP 프로토타입 테스트를, 매장을 짓기 전 시범 매장을 둘러보는 과정에 빗대어 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-09-25
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

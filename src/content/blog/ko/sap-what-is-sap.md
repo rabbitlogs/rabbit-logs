@@ -1,7 +1,7 @@
 ---
 title: SAP란 무엇인가? 레스토랑 주방으로 이해하기
 description: SAP가 뭔지 막막한 입문자를 위해, 회사 전체를 하나로 묶는 SAP를 레스토랑 운영에 비유해 쉽게 풀어봅니다.
-pubDate: 2026-06-02
+pubDate: 2025-07-02
 category: project
 series: 레스토랑으로 배우는 SAP
 level: beginner

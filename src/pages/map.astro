@@ -1,0 +1,387 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import yaml from 'js-yaml';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// book-index.yaml은 빌드 타임에만 읽는다 (클라이언트로는 가공된 JSON만 내려감)
+const yamlPath = path.resolve('./src/data/book-index.yaml');
+const raw = fs.readFileSync(yamlPath, 'utf-8');
+const allEntries = yaml.load(raw);
+
+// 블로그엔 리빌딩 완료(rebuilt)된 글만 존재하므로, 지도에도 그만 표시한다
+const rebuilt = allEntries.filter((e) => e.status === 'rebuilt');
+const rebuiltIds = new Set(rebuilt.map((e) => e.slug));
+
+const catColor = { project: '#2c5f57', operations: '#7a9b8e', study: '#d99441' };
+
+// 카테고리급 1차 태그는 거의 모든 글에 붙어 그래프를 지저분하게 만들어 제외
+const skipTags = new Set(['SAP프로젝트', 'SAP실무운영', 'SAP학습자료']);
+
+const postNodes = rebuilt.map((e) => ({
+  id: e.slug,
+  title: e.title,
+  category: e.category,
+  tags: (e.tags || []).filter((t) => !skipTags.has(t)),
+  isTag: false,
+}));
+
+const tagCount = {};
+postNodes.forEach((n) => n.tags.forEach((t) => (tagCount[t] = (tagCount[t] || 0) + 1)));
+const tagNodes = Object.keys(tagCount).map((t) => ({ id: '#' + t, title: t, isTag: true }));
+
+const postEdges = [];
+rebuilt.forEach((e) => {
+  const rel = e.relations || {};
+  (rel.prerequisite || []).forEach((t) => {
+    if (rebuiltIds.has(t)) postEdges.push({ s: t, t: e.slug, type: 'prerequisite' });
+  });
+  (rel.related || []).forEach((t) => {
+    if (rebuiltIds.has(t)) postEdges.push({ s: e.slug, t, type: 'related' });
+  });
+  (rel.deepens || []).forEach((t) => {
+    if (rebuiltIds.has(t)) postEdges.push({ s: e.slug, t, type: 'deepens' });
+  });
+});
+// related는 양방향 중복 제거
+const seen = new Set();
+const dedupPostEdges = postEdges.filter((e) => {
+  if (e.type !== 'related') return true;
+  const key = [e.s, e.t].sort().join('|');
+  if (seen.has(key)) return false;
+  seen.add(key);
+  return true;
+});
+
+const tagEdges = [];
+postNodes.forEach((n) => n.tags.forEach((t) => tagEdges.push({ s: n.id, t: '#' + t, type: 'tag' })));
+
+const graphData = {
+  nodes: [...postNodes, ...tagNodes],
+  edges: [...dedupPostEdges, ...tagEdges],
+  catColor,
+};
+const graphJson = JSON.stringify(graphData);
+---
+
+<BaseLayout title="글 지도 — Rabbit Logs" description="레스토랑으로 배우는 SAP, 글들의 관계와 태그를 한눈에 보는 지도" lang="ko">
+  <section style="padding-top: 1.2rem;">
+    <h1 style="font-size: 1.7rem; margin: 0 0 0.3rem;">🐰 글 지도</h1>
+    <p style="color:#8a8474; font-size:0.9rem; margin:0 0 1rem;">
+      리빌딩 완료한 글 {postNodes.length}개와 태그 {tagNodes.length}개의 관계예요.
+      한 번 클릭하면 연결만 강조되고, <strong>더블클릭하면 해당 글로 이동</strong>해요.
+    </p>
+
+    <div id="toolbar">
+      <span class="chip active" data-cat="all">전체</span>
+      <span class="chip" data-cat="project">project</span>
+      <span class="chip" data-cat="operations">operations</span>
+      <span class="chip" data-cat="study">study</span>
+    </div>
+
+    <div id="stage">
+      <svg id="graph-svg"></svg>
+      <div id="tooltip"></div>
+      <div id="panel">클릭: 강조 · 더블클릭: 글로 이동 · 드래그: 재배치 · 스크롤: 줌</div>
+    </div>
+  </section>
+
+  <script type="application/json" id="graph-data" set:html={graphJson} />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script>
+    const RAW = JSON.parse(document.getElementById('graph-data').textContent);
+    const catColor = RAW.catColor;
+    const allNodes = RAW.nodes;
+    const allEdges = RAW.edges;
+    const allNodesById = {};
+    allNodes.forEach((n) => (allNodesById[n.id] = n));
+
+    const svg = d3.select('#graph-svg');
+    const stage = document.getElementById('stage');
+    let width = stage.clientWidth,
+      height = stage.clientHeight;
+    const g = svg.append('g');
+    svg.call(d3.zoom().scaleExtent([0.3, 3]).on('zoom', (ev) => g.attr('transform', ev.transform)));
+
+    svg
+      .append('defs')
+      .append('marker')
+      .attr('id', 'arrow')
+      .attr('viewBox', '0 -4 8 8')
+      .attr('refX', 18)
+      .attr('refY', 0)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-4L8,0L0,4')
+      .attr('fill', '#9a9486');
+
+    const linkObjs = allEdges.map((e) => ({ source: e.s, target: e.t, type: e.type }));
+
+    const sim = d3
+      .forceSimulation(allNodes)
+      .force(
+        'link',
+        d3
+          .forceLink(linkObjs)
+          .id((d) => d.id)
+          .distance((d) => (d.type === 'tag' ? 45 : d.type === 'prerequisite' ? 75 : 95))
+          .strength((d) => (d.type === 'tag' ? 0.35 : 0.6))
+      )
+      .force('charge', d3.forceManyBody().strength((d) => (d.isTag ? -70 : -200)))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collide', d3.forceCollide().radius((d) => (d.isTag ? 12 : 22)));
+
+    const edgeStyle = {
+      prerequisite: { dash: 'none', width: 1.6, color: '#9a9486', arrow: true },
+      related: { dash: '4,3', width: 1.1, color: '#c9c3b3', arrow: false },
+      deepens: { dash: 'none', width: 3, color: '#d99441', arrow: false },
+      tag: { dash: '1,3', width: 0.8, color: '#e8d8b8', arrow: false },
+    };
+
+    const link = g
+      .append('g')
+      .selectAll('line')
+      .data(linkObjs)
+      .join('line')
+      .attr('stroke', (d) => edgeStyle[d.type].color)
+      .attr('stroke-width', (d) => edgeStyle[d.type].width)
+      .attr('stroke-dasharray', (d) => edgeStyle[d.type].dash)
+      .attr('marker-end', (d) => (edgeStyle[d.type].arrow ? 'url(#arrow)' : null));
+
+    const node = g
+      .append('g')
+      .selectAll('.n')
+      .data(allNodes)
+      .join('path')
+      .attr('class', 'n node')
+      .attr('d', (d) => (d.isTag ? d3.symbol().type(d3.symbolDiamond).size(55)() : d3.symbol().type(d3.symbolCircle).size(220)()))
+      .attr('fill', (d) => (d.isTag ? '#d99441' : catColor[d.category]))
+      .attr('fill-opacity', (d) => (d.isTag ? 0.55 : 1))
+      .attr('stroke', (d) => (d.isTag ? '#b8763a' : '#fff'))
+      .attr('stroke-width', (d) => (d.isTag ? 1 : 1.5))
+      .style('cursor', 'pointer')
+      .call(drag(sim));
+
+    const label = g
+      .append('g')
+      .selectAll('text')
+      .data(allNodes)
+      .join('text')
+      .attr('class', (d) => (d.isTag ? 'tag-label' : 'node-label'))
+      .attr('dx', (d) => (d.isTag ? 7 : 10))
+      .attr('dy', 4)
+      .text((d) => (d.isTag ? d.title.replace(/^SAP/, '') : d.title.length > 16 ? d.title.slice(0, 16) + '…' : d.title));
+
+    const tooltip = d3.select('#tooltip');
+    node
+      .on('mouseenter', (ev, d) => {
+        tooltip
+          .style('opacity', 1)
+          .html(
+            d.isTag
+              ? `<b>#${d.title}</b>`
+              : `<b>${d.title}</b><span class="tagline">${d.category} · 더블클릭하면 이동</span>`
+          )
+          .style('left', ev.offsetX + 14 + 'px')
+          .style('top', ev.offsetY + 10 + 'px');
+      })
+      .on('mouseleave', () => tooltip.style('opacity', 0));
+
+    let active = null;
+    let activeCat = 'all';
+    let clickTimer = null;
+
+    node.on('click', (ev, d) => {
+      ev.stopPropagation();
+      // 더블클릭과 구분하기 위해 살짝 지연 후 단일 클릭 처리
+      if (clickTimer) {
+        clearTimeout(clickTimer);
+        clickTimer = null;
+        return; // 더블클릭으로 처리됨, 단일 클릭 로직 skip
+      }
+      clickTimer = setTimeout(() => {
+        active = active === d.id ? null : d.id;
+        applyFilters();
+        clickTimer = null;
+      }, 220);
+    });
+
+    node.on('dblclick', (ev, d) => {
+      ev.stopPropagation();
+      if (clickTimer) {
+        clearTimeout(clickTimer);
+        clickTimer = null;
+      }
+      if (!d.isTag) {
+        window.location.href = `/blog/${d.id}`;
+      }
+    });
+
+    svg.on('click', () => {
+      active = null;
+      applyFilters();
+    });
+
+    document.querySelectorAll('.chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCat = chip.dataset.cat;
+        active = null;
+        applyFilters();
+      });
+    });
+
+    function connected(id) {
+      const s = new Set([id]);
+      allEdges.forEach((e) => {
+        if (e.s === id) s.add(e.t);
+        if (e.t === id) s.add(e.s);
+      });
+      return s;
+    }
+
+    function applyFilters() {
+      const catOk = (d) => activeCat === 'all' || d.isTag || d.category === activeCat;
+      const focusSet = active ? connected(active) : null;
+      const hide = (d) => !catOk(d) || (focusSet && !focusSet.has(d.id));
+
+      node.classed('dim', hide);
+      label.classed('dim', hide);
+      link.classed('dim', (d) => {
+        const sId = d.source.id || d.source;
+        const tId = d.target.id || d.target;
+        if (focusSet) return !(sId === active || tId === active);
+        const sNode = allNodesById[sId];
+        const tNode = allNodesById[tId];
+        return !catOk(sNode) || !catOk(tNode);
+      });
+    }
+
+    sim.on('tick', () => {
+      link
+        .attr('x1', (d) => d.source.x)
+        .attr('y1', (d) => d.source.y)
+        .attr('x2', (d) => d.target.x)
+        .attr('y2', (d) => d.target.y);
+      node.attr('transform', (d) => `translate(${d.x},${d.y})`);
+      label.attr('x', (d) => d.x).attr('y', (d) => d.y);
+    });
+
+    function drag(simulation) {
+      function started(ev, d) {
+        if (!ev.active) simulation.alphaTarget(0.2).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+      function dragged(ev, d) {
+        d.fx = ev.x;
+        d.fy = ev.y;
+      }
+      function ended(ev, d) {
+        if (!ev.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+      return d3.drag().on('start', started).on('drag', dragged).on('end', ended);
+    }
+
+    window.addEventListener('resize', () => {
+      width = stage.clientWidth;
+      height = stage.clientHeight;
+      sim.force('center', d3.forceCenter(width / 2, height / 2));
+      sim.alpha(0.3).restart();
+    });
+  </script>
+
+  <style>
+    #toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .chip {
+      border: 1px solid #d8d2c4;
+      border-radius: 20px;
+      padding: 4px 12px;
+      cursor: pointer;
+      background: #fff;
+      color: #6b6555;
+      font-size: 12px;
+      user-select: none;
+    }
+    .chip.active {
+      background: #2c5f57;
+      color: #fff;
+      border-color: #2c5f57;
+    }
+    #stage {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      min-height: 480px;
+      border: 1px solid #d8d2c4;
+      border-radius: 12px;
+      background: #faf8f3;
+      overflow: hidden;
+    }
+    #graph-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .node-label {
+      font-size: 9.5px;
+      fill: #2a2a26;
+      pointer-events: none;
+    }
+    .tag-label {
+      font-size: 8px;
+      fill: #93642c;
+      pointer-events: none;
+    }
+    .dim {
+      opacity: 0.08 !important;
+    }
+    #tooltip {
+      position: absolute;
+      pointer-events: none;
+      background: #2a2a26;
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      max-width: 240px;
+      opacity: 0;
+      transition: opacity 0.12s;
+      line-height: 1.4;
+      z-index: 10;
+    }
+    #tooltip b {
+      color: #d99441;
+      display: block;
+      margin-bottom: 2px;
+    }
+    #tooltip .tagline {
+      color: #cfd0c8;
+      font-size: 10px;
+    }
+    #panel {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: #fff;
+      border: 1px solid #d8d2c4;
+      border-radius: 10px;
+      padding: 8px 11px;
+      font-size: 10.5px;
+      max-width: 230px;
+      color: #6b6555;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</BaseLayout>

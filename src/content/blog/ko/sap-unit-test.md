@@ -1,7 +1,7 @@
 ---
 title: "SAP 단위 테스트, 재료 하나하나의 품질 검사"
 description: "개발자가 자신이 만든 가장 작은 단위의 기능이 독립적으로 잘 작동하는지 검증하는 SAP 단위 테스트를, 매장에 들인 재료를 하나하나 검사하는 과정에 빗대어 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-10-02
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

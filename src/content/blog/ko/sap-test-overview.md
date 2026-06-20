@@ -1,7 +1,7 @@
 ---
 title: "SAP 테스트 5단계, 새 매장을 여는 검증의 여정 (개요)"
 description: "Fit/Gap·프로토타입·단위·통합·UAT까지, SAP 프로젝트의 테스트 5단계를 새 레스토랑 매장을 여는 점검 과정에 빗대어 한눈에 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-09-10
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

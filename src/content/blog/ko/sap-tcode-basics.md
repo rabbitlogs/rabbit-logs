@@ -1,7 +1,7 @@
 ---
 title: "SAP T-CODE 사용법: 입력부터 단축 명령어·즐겨찾기까지"
 description: "SAP T-CODE(트랜잭션 코드)의 개념과 입력 위치, /n·/o 단축 명령어, 즐겨찾기 설정까지 입문자 눈높이로 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-11-10
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

@@ -1,7 +1,7 @@
 ---
 title: "SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?"
 description: "SAP 구축 프로젝트가 어려운 진짜 이유는 기술이 아니라 사람과 소통입니다. 새 레스토랑 매장을 여는 과정에 비유해 착수부터 안정화까지 5단계를 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-08-14
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

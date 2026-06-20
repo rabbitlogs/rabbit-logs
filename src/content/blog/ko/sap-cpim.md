@@ -1,7 +1,7 @@
 ---
 title: "SAP 자격증보다 CPIM을 먼저 권한 이유 (Why vs How)"
 description: "현직 PP 컨설턴트가 SAP 자격증 대신 CPIM을 먼저 추천한 이유. 시스템을 다루는 'How'와 프로세스를 이해하는 'Why'의 차이를 실무자 관점에서 정리했습니다."
-pubDate: 2026-06-17
+pubDate: 2026-05-04
 category: "study"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

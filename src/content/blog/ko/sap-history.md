@@ -1,7 +1,7 @@
 ---
 title: "SAP는 어디서 왔나? 1972년 독일에서 시작된 이야기"
 description: "IBM을 떠난 다섯 엔지니어가 1972년 세운 SAP. R/2·R/3부터 S/4HANA까지, SAP가 어떻게 ERP의 표준이 됐는지 입문자 눈높이로 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-07-13
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

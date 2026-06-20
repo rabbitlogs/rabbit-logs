@@ -1,7 +1,7 @@
 ---
 title: "SAP Fit/Gap 분석, 표준과 우리 매장 사이의 간격 재기"
 description: "SAP 표준 기능이 우리 회사에 얼마나 맞는지(Fit), 손봐야 할 부분은 무엇인지(Gap)를 가려내는 Fit/Gap 분석을, 본사 표준 메뉴를 우리 매장에 맞추는 과정에 빗대어 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-09-17
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

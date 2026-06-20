@@ -1,7 +1,7 @@
 ---
 title: "SAP UAT, 문 열기 전 사장의 최종 점검"
 description: "실제 현업 사용자가 자신의 업무 시나리오로 시스템을 최종 검증하고 인수를 승인하는 SAP UAT를, 매장 문을 열기 전 사장이 직접 돌려보는 최종 점검에 빗대어 정리했습니다."
-pubDate: 2026-06-18
+pubDate: 2025-10-16
 category: "project"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"
