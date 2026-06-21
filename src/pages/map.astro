@@ -13,7 +13,7 @@ const allEntries = yaml.load(raw);
 const rebuilt = allEntries.filter((e) => e.status === 'rebuilt');
 const rebuiltIds = new Set(rebuilt.map((e) => e.slug));
 
-const catColor = { project: '#2c5f57', operations: '#7a9b8e', study: '#d99441' };
+const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441' };
 
 // 카테고리급 1차 태그는 거의 모든 글에 붙어 그래프를 지저분하게 만들어 제외
 const skipTags = new Set(['SAP프로젝트', 'SAP실무운영', 'SAP학습자료']);
@@ -70,9 +70,9 @@ const graphJson = JSON.stringify(graphData);
       <h1 style="font-size: 1.7rem; margin: 0;">🐰 글 지도</h1>
       <div id="toolbar">
         <span class="chip active" data-cat="all">전체</span>
-        <span class="chip" data-cat="project">project</span>
-        <span class="chip" data-cat="operations">operations</span>
-        <span class="chip" data-cat="study">study</span>
+        <span class="chip" data-cat="project"><i class="cdot" style="background:#2c5f57"></i>project</span>
+        <span class="chip" data-cat="operations"><i class="cdot" style="background:#3b6ea5"></i>operations</span>
+        <span class="chip" data-cat="study"><i class="cdot" style="background:#d99441"></i>study</span>
         <span class="chip" id="tag-toggle">+ 태그</span>
       </div>
     </div>
@@ -165,14 +165,14 @@ const graphJson = JSON.stringify(graphData);
           d3
             .forceLink(linkObjs)
             .id((d) => d.id)
-            .distance((d) => (d.type === 'tag' ? 60 : d.type === 'prerequisite' ? 110 : 140))
-            .strength((d) => (d.type === 'tag' ? 0.3 : 0.5))
+            .distance((d) => (d.type === 'tag' ? 42 : d.type === 'prerequisite' ? 78 : 95))
+            .strength((d) => (d.type === 'tag' ? 0.3 : 0.55))
         )
-        .force('charge', d3.forceManyBody().strength((d) => (d.isTag ? -90 : withTags ? -320 : -420)))
+        .force('charge', d3.forceManyBody().strength((d) => (d.isTag ? -60 : withTags ? -200 : -260)))
         .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('collide', d3.forceCollide().radius((d) => (d.isTag ? 16 : 30)))
-        .force('x', d3.forceX(width / 2).strength(0.04))
-        .force('y', d3.forceY(height / 2).strength(0.04));
+        .force('collide', d3.forceCollide().radius((d) => (d.isTag ? 14 : 26)))
+        .force('x', d3.forceX(width / 2).strength(0.12))
+        .force('y', d3.forceY(height / 2).strength(0.14));
 
       link = g
         .append('g')
@@ -302,6 +302,12 @@ const graphJson = JSON.stringify(graphData);
         const tNode = curNodesById[tId];
         return !catOk(sNode) || !catOk(tNode);
       });
+
+      // 보이는 노드는 중앙으로 끌어모으고, 숨겨진 노드는 약하게 밀어내 변화를 체감시킴
+      const visible = (d) => !hide(d);
+      sim.force('x', d3.forceX(width / 2).strength((d) => (visible(d) ? 0.2 : 0.02)));
+      sim.force('y', d3.forceY(height / 2).strength((d) => (visible(d) ? 0.22 : 0.02)));
+      sim.alpha(0.5).restart();
     }
 
     function drag(simulation) {
@@ -394,6 +400,14 @@ const graphJson = JSON.stringify(graphData);
       font-size: 12px;
       user-select: none;
     }
+    .chip .cdot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
     .chip.active {
       background: #2c5f57;
       color: #fff;
@@ -404,8 +418,8 @@ const graphJson = JSON.stringify(graphData);
       width: 100vw;
       margin-left: 50%;
       transform: translateX(-50%);
-      height: 82vh;
-      min-height: 560px;
+      height: 78vh;
+      min-height: 520px;
       border-top: 1px solid #d8d2c4;
       border-bottom: 1px solid #d8d2c4;
       background: #faf8f3;
@@ -427,7 +441,7 @@ const graphJson = JSON.stringify(graphData);
       pointer-events: none;
     }
     .dim {
-      opacity: 0.08 !important;
+      opacity: 0.06 !important;
     }
     #tooltip {
       position: absolute;
