@@ -73,8 +73,8 @@ SAP에서 오류 메시지를 받으면 본능적으로 "그래서 뭘 고치면
 
 **더 읽어보기**
 
-- [SAP PP 기준정보 4가지, 생산관리의 뼈대](/blog/sap-pp-master-data)
-- [SAP MRP란? 자재소요량계획을 레스토랑 대량 주문으로 이해하기](/blog/sap-mrp)
+- [SAP PP 기준정보, 핵심 4가지로 이해하기](/blog/sap-pp-master-data)
+- [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
 - [SAP 데이터 필드 이름, 레시피 재료명으로 읽기](/blog/sap-field-names)
 
 <!-- 관련글: related=sap-pp-master-data,sap-mrp -->

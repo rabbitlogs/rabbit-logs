@@ -98,7 +98,7 @@ SAP는 어렵고 딱딱하다는 인식이 강하지만, 규칙만 익히면 꽤
 
 **더 읽어보기**
 
-- [실무자가 자주 쓰는 SAP PP T-CODE 모음](/blog/sap-pp-tcode)
-- [SAP 가독성을 높이는 폰트 설정 (D2Coding·Pretendard)](/blog/sap-font-readability)
+- [SAP PP T-CODE, 업무 흐름대로 정리한 주방 동선](/blog/sap-pp-tcode)
+- [SAP 폰트 설정, 메뉴판처럼 또렷하게 읽는 법](/blog/sap-font-readability)
 
 <!-- 관련글: related=sap-font-readability -->

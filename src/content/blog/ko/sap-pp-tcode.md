@@ -15,7 +15,7 @@ SAP PP(생산관리) 실무자라면 하루에도 수십 번씩 T-CODE를 마주
 
 생산관리는 수주부터 생산, 출하까지 전 과정을 아우르다 보니 찍어야 할 코드도, 확인할 정보도 많습니다. 그래서 오늘은 PP 실무에서 자주 쓰는 T-CODE를 **업무 흐름순**으로 정리했습니다. "그 코드 뭐였더라?" 싶을 때 빠르게 찾아보는 용도로 두시면 좋습니다.
 
-> **참고**: 실무에서 새로 생성(Create)하는 작업은 대부분 회사가 만든 Z코드를 쓰고, 표준 T-CODE는 오히려 변경(Change)·조회(Display)에 더 자주 쓰입니다. 그래서 이 글도 조회·변경 중심으로 구성했습니다. T-CODE 입력법이 낯설다면 [SAP T-CODE 사용법](/blog/sap-tcode-basics)을 먼저 보세요.
+> **참고**: 실무에서 새로 생성(Create)하는 작업은 대부분 회사가 만든 Z코드를 쓰고, 표준 T-CODE는 오히려 변경(Change)·조회(Display)에 더 자주 쓰입니다. 그래서 이 글도 조회·변경 중심으로 구성했습니다. T-CODE 입력법이 낯설다면 [SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법](/blog/sap-tcode-basics)을 먼저 보세요.
 
 [[TOC]]
 
@@ -105,7 +105,7 @@ SAP PP(생산관리) 실무자라면 하루에도 수십 번씩 T-CODE를 마주
 
 **더 읽어보기**
 
-- [SAP T-CODE 사용법: 입력부터 단축 명령어·즐겨찾기까지](/blog/sap-tcode-basics)
-- [SAP 시그니처 테마를 권하는 이유 (실무자 협업 관점)](/blog/sap-signature-theme)
+- [SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법](/blog/sap-tcode-basics)
+- [SAP 시그니처 테마, 협업이 편해지는 주방 유니폼](/blog/sap-signature-theme)
 
 <!-- 관련글: prerequisite=sap-tcode-basics; related=sap-signature-theme -->
