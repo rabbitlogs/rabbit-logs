@@ -3,8 +3,20 @@ import Search from '../components/Search.astro';
 const { title, description, lang = 'ko' } = Astro.props;
 
 const nav = {
-  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', about: '소개 & 문의', other: 'EN', otherHref: '/en/', privacy: '개인정보처리방침', terms: '이용약관' },
-  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', about: 'About & Contact', other: 'KO', otherHref: '/', privacy: 'Privacy Policy', terms: 'Terms of Use' },
+  ko: {
+    project: 'SAP 프로젝트', projectShort: '프로젝트',
+    operations: 'SAP 실무운영', operationsShort: '실무운영',
+    study: 'SAP 학습자료', studyShort: '학습자료',
+    stats: '통계·데이터', statsShort: '통계·데이터',
+    about: '소개 & 문의', other: 'EN', otherHref: '/en/', privacy: '개인정보처리방침', terms: '이용약관',
+  },
+  en: {
+    project: 'SAP Projects', projectShort: 'Projects',
+    operations: 'SAP Operations', operationsShort: 'Operations',
+    study: 'SAP Study Notes', studyShort: 'Study Notes',
+    stats: 'Stats & Data', statsShort: 'Stats & Data',
+    about: 'About & Contact', other: 'KO', otherHref: '/', privacy: 'Privacy Policy', terms: 'Terms of Use',
+  },
 };
 const t = nav[lang];
 const home = lang === 'en' ? '/en/' : '/';
@@ -52,9 +64,10 @@ const home = lang === 'en' ? '/en/' : '/';
           <a href={t.otherHref} class="lang-switch">{t.other}</a>
         </div>
         <nav class="nav">
-          <a href={`${home}category/project`}>{t.project}</a>
-          <a href={`${home}category/operations`}>{t.operations}</a>
-          <a href={`${home}category/study`}>{t.study}</a>
+          <a href={`${home}category/project`}><span class="lbl-full">{t.project}</span><span class="lbl-short">{t.projectShort}</span></a>
+          <a href={`${home}category/operations`}><span class="lbl-full">{t.operations}</span><span class="lbl-short">{t.operationsShort}</span></a>
+          <a href={`${home}category/study`}><span class="lbl-full">{t.study}</span><span class="lbl-short">{t.studyShort}</span></a>
+          <a href={`${home}category/stats`}><span class="lbl-full">{t.stats}</span><span class="lbl-short">{t.statsShort}</span></a>
           <a href={`${home}about`}>{t.about}</a>
         </nav>
       </div>
@@ -83,14 +96,11 @@ const home = lang === 'en' ? '/en/' : '/';
       .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
 
       .site-header { border-bottom: 1px solid var(--line); }
-      .header-inner { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; flex-wrap: wrap; }
+      .header-inner { display: flex; align-items: center; gap: 1rem; padding: 1rem 0 0.8rem; flex-wrap: wrap; }
       .brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--ink); margin-right: auto; order: 1; }
       .brand-logo { height: 40px; width: auto; display: block; }
       .brand-name { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
-      .nav { display: flex; gap: 1.1rem; align-items: center; order: 2; }
-      .nav a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
-      .nav a:hover { color: var(--primary); }
-      .header-actions { display: flex; align-items: center; gap: 0.5rem; order: 3; }
+      .header-actions { display: flex; align-items: center; gap: 0.5rem; order: 2; }
       .map-btn {
         display: inline-flex; align-items: center; justify-content: center;
         width: 36px; height: 36px; padding: 0;
@@ -101,14 +111,26 @@ const home = lang === 'en' ? '/en/' : '/';
       .map-btn:hover { background: rgba(44,95,87,0.08); }
       .lang-switch { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
 
-      /* 모바일: 브랜드+언어토글 윗줄, 카테고리 메뉴는 아랫줄 전체폭 균등 분배 */
+      /* 카테고리 nav는 데스크탑에서도 항상 둘째 줄(지도·검색·언어토글은 첫 줄 유지) */
+      .nav {
+        order: 3; flex: 1 0 100%;
+        display: flex; gap: 1.1rem; align-items: center;
+        border-top: 1px solid var(--line); padding-top: 0.7rem;
+      }
+      .nav a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
+      .nav a:hover { color: var(--primary); }
+      .lbl-short { display: none; }
+
+      /* 모바일: 카테고리 라벨에서 'SAP' 접두어 생략(짧은 라벨), 한 줄에 균등 배분 */
       @media (max-width: 640px) {
         .header-inner { gap: 0.6rem 0.5rem; }
         .brand { margin-left: 0.5rem; }
         .lang-switch { margin-right: 0.5rem; }
-        .header-actions { order: 2; margin-right: 0.5rem; }
-        .nav { order: 3; flex: 1 0 100%; justify-content: space-between; gap: 0.3rem; border-top: 1px solid var(--line); padding-top: 0.7rem; }
-        .nav a { font-size: 0.82rem; flex: 1; text-align: center; }
+        .header-actions { margin-right: 0.5rem; }
+        .nav { justify-content: space-between; gap: 0.3rem; }
+        .nav a { font-size: 0.8rem; flex: 1; text-align: center; }
+        .lbl-full { display: none; }
+        .lbl-short { display: inline; }
       }
 
       .site-footer { margin-top: 2rem; border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.85rem; text-align: center; }

@@ -44,15 +44,8 @@ if (lang === 'ko' && slug) {
 
       const neighborIds = Object.keys(neighborType).filter((id) => bySlug[id] && bySlug[id].status === 'rebuilt');
 
-      // 태그: 카테고리급 1차 태그는 제외하고, 너무 많아지지 않게 최대 4개만 바깥 링에 배치
-      const skipTags = new Set(['SAP프로젝트', 'SAP실무운영', 'SAP학습자료']);
-      const myTags = (me.tags || []).filter((t) => !skipTags.has(t)).slice(0, 4);
-
-      if (neighborIds.length > 0 || myTags.length > 0) {
-        const cx = 150, cy = 120;
-        const R1 = 58; // 글(선행/관련/심화) 안쪽 링
-        const R2 = 98; // 태그 바깥 링
-
+      if (neighborIds.length > 0) {
+        const cx = 150, cy = 110, R = 72;
         const N = neighborIds.length;
         const neighbors = neighborIds.map((id, i) => {
           const angle = -Math.PI / 2 + (i * 2 * Math.PI) / N;
@@ -61,26 +54,14 @@ if (lang === 'ko' && slug) {
             title: bySlug[id].mapTitle || bySlug[id].title,
             category: bySlug[id].category,
             type: neighborType[id],
-            x: Math.round(cx + R1 * Math.cos(angle)),
-            y: Math.round(cy + R1 * Math.sin(angle)),
-          };
-        });
-
-        const T = myTags.length;
-        const tagNodes = myTags.map((tag, i) => {
-          // 고정 45도 오프셋: 안쪽 링 개수(N)와 무관하게 항상 어긋나게 배치
-          const angle = -Math.PI / 2 + Math.PI / 4 + (i * 2 * Math.PI) / T;
-          return {
-            tag,
-            x: Math.round(cx + R2 * Math.cos(angle)),
-            y: Math.round(cy + R2 * Math.sin(angle)),
+            x: Math.round(cx + R * Math.cos(angle)),
+            y: Math.round(cy + R * Math.sin(angle)),
           };
         });
 
         miniMap = {
           center: { title: me.mapTitle || me.title, category: me.category, x: cx, y: cy },
           neighbors,
-          tagNodes,
         };
       }
     }
@@ -109,51 +90,29 @@ if (lang === 'ko' && slug) {
           <span class="mini-map-label">🗺️ 이 글과 연결된 글</span>
           <a href="/map" class="mini-map-all">전체 지도 보기 →</a>
         </div>
-        <div class="mini-map-body">
-          <div class="mini-map-legend">
-            <span><i class="mm-line solid"></i> 선행 — 먼저 읽기</span>
-            <span><i class="mm-line dashed"></i> 관련 — 함께 보기</span>
-            <span><i class="mm-line thick"></i> 심화 — 더 깊이</span>
-            <span><i class="mm-dot tag"></i> 태그 — 키워드</span>
-          </div>
-          <svg viewBox="0 0 300 250" class="mini-map-svg" role="img" aria-label="관련 글 및 태그 관계도">
-            <defs>
-              <marker id="mm-arrow" viewBox="0 -3 6 6" refX="6.5" refY="0" markerWidth="5" markerHeight="5" markerUnits="userSpaceOnUse" orient="auto">
-                <path d="M0,-3L6,0L0,3" fill="#8a8374" />
-              </marker>
-            </defs>
-            {miniMap.tagNodes.map((t) => (
-              <line
-                x1={miniMap.center.x} y1={miniMap.center.y}
-                x2={t.x} y2={t.y}
-                stroke="#d9c9de" stroke-width="0.7" stroke-dasharray="1,2"
-              />
-            ))}
-            {miniMap.neighbors.map((n) => (
-              <line
-                x1={miniMap.center.x} y1={miniMap.center.y}
-                x2={n.x} y2={n.y}
-                stroke={n.type === 'deepens' ? '#d99441' : '#a8a194'}
-                stroke-width={n.type === 'deepens' ? 1.8 : 1}
-                stroke-dasharray={n.type === 'related' ? '3,3' : 'none'}
-                marker-end={n.type === 'prerequisite' ? 'url(#mm-arrow)' : null}
-              />
-            ))}
-            <circle cx={miniMap.center.x} cy={miniMap.center.y} r="9" fill={catColor[miniMap.center.category]} stroke="#fff" stroke-width="1.5" />
-            <text x={miniMap.center.x} y={miniMap.center.y + 22} text-anchor="middle" class="mm-center-label">{miniMap.center.title}</text>
-            {miniMap.neighbors.map((n) => (
-              <a href={`/blog/${n.slug}`}>
-                <circle cx={n.x} cy={n.y} r="6" fill={catColor[n.category]} stroke="#fff" stroke-width="1.2" />
-                <text x={n.x} y={n.y + (n.y > miniMap.center.y ? 16 : -10)} text-anchor="middle" class="mm-label">{n.title}</text>
-              </a>
-            ))}
-            {miniMap.tagNodes.map((t) => (
-              <g>
-                <path transform={`translate(${t.x},${t.y}) rotate(45)`} d="M-4,-4 L4,-4 L4,4 L-4,4 Z" fill="#9b7fa6" fill-opacity="0.55" stroke="#b8763a" stroke-width="0.8" />
-                <text x={t.x} y={t.y + (t.y > miniMap.center.y ? 14 : -9)} text-anchor="middle" class="mm-tag-label">#{t.tag}</text>
-              </g>
-            ))}
-          </svg>
+        <svg viewBox="0 0 300 220" class="mini-map-svg" role="img" aria-label="관련 글 관계도">
+          {miniMap.neighbors.map((n) => (
+            <line
+              x1={miniMap.center.x} y1={miniMap.center.y}
+              x2={n.x} y2={n.y}
+              stroke={n.type === 'deepens' ? '#d99441' : '#a8a194'}
+              stroke-width={n.type === 'deepens' ? 1.8 : 1}
+              stroke-dasharray={n.type === 'related' ? '3,3' : 'none'}
+            />
+          ))}
+          <circle cx={miniMap.center.x} cy={miniMap.center.y} r="9" fill={catColor[miniMap.center.category]} stroke="#fff" stroke-width="1.5" />
+          <text x={miniMap.center.x} y={miniMap.center.y + 22} text-anchor="middle" class="mm-center-label">{miniMap.center.title}</text>
+          {miniMap.neighbors.map((n) => (
+            <a href={`/blog/${n.slug}`}>
+              <circle cx={n.x} cy={n.y} r="6" fill={catColor[n.category]} stroke="#fff" stroke-width="1.2" />
+              <text x={n.x} y={n.y + (n.y > miniMap.center.y ? 16 : -10)} text-anchor="middle" class="mm-label">{n.title}</text>
+            </a>
+          ))}
+        </svg>
+        <div class="mini-map-legend">
+          <span><i class="mm-line solid"></i> 선행</span>
+          <span><i class="mm-line dashed"></i> 관련</span>
+          <span><i class="mm-line thick"></i> 심화</span>
         </div>
       </div>
     )}
@@ -308,31 +267,24 @@ if (lang === 'ko' && slug) {
       border-radius: 12px;
       background: #faf8f3;
     }
-    .mini-map-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+    .mini-map-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.3rem; }
     .mini-map-label { font-size: 0.85rem; font-weight: 700; color: var(--ink, #2a2a26); }
     .mini-map-all { font-size: 0.8rem; color: var(--primary); text-decoration: none; font-weight: 600; white-space: nowrap; }
     .mini-map-all:hover { text-decoration: underline; }
-    .mini-map-body { display: flex; align-items: center; gap: 1rem; }
-    .mini-map-svg { flex: 1; min-width: 0; max-width: 420px; height: auto; display: block; margin: 0 auto; }
+    .mini-map-svg { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
     .mini-map-svg a { cursor: pointer; }
     .mm-label { font-size: 8.5px; fill: #6b6555; }
     .mini-map-svg a:hover .mm-label { fill: var(--primary); font-weight: 700; }
     .mini-map-svg a:hover circle { stroke: var(--primary); }
     .mm-center-label { font-size: 9px; font-weight: 700; fill: var(--ink, #2a2a26); }
-    .mm-tag-label { font-size: 7.5px; fill: #7a5d83; }
     .mini-map-legend {
-      flex: 0 0 auto;
-      display: flex; flex-direction: column; gap: 8px;
-      padding: 0.6rem 0; font-size: 10.5px; color: #6b6555; white-space: nowrap;
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+      margin-top: 0.3rem; padding-bottom: 0.6rem;
+      font-size: 10.5px; color: #6b6555;
     }
     .mini-map-legend .mm-line { display: inline-block; width: 16px; height: 0; vertical-align: middle; margin-right: 4px; border-top: 1.4px solid #a8a194; }
     .mini-map-legend .mm-line.dashed { border-top-style: dashed; }
     .mini-map-legend .mm-line.thick { border-top-width: 2.2px; border-top-color: #d99441; }
-    .mini-map-legend .mm-dot { display: inline-block; width: 8px; height: 8px; margin-right: 4px; vertical-align: middle; transform: rotate(45deg); background: #9b7fa6; opacity: 0.7; }
-    @media (max-width: 600px) {
-      .mini-map-body { flex-direction: column-reverse; align-items: stretch; }
-      .mini-map-legend { flex-direction: row; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    }
     .post-tags .tag {
       font-size: 0.85rem; color: var(--primary); background: rgba(44,95,87,0.07);
       border: 1px solid rgba(44,95,87,0.15); border-radius: 999px; padding: 0.25rem 0.75rem;

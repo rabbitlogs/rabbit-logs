@@ -8,20 +8,42 @@ export async function getStaticPaths() {
     { params: { cat: 'project' } },
     { params: { cat: 'operations' } },
     { params: { cat: 'study' } },
+    { params: { cat: 'stats' } },
   ];
 }
 
 const { cat } = Astro.params;
-const catName = { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' };
+const catName = { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', stats: '통계·데이터' };
+const catDesc = {
+  project: [
+    'SAP를 처음 도입하고 구축하는 과정의 기록입니다.',
+    'PI 기획부터 구축, 테스트, 안정화까지 프로젝트의 큰 흐름을 다룹니다.',
+  ],
+  operations: [
+    '구축이 끝난 뒤, 매일의 업무에서 SAP를 실제로 다루는 이야기입니다.',
+    'T-CODE, 생산·재고 관리 등 현업 운영 노하우를 정리합니다.',
+  ],
+  study: [
+    'SAP를 공부하는 사람을 위한 기초 개념과 자격증 가이드입니다.',
+    '입문자가 막막해하는 지점을 실무자 관점에서 풀어냅니다.',
+  ],
+  stats: [
+    'SAP 실무를 하다 보면 결국 데이터를 보는 눈이 필요해집니다.',
+    '통계와 데이터 분석을 공부하며 남기는 기록입니다.',
+  ],
+};
 
 const posts = (await getCollection('blog'))
   .filter((p) => p.id.startsWith('ko/') && p.data.category === cat)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={`${catName[cat]} 카테고리 글 목록`} lang="ko">
+<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={catDesc[cat].join(' ')} lang="ko">
   <section style="padding-top: 1.2rem;">
-    <h1 style="font-size: 2rem; margin: 0 0 1.5rem;">{catName[cat]}</h1>
+    <h1 style="font-size: 2rem; margin: 0 0 0.6rem;">{catName[cat]}</h1>
+    <p style="font-size: 0.98rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.8rem;">
+      {catDesc[cat].map((line, i) => (<>{i > 0 && <br />}{line}</>))}
+    </p>
     {posts.map((post) => (
       <PostCard
         href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
