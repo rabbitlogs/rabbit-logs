@@ -73,14 +73,14 @@ const graphJson = JSON.stringify(graphData);
         <span class="chip" data-cat="project">project</span>
         <span class="chip" data-cat="operations">operations</span>
         <span class="chip" data-cat="study">study</span>
-        <span class="chip" id="tag-toggle">+ 태그 보기</span>
+        <span class="chip" id="tag-toggle">+ 태그</span>
       </div>
     </div>
 
     <div id="legend">
-      <span><i class="line solid"></i> 선행 — 먼저 읽으면 좋은 글</span>
-      <span><i class="line dashed"></i> 관련 — 함께 보면 좋은 글</span>
-      <span><i class="line thick"></i> 심화 — 더 깊이 들어가는 글</span>
+      <span><i class="line solid"></i> 선행 (먼저 읽으면 좋은 글)</span>
+      <span><i class="line dashed"></i> 관련 (함께 보면 좋은 글)</span>
+      <span><i class="line thick"></i> 심화 (더 깊이 들어가는 글)</span>
     </div>
 
     <div id="stage">
@@ -93,7 +93,15 @@ const graphJson = JSON.stringify(graphData);
   <script type="application/json" id="graph-data" set:html={graphJson} />
   <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
   <script is:inline>
-    const RAW = JSON.parse(document.getElementById('graph-data').textContent);
+    (function () {
+      function showErr(msg) {
+        var p = document.getElementById('panel');
+        if (p) { p.style.color = '#b00'; p.textContent = '⚠ ' + msg; }
+        console.error('[map] ' + msg);
+      }
+      function boot() {
+        if (typeof d3 === 'undefined') { showErr('d3 로드 실패 — 새로고침하거나 광고차단 확장을 꺼보세요'); return; }
+        const RAW = JSON.parse(document.getElementById('graph-data').textContent);
     const catColor = RAW.catColor;
     const allNodes = RAW.nodes;
     const allEdges = RAW.edges;
@@ -265,7 +273,7 @@ const graphJson = JSON.stringify(graphData);
 
     document.getElementById('tag-toggle').addEventListener('click', (ev) => {
       const next = !showTags;
-      ev.currentTarget.textContent = next ? '− 태그 숨기기' : '+ 태그 보기';
+      ev.currentTarget.textContent = next ? '− 태그' : '+ 태그';
       ev.currentTarget.classList.toggle('active', next);
       buildGraph(next);
     });
@@ -322,6 +330,22 @@ const graphJson = JSON.stringify(graphData);
       sim.force('center', d3.forceCenter(width / 2, height / 2));
       sim.alpha(0.3).restart();
     });
+      } // boot 끝
+
+      // d3 로드 대기 후 부팅 (DOM 준비도 함께 보장)
+      var tries = 0;
+      function waitAndBoot() {
+        var domReady = document.readyState !== 'loading';
+        if (typeof d3 !== 'undefined' && domReady) { boot(); return; }
+        if (tries++ < 80) { setTimeout(waitAndBoot, 50); return; }
+        boot(); // 마지막 시도 (에러 메시지 목적)
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitAndBoot);
+      } else {
+        waitAndBoot();
+      }
+    })();
   </script>
 
   <style>
