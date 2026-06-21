@@ -79,9 +79,9 @@ const graphJson = JSON.stringify(graphData);
     </div>
 
     <div id="legend">
-      <span><i class="line solid"></i> 선행</span>
-      <span><i class="line dashed"></i> 관련</span>
-      <span><i class="line thick"></i> 심화</span>
+      <span><i class="line solid"></i> 선행 — 먼저 읽기</span>
+      <span><i class="line dashed"></i> 관련 — 함께 보기</span>
+      <span><i class="line thick"></i> 심화 — 더 깊이</span>
     </div>
 
     <div id="stage">
@@ -118,14 +118,14 @@ const graphJson = JSON.stringify(graphData);
           .append('marker')
           .attr('id', 'arrow')
           .attr('markerUnits', 'userSpaceOnUse')
-          .attr('viewBox', '0 -4 8 8')
-          .attr('refX', 8.5)
+          .attr('viewBox', '0 -3 6 6')
+          .attr('refX', 7.5)
           .attr('refY', 0)
-          .attr('markerWidth', 8)
-          .attr('markerHeight', 8)
+          .attr('markerWidth', 5.5)
+          .attr('markerHeight', 5.5)
           .attr('orient', 'auto')
           .append('path')
-          .attr('d', 'M0,-4L8,0L0,4')
+          .attr('d', 'M0,-3L6,0L0,3')
           .attr('fill', '#8a8374');
 
         // 옵시디언 그래프뷰와 비슷한 톤: 가늘고 연한 회색 선, 종류별로만 살짝 구분
@@ -379,6 +379,7 @@ const graphJson = JSON.stringify(graphData);
       flex-wrap: wrap;
       font-size: 11.5px;
       color: #6b6555;
+      margin-top: 0.7rem;
       margin-bottom: 0.8rem;
     }
     #legend i.line {
