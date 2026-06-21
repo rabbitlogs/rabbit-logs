@@ -1,5 +1,6 @@
 ---
-title: "SAP 10개 모듈 완전정복: 레스토랑 주방으로 한눈에"
+title: "SAP 10개 모듈, 레스토랑 주방 전체로 한눈에 보기"
+mapTitle: "SAP 10개 모듈"
 description: "SAP 핵심 모듈 10가지(FI·CO·SD·MM·PP·QM·PM·PS·HR·LE)를 레스토랑 주방의 각 파트에 비유해 입문자 눈높이로 정리했습니다."
 pubDate: 2025-07-07
 category: "project"

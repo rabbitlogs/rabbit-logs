@@ -18,19 +18,10 @@ const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441' }
 // 카테고리급 1차 태그는 거의 모든 글에 붙어 그래프를 지저분하게 만들어 제외
 const skipTags = new Set(['SAP프로젝트', 'SAP실무운영', 'SAP학습자료']);
 
-function graphDisplayTitle(title) {
-  // "주제, 비유" 형태의 제목만 앞부분으로 줄임 (쉼표가 정확히 1개일 때만 — 나열형 제목 오분리 방지)
-  const commaCount = (title.match(/,/g) || []).length;
-  if (commaCount === 1) {
-    return title.split(',')[0].trim();
-  }
-  return title;
-}
-
 const postNodes = rebuilt.map((e) => ({
   id: e.slug,
   title: e.title,
-  displayTitle: graphDisplayTitle(e.title),
+  displayTitle: e.mapTitle || e.title,
   category: e.category,
   tags: (e.tags || []).filter((t) => !skipTags.has(t)),
   isTag: false,
@@ -414,7 +405,7 @@ const graphJson = JSON.stringify(graphData);
       display: block;
     }
     .node-label {
-      font-size: 8.2px;
+      font-size: 9.5px;
       fill: #44413a;
       pointer-events: none;
       text-anchor: middle;

@@ -3,7 +3,8 @@
 # 전체 49개, 발행기간 2025-07-02 ~ 2026-06-20 (평균 7.4일 간격)
 
 - slug: sap-what-is-sap
-  title: "SAP란 무엇인가? 레스토랑 주방으로 이해하기"
+  mapTitle: "SAP 입문"
+  title: "SAP 입문, 레스토랑 주방으로 이해하는 통합 두뇌"
   category: project
   status: rebuilt
   pubDate: "2025-07-02"
@@ -15,7 +16,8 @@
     deepens: []
 
 - slug: sap-modules-guide
-  title: "SAP 10개 모듈 완전정복: 레스토랑 주방으로 한눈에"
+  mapTitle: "SAP 10개 모듈"
+  title: "SAP 10개 모듈, 레스토랑 주방 전체로 한눈에 보기"
   category: project
   status: rebuilt
   pubDate: "2025-07-07"
@@ -27,7 +29,8 @@
     deepens: []
 
 - slug: sap-history
-  title: "SAP는 어디서 왔나? 1972년 독일에서 시작된 이야기"
+  mapTitle: "SAP 역사"
+  title: "SAP 역사, 작은 주방에서 시작된 이야기"
   category: project
   status: rebuilt
   pubDate: "2025-07-13"
@@ -60,6 +63,7 @@
   relations: {prerequisite: [], related: [], deepens: []}
 
 - slug: sap-pi-vs-implementation
+  mapTitle: "SAP PI와 구축"
   title: "SAP PI와 구축, 매장을 기획하는 사람과 짓는 사람"
   category: project
   status: rebuilt
@@ -72,6 +76,7 @@
     deepens: []
 
 - slug: sap-build-project-difficulty
+  mapTitle: "SAP 구축 프로젝트"
   title: "SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?"
   category: project
   status: rebuilt
@@ -105,7 +110,8 @@
   relations: {prerequisite: [], related: [], deepens: []}
 
 - slug: sap-test-overview
-  title: "SAP 테스트 5단계, 새 매장을 여는 검증의 여정 (개요)"
+  mapTitle: "SAP 테스트 5단계"
+  title: "SAP 테스트 5단계, 새 매장을 여는 검증의 여정"
   category: project
   status: rebuilt
   pubDate: "2025-09-10"
@@ -117,6 +123,7 @@
     deepens: []
 
 - slug: sap-fit-gap
+  mapTitle: "SAP Fit/Gap 분석"
   title: "SAP Fit/Gap 분석, 표준과 우리 매장 사이의 간격 재기"
   category: project
   status: rebuilt
@@ -129,6 +136,7 @@
     deepens: []
 
 - slug: sap-prototype-test
+  mapTitle: "SAP 프로토타입 테스트"
   title: "SAP 프로토타입 테스트, 짓기 전에 보는 시범 매장"
   category: project
   status: rebuilt
@@ -141,6 +149,7 @@
     deepens: []
 
 - slug: sap-unit-test
+  mapTitle: "SAP 단위 테스트"
   title: "SAP 단위 테스트, 재료 하나하나의 품질 검사"
   category: project
   status: rebuilt
@@ -153,6 +162,7 @@
     deepens: []
 
 - slug: sap-integration-test
+  mapTitle: "SAP 통합 테스트"
   title: "SAP 통합 테스트, 주방과 홀이 하나로 맞물리는가"
   category: project
   status: rebuilt
@@ -165,6 +175,7 @@
     deepens: []
 
 - slug: sap-uat
+  mapTitle: "SAP UAT"
   title: "SAP UAT, 문 열기 전 사장의 최종 점검"
   category: project
   status: rebuilt
@@ -198,7 +209,8 @@
   relations: {prerequisite: [], related: [], deepens: []}
 
 - slug: sap-tcode-basics
-  title: "SAP T-CODE 사용법: 입력부터 단축 명령어·즐겨찾기까지"
+  mapTitle: "SAP T-CODE"
+  title: "SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법"
   category: operations
   status: rebuilt
   pubDate: "2025-11-10"
@@ -210,7 +222,8 @@
     deepens: []
 
 - slug: sap-signature-theme
-  title: "SAP 시그니처 테마를 권하는 이유 (실무자 협업 관점)"
+  mapTitle: "SAP 시그니처 테마"
+  title: "SAP 시그니처 테마, 협업이 편해지는 주방 유니폼"
   category: operations
   status: rebuilt
   pubDate: "2025-11-15"
@@ -222,7 +235,8 @@
     deepens: []
 
 - slug: sap-font-readability
-  title: "SAP 가독성을 높이는 폰트 설정 (D2Coding·Pretendard)"
+  mapTitle: "SAP 폰트 설정"
+  title: "SAP 폰트 설정, 메뉴판처럼 또렷하게 읽는 법"
   category: operations
   status: rebuilt
   pubDate: "2025-11-22"
@@ -234,7 +248,8 @@
     deepens: []
 
 - slug: sap-pp-tcode
-  title: "실무자가 자주 쓰는 SAP PP T-CODE 모음 (업무 흐름순)"
+  mapTitle: "SAP PP T-CODE"
+  title: "SAP PP T-CODE, 업무 흐름대로 정리한 주방 동선"
   category: operations
   status: rebuilt
   pubDate: "2025-11-29"
@@ -274,7 +289,8 @@
   relations: {prerequisite: [], related: [], deepens: []}
 
 - slug: sap-cbo-z-program
-  title: "SAP CBO, 애증의 Z코드 완벽 해부"
+  mapTitle: "SAP CBO"
+  title: "SAP CBO, 주방장만 아는 비밀 레시피 Z코드"
   category: operations
   status: rebuilt
   pubDate: "2026-01-04"
@@ -293,6 +309,7 @@
   relations: {prerequisite: [], related: [], deepens: []}
 
 - slug: sap-pp-master-data
+  mapTitle: "SAP PP 기준정보"
   title: "SAP PP 기준정보, 핵심 4가지로 이해하기"
   category: operations
   status: rebuilt
@@ -305,7 +322,8 @@
     deepens: []
 
 - slug: sap-mrp
-  title: "SAP MRP란? 자재소요량계획을 레스토랑 대량 주문으로 이해하기"
+  mapTitle: "SAP MRP"
+  title: "SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획"
   category: operations
   status: rebuilt
   pubDate: "2026-01-22"
@@ -317,7 +335,8 @@
     deepens: []
 
 - slug: sap-movement-type
-  title: "SAP 이동유형, 재고의 모든 움직임에 붙는 코드"
+  mapTitle: "SAP 이동유형"
+  title: "SAP 이동유형, 식자재가 냉장고 드나들 때마다 찍는 도장"
   category: operations
   status: rebuilt
   pubDate: "2026-01-28"
@@ -329,7 +348,8 @@
     deepens: []
 
 - slug: sap-planned-vs-production-order
-  title: "SAP 계획오더 vs 생산오더, 무엇이 다를까?"
+  mapTitle: "SAP 계획오더 vs 생산오더"
+  title: "SAP 계획오더 vs 생산오더, 식단표와 실제 조리 지시서"
   category: operations
   status: rebuilt
   pubDate: "2026-02-03"
@@ -341,6 +361,7 @@
     deepens: []
 
 - slug: sap-production-order-status
+  mapTitle: "생산오더 상태 코드"
   title: "SAP 생산오더 상태 코드, 요리 한 접시가 완성되는 순서"
   category: operations
   status: rebuilt
@@ -353,6 +374,7 @@
     deepens: []
 
 - slug: sap-gi-gr-cnf
+  mapTitle: "SAP GI·GR·CNF"
   title: "SAP GI·GR·CNF, 재고가 나가고 들어오고 만들어지는 세 순간"
   category: operations
   status: rebuilt
@@ -365,6 +387,7 @@
     deepens: []
 
 - slug: sap-wip
+  mapTitle: "SAP WIP"
   title: "SAP WIP, 아직 접시에 담기지 않은 요리의 가치"
   category: operations
   status: rebuilt
@@ -426,7 +449,8 @@
   relations: {prerequisite: [], related: [], deepens: []}
 
 - slug: sap-certification
-  title: "SAP 자격증 취득 가이드: 비용·유지비·필요성 (2026)"
+  mapTitle: "SAP 자격증 가이드"
+  title: "SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법"
   category: study
   status: rebuilt
   pubDate: "2026-04-10"
@@ -438,7 +462,8 @@
     deepens: []
 
 - slug: sap-exam-format
-  title: "SAP 자격증 시험 방식: 실기 전환 후 응시법 (2026)"
+  mapTitle: "SAP 자격증 시험"
+  title: "SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장"
   category: study
   status: rebuilt
   pubDate: "2026-04-15"
@@ -450,7 +475,8 @@
     deepens: []
 
 - slug: sap-cpim
-  title: "SAP 자격증보다 CPIM을 먼저 권한 이유 (Why vs How)"
+  mapTitle: "SAP 자격증 vs CPIM"
+  title: "SAP 자격증 vs CPIM, 조리법보다 손님 입맛을 먼저 배우는 이유"
   category: study
   status: rebuilt
   pubDate: "2026-05-04"
@@ -462,7 +488,8 @@
     deepens: []
 
 - slug: sap-data-types
-  title: "SAP 데이터 유형: 컨피규레이션, 마스터, 트랜잭션"
+  mapTitle: "SAP 데이터 유형"
+  title: "SAP 데이터 유형, 레시피·재료·주문서로 구분하기"
   category: study
   status: rebuilt
   pubDate: "2026-05-21"
@@ -474,6 +501,7 @@
     deepens: []
 
 - slug: sap-field-names
+  mapTitle: "SAP 데이터 필드 이름"
   title: "SAP 데이터 필드 이름, 레시피 재료명으로 읽기"
   category: study
   status: rebuilt

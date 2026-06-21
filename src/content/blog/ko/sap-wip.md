@@ -1,5 +1,6 @@
 ---
 title: "SAP WIP, 아직 접시에 담기지 않은 요리의 가치"
+mapTitle: "SAP WIP"
 description: "만들어지는 중인 재공품(WIP)이 생산·원가·재고 관점에서 왜 중요한지, 조리 중인 요리에 빗대어 세 전문가의 시선으로 정리했습니다."
 pubDate: 2026-02-23
 category: "operations"

@@ -1,5 +1,6 @@
 ---
 title: "SAP PP 기준정보, 핵심 4가지로 이해하기"
+mapTitle: "SAP PP 기준정보"
 description: "SAP PP의 토대가 되는 4대 기준정보(자재 마스터·BOM·라우팅·생산버전)를 레스토랑 메뉴 운영에 빗대어 입문자 눈높이로 정리했습니다."
 pubDate: 2026-01-14
 category: "operations"

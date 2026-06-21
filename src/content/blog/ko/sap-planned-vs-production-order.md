@@ -1,5 +1,6 @@
 ---
-title: "SAP 계획오더 vs 생산오더, 무엇이 다를까?"
+title: "SAP 계획오더 vs 생산오더, 식단표와 실제 조리 지시서"
+mapTitle: "SAP 계획오더 vs 생산오더"
 description: "MRP가 만든 계획오더는 어떻게 확정된 생산오더로 바뀔까요? 두 오더의 결정적 차이를, 레스토랑이 단체 주문을 준비하고 확정하는 과정에 빗대어 정리했습니다."
 pubDate: 2026-02-03
 category: "operations"

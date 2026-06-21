@@ -1,5 +1,6 @@
 ---
 title: "SAP 생산오더 상태 코드, 요리 한 접시가 완성되는 순서"
+mapTitle: "생산오더 상태 코드"
 description: "CRTD·REL·CNF·DLV·TECO 같은 SAP 생산오더 상태 코드를, 주방에서 요리 한 접시가 완성되는 순서에 빗대어 정리했습니다."
 pubDate: 2026-02-10
 category: "operations"

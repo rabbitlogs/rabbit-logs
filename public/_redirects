@@ -24,6 +24,83 @@
 /sap-%EA%B0%80%EB%8F%85%EC%84%B1-%ED%8F%B0%ED%8A%B8-%EC%B6%94%EC%B2%9C/   /blog/sap-font-readability   301
 /sap-가독성-폰트-추천/   /blog/sap-font-readability   301
 
+# 컨설턴트 → PI와 구축
+/sap-%ec%bb%a8%ec%84%a4%ed%84%b4%ed%8a%b8/   /blog/sap-pi-vs-implementation   301
+/sap-컨설턴트/   /blog/sap-pi-vs-implementation   301
+
+# 구축 프로젝트
+/sap-%ea%b5%ac%ec%b6%95-%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8/   /blog/sap-build-project-difficulty   301
+/sap-구축-프로젝트/   /blog/sap-build-project-difficulty   301
+
+# 테스트 5단계 (개요)
+/sap-%ed%85%8c%ec%8a%a4%ed%8a%b8-5%eb%8b%a8%ea%b3%84/   /blog/sap-test-overview   301
+/sap-테스트-5단계/   /blog/sap-test-overview   301
+
+# Fit/Gap 분석
+/sap-fit-gap-%eb%b6%84%ec%84%9d/   /blog/sap-fit-gap   301
+/sap-fit-gap-분석/   /blog/sap-fit-gap   301
+
+# 프로토타입 테스트
+/sap-%ed%94%84%eb%a1%9c%ed%86%a0%ed%83%80%ec%9e%85-%ed%85%8c%ec%8a%a4%ed%8a%b8/   /blog/sap-prototype-test   301
+/sap-프로토타입-테스트/   /blog/sap-prototype-test   301
+
+# 단위 테스트
+/sap-%eb%8b%a8%ec%9c%84-%ed%85%8c%ec%8a%a4%ed%8a%b8/   /blog/sap-unit-test   301
+/sap-단위-테스트/   /blog/sap-unit-test   301
+
+# 통합 테스트
+/sap-%ed%86%b5%ed%95%a9-%ed%85%8c%ec%8a%a4%ed%8a%b8/   /blog/sap-integration-test   301
+/sap-통합-테스트/   /blog/sap-integration-test   301
+
+# UAT (슬러그는 같지만 예전엔 /blog/ 없이 평면 구조였음)
+/sap-uat/   /blog/sap-uat   301
+
+# T-CODE 사용법
+/sap-t-code-%ec%84%a4%ec%a0%95/   /blog/sap-tcode-basics   301
+/sap-t-code-설정/   /blog/sap-tcode-basics   301
+
+# PP T-CODE 모음
+/sap-pp-t-code-%ec%a0%95%eb%a6%ac/   /blog/sap-pp-tcode   301
+/sap-pp-t-code-정리/   /blog/sap-pp-tcode   301
+
+# CBO (슬러그도 바뀜: clean-core → z-program)
+/sap-cbo-clean-core/   /blog/sap-cbo-z-program   301
+
+# PP 기준정보
+/sap-pp-%ea%b8%b0%ec%a4%80%ec%a0%95%eb%b3%b4/   /blog/sap-pp-master-data   301
+/sap-pp-기준정보/   /blog/sap-pp-master-data   301
+
+# MRP (슬러그는 같지만 /blog/ 경로로 이동)
+/sap-mrp/   /blog/sap-mrp   301
+
+# 이동유형
+/sap-%ec%9d%b4%eb%8f%99%ec%9c%a0%ed%98%95/   /blog/sap-movement-type   301
+/sap-이동유형/   /blog/sap-movement-type   301
+
+# 계획오더 vs 생산오더
+/sap-%ea%b3%84%ed%9a%8d%ec%98%a4%eb%8d%94-%ec%83%9d%ec%82%b0%ec%98%a4%eb%8d%94/   /blog/sap-planned-vs-production-order   301
+/sap-계획오더-생산오더/   /blog/sap-planned-vs-production-order   301
+
+# 생산오더 상태 코드
+/sap-%ec%83%9d%ec%82%b0%ec%98%a4%eb%8d%94-%ec%83%81%ed%83%9c-%ec%bd%94%eb%93%9c/   /blog/sap-production-order-status   301
+/sap-생산오더-상태-코드/   /blog/sap-production-order-status   301
+
+# GI·GR·CNF
+/sap-gi-gr-cnf-%ed%8e%b8%ec%9d%98%ec%a0%90-%eb%b9%84%ec%9c%a0/   /blog/sap-gi-gr-cnf   301
+/sap-gi-gr-cnf-편의점-비유/   /blog/sap-gi-gr-cnf   301
+
+# WIP
+/sap-wip-%ec%a4%91%ec%9a%94%ec%84%b1/   /blog/sap-wip   301
+/sap-wip-중요성/   /blog/sap-wip   301
+
+# 데이터 유형
+/sap-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%9c%a0%ed%98%95/   /blog/sap-data-types   301
+/sap-데이터-유형/   /blog/sap-data-types   301
+
+# 데이터 필드 이름
+/sap-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ed%95%84%eb%93%9c-%ec%9d%b4%eb%a6%84/   /blog/sap-field-names   301
+/sap-데이터-필드-이름/   /blog/sap-field-names   301
+
 # 예전 고정 페이지 → 새 페이지
 /about-contact/   /about   301
 /%ec%9d%b4%ec%9a%a9%ec%95%bd%ea%b4%80/   /terms   301

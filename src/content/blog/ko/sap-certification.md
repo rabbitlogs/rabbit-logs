@@ -1,5 +1,6 @@
 ---
-title: "SAP 자격증 취득 가이드: 비용·유지비·필요성 (2026)"
+title: "SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법"
+mapTitle: "SAP 자격증 가이드"
 description: SAP 자격증 응시 자격부터 교육비, Stay Certified 갱신 비용, 그리고 정말 필요한지까지 입문자 눈높이로 정리했습니다.
 pubDate: 2026-04-10
 category: study

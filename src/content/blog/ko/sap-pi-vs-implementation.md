@@ -1,5 +1,6 @@
 ---
 title: "SAP PI와 구축, 매장을 기획하는 사람과 짓는 사람"
+mapTitle: "SAP PI와 구축"
 description: "같은 'SAP 컨설턴트'라는 이름표 안에서도, PI(기획)와 구축(시공)은 역할이 전혀 다릅니다. 새 매장을 여는 과정에 빗대어 두 세계의 차이와 균형을 정리했습니다."
 pubDate: 2025-08-06
 category: "project"
