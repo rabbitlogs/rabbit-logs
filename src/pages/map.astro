@@ -13,7 +13,7 @@ const allEntries = yaml.load(raw);
 const rebuilt = allEntries.filter((e) => e.status === 'rebuilt');
 const rebuiltIds = new Set(rebuilt.map((e) => e.slug));
 
-const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441' };
+const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441', stats: '#a8516e' };
 
 // 카테고리급 1차 태그는 거의 모든 글에 붙어 그래프를 지저분하게 만들어 제외
 const skipTags = new Set(['SAP프로젝트', 'SAP실무운영', 'SAP학습자료']);
@@ -71,9 +71,10 @@ const graphJson = JSON.stringify(graphData);
       <h1 style="font-size: 1.7rem; margin: 0;">🐰 글 지도</h1>
       <div id="toolbar">
         <span class="chip active" data-cat="all">전체</span>
-        <span class="chip" data-cat="project"><i class="cdot" style="background:#2c5f57"></i>project</span>
-        <span class="chip" data-cat="operations"><i class="cdot" style="background:#3b6ea5"></i>operations</span>
-        <span class="chip" data-cat="study"><i class="cdot" style="background:#d99441"></i>study</span>
+        <span class="chip" data-cat="project"><i class="cdot" style="background:#2c5f57"></i>프로젝트</span>
+        <span class="chip" data-cat="operations"><i class="cdot" style="background:#3b6ea5"></i>실무운영</span>
+        <span class="chip" data-cat="study"><i class="cdot" style="background:#d99441"></i>학습자료</span>
+        <span class="chip" data-cat="stats"><i class="cdot" style="background:#a8516e"></i>통계·데이터</span>
         <span class="chip" id="tag-toggle">+ 태그</span>
       </div>
     </div>
@@ -119,10 +120,10 @@ const graphJson = JSON.stringify(graphData);
           .append('marker')
           .attr('id', 'arrow')
           .attr('viewBox', '0 -3 6 6')
-          .attr('refX', 13)
+          .attr('refX', 7.5)
           .attr('refY', 0)
-          .attr('markerWidth', 3.2)
-          .attr('markerHeight', 3.2)
+          .attr('markerWidth', 5.5)
+          .attr('markerHeight', 5.5)
           .attr('orient', 'auto')
           .append('path')
           .attr('d', 'M0,-3L6,0L0,3')
@@ -133,7 +134,7 @@ const graphJson = JSON.stringify(graphData);
           prerequisite: { dash: 'none', width: 1, color: '#a8a194', arrow: true },
           related: { dash: '2,2', width: 0.7, color: '#cfc9ba', arrow: false },
           deepens: { dash: 'none', width: 1.4, color: '#d99441', arrow: false },
-          tag: { dash: '1,2', width: 0.6, color: '#e8d8b8', arrow: false },
+          tag: { dash: '1,2', width: 0.6, color: '#d9c9de', arrow: false },
         };
 
         let activeCat = 'all';
@@ -186,7 +187,7 @@ const graphJson = JSON.stringify(graphData);
           node = nodeGroup
             .append('circle')
             .attr('r', (d) => (d.isTag ? TAG_R : NODE_R))
-            .attr('fill', (d) => (d.isTag ? '#d99441' : catColor[d.category]))
+            .attr('fill', (d) => (d.isTag ? '#9b7fa6' : catColor[d.category]))
             .attr('fill-opacity', (d) => (d.isTag ? 0.55 : 1))
             .attr('stroke', '#fff')
             .attr('stroke-width', 1.2)
@@ -212,32 +213,58 @@ const graphJson = JSON.stringify(graphData);
             return s;
           }
 
-          // 마우스 오버: 연결된 노드/선만 강조, 클릭: 글로 이동
-          nodeGroup
-            .on('mouseenter', (ev, d) => {
-              const nb = neighbors(d.id);
-              node.classed('dim', (n) => !nb.has(n.id));
-              label.classed('dim', (n) => !nb.has(n.id));
-              link
-                .classed('dim', (l) => {
-                  const sId = l.source.id || l.source;
-                  const tId = l.target.id || l.target;
-                  return !(sId === d.id || tId === d.id);
-                })
-                .style('display', (l) => {
-                  if (l.type !== 'related') return null;
-                  const sId = l.source.id || l.source;
-                  const tId = l.target.id || l.target;
-                  return sId === d.id || tId === d.id ? null : 'none';
-                });
-            })
-            .on('mouseleave', () => {
-              applyFilters();
-            })
-            .on('click', (ev, d) => {
+          function highlight(id) {
+            const nb = neighbors(id);
+            node.classed('dim', (n) => !nb.has(n.id));
+            label.classed('dim', (n) => !nb.has(n.id));
+            link
+              .classed('dim', (l) => {
+                const sId = l.source.id || l.source;
+                const tId = l.target.id || l.target;
+                return !(sId === id || tId === id);
+              })
+              .style('display', (l) => {
+                if (l.type !== 'related') return null;
+                const sId = l.source.id || l.source;
+                const tId = l.target.id || l.target;
+                return sId === id || tId === id ? null : 'none';
+              });
+          }
+
+          // 터치 기기(모바일)인지: hover가 안 되는 환경
+          const isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+          let touchActiveId = null;
+
+          if (isTouch) {
+            // 모바일: 1차 터치=강조만, 같은 노드 2차 터치=이동
+            nodeGroup.on('click', (ev, d) => {
               ev.stopPropagation();
-              if (!d.isTag) window.location.href = `/blog/${d.id}`;
+              if (d.isTag) {
+                highlight(d.id);
+                touchActiveId = d.id;
+                return;
+              }
+              if (touchActiveId === d.id) {
+                window.location.href = `/blog/${d.id}`;
+              } else {
+                highlight(d.id);
+                touchActiveId = d.id;
+              }
             });
+          } else {
+            // PC: 마우스 오버=강조, 클릭=바로 이동
+            nodeGroup
+              .on('mouseenter', (ev, d) => highlight(d.id))
+              .on('mouseleave', () => applyFilters())
+              .on('click', (ev, d) => {
+                ev.stopPropagation();
+                if (!d.isTag) window.location.href = `/blog/${d.id}`;
+              });
+          }
+
+          svg.on('click.touchreset', () => {
+            touchActiveId = null;
+          });
 
           sim.on('tick', () => {
             link
@@ -269,7 +296,25 @@ const graphJson = JSON.stringify(graphData);
         });
 
         function applyFilters() {
-          const catOk = (d) => activeCat === 'all' || d.isTag || d.category === activeCat;
+          // 태그는 활성 카테고리 글과 실제로 연결된 것만 보이게(전체일 땐 다 보임)
+          let visibleTagIds = null;
+          if (activeCat !== 'all') {
+            visibleTagIds = new Set();
+            curEdges.forEach((e) => {
+              if (e.type !== 'tag') return;
+              const postId = String(e.s).startsWith('#') ? e.t : e.s;
+              const tagId = String(e.s).startsWith('#') ? e.s : e.t;
+              const postNode = curNodesById[postId];
+              if (postNode && postNode.category === activeCat) visibleTagIds.add(tagId);
+            });
+          }
+
+          const catOk = (d) => {
+            if (!d) return false;
+            if (activeCat === 'all') return true;
+            if (d.isTag) return visibleTagIds ? visibleTagIds.has(d.id) : true;
+            return d.category === activeCat;
+          };
 
           node.classed('dim', (d) => !catOk(d));
           label.classed('dim', (d) => !catOk(d));
@@ -413,13 +458,14 @@ const graphJson = JSON.stringify(graphData);
     }
     .tag-label {
       font-size: 8px;
-      fill: #93642c;
+      fill: #7a5d83;
       pointer-events: none;
       text-anchor: middle;
       transition: opacity 0.15s;
     }
     .node-g circle {
       transition: opacity 0.15s;
+      filter: drop-shadow(0 1px 1.5px rgba(42, 42, 38, 0.22));
     }
     .dim {
       opacity: 0.1 !important;

@@ -36,6 +36,18 @@ const home = lang === 'en' ? '/en/' : '/';
       <div class="wrap header-inner">
         <a href={home} class="brand"><img src="/rabbit-logo.webp" alt="" class="brand-logo" width="69" height="80" /><span class="brand-name">Rabbit Logs</span></a>
         <div class="header-actions">
+          <a href="/map" class="map-btn" aria-label="글 지도">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="6" r="2.6"></circle>
+              <circle cx="18" cy="7" r="2.6"></circle>
+              <circle cx="7" cy="18" r="2.6"></circle>
+              <circle cx="17" cy="17" r="2.6"></circle>
+              <line x1="8.3" y1="7.3" x2="15.7" y2="6.6"></line>
+              <line x1="7.5" y1="8.4" x2="7.3" y2="15.5"></line>
+              <line x1="9.2" y1="17.4" x2="14.8" y2="16.6"></line>
+              <line x1="17.7" y1="9.5" x2="17.2" y2="14.5"></line>
+            </svg>
+          </a>
           <Search lang={lang} />
           <a href={t.otherHref} class="lang-switch">{t.other}</a>
         </div>
@@ -79,6 +91,14 @@ const home = lang === 'en' ? '/en/' : '/';
       .nav a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
       .nav a:hover { color: var(--primary); }
       .header-actions { display: flex; align-items: center; gap: 0.5rem; order: 3; }
+      .map-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 36px; height: 36px; padding: 0;
+        background: none; border: none; cursor: pointer;
+        color: var(--primary); border-radius: 999px;
+        transition: background 0.15s;
+      }
+      .map-btn:hover { background: rgba(44,95,87,0.08); }
       .lang-switch { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
 
       /* 모바일: 브랜드+언어토글 윗줄, 카테고리 메뉴는 아랫줄 전체폭 균등 분배 */
