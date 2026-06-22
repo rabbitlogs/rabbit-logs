@@ -2,9 +2,8 @@
 // ─────────────────────────────────────────────
 //  애드센스 광고 한 칸 (사각형 반응형)
 //  - rectangle 포맷 유지 (투명 광고 방지)
-//  - 모바일에서 max-width 300px로 폭 제한 (화면 꽉 참 방지)
-//  - AD_CLIENT: 본인 애드센스 퍼블리셔 ID
-//  - AD_SLOT  : 애드센스 광고 유닛 번호(data-ad-slot)
+//  - PC: max-width 336px (박스 안에 좌우 여백 확보)
+//  - 모바일: max-width 300px
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
 const AD_SLOT = '3094787370';
@@ -38,19 +37,21 @@ const AD_SLOT = '3094787370';
     text-transform: uppercase;
     margin-bottom: 0.75rem;
   }
+  /* PC: 336px로 제한, 가운데 정렬 → 박스 안에 좌우 여백 자연스럽게 생김 */
   .ad-slot .adsbygoogle {
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 336px;
   }
   .ad-slot .adsbygoogle iframe {
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 336px;
   }
-  /* 모바일에서 광고가 화면 폭에 꽉 차지 않게 */
+  /* 모바일: 300px로 제한 */
   @media (max-width: 640px) {
-    .ad-slot .adsbygoogle {
+    .ad-slot .adsbygoogle,
+    .ad-slot .adsbygoogle iframe {
       max-width: 300px;
     }
   }
