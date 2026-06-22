@@ -1,9 +1,10 @@
 ---
 // ─────────────────────────────────────────────
-//  애드센스 광고 한 칸 (반응형 auto)
-//  - auto + full-width-responsive: AdSense가 그 자리에 맞는 광고를 자동 선택
-//  - 광고 크기에 따라 박스 높이가 자동 조정됨 (빈 박스 현상 최소화)
-//  - unfilled 시 박스 자체를 숨김
+//  애드센스 광고 한 칸 (사각형 반응형)
+//  - 일반 디스플레이 광고를 쓰되, 광고가 박스 폭에 맞춰 비율대로 들어온다.
+//    fluid에서 광고가 잘리던 문제, auto에서 모바일 빈칸 남던 문제를 둘 다 피한다.
+//  - AD_CLIENT: 본인 애드센스 퍼블리셔 ID
+//  - AD_SLOT  : 애드센스 광고 유닛 번호(data-ad-slot)
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
 const AD_SLOT = '3094787370';
@@ -16,15 +17,15 @@ const AD_SLOT = '3094787370';
     style="display:block;"
     data-ad-client={AD_CLIENT}
     data-ad-slot={AD_SLOT}
-    data-ad-format="auto"
-    data-full-width-responsive="true"
+    data-ad-format="rectangle"
+    data-full-width-responsive="false"
   ></ins>
 </div>
 
 <style>
   .ad-slot {
     margin: 2.5rem 0;
-    padding: 0.75rem;
+    padding: 1.25rem;          /* 박스 테두리 안쪽 여백 (광고 좌우 여백) */
     border: 1px dashed var(--line);
     border-radius: 8px;
     text-align: center;
@@ -35,11 +36,19 @@ const AD_SLOT = '3094787370';
     letter-spacing: 0.15em;
     color: var(--muted);
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
+  /* 광고를 박스 안쪽 폭에 맞추되, 광고 자체 크기를 잘라내지 않는다.
+     rectangle 포맷은 광고가 자기 크기로 들어오고, 가운데 정렬만 한다. */
   .ad-slot .adsbygoogle {
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .ad-slot .adsbygoogle iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
   }
   /* 광고를 못 채운 칸은 통째로 숨김 */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {
