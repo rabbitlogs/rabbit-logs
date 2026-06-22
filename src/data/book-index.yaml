@@ -512,3 +512,16 @@
     prerequisite: ['sap-data-types']
     related: ['sap-tcode-basics']
     deepens: []
+
+- slug: stats-why-back-to-school
+  mapTitle: "다시 학생이 된 이유"
+  title: "다시 학생이 된 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서"
+  category: stats
+  status: rebuilt
+  pubDate: 2026-06-22
+  level: beginner
+  tags: ['통계·데이터', '방통대', '편입', '데이터분석', '직장인공부']
+  relations:
+    prerequisite: []
+    related: ['sap-mrp', 'sap-build-project-difficulty']
+    deepens: []
