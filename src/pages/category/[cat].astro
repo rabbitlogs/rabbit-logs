@@ -42,8 +42,11 @@ const posts = (await getCollection('blog'))
   <section style="padding-top: 1.2rem;">
     <h1 style="font-size: 2rem; margin: 0 0 0.6rem;">{catName[cat]}</h1>
     <p style="font-size: 0.98rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.8rem;">
-      {catDesc[cat].map((line, i) => (<>{i > 0 && <br />}{line}</>))}
+      {catDesc[cat].map((line, i) => (<>{i > 0 && <><br class="cat-desc-br" /> </>}{line}</>))}
     </p>
+    <style>
+      @media (max-width: 640px) { .cat-desc-br { display: none; } }
+    </style>
     {posts.map((post) => (
       <PostCard
         href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
