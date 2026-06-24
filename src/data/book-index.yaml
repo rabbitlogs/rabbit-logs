@@ -1,6 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (최종 확정)
 # status: rebuilt(리빌딩+발행 완료) / planned(원본 있음, 리빌딩 예정, 날짜 선확정)
 # 전체 51개, 발행기간 2025-07-02 ~ 2026-06-22 (평균 7.4일 간격)
+# rebuilt: 33개 / planned: 18개  ← 2025-06-24 갱신 (SAP MES 시리즈 2편 추가)
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -101,19 +102,37 @@
   pubDate: "2025-08-22"   # 리빌딩 시 이 날짜로 백데이트
   relations: {prerequisite: [], related: [], deepens: []}
 
-- slug: sap-mes-역활
-  title: "SAP MES, 총괄 셰프와 주방 팀의 환상적인 호흡법"
-  category: project
-  status: planned
-  pubDate: "2025-08-27"   # 리빌딩 시 이 날짜로 백데이트
-  relations: {prerequisite: [], related: [], deepens: []}
+- slug: sap-mes-role
+  mapTitle: "SAP MES"
+  title: "SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업"
+  category: study
+  status: rebuilt
+  pubDate: "2025-07-17"
+  level: beginner
+  tags: ['SAP학습자료', 'SAPMES', 'SAP생산계획', 'SAPPP']
+  relations:
+    prerequisite:
+      - sap-what-is-sap
+    related:
+      - sap-pp-master-data
+    deepens:
+      - sap-mes-interface
 
-- slug: sap-mes-인터페이스
-  title: "'웨이터' 비유로 보는 SAP MES 인터페이스"
-  category: project
-  status: planned
-  pubDate: "2025-09-03"   # 리빌딩 시 이 날짜로 백데이트
-  relations: {prerequisite: [], related: [], deepens: []}
+- slug: sap-mes-interface
+  mapTitle: "SAP MES 인터페이스"
+  title: "SAP MES 인터페이스, 홀과 주방을 잇는 웨이터의 기술"
+  category: study
+  status: rebuilt
+  pubDate: "2025-07-20"
+  level: beginner
+  tags: ['SAP학습자료', 'SAPMES', 'SAPRFC', 'SAPPI']
+  relations:
+    prerequisite:
+      - sap-mes-role
+      - sap-what-is-sap
+    related:
+      - sap-pp-master-data
+    deepens: []
 
 - slug: sap-test-overview
   mapTitle: "SAP 테스트 5단계"
