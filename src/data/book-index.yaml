@@ -1,6 +1,6 @@
 # Rabbit Logs 마스터 인덱스 (최종 확정)
 # status: rebuilt(리빌딩+발행 완료) / planned(원본 있음, 리빌딩 예정, 날짜 선확정)
-# 전체 49개, 발행기간 2025-07-02 ~ 2026-06-20 (평균 7.4일 간격)
+# 전체 51개, 발행기간 2025-07-02 ~ 2026-06-22 (평균 7.4일 간격)
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -12,7 +12,7 @@
   tags: ['SAP프로젝트', 'SAP입문', 'ERP', 'SAP모듈']
   relations:
     prerequisite: []
-    related: []
+    related: ['sap-history', 'sap-modules-guide']
     deepens: []
 
 - slug: sap-modules-guide
@@ -42,11 +42,17 @@
     deepens: []
 
 - slug: sap-now-ai-tour-2025
-  title: "SAP NOW AI Tour 2025 생생 참관 후기"
+  mapTitle: "SAP NOW AI Tour 2025 Korea"
+  title: "SAP NOW AI Tour 2025 Korea, 현장에서 확인한 한 가지"
   category: operations
-  status: planned
-  pubDate: "2025-07-17"   # 리빌딩 시 이 날짜로 백데이트
-  relations: {prerequisite: [], related: [], deepens: []}
+  status: rebuilt
+  pubDate: "2025-07-17"
+  level: beginner
+  tags: ['SAP실무운영', 'SAPNOW', 'SAP행사후기', 'SAPJoule', '클린코어']
+  relations:
+    prerequisite: []
+    related: ['sap-joule-clean-core', 'sap-cbo-z-program']
+    deepens: []
 
 - slug: sap-pp-모듈
   title: "SAP PP, 세상에서 제일 맛있는 라면을 끓이는 비법!"
@@ -308,6 +314,20 @@
   pubDate: "2026-01-09"   # 리빌딩 시 이 날짜로 백데이트
   relations: {prerequisite: [], related: [], deepens: []}
 
+
+- slug: sap-joule-clean-core
+  mapTitle: "SAP Joule·클린코어"
+  title: "SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터"
+  category: operations
+  status: rebuilt
+  pubDate: "2026-01-11"
+  level: intermediate
+  tags: ['SAP실무운영', 'SAPJoule', '클린코어', 'CleanCore', 'SAP비즈니스AI']
+  relations:
+    prerequisite: ['sap-cbo-z-program']
+    related: ['sap-now-ai-tour-2025']
+    deepens: []
+
 - slug: sap-pp-master-data
   mapTitle: "SAP PP 기준정보"
   title: "SAP PP 기준정보, 핵심 4가지로 이해하기"
@@ -459,7 +479,7 @@
   relations:
     prerequisite: []
     related: []
-    deepens: []
+    deepens: ['sap-exam-format', 'sap-cpim']
 
 - slug: sap-exam-format
   mapTitle: "SAP 자격증 시험"
@@ -518,7 +538,7 @@
   title: "다시 학생이 된 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서"
   category: stats
   status: rebuilt
-  pubDate: 2026-06-22
+  pubDate: "2026-06-22"
   level: beginner
   tags: ['통계·데이터', '방통대', '편입', '데이터분석', '직장인공부']
   relations:
