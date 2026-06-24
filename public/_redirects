@@ -108,13 +108,81 @@
 /%ea%b0%9c%ec%9d%b8%ec%a0%95%eb%b3%b4%ec%b2%98%eb%a6%ac%eb%b0%a9%ec%b9%a8/   /privacy   301
 /개인정보처리방침/   /privacy   301
 
-# SAP MES 역할 (WordPress 슬러그 오타: 역활 → 새 영어 슬러그)
+
+# sap-mes-역활 → sap-mes-role
 /sap-mes-%ec%97%ad%ed%99%9c/   /blog/sap-mes-role   301
 /sap-mes-역활/   /blog/sap-mes-role   301
 
-# SAP MES 인터페이스
+# sap-mes-인터페이스 → sap-mes-interface
 /sap-mes-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4/   /blog/sap-mes-interface   301
 /sap-mes-인터페이스/   /blog/sap-mes-interface   301
+
+# sap-pp-모듈 → sap-pp-overview
+/sap-pp-%eb%aa%a8%eb%93%88/   /blog/sap-pp-overview   301
+/sap-pp-모듈/   /blog/sap-pp-overview   301
+
+# sap-조직-구조-기준-정보 → sap-org-structure
+/sap-%ec%a1%b0%ec%a7%81-%ea%b5%ac%ec%a1%b0-%ea%b8%b0%ec%a4%80-%ec%a0%95%eb%b3%b4/   /blog/sap-org-structure   301
+/sap-조직-구조-기준-정보/   /blog/sap-org-structure   301
+
+# sap-pi-란 → sap-pi-overview
+/sap-pi-%eb%9e%80/   /blog/sap-pi-overview   301
+/sap-pi-란/   /blog/sap-pi-overview   301
+
+# sap-생산-전략-mts-mto-비교 → sap-production-strategy
+/sap-%ec%83%9d%ec%82%b0-%ec%a0%84%eb%9e%b5-mts-mto-%eb%b9%84%ea%b5%90/   /blog/sap-production-strategy   301
+/sap-생산-전략-mts-mto-비교/   /blog/sap-production-strategy   301
+
+# sap-컷오버 → sap-cutover
+/sap-%ec%bb%b7%ec%98%a4%EB%B2%84/   /blog/sap-cutover   301
+/sap-컷오버/   /blog/sap-cutover   301
+
+# sap-변화관리 → sap-change-management
+/sap-%eb%b3%80%ed%99%94%ea%b4%80%eb%a6%ac/   /blog/sap-change-management   301
+/sap-변화관리/   /blog/sap-change-management   301
+
+# sap-컷오버-현장 → sap-cutover-live
+/sap-%ec%bb%b7%ec%98%a4%eb%b2%84-%ed%98%84%ec%9e%a5/   /blog/sap-cutover-live   301
+/sap-컷오버-현장/   /blog/sap-cutover-live   301
+
+# sap-생산오더-이월 → sap-production-order-carryover
+/sap-%ec%83%9d%ec%82%b0%ec%98%a4%eb%8d%94-%ec%9d%b4%ec%9b%94/   /blog/sap-production-order-carryover   301
+/sap-생산오더-이월/   /blog/sap-production-order-carryover   301
+
+# sap-배치잡 → sap-batch-job
+/sap-%eb%b0%b0%ec%b9%98%ec%9e%a1/   /blog/sap-batch-job   301
+/sap-배치잡/   /blog/sap-batch-job   301
+
+# sap-배치-관리 → sap-batch-management
+/sap-%eb%b0%b0%ec%b9%98-%ea%b4%80%eb%a6%ac/   /blog/sap-batch-management   301
+/sap-배치-관리/   /blog/sap-batch-management   301
+
+# sap-자동완성-삭제-설정 → sap-autocomplete
+/sap-%ec%9e%90%eb%8f%99%ec%99%84%ec%84%b1-%ec%82%ad%ec%a0%9c-%ec%84%a4%ec%a0%95/   /blog/sap-autocomplete   301
+/sap-자동완성-삭제-설정/   /blog/sap-autocomplete   301
+
+# sap-드롭다운 → sap-dropdown
+/sap-%eb%93%9c%eb%a1%ad%eb%8b%a4%ec%9a%b4/   /blog/sap-dropdown   301
+/sap-드롭다운/   /blog/sap-dropdown   301
+
+# sap-비밀번호-별표 → sap-password-asterisk
+/sap-%eb%b9%84%eb%b0%80%eb%b2%88%ed%98%b8-%eb%b3%84%ed%91%9c/   /blog/sap-password-asterisk   301
+/sap-비밀번호-별표/   /blog/sap-password-asterisk   301
+
+# sap-사용자-프로파일-매개변수-id → sap-user-parameters
+/sap-%ec%82%ac%ec%9a%a9%ec%9e%90-%ed%94%84%eb%a1%9c%ed%8c%8c%ec%9d%bc-%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98-id/   /blog/sap-user-parameters   301
+/sap-사용자-프로파일-매개변수-id/   /blog/sap-user-parameters   301
+
+# sap-생산오더-번호-규칙 → sap-production-order-number
+/sap-%ec%83%9d%ec%82%b0%ec%98%a4%eb%8d%94-%eb%b2%88%ed%98%b8-%ea%b7%9c%ec%b9%99/   /blog/sap-production-order-number   301
+/sap-생산오더-번호-규칙/   /blog/sap-production-order-number   301
+
+# 순환-bom → sap-circular-bom
+/%ec%88%9c%ed%99%98-bom/   /blog/sap-circular-bom   301
+/순환-bom/   /blog/sap-circular-bom   301
+
+# sap-activity-cnf (경로 prefix 추가)
+/sap-activity-cnf/   /blog/sap-activity-cnf   301
 
 # ── 포괄 규칙 (맨 아래 유지) ──
 # 위에서 매칭 안 된 예전 글은 일단 홈으로 보냄 (404 방지).
