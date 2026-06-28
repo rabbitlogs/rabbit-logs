@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/ko/sap-what-is-sap.md",
+                "file": "src/content/blog/ko/sap-mes-role.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sap-what-is-sap"
+              "title": "sap-mes-role"
             }
           }
         ]
@@ -186,8 +186,8 @@
   },
   "active": "0d5d9b8cc52adba5",
   "lastOpenFiles": [
-    "src/content/blog/ko/stats-adsp.md",
     "src/content/blog/ko/sap-what-is-sap.md",
+    "src/content/blog/ko/stats-adsp.md",
     "src/content/blog/ko/sap-pi-overview.md",
     "src/content/blog/ko/sap-now-ai-tour-2025.md",
     "src/content/blog/ko/study-pp-work-center.md",
