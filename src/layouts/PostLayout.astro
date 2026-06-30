@@ -294,16 +294,8 @@ if (lang === 'ko' && slug) {
           if (lastFocused) lastFocused.focus();
         };
 
-        // 본문 안의 이미지를 wrapper로 감싸고, 호버 시 확대 아이콘을 보여준다.
-        // (브라우저 기본 zoom-in 커서는 OS·브라우저마다 모양이 달라 직접 그린 SVG 아이콘으로 대체)
-        const zoomIconSvg = `
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"></circle>
-            <line x1="11" y1="8" x2="11" y2="14"></line>
-            <line x1="8" y1="11" x2="14" y2="11"></line>
-            <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
-          </svg>`;
-
+        // 본문 안의 이미지를 wrapper로 감싸 클릭 영역을 잡는다.
+        // (호버 시 이미지가 살짝 어두워지는 것만으로 클릭 가능함을 알린다 — 별도 아이콘 없음)
         prose.querySelectorAll('img').forEach((img) => {
           img.classList.add('lightbox-trigger');
 
@@ -314,12 +306,6 @@ if (lang === 'ko' && slug) {
           wrap.setAttribute('aria-label', '이미지 확대');
           img.parentNode.insertBefore(wrap, img);
           wrap.appendChild(img);
-
-          const icon = document.createElement('span');
-          icon.className = 'lightbox-zoom-icon';
-          icon.innerHTML = zoomIconSvg;
-          icon.setAttribute('aria-hidden', 'true');
-          wrap.appendChild(icon);
 
           wrap.addEventListener('click', () => openLightbox(img));
           wrap.addEventListener('keydown', (e) => {
@@ -406,38 +392,9 @@ if (lang === 'ko' && slug) {
     .post :global(.prose .lightbox-zoom-wrap:focus-visible img) {
       filter: brightness(0.93);
     }
-    .post :global(.prose .lightbox-zoom-icon) {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%) scale(0.85);
-      width: 46px; height: 46px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(32, 37, 31, 0.55);
-      color: #fff;
-      border-radius: 999px;
-      opacity: 0;
-      transition: opacity 0.15s, transform 0.15s;
-      pointer-events: none;
-    }
-    .post :global(.prose .lightbox-zoom-icon svg) {
-      width: 22px; height: 22px;
-    }
-    .post :global(.prose .lightbox-zoom-wrap:hover .lightbox-zoom-icon),
-    .post :global(.prose .lightbox-zoom-wrap:focus-visible .lightbox-zoom-icon) {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
     .post :global(.prose .lightbox-zoom-wrap:focus-visible) {
       outline: 2px solid var(--primary);
       outline-offset: 2px;
-    }
-    /* 터치 환경(호버 불가)에서는 아이콘을 항상 옅게 보여줘 확대 가능함을 알린다 */
-    @media (hover: none) {
-      .post :global(.prose .lightbox-zoom-icon) {
-        opacity: 0.85;
-        transform: translate(-50%, -50%) scale(0.85);
-        width: 38px; height: 38px;
-      }
-      .post :global(.prose .lightbox-zoom-icon svg) { width: 18px; height: 18px; }
     }
   </style>
 
