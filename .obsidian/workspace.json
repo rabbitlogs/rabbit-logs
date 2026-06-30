@@ -186,6 +186,9 @@
   },
   "active": "0d5d9b8cc52adba5",
   "lastOpenFiles": [
+    "src/content/blog/ko/sap-test-overview.md",
+    "src/content/blog/ko/sap-wip.md",
+    "src/content/blog/ko/stats-adsp.md",
     "public/downloads/ADsP-mocktest-4.pdf",
     "public/downloads/ADsP-mocktest-5.pdf",
     "public/downloads/ADsP-mocktest-14.pdf",
@@ -196,12 +199,10 @@
     "public/downloads/ADsP AI 모의고사_4회차.pdf",
     "public/downloads/ADsP AI 모의고사_3회차.pdf",
     "public/downloads/ADsP AI 모의고사_2회차.pdf",
-    "public/downloads/ADsP AI 모의고사_1회차.pdf",
     "src/content/blog/ko/sap-modules-guide.md",
     "src/content/blog/ko/stats-why-back-to-school.md",
     "src/content/blog/ko/sap-what-is-sap.md",
     "src/content/blog/ko/sap-mes-role.md",
-    "src/content/blog/ko/stats-adsp.md",
     "src/content/blog/ko/sap-pi-overview.md",
     "src/content/blog/ko/sap-now-ai-tour-2025.md",
     "src/content/blog/ko/study-pp-work-center.md",
@@ -229,7 +230,6 @@
     "src/content/blog/ko/sap-data-types.md",
     "src/content/blog/ko/sap-field-names.md",
     "src/content/blog/ko/sap-build-project-difficulty.md",
-    "src/content/blog/ko/sap-pi-vs-implementation.md",
     "public/images/sap-tcode-favorites_en.jpg",
     "public/images/sap-history-timeline.jpg"
   ]
