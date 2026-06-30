@@ -74,7 +74,7 @@ tags: ["통계·데이터", "ADsP", "데이터자격증", "직장인공부법"]
 
 ==47회(2025년 11월) 합격 후 글을 쓰는 시점에 49회 기출까지 나와 있어서, 45–49회 기반으로 새로 정리한 버전을 아래에서 공유합니다. 50회(2026년 8월) 수험생에게도 도움이 되길 바랍니다.==
 
-**[ADsP AI 모의고사 1회차 다운로드](https://rabbitlogs.com/downloads/ADsP-mocktest-1.pdf)**
+**[ADsP AI 모의고사 1회차 다운로드](https://rabbitlogs.com/downloads/ADsP-mocktest-1.pdf)**,
 
 **[ADsP AI 모의고사 2회차 다운로드](https://rabbitlogs.com/downloads/ADsP-mocktest-2.pdf)**
 
