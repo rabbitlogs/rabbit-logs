@@ -388,11 +388,11 @@ if (lang === 'ko' && slug) {
        (광고 박스 기본 margin 2.5rem + 푸터 margin-top 4rem이 겹쳐 벌어지는 것 보정) */
     .post :global(.ad-slot.ad-last) { margin-bottom: 0; }
 
-    /* 본문 이미지 확대 아이콘 오버레이 (브라우저 기본 zoom 커서 대신 직접 그린 아이콘) */
+    /* 본문 이미지 확대 아이콘 오버레이 (브라우저 기본 zoom 커서는 쓰지 않음 — 아이콘 하나만 보이게 pointer 사용) */
     .post :global(.prose .lightbox-zoom-wrap) {
       position: relative;
       display: block;
-      cursor: zoom-in;
+      cursor: pointer;
       border-radius: 8px;
       margin: 1.5rem auto 0.1rem;
       max-width: 100%;
