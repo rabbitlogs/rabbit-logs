@@ -94,8 +94,6 @@ SAP 경험이 쌓일수록 코드 번호 자체가 친숙해집니다. 숙련된
 
 **더 읽어보기**
 
-- [SAP 비밀번호 별표 옵션, 계정 잠김의 주범인 이유](/blog/sap-password-asterisk)
-- [SAP 자동완성 설정과 삭제, 입력 실수를 줄이는 방법](/blog/sap-autocomplete)
-- [SAP 매개변수 ID, 매일 쓰는 기본값을 한 번에 저장하는 법](/blog/sap-user-parameters)
+- [SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법](/blog/sap-tcode-basics)
 
-<!-- 관련글: prerequisite=; related=sap-password-asterisk,sap-autocomplete,sap-user-parameters; deepens= -->
+<!-- 관련글: prerequisite=; related=sap-tcode-basics; deepens= -->

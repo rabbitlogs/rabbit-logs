@@ -108,8 +108,7 @@ SAP가 이 구조를 지원하는 이유는 현실의 복잡한 생산 흐름을
 
 **더 읽어보기**
 
-- [SAP PP 기준정보, 생산을 떠받치는 네 가지 기둥](/blog/sap-pp-master-data)
-- [SAP 이동유형, 재고가 움직일 때마다 붙는 이름표](/blog/sap-movement-type)
-- [SAP GI·GR·CNF, 재료를 꺼내고 완성품을 올리기까지](/blog/sap-gi-gr-cnf)
+- [SAP PP 기준정보, 핵심 4가지로 이해하기](/blog/sap-pp-master-data)
+- [SAP 이동유형, 식자재가 냉장고 드나들 때마다 찍는 도장](/blog/sap-movement-type)
 
-<!-- 관련글: prerequisite=sap-pp-master-data; related=sap-movement-type,sap-gi-gr-cnf; deepens= -->
+<!-- 관련글: prerequisite=sap-pp-master-data; related=sap-movement-type; deepens= -->

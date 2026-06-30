@@ -86,6 +86,5 @@ SAP GUI의 기본 폰트는 대개 '굴림'입니다. 솔직히 지금 시대에
 **더 읽어보기**
 
 - [SAP 시그니처 테마, 협업이 편해지는 주방 유니폼](/blog/sap-signature-theme)
-- [SAP 입문, 레스토랑 주방으로 이해하는 통합 두뇌](/blog/sap-what-is-sap)
 
-<!-- 관련글: related=sap-signature-theme -->
+<!-- 관련글: prerequisite=; related=sap-signature-theme; deepens= -->

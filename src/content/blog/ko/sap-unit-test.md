@@ -63,6 +63,5 @@ tags: ["SAP프로젝트", "단위테스트", "SAP테스트", "구축"]
 **더 읽어보기**
 
 - [SAP 프로토타입 테스트, 짓기 전에 보는 시범 매장](/blog/sap-prototype-test)
-- [SAP 통합 테스트, 주방과 홀이 하나로 맞물리는가](/blog/sap-integration-test)
 
-<!-- 관련글: prerequisite=sap-prototype-test -->
+<!-- 관련글: prerequisite=sap-prototype-test; related=; deepens= -->

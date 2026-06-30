@@ -1,6 +1,6 @@
 # Rabbit Logs 마스터 인덱스 (최종 확정)
 # status: rebuilt(리빌딩+발행 완료) / planned(원본 있음, 리빌딩 예정, 날짜 선확정)
-# 전체 51개, 발행기간 2025-07-02 ~ 2026-06-22 (평균 7.4일 간격)
+# 전체 59개, 발행기간 2025-07-02 ~ 2026-06-25 (평균 7.4일 간격)
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -12,8 +12,8 @@
   tags: ['SAP프로젝트', 'SAP입문', 'ERP', 'SAP모듈']
   relations:
     prerequisite: []
-    related: []
-    deepens: []
+    related: ['sap-history', 'sap-org-structure']
+    deepens: ['sap-modules-guide']
 
 - slug: sap-modules-guide
   mapTitle: "SAP 10개 모듈"
@@ -598,7 +598,7 @@
   relations:
     prerequisite: []
     related: []
-    deepens: []
+    deepens: ['sap-exam-format', 'sap-cpim']
 
 - slug: sap-exam-format
   mapTitle: "SAP 자격증 시험"
@@ -657,10 +657,114 @@
   title: "다시 학생이 된 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서"
   category: stats
   status: rebuilt
-  pubDate: 2026-06-22
+  pubDate: "2026-06-22"
   level: beginner
   tags: ['통계·데이터', '방통대', '편입', '데이터분석', '직장인공부']
   relations:
     prerequisite: []
     related: ['sap-mrp', 'sap-build-project-difficulty']
+    deepens: []
+
+- slug: study-pp-routing
+  mapTitle: "SAP 라우팅"
+  title: "SAP 라우팅, 레시피대로 요리하는 공정 순서표"
+  category: study
+  status: rebuilt
+  pubDate: "2025-10-15"
+  level: beginner
+  tags: ['SAP학습자료', 'SAP라우팅', 'SAPP기준정보', 'SAP생산관리']
+  relations:
+    prerequisite: ['sap-pp-master-data']
+    related: []
+    deepens: ['study-pp-work-center']
+
+- slug: study-pp-work-center
+  mapTitle: "SAP 작업장"
+  title: "SAP 작업장, 공정이 실제로 일어나는 주방 스테이션"
+  category: study
+  status: rebuilt
+  pubDate: "2025-10-22"
+  level: beginner
+  tags: ['SAP학습자료', 'SAP작업장', 'SAPP기준정보', 'SAP생산관리']
+  relations:
+    prerequisite: ['study-pp-routing']
+    related: []
+    deepens: []
+
+- slug: stats-descriptive-basics
+  mapTitle: "기술통계"
+  title: "기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: beginner
+  tags: ['통계·데이터', '기술통계', '통계개념']
+  relations:
+    prerequisite: ['stats-why-back-to-school']
+    related: []
+    deepens: ['stats-mean-trap-kpi', 'stats-correlation-vs-causation']
+
+- slug: stats-mean-trap-kpi
+  mapTitle: "평균의 함정"
+  title: "평균의 함정, KPI 숫자가 목표를 달성했다는 착각"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: intermediate
+  tags: ['통계·데이터', 'KPI분석', '이상치', '기술통계']
+  relations:
+    prerequisite: ['stats-descriptive-basics']
+    related: ['stats-sap-inventory-variance']
+    deepens: []
+
+- slug: stats-correlation-vs-causation
+  mapTitle: "상관관계 vs 인과관계"
+  title: "상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: intermediate
+  tags: ['통계·데이터', '상관관계', '인과관계', '통계개념']
+  relations:
+    prerequisite: ['stats-descriptive-basics']
+    related: ['stats-mean-trap-kpi']
+    deepens: []
+
+- slug: stats-sap-inventory-variance
+  mapTitle: "재고 편차"
+  title: "재고 편차, 숫자가 맞는데 현장이 다른 이유"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: intermediate
+  tags: ['통계·데이터', '재고편차', '기술통계', 'SAP실무']
+  relations:
+    prerequisite: ['stats-descriptive-basics']
+    related: ['stats-mean-trap-kpi', 'sap-mrp']
+    deepens: []
+
+- slug: stats-excel-powerquery-pivot
+  mapTitle: "파워쿼리 → 피벗"
+  title: "SAP 데이터를 엑셀에서 제대로 쓰는 법, 파워쿼리에서 피벗까지"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: beginner
+  tags: ['통계·데이터', 'SAP실무', '엑셀파워쿼리', '피벗테이블']
+  relations:
+    prerequisite: []
+    related: ['stats-sap-inventory-variance', 'stats-descriptive-basics']
+    deepens: []
+
+- slug: stats-adsp
+  mapTitle: "ADsP"
+  title: "ADsP 합격, 직장인의 2주 공부법"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: beginner
+  tags: ['통계·데이터', 'ADsP', '데이터자격증', '직장인공부법']
+  relations:
+    prerequisite: []
+    related: ['stats-why-back-to-school', 'stats-descriptive-basics']
     deepens: []

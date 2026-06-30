@@ -85,8 +85,8 @@ SAP를 처음 배울 때 조직 구조 설정 화면은 T-CODE `SPRO`(IMG)에서
 
 **더 읽어보기**
 
-- [SAP PP 기준정보, 생산을 떠받치는 네 가지 기둥](/blog/sap-pp-master-data)
-- [SAP 데이터 유형, 컨피규레이션·마스터·트랜잭션의 차이](/blog/sap-data-types)
-- [SAP란 무엇인가, 우리 회사의 통합 두뇌를 설명합니다](/blog/sap-what-is-sap)
+- [SAP 입문, 레스토랑 주방으로 이해하는 통합 두뇌](/blog/sap-what-is-sap)
+- [SAP 데이터 유형, 레시피·재료·주문서로 구분하기](/blog/sap-data-types)
+- [SAP PP 기준정보, 핵심 4가지로 이해하기](/blog/sap-pp-master-data)
 
 <!-- 관련글: prerequisite=sap-what-is-sap; related=sap-data-types,sap-pp-master-data; deepens= -->

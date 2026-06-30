@@ -66,6 +66,5 @@ SAP에서 테마를 맞추는 것은 개인의 취향을 통일하는 일이 아
 **더 읽어보기**
 
 - [SAP 폰트 설정, 메뉴판처럼 또렷하게 읽는 법](/blog/sap-font-readability)
-- [SAP 입문, 레스토랑 주방으로 이해하는 통합 두뇌](/blog/sap-what-is-sap)
 
-<!-- 관련글: related=sap-font-readability -->
+<!-- 관련글: prerequisite=; related=sap-font-readability; deepens= -->

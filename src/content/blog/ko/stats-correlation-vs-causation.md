@@ -107,4 +107,4 @@ r값 해석 기준은 대략 이렇습니다.
 - [기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일](/blog/stats-descriptive-basics)
 - [평균의 함정, KPI 숫자가 목표를 달성했다는 착각](/blog/stats-mean-trap-kpi)
 
-<!-- 관련글: prerequisite=stats-descriptive-basics; related=stats-mean-trap-kpi -->
+<!-- 관련글: prerequisite=stats-descriptive-basics; related=stats-mean-trap-kpi; deepens= -->

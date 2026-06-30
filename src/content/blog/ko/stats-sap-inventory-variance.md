@@ -113,5 +113,6 @@ tags: ["통계·데이터", "재고편차", "기술통계", "SAP실무"]
 
 - [기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일](/blog/stats-descriptive-basics)
 - [평균의 함정, KPI 숫자가 목표를 달성했다는 착각](/blog/stats-mean-trap-kpi)
+- [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
 
-<!-- 관련글: prerequisite=stats-descriptive-basics; related=stats-mean-trap-kpi -->
+<!-- 관련글: prerequisite=stats-descriptive-basics; related=stats-mean-trap-kpi,sap-mrp; deepens= -->

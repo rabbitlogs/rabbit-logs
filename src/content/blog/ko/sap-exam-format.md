@@ -82,6 +82,6 @@ SAP 자격증 시험도 이렇게 바뀌었습니다. 헷갈리게 꼬아낸 객
 **더 읽어보기**
 
 - [SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법](/blog/sap-certification)
-- [SAP 자격증 vs [CPIM](https://www.ascm.org/learning-development/certifications-credentials/cpim/), 조리법보다 손님 입맛을 먼저 배우는 이유](/blog/sap-cpim)
+- [SAP 자격증 vs CPIM, 조리법보다 손님 입맛을 먼저 배우는 이유](/blog/sap-cpim)
 
-<!-- 관련글: prerequisite=sap-certification; related=sap-cpim -->
+<!-- 관련글: prerequisite=sap-certification; related=sap-cpim; deepens= -->

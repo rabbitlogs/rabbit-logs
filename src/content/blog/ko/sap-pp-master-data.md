@@ -85,7 +85,6 @@ PP를 하다 막히는 문제의 상당수는, 알고 보면 기준정보가 부
 
 **더 읽어보기**
 
-- [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
 - [SAP PP T-CODE, 업무 흐름대로 정리한 주방 동선](/blog/sap-pp-tcode)
 
-<!-- 관련글: related=sap-pp-tcode -->
+<!-- 관련글: prerequisite=; related=sap-pp-tcode; deepens= -->

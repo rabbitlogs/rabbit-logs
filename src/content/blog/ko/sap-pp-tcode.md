@@ -108,4 +108,4 @@ SAP PP(생산관리) 실무자라면 하루에도 수십 번씩 T-CODE를 마주
 - [SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법](/blog/sap-tcode-basics)
 - [SAP 시그니처 테마, 협업이 편해지는 주방 유니폼](/blog/sap-signature-theme)
 
-<!-- 관련글: prerequisite=sap-tcode-basics; related=sap-signature-theme -->
+<!-- 관련글: prerequisite=sap-tcode-basics; related=sap-signature-theme; deepens= -->

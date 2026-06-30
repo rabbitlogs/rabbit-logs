@@ -69,7 +69,7 @@ SAP와 MES를 다루는 사람은 사실 누구보다 데이터에 가까이 있
 
 **더 읽어보기**
 
-- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
 - [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
+- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
 
-<!-- 관련글: related=sap-mrp,sap-build-project-difficulty -->
+<!-- 관련글: prerequisite=; related=sap-mrp,sap-build-project-difficulty; deepens= -->

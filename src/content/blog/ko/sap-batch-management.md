@@ -98,8 +98,8 @@ SAP 프로젝트에서 배치 관리 도입 여부는 구축 초기에 결정해
 
 **더 읽어보기**
 
-- [SAP 이동유형, 재고가 움직일 때마다 붙는 이름표](/blog/sap-movement-type)
-- [SAP GI·GR·CNF, 재료를 꺼내고 완성품을 올리기까지](/blog/sap-gi-gr-cnf)
+- [SAP 이동유형, 식자재가 냉장고 드나들 때마다 찍는 도장](/blog/sap-movement-type)
+- [SAP GI·GR·CNF, 재고가 나가고 들어오고 만들어지는 세 순간](/blog/sap-gi-gr-cnf)
 - [SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업](/blog/sap-mes-role)
 
 <!-- 관련글: prerequisite=; related=sap-movement-type,sap-gi-gr-cnf,sap-mes-role; deepens= -->

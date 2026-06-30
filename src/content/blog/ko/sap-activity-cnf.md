@@ -101,6 +101,6 @@ Activity와 CNF는 개념 자체는 단순합니다. '할 일 목록'과 '완료
 
 - [SAP PP, 주방의 생산 계획이 완성되는 법](/blog/sap-pp-overview)
 - [SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업](/blog/sap-mes-role)
-- [SAP 생산오더 상태 코드, 요리 과정에서 읽는 신호등](/blog/sap-production-order-status)
+- [SAP 생산오더 상태 코드, 요리 한 접시가 완성되는 순서](/blog/sap-production-order-status)
 
 <!-- 관련글: prerequisite=sap-pp-overview,sap-mes-role; related=sap-production-order-status,sap-mes-interface; deepens= -->

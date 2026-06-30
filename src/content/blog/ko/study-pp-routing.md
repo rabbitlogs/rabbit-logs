@@ -87,7 +87,7 @@ BOM과 라우팅은 함께 있어야 비로소 제품을 만들 수 있습니다
 
 **더 읽어보기**
 
-- [SAP 작업장, 공정이 실제로 일어나는 곳](/blog/study-pp-work-center)
-- [SAP BOM, 레스토랑 레시피처럼 만드는 재료 목록](/blog/study-pp-bom)
+- [SAP PP 기준정보, 핵심 4가지로 이해하기](/blog/sap-pp-master-data)
+- [SAP 작업장, 공정이 실제로 일어나는 주방 스테이션](/blog/study-pp-work-center)
 
-<!-- 관련글: deepens=study-pp-work-center; related=study-pp-bom -->
+<!-- 관련글: prerequisite=sap-pp-master-data; related=; deepens=study-pp-work-center -->

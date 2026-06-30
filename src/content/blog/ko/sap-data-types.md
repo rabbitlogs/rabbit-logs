@@ -75,6 +75,5 @@ SAP에서 오류 메시지를 받으면 본능적으로 "그래서 뭘 고치면
 
 - [SAP PP 기준정보, 핵심 4가지로 이해하기](/blog/sap-pp-master-data)
 - [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
-- [SAP 데이터 필드 이름, 레시피 재료명으로 읽기](/blog/sap-field-names)
 
-<!-- 관련글: related=sap-pp-master-data,sap-mrp -->
+<!-- 관련글: prerequisite=; related=sap-pp-master-data,sap-mrp; deepens= -->

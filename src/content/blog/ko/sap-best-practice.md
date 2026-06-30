@@ -75,8 +75,7 @@ Best Practice를 둘러싼 현장의 흔한 오해가 두 가지 있습니다.
 
 **더 읽어보기**
 
-- [SAP Fit/Gap 분석, 우리 주방에 맞는 설비를 고르는 법](/blog/sap-fit-gap)
-- [SAP CBO, 주방장만 아는 비밀 레시피 Z코드](/blog/sap-cbo-z-program)
-- [SAP 변화관리, 새 주방을 열기 전에 스탭이 먼저 바뀌어야 합니다](/blog/sap-change-management)
+- [SAP Fit/Gap 분석, 표준과 우리 매장 사이의 간격 재기](/blog/sap-fit-gap)
+- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
 
-<!-- 관련글: prerequisite=sap-fit-gap; related=sap-cbo-z-program,sap-change-management; deepens= -->
+<!-- 관련글: prerequisite=; related=sap-fit-gap,sap-build-project-difficulty; deepens= -->

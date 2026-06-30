@@ -1,5 +1,5 @@
 ---
-title: "SAP PI, 운영 방식을 바꾸지 않으면 새 레스토랑도 헛겁니다"
+title: "SAP PI, 매장만 새로 단장해선 레시피가 안 바뀝니다"
 mapTitle: "SAP PI"
 description: "SAP PI(Process Innovation)가 무엇인지, 왜 시스템 도입 전에 운영 방식부터 바꿔야 하는지를 레스토랑 리뉴얼 비유로 설명합니다."
 pubDate: "2025-08-07"
@@ -69,7 +69,7 @@ PI 없이 SAP를 도입하면 SAP는 정말로 '비싼 엑셀'이 됩니다. 데
 
 같은 레스토랑, 같은 SAP 시스템이라도 PI를 거쳤느냐 아니냐에 따라 현장의 체감은 완전히 달라집니다.
 
-![SAP PI 전후 레스토랑 운영 흐름 비교 — 끊어진 수작업 흐름과 SAP 기반 통합 흐름을 나란히 보여주는 도식](https://rabbitlogs.com/images/sap-pi-overview-01.jpg)
+![SAP PI 전후 레스토랑 운영 흐름 비교 — 끊어진 수작업 흐름과 SAP 기반 통합 흐름을 나란히 보여주는 도식](/images/sap-pi-overview-01.jpg)
 *그림 1. PI 전후 레스토랑 운영 흐름 비교*
 
 ## PI는 어떻게 진행되는가
@@ -108,8 +108,8 @@ SAP PI와 SAP 구축은 다른 프로젝트처럼 느껴지지만, 사실 하나
 
 **더 읽어보기**
 
-- [SAP 구축 프로젝트, 레스토랑 매장 오픈이 왜 이렇게 힘들까](/blog/sap-build-project-difficulty)
-- [SAP Fit/Gap 분석, 우리 주방에 맞는 설비를 고르는 법](/blog/sap-fit-gap)
+- [SAP 입문, 레스토랑 주방으로 이해하는 통합 두뇌](/blog/sap-what-is-sap)
 - [SAP 컷오버, 오래된 주방에서 새 주방으로 이사하는 날](/blog/sap-cutover)
+- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
 
-<!-- 관련글: prerequisite=sap-build-project-difficulty; related=sap-fit-gap; deepens=sap-cutover -->
+<!-- 관련글: prerequisite=sap-what-is-sap; related=sap-build-project-difficulty,sap-fit-gap; deepens=sap-cutover -->

@@ -67,7 +67,8 @@ WIP는 같은 '조리 중인 요리'를 세 사람이 다르게 바라보는 개
 
 **더 읽어보기**
 
+- [SAP GI·GR·CNF, 재고가 나가고 들어오고 만들어지는 세 순간](/blog/sap-gi-gr-cnf)
 - [SAP 생산오더 상태 코드, 요리 한 접시가 완성되는 순서](/blog/sap-production-order-status)
 - [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
 
-<!-- 관련글: related=sap-production-order-status,sap-mrp; deepens=sap-gi-gr-cnf -->
+<!-- 관련글: prerequisite=; related=sap-production-order-status,sap-mrp; deepens=sap-gi-gr-cnf -->

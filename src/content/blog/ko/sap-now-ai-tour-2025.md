@@ -43,7 +43,6 @@ SAP NOW AI Tour 2025 Korea 키노트와 세션 영상은 [SAP NOW AI Tour 2025 K
 
 **더 읽어보기**
 
-- [SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터](/blog/sap-joule-clean-core)
-- [SAP CBO, 주방장만 아는 비밀 레시피 Z코드](/blog/sap-cbo-z-program)
+- [SAP Joule과 Clean Core, 주방장 AI의 조건](/blog/sap-joule-clean-core)
 
-<!-- 관련글: related=sap-joule-clean-core,sap-cbo-z-program -->
+<!-- 관련글: prerequisite=; related=sap-joule-clean-core; deepens= -->

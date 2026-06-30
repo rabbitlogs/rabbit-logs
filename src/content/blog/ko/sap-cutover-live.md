@@ -85,6 +85,6 @@ tags: ["SAP프로젝트", "SAP컷오버", "SAP구축", "SAP데이터마이그레
 
 - [SAP 컷오버, 오래된 주방에서 새 주방으로 이사하는 날](/blog/sap-cutover)
 - [SAP 변화관리, 새 주방을 열기 전에 스탭이 먼저 바뀌어야 합니다](/blog/sap-change-management)
-- [SAP UAT, 문 열기 전 마지막 시식 행사](/blog/sap-uat)
+- [SAP UAT, 문 열기 전 사장의 최종 점검](/blog/sap-uat)
 
 <!-- 관련글: prerequisite=sap-cutover; related=sap-change-management,sap-uat; deepens= -->

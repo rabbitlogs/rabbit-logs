@@ -75,7 +75,7 @@ AI 도입의 진짜 관문은 'Joule이 얼마나 똑똑한가'가 아니라, **
 
 **더 읽어보기**
 
+- [SAP NOW AI Tour 2025 Korea, 현장 기록](/blog/sap-now-ai-tour-2025)
 - [SAP CBO, 주방장만 아는 비밀 레시피 Z코드](/blog/sap-cbo-z-program)
-- [SAP NOW AI Tour 2025 Korea 참관기](/blog/sap-now-ai-tour-2025)
 
-<!-- 관련글: related=sap-cbo-z-program,sap-now-ai-tour-2025 -->
+<!-- 관련글: prerequisite=sap-now-ai-tour-2025; related=sap-cbo-z-program; deepens= -->

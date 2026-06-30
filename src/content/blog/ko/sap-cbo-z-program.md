@@ -85,4 +85,4 @@ CBO를 만들기 전엔 늘 이렇게 물어보면 좋습니다. "이거 정말 
 - [SAP PP T-CODE, 업무 흐름대로 정리한 주방 동선](/blog/sap-pp-tcode)
 - [SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법](/blog/sap-tcode-basics)
 
-<!-- 관련글: related=sap-pp-tcode,sap-tcode-basics -->
+<!-- 관련글: prerequisite=; related=sap-pp-tcode,sap-tcode-basics; deepens= -->

@@ -66,7 +66,7 @@ UAT에서 사용자의 'OK' 사인을 받는 순간, 프로젝트는 '구축'이
 
 **더 읽어보기**
 
+- [SAP 통합 테스트, 주방과 홀이 하나로 맞물리는가](/blog/sap-integration-test)
 - [SAP 테스트 5단계, 새 매장을 여는 검증의 여정](/blog/sap-test-overview)
-- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
 
-<!-- 관련글: prerequisite=sap-integration-test; related=sap-test-overview -->
+<!-- 관련글: prerequisite=sap-integration-test; related=sap-test-overview; deepens= -->

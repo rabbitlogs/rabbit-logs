@@ -104,8 +104,8 @@ tags: ["SAP실무운영", "SAP생산오더", "SAP이월", "SAPWIP"]
 
 **더 읽어보기**
 
-- [SAP WIP, 아직 완성되지 않은 음식의 진짜 가치](/blog/sap-wip)
+- [SAP WIP, 아직 접시에 담기지 않은 요리의 가치](/blog/sap-wip)
 - [SAP Activity와 CNF, 주방일지를 주방장에게 보고하는 순간](/blog/sap-activity-cnf)
-- [SAP 생산오더 상태 코드, 요리 과정에서 읽는 신호등](/blog/sap-production-order-status)
+- [SAP 생산오더 상태 코드, 요리 한 접시가 완성되는 순서](/blog/sap-production-order-status)
 
 <!-- 관련글: prerequisite=sap-wip,sap-activity-cnf; related=sap-production-order-status; deepens= -->

@@ -101,8 +101,7 @@ SM37에서는 배치잡의 상태를 볼 수 있습니다.
 
 **더 읽어보기**
 
-- [SAP 매개변수 ID, 매일 쓰는 값을 기본값으로 저장하는 법](/blog/sap-user-parameters)
-- [SAP MRP, 자재소요량계획이 장보기 목록을 만드는 방식](/blog/sap-mrp)
-- [실무자 추천 SAP PP T-CODE 모음](/blog/sap-pp-tcode)
+- [SAP 매개변수 ID, 매일 쓰는 기본값을 한 번에 저장하는 법](/blog/sap-user-parameters)
+- [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
 
 <!-- 관련글: prerequisite=; related=sap-user-parameters,sap-mrp; deepens= -->

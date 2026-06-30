@@ -80,6 +80,5 @@ tags: ["SAP학습자료", "SAP작업장", "SAPP기준정보", "SAP생산관리"]
 **더 읽어보기**
 
 - [SAP 라우팅, 레시피대로 요리하는 공정 순서표](/blog/study-pp-routing)
-- [SAP BOM, 레스토랑 레시피처럼 만드는 재료 목록](/blog/study-pp-bom)
 
-<!-- 관련글: prerequisite=study-pp-routing; related=study-pp-bom -->
+<!-- 관련글: prerequisite=study-pp-routing; related=; deepens= -->

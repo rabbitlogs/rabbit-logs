@@ -65,6 +65,5 @@ tags: ["SAP프로젝트", "통합테스트", "SAP테스트", "구축"]
 **더 읽어보기**
 
 - [SAP 단위 테스트, 재료 하나하나의 품질 검사](/blog/sap-unit-test)
-- [SAP UAT, 문 열기 전 사장의 최종 점검](/blog/sap-uat)
 
-<!-- 관련글: prerequisite=sap-unit-test -->
+<!-- 관련글: prerequisite=sap-unit-test; related=; deepens= -->

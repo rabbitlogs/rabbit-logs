@@ -95,8 +95,6 @@ Delete 키 하나로 개별 항목을 지울 수 있다는 것, 옵션 창에서
 
 **더 읽어보기**
 
-- [SAP 매개변수 ID, 매일 쓰는 기본값을 한 번에 저장하는 법](/blog/sap-user-parameters)
-- [SAP T-CODE, 주방 단축키처럼 외워두면 편한 것들](/blog/sap-tcode-basics)
-- [SAP 드롭다운 키 표시, 이름표에 사원번호 추가하기](/blog/sap-dropdown)
+- [SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법](/blog/sap-tcode-basics)
 
-<!-- 관련글: prerequisite=; related=sap-user-parameters,sap-tcode-basics,sap-dropdown; deepens= -->
+<!-- 관련글: prerequisite=; related=sap-tcode-basics; deepens= -->

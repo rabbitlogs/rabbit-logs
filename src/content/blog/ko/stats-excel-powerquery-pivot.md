@@ -74,7 +74,6 @@ SAP 데이터를 엑셀로 가져와서 수작업으로 고치고, 피벗 돌리
 **더 읽어보기**
 
 - [재고 편차, 숫자가 맞는데 현장이 다른 이유](/blog/stats-sap-inventory-variance)
-- [상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것](/blog/stats-correlation-vs-causation)
 - [기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일](/blog/stats-descriptive-basics)
 
-<!-- 관련글: related=stats-sap-inventory-variance,stats-correlation-vs-causation,stats-descriptive-basics -->
+<!-- 관련글: prerequisite=; related=stats-sap-inventory-variance,stats-descriptive-basics; deepens= -->

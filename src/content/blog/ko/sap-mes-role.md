@@ -95,7 +95,6 @@ SAP를 배울 때 MES를 항상 세트로 생각하는 습관, 현장에서 꽤 
 **더 읽어보기**
 
 - [SAP MES 인터페이스, 홀과 주방을 잇는 웨이터의 기술](/blog/sap-mes-interface)
-- [SAP란 무엇인가, 레스토랑 주방이 된 우리 회사](/blog/sap-what-is-sap)
-- [SAP PP, 주방의 조리 계획을 맡은 생산 모듈](/blog/sap-pp-production-planning)
+- [SAP Activity와 CNF, 주방일지를 주방장에게 보고하는 순간](/blog/sap-activity-cnf)
 
-<!-- 관련글: prerequisite=sap-what-is-sap; deepens=sap-mes-interface; related=sap-pp-production-planning -->
+<!-- 관련글: prerequisite=; related=sap-mes-interface,sap-activity-cnf; deepens= -->

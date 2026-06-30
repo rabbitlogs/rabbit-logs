@@ -117,7 +117,8 @@ Q3와 Q1의 차이(5–4=1)를 **IQR(사분위 범위)**이라고 합니다. IQR
 
 **더 읽어보기**
 
-- [다시 학교로 돌아간 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서](/blog/stats-why-back-to-school)
+- [다시 학생이 된 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서](/blog/stats-why-back-to-school)
 - [평균의 함정, KPI 숫자가 목표를 달성했다는 착각](/blog/stats-mean-trap-kpi)
+- [상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것](/blog/stats-correlation-vs-causation)
 
-<!-- 관련글: prerequisite=stats-why-back-to-school; related=stats-mean-trap-kpi -->
+<!-- 관련글: prerequisite=stats-why-back-to-school; related=; deepens=stats-mean-trap-kpi,stats-correlation-vs-causation -->
