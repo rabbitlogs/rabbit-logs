@@ -248,6 +248,76 @@ if (lang === 'ko' && slug) {
         });
       });
     </script>
+
+    <!--
+      라이트박스: 본문(.prose) 안의 이미지를 클릭하면 확대 팝업으로 보여준다.
+      ※ 본문에 광고가 삽입된 뒤(위 스크립트) 동작해야 새로 추가될 이미지가 없으므로 순서 그대로 둔다.
+      ※ alt 텍스트를 캡션으로 사용(없으면 캡션 영역 숨김).
+    -->
+    <div id="lightbox" class="lightbox" hidden>
+      <button type="button" class="lightbox-close" aria-label="닫기">✕</button>
+      <img class="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption"></p>
+    </div>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const prose = document.querySelector('.prose');
+        const lightbox = document.getElementById('lightbox');
+        if (!prose || !lightbox) return;
+
+        const lbImg = lightbox.querySelector('.lightbox-img');
+        const lbCaption = lightbox.querySelector('.lightbox-caption');
+        const lbClose = lightbox.querySelector('.lightbox-close');
+        let lastFocused = null;
+
+        const openLightbox = (img) => {
+          lastFocused = document.activeElement;
+          lbImg.src = img.currentSrc || img.src;
+          lbImg.alt = img.alt || '';
+          if (img.alt) {
+            lbCaption.textContent = img.alt;
+            lbCaption.hidden = false;
+          } else {
+            lbCaption.textContent = '';
+            lbCaption.hidden = true;
+          }
+          lightbox.hidden = false;
+          document.body.style.overflow = 'hidden';
+          lbClose.focus();
+        };
+
+        const closeLightbox = () => {
+          lightbox.hidden = true;
+          lbImg.src = '';
+          document.body.style.overflow = '';
+          if (lastFocused) lastFocused.focus();
+        };
+
+        // 본문 안의 이미지에 클릭 핸들러 부여(광고 등 이후 삽입된 이미지는 대상 아님)
+        prose.querySelectorAll('img').forEach((img) => {
+          img.classList.add('lightbox-trigger');
+          img.tabIndex = 0;
+          img.setAttribute('role', 'button');
+          img.setAttribute('aria-label', '이미지 확대');
+          img.addEventListener('click', () => openLightbox(img));
+          img.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.hidden && e.key === 'Escape') closeLightbox();
+        });
+      });
+    </script>
   </article>
 
   <style>
@@ -296,5 +366,56 @@ if (lang === 'ko' && slug) {
     /* 글 끝(푸터 직전) 광고는 아래 여백을 줄여 푸터와 간격을 좁힌다.
        (광고 박스 기본 margin 2.5rem + 푸터 margin-top 4rem이 겹쳐 벌어지는 것 보정) */
     .post :global(.ad-slot.ad-last) { margin-bottom: 0; }
+
+    /* 본문 이미지: 클릭해서 확대할 수 있다는 신호 (호버 시 살짝 어두워짐 + 확대 커서) */
+    .post :global(.prose img.lightbox-trigger) {
+      cursor: zoom-in;
+      transition: filter 0.15s, opacity 0.15s;
+    }
+    .post :global(.prose img.lightbox-trigger:hover) { filter: brightness(0.93); }
+    .post :global(.prose img.lightbox-trigger:focus-visible) {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  </style>
+
+  <style is:global>
+    /* 라이트박스(이미지 확대 팝업) */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.9rem; padding: 2.5rem 1.25rem;
+      background: rgba(32, 37, 31, 0.92);
+      cursor: zoom-out;
+    }
+    .lightbox[hidden] { display: none; }
+    .lightbox-img {
+      max-width: 100%; max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      cursor: default;
+    }
+    .lightbox-caption {
+      margin: 0; max-width: 640px;
+      color: #f3f0e8; font-size: 0.92rem; line-height: 1.6;
+      text-align: center; cursor: default;
+    }
+    .lightbox-caption[hidden] { display: none; }
+    .lightbox-close {
+      position: absolute; top: 1.1rem; right: 1.25rem;
+      width: 40px; height: 40px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.1); border: none; border-radius: 999px;
+      color: #fff; font-size: 1.1rem; line-height: 1; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+    @media (max-width: 640px) {
+      .lightbox { padding: 1.5rem 1rem; }
+      .lightbox-img { max-height: 72vh; }
+      .lightbox-close { top: 0.7rem; right: 0.8rem; width: 36px; height: 36px; }
+    }
   </style>
 </BaseLayout>
