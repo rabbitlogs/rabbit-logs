@@ -186,6 +186,13 @@
   },
   "active": "0d5d9b8cc52adba5",
   "lastOpenFiles": [
+    "public/downloads/ADsP AI 모의고사_5회차.pdf",
+    "public/downloads/ADsP AI 모의고사_4회차.pdf",
+    "public/downloads/ADsP AI 모의고사_3회차.pdf",
+    "public/downloads/ADsP AI 모의고사_2회차.pdf",
+    "public/downloads/ADsP AI 모의고사_1회차.pdf",
+    "public/downloads",
+    "public/새 폴더",
     "src/content/blog/ko/sap-modules-guide.md",
     "src/content/blog/ko/stats-why-back-to-school.md",
     "src/content/blog/ko/sap-what-is-sap.md",
@@ -221,16 +228,9 @@
     "src/content/blog/ko/sap-field-names.md",
     "src/content/blog/ko/sap-build-project-difficulty.md",
     "src/content/blog/ko/sap-pi-vs-implementation.md",
-    "src/content/blog/ko/sap-planned-vs-production-order.md",
     "public/images/sap-tcode-favorites_en.jpg",
     "public/images/sap-history-timeline.jpg",
     "en/blog",
-    "en",
-    "src/pages/en/about.astro",
-    "src/pages/en/en_about.astro",
-    "src/pages/about.astro",
-    "public/_redirects",
-    "src/pages/en/terms.astro",
-    "src/pages/en/privacy.astro"
+    "en"
   ]
 }
