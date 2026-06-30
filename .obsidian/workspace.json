@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/ko/stats-adsp.md",
+                "file": "src/content/blog/ko/sap-history.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "stats-adsp"
+              "title": "sap-history"
             }
           }
         ]
@@ -186,9 +186,12 @@
   },
   "active": "0d5d9b8cc52adba5",
   "lastOpenFiles": [
+    "public/images/sap-history-timeline.jpg",
+    "src/content/blog/ko/sap-integration-test.md",
+    "src/content/blog/ko/sap-history.md",
+    "src/content/blog/ko/stats-adsp.md",
     "src/content/blog/ko/sap-test-overview.md",
     "src/content/blog/ko/sap-wip.md",
-    "src/content/blog/ko/stats-adsp.md",
     "public/downloads/ADsP-mocktest-4.pdf",
     "public/downloads/ADsP-mocktest-5.pdf",
     "public/downloads/ADsP-mocktest-14.pdf",
@@ -227,10 +230,6 @@
     "blog/sap-certification.md",
     "blog/ko/sap-exam-format.md",
     "blog/sap-exam-format.md",
-    "src/content/blog/ko/sap-data-types.md",
-    "src/content/blog/ko/sap-field-names.md",
-    "src/content/blog/ko/sap-build-project-difficulty.md",
-    "public/images/sap-tcode-favorites_en.jpg",
-    "public/images/sap-history-timeline.jpg"
+    "public/images/sap-tcode-favorites_en.jpg"
   ]
 }
