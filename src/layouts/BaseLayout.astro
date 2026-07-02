@@ -1,6 +1,6 @@
 ---
 import Search from '../components/Search.astro';
-const { title, description, lang = 'ko' } = Astro.props;
+const { title, description, lang = 'ko', showAds = false } = Astro.props;
 
 const nav = {
   ko: {
@@ -40,8 +40,12 @@ const home = lang === 'en' ? '/en/' : '/';
     <meta name="twitter:image" content="https://rabbitlogs.com/og-thumbnail.jpg" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <!-- 다이나믹 서브셋: 페이지에 실제 쓰인 글자만 받아온다 (9개 굵기 전체 3.8MB → 대폭 절감) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9488002130804570" crossorigin="anonymous"></script>
+    <!-- 렌더 비차단 로드: 첫 화면은 시스템 폰트로 즉시 그리고, Pretendard는 받으면 swap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" /></noscript>
+    {showAds && (
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9488002130804570" crossorigin="anonymous"></script>
+    )}
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ace324d6aeba4980a4afb29b4666464f"}'></script>
     <!-- End Cloudflare Web Analytics -->
