@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/ko/sap-pi-vs-implementation.md",
+                "file": "src/content/blog/ko/stats-correlation-vs-causation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sap-pi-vs-implementation"
+              "title": "stats-correlation-vs-causation"
             }
           }
         ]
@@ -186,6 +186,7 @@
   },
   "active": "0d5d9b8cc52adba5",
   "lastOpenFiles": [
+    "src/content/blog/ko/sap-pi-vs-implementation.md",
     "public/images/sap-pi-overview-01.jpg",
     "src/content/blog/ko/sap-batch-management.md",
     "src/content/blog/ko/sap-font-readability.md",
@@ -230,7 +231,6 @@
     "src/content/blog/ko/sap-certification.md",
     "src/content/blog/ko/sap-cpim.md",
     "src/content/blog/sap-certification.md",
-    "blog/sap-certification.md",
-    "public/images/sap-tcode-favorites_en.jpg"
+    "blog/sap-certification.md"
   ]
 }
