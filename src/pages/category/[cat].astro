@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
+import AdSense from '../../components/AdSense.astro';
 
 export async function getStaticPaths() {
   return [
@@ -47,15 +48,19 @@ const posts = (await getCollection('blog'))
     <style>
       @media (max-width: 640px) { .cat-desc-br { display: none; } }
     </style>
-    {posts.map((post) => (
-      <PostCard
-        href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
-        title={post.data.title}
-        description={post.data.description}
-        category={post.data.category}
-        pubDate={post.data.pubDate}
-        lang="ko"
-      />
+    {posts.map((post, i) => (
+      <>
+        <PostCard
+          href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
+          title={post.data.title}
+          description={post.data.description}
+          category={post.data.category}
+          pubDate={post.data.pubDate}
+          lang="ko"
+        />
+        {/* 글 3개마다 광고 1개 (목록 흐름을 해치지 않게 카드 사이에만 삽입) */}
+        {(i + 1) % 3 === 0 && i !== posts.length - 1 && <AdSense />}
+      </>
     ))}
   </section>
 </BaseLayout>

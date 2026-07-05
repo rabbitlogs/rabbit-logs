@@ -49,6 +49,8 @@ const home = lang === 'en' ? '/en/' : '/';
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ace324d6aeba4980a4afb29b4666464f"}'></script>
     <!-- End Cloudflare Web Analytics -->
+    <!-- 페이지별 추가 head 태그(예: JSON-LD 구조화 데이터) -->
+    <slot name="head" />
   </head>
   <body>
     <header class="site-header">

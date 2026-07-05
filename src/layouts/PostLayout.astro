@@ -5,7 +5,7 @@ import yaml from 'js-yaml';
 import BaseLayout from './BaseLayout.astro';
 import AdSense from '../components/AdSense.astro';
 
-const { title, description, pubDate, category, lang = 'ko', tags = [], slug } = Astro.props;
+const { title, description, pubDate, category, lang = 'ko', tags = [], slug, thumbnail } = Astro.props;
 
 const catName = {
   ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' },
@@ -14,6 +14,41 @@ const catName = {
 const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
+
+// JSON-LD (Article 구조화 데이터)
+// 검색엔진이 이 글의 제목, 저자, 작성일, 이미지를 명확히 인식하도록 돕는 메타데이터.
+// 화면에는 아무 것도 렌더링되지 않고, head에 application/ld+json 스크립트로만 삽입된다.
+const siteUrl = 'https://rabbitlogs.com';
+const pageUrl = lang === 'en' ? siteUrl + '/en/blog/' + slug : siteUrl + '/blog/' + slug;
+const ogImage = thumbnail ? siteUrl + thumbnail : siteUrl + '/og-thumbnail.jpg';
+const isoDate = new Date(pubDate).toISOString();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  image: ogImage,
+  datePublished: isoDate,
+  dateModified: isoDate,
+  author: {
+    '@type': 'Person',
+    name: 'Rabbit',
+    url: siteUrl,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Rabbit Logs',
+    logo: {
+      '@type': 'ImageObject',
+      url: siteUrl + '/rabbit-logo.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': pageUrl,
+  },
+};
 
 // ── 1-hop 미니맵: book-index.yaml에서 이 글과 직접 연결된 글만 모은다 (ko 전용) ──
 const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441', stats: '#a8516e' };
@@ -72,6 +107,7 @@ if (lang === 'ko' && slug) {
 ---
 
 <BaseLayout title={title} description={description} lang={lang} showAds={true}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <article class="post">
     <div class="post-meta">
       <span class="cat">{catName[lang][category]}</span>
