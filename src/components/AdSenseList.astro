@@ -1,11 +1,12 @@
 ---
 // ─────────────────────────────────────────────
-//  애드센스 광고 한 칸 (목록 페이지 전용 — 가로 반응형)
+//  애드센스 광고 한 칸 (목록 페이지 전용 — 가로 고정)
 //  - 홈/카테고리처럼 글 카드가 세로로 나열되는 목록 사이에 끼워 넣는 용도.
 //  - 본문용 AdSense.astro는 세로형(사각형)이 자연스럽지만,
 //    목록에서는 카드 폭에 맞춘 가로로 낮은 배너가 리듬을 덜 깬다.
-//  - auto + full-width-responsive 조합: 애드센스가 슬롯의 실제 폭을 보고
-//    적당한 가로형 비율을 알아서 채워준다(고정 비율 강제보다 채움률이 안정적).
+//  - horizontal 고정 포맷: auto보다 예측 가능한 가로:세로 비율(약 2:1 안팎)로 요청.
+//  - full-width-responsive는 그대로 true로 둬서, 목록 컨테이너 폭(약 720px)
+//    안에서 비율은 유지한 채 폭에 맞게 늘어나게 한다.
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
 const AD_SLOT = '3094787370';
@@ -18,7 +19,7 @@ const AD_SLOT = '3094787370';
     style="display:block;"
     data-ad-client={AD_CLIENT}
     data-ad-slot={AD_SLOT}
-    data-ad-format="auto"
+    data-ad-format="horizontal"
     data-full-width-responsive="true"
   ></ins>
 </div>
