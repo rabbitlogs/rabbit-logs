@@ -237,14 +237,18 @@ if (lang === 'ko' && slug) {
 
         const h2s = prose.querySelectorAll('h2');
 
+        // 첫 광고 위치: 두 번째 소제목 앞으로 한 칸 미룸(체감 광고 밀도를 낮추기 위함).
+        // 소제목이 1개뿐인 짧은 글은 h2s[1]이 없으므로 h2s[0]으로 폴백한다.
+        const firstAdAnchor = h2s[1] || h2s[0];
+
         if (count === 2) {
-          if (h2s[0]) insertBeforeInProse(h2s[0]);
+          if (firstAdAnchor) insertBeforeInProse(firstAdAnchor);
           appendAfterTags();
         } else {
-          if (h2s[0]) insertBeforeInProse(h2s[0]);
+          if (firstAdAnchor) insertBeforeInProse(firstAdAnchor);
           if (h2s.length >= 3) {
             insertBeforeInProse(h2s[Math.floor(h2s.length / 2)]);
-          } else if (h2s[1]) {
+          } else if (h2s[1] && h2s[1] !== firstAdAnchor) {
             insertBeforeInProse(h2s[1]);
           }
           appendAfterTags();
