@@ -8,8 +8,8 @@ import AdSense from '../components/AdSense.astro';
 const { title, description, pubDate, category, lang = 'ko', tags = [], slug, thumbnail } = Astro.props;
 
 const catName = {
-  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' },
-  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes' },
+  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', stats: '통계·데이터' },
+  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' },
 };
 const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', {
   year: 'numeric', month: 'long', day: 'numeric',
