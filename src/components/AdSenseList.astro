@@ -1,26 +1,27 @@
 ---
 // ─────────────────────────────────────────────
-//  애드센스 광고 한 칸 (목록 페이지 전용 — 가로 고정)
+//  애드센스 광고 한 칸 (목록 페이지 전용 — 인아티클/Fluid)
 //  - 홈/카테고리처럼 글 카드가 세로로 나열되는 목록 사이에 끼워 넣는 용도.
-//  - 본문용 AdSense.astro는 세로형(사각형)이 자연스럽지만,
-//    목록에서는 카드 폭에 맞춘 가로로 낮은 배너가 리듬을 덜 깬다.
-//  - horizontal 고정 포맷: auto보다 예측 가능한 가로:세로 비율(약 2:1 안팎)로 요청.
-//  - full-width-responsive는 그대로 true로 둬서, 목록 컨테이너 폭(약 720px)
-//    안에서 비율은 유지한 채 폭에 맞게 늘어나게 한다.
+//  - 본문용 AdSense.astro는 사각형이 자연스럽지만,
+//    목록에서는 제목·설명·이미지가 있는 네이티브(카드형) 스타일이 PostCard와 더 잘 섞인다.
+//  - in-article 레이아웃 + fluid 포맷: 애드센스가 콘텐츠 카드처럼 보이는 광고를
+//    생성해, 목록 컨테이너 폭에 맞춰 반응형으로 채워준다.
+//  - 이 슬롯(7098667480)은 애드센스 대시보드에서 "인아티클 광고" 전용으로
+//    별도 생성한 것으로, 기존 본문용 슬롯(3094787370)과는 다른 슬롯이다.
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
-const AD_SLOT = '3094787370';
+const AD_SLOT = '7098667480';
 ---
 
 <div class="ad-slot" aria-label="광고">
   <span class="ad-label">광고</span>
   <ins
     class="adsbygoogle"
-    style="display:block;"
+    style="display:block; text-align:center;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
     data-ad-client={AD_CLIENT}
     data-ad-slot={AD_SLOT}
-    data-ad-format="horizontal"
-    data-full-width-responsive="true"
   ></ins>
 </div>
 
@@ -40,10 +41,10 @@ const AD_SLOT = '3094787370';
     text-transform: uppercase;
     margin-bottom: 0.6rem;
   }
-  /* 가로형: 폭 제한 없이 목록 컨테이너 폭(약 720px)에 맞춰 자연스럽게 늘어남 */
+  /* 인아티클 광고는 컨테이너 폭(목록 wrap 기준 약 720px)에 맞춰
+     자체적으로 반응형 크기를 결정하므로 별도 width/height 강제를 두지 않는다 */
   .ad-slot .adsbygoogle {
     display: block;
-    width: 100%;
   }
   /* 광고를 못 채운 칸은 통째로 숨김 */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {
