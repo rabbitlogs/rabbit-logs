@@ -15,6 +15,7 @@ const posts = (await getCollection('blog'))
   title="Rabbit Logs — SAP PP·PI 구축과 운영 기록"
   description="코드는 몰라도, 프로세스는 잘 아는 사람. 생산 PI·SAP PP 구축과 안정화, 현업의 SAP 실무 기록."
   lang="ko"
+  showAds={true}
 >
   <section class="hero">
     <div class="hero-img"><img src="/images/hero-rabbit.webp" alt="노트북으로 작업하는 Rabbit Logs 토끼 캐릭터" width="384" height="439" fetchpriority="high" /></div>
@@ -42,6 +43,41 @@ const posts = (await getCollection('blog'))
       </>
     ))}
   </section>
+
+  <!--
+    목록 페이지 광고 초기화.
+    본문(PostLayout)과 달리 위치는 이미 정적으로 고정돼 있으므로(3개마다 1개),
+    남은 일은 각 ins.adsbygoogle에 push({})를 호출해 애드센스에 렌더를 요청하고,
+    일정 시간 안에 채워지지 않으면(미충전/광고차단) 빈 박스를 제거하는 것뿐이다.
+  -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slots = document.querySelectorAll('.latest .ad-slot');
+      slots.forEach((slot) => {
+        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+
+        const ins = slot.querySelector('ins.adsbygoogle');
+        if (!ins) return;
+
+        let tries = 0;
+        const checker = setInterval(() => {
+          tries++;
+          const status = ins.getAttribute('data-ad-status');
+          const iframe = ins.querySelector('iframe');
+
+          if (status === 'unfilled') {
+            slot.remove();
+            clearInterval(checker);
+          } else if (iframe && iframe.offsetHeight > 0) {
+            clearInterval(checker);
+          } else if (tries >= 12) {
+            slot.remove();
+            clearInterval(checker);
+          }
+        }, 250);
+      });
+    });
+  </script>
 
   <style>
     .hero { display: flex; align-items: center; gap: 2.5rem; padding: 3rem 0 2.5rem; }
