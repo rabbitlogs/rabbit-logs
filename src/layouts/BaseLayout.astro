@@ -58,13 +58,6 @@ const home = lang === 'en' ? '/en/' : '/';
       <div class="wrap header-inner">
         <a href={home} class="brand"><img src="/rabbit-logo.webp" alt="" class="brand-logo" width="69" height="80" /><span class="brand-name">Rabbit Logs</span></a>
         <div class="header-actions">
-          <a href="/rss.xml" class="rss-btn" aria-label="RSS 피드">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 11a9 9 0 0 1 9 9"></path>
-              <path d="M4 4a16 16 0 0 1 16 16"></path>
-              <circle cx="5" cy="19" r="1.4" fill="currentColor" stroke="none"></circle>
-            </svg>
-          </a>
           <a href="/map" class="map-btn" aria-label="글 지도">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="6" cy="6" r="2.6"></circle>
@@ -79,6 +72,13 @@ const home = lang === 'en' ? '/en/' : '/';
           </a>
           <Search lang={lang} />
           <a href={t.otherHref} class="lang-switch">{t.other}</a>
+          <a href="/rss.xml" class="rss-btn" aria-label="RSS 피드">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1.4" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
         </div>
         <nav class="nav">
           <a href={`${home}category/project`}><span class="lbl-full">{t.project}</span><span class="lbl-short">{t.projectShort}</span></a>
@@ -126,7 +126,8 @@ const home = lang === 'en' ? '/en/' : '/';
         transition: background 0.15s;
       }
       .map-btn:hover, .rss-btn:hover { background: rgba(44,95,87,0.08); }
-      .lang-switch { border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+      .lang-switch { border: none; border-radius: 999px; padding: 0.15rem 0.7rem; color: var(--primary) !important; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.15s; }
+      .lang-switch:hover { background: rgba(44,95,87,0.08); }
 
       /* 카테고리 nav는 데스크탑에서도 항상 둘째 줄(지도·검색·언어토글은 첫 줄 유지) */
       .nav {
