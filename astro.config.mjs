@@ -8,6 +8,9 @@ import { remarkHighlight, remarkInlineToc } from './src/plugins/markdown.mjs';
 export default defineConfig({
   site: 'https://rabbitlogs.com',
   integrations: [sitemap()],
+  build: {
+    inlineStylesheets: 'always',
+  },
   i18n: {
     defaultLocale: 'ko',
     locales: ['ko', 'en'],
