@@ -2,7 +2,7 @@
 title: "상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것"
 mapTitle: "상관관계 vs 인과관계"
 description: "상관계수 r의 의미부터 상관관계와 인과관계의 차이, 실무에서 흔히 틀리는 패턴까지 통계 개념 노트로 정리합니다."
-pubDate: "2026-06-25"
+pubDate: "2026-07-04"
 category: "stats"
 series: "통계 개념 노트"
 level: "intermediate"

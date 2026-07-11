@@ -2,7 +2,7 @@
 title: "SAP T-CODE, 주방 단골 메뉴를 빠르게 부르는 법"
 mapTitle: "SAP T-CODE"
 description: "SAP T-CODE(트랜잭션 코드)의 개념과 입력 위치, /n·/o 단축 명령어, 즐겨찾기 설정까지 입문자 눈높이로 정리했습니다."
-pubDate: 2025-11-10
+pubDate: "2025-11-10"
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

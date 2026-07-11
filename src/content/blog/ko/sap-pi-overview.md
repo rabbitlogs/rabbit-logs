@@ -2,7 +2,7 @@
 title: "SAP PI, 매장만 새로 단장해선 레시피가 안 바뀝니다"
 mapTitle: "SAP PI"
 description: "SAP PI(Process Innovation)가 무엇인지, 왜 시스템 도입 전에 운영 방식부터 바꿔야 하는지를 레스토랑 리뉴얼 비유로 설명합니다."
-pubDate: "2025-08-07"
+pubDate: "2025-08-13"
 category: "project"
 series: "SAP 구축 프로젝트"
 level: "beginner"
@@ -110,6 +110,6 @@ SAP PI와 SAP 구축은 다른 프로젝트처럼 느껴지지만, 사실 하나
 
 - [SAP 입문, 레스토랑 주방으로 이해하는 통합 두뇌](/blog/sap-what-is-sap)
 - [SAP 컷오버, 오래된 주방에서 새 주방으로 이사하는 날](/blog/sap-cutover)
-- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
+- [SAP 구축 프로젝트, 새 매장을 여는 다섯 고비](/blog/sap-build-project-difficulty)
 
 <!-- 관련글: prerequisite=sap-what-is-sap; related=sap-build-project-difficulty,sap-fit-gap; deepens=sap-cutover -->

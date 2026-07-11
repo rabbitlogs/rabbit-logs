@@ -2,7 +2,7 @@
 title: "SAP PP T-CODE, 업무 흐름대로 정리한 주방 동선"
 mapTitle: "SAP PP T-CODE"
 description: "SAP PP 생산관리 실무에서 자주 쓰는 T-CODE를 주문·생산·자재·출하 흐름순으로 정리한 레퍼런스. 조회·변경 중심 표준 코드 위주로 모았습니다."
-pubDate: 2025-11-29
+pubDate: "2025-11-29"
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

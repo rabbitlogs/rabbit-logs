@@ -2,7 +2,7 @@
 title: "SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터"
 mapTitle: "SAP Joule·클린코어"
 description: "SAP의 AI 비서 Joule을 쓰려면 클린코어가 전제이고, 클린코어로 가려면 쌓인 Z-코드 정리가 먼저입니다. SAP NOW AI Tour 2025 Korea에서 확인한 AI 도입의 진짜 순서를 실무자 시선으로 정리했습니다."
-pubDate: 2026-01-11
+pubDate: "2026-01-11"
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"
@@ -75,7 +75,7 @@ AI 도입의 진짜 관문은 'Joule이 얼마나 똑똑한가'가 아니라, **
 
 **더 읽어보기**
 
-- [SAP NOW AI Tour 2025 Korea, 현장 기록](/blog/sap-now-ai-tour-2025)
+- [SAP NOW AI Tour 2025 Korea, 현장에서 확인한 한 가지](/blog/sap-now-ai-tour-2025)
 - [SAP CBO, 주방장만 아는 비밀 레시피 Z코드](/blog/sap-cbo-z-program)
 
 <!-- 관련글: prerequisite=sap-now-ai-tour-2025; related=sap-cbo-z-program; deepens= -->

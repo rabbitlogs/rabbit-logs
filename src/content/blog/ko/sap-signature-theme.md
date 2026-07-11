@@ -2,7 +2,7 @@
 title: "SAP 시그니처 테마, 협업이 편해지는 주방 유니폼"
 mapTitle: "SAP 시그니처 테마"
 description: "수많은 SAP 테마 중 실무자들이 시그니처 테마를 선택하는 이유와 설정 방법을, 협업과 업무 효율 관점에서 정리했습니다."
-pubDate: 2025-11-15
+pubDate: "2025-11-15"
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

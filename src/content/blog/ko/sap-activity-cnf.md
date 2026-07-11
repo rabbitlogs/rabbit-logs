@@ -2,7 +2,7 @@
 title: "SAP Activity와 CNF, 주방일지를 주방장에게 보고하는 순간"
 mapTitle: "SAP Activity와 CNF"
 description: "SAP PP의 Activity와 CNF·PCNF 개념을 레스토랑 주방 실적 보고 흐름으로 설명합니다. MES에서 실적이 올라오면 SAP에서 어떻게 확정되는지 이해할 수 있습니다."
-pubDate: "2025-08-11"
+pubDate: "2025-08-19"
 category: "study"
 series: "SAP PP 기초"
 level: "beginner"

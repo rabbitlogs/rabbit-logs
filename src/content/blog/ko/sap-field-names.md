@@ -2,7 +2,7 @@
 title: "SAP 데이터 필드 이름, 레시피 재료명으로 읽기"
 mapTitle: "SAP 데이터 필드 이름"
 description: "AUFNR, MATNR 같은 SAP 필드 이름이 외계어처럼 보이는 이유와 쉽게 해석하는 법을, 주방 레시피 카드의 재료명에 비유해 정리했습니다."
-pubDate: 2026-06-20
+pubDate: "2026-06-18"
 category: "study"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

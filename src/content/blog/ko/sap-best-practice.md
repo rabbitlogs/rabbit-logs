@@ -2,7 +2,7 @@
 title: "SAP Best Practice, 검증된 레시피를 쓰는 이유"
 mapTitle: "SAP Best Practice"
 description: "SAP Best Practice가 무엇인지, 왜 표준 프로세스를 기반으로 구축을 시작하는지, 그리고 표준을 100% 따르면 안 되는 이유를 밀키트 비유로 설명합니다."
-pubDate: "2025-08-22"
+pubDate: "2025-08-27"
 category: "project"
 series: "SAP 프로젝트 기초"
 level: "beginner"
@@ -76,6 +76,6 @@ Best Practice를 둘러싼 현장의 흔한 오해가 두 가지 있습니다.
 **더 읽어보기**
 
 - [SAP Fit/Gap 분석, 표준과 우리 매장 사이의 간격 재기](/blog/sap-fit-gap)
-- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
+- [SAP 구축 프로젝트, 새 매장을 여는 다섯 고비](/blog/sap-build-project-difficulty)
 
 <!-- 관련글: prerequisite=; related=sap-fit-gap,sap-build-project-difficulty; deepens= -->

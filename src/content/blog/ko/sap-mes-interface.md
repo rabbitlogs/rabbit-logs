@@ -2,7 +2,7 @@
 title: "SAP MES 인터페이스, 홀과 주방을 잇는 웨이터의 기술"
 mapTitle: "SAP MES 인터페이스"
 description: "SAP와 MES가 데이터를 주고받는 통로가 인터페이스입니다. RFC와 PI/PO의 구조 차이, 동기와 비동기의 선택 기준을 현장 실무 관점에서 풀어봅니다."
-pubDate: 2025-07-20
+pubDate: "2025-07-30"
 category: "study"
 series: "SAP MES 시리즈"
 level: "beginner"

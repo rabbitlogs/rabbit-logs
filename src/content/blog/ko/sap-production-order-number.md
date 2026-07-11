@@ -2,7 +2,7 @@
 title: "SAP 생산오더 번호, 12자리 숫자가 다 차면 어떻게 되나"
 mapTitle: "SAP 생산오더 번호"
 description: "SAP 생산오더 번호가 재사용되지 않는 이유, 클라이언트 단위 고유성, 번호 범위가 소진됐을 때 일어나는 일을 은행 순번 대기표 비유로 설명합니다."
-pubDate: "2026-03-01"
+pubDate: "2026-03-05"
 category: "operations"
 series: ""
 level: "beginner"

@@ -2,7 +2,7 @@
 title: "SAP 생산오더 이월, 월말 마감 때 만들다 만 음식을 처리하는 법"
 mapTitle: "SAP 생산오더 이월"
 description: "월말에 완료되지 않은 SAP 생산오더를 다음 달로 넘기는 두 가지 방식 — 오더 이월과 WIP 원가 이월을 레스토랑 단체 주문 마감 비유로 비교 설명합니다."
-pubDate: "2025-11-20"
+pubDate: "2026-03-30"
 category: "operations"
 series: ""
 level: "intermediate"

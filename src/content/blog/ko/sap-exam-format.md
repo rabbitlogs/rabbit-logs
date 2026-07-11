@@ -2,7 +2,7 @@
 title: "SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장"
 mapTitle: "SAP 자격증 시험"
 description: 객관식에서 실기로 바뀐 SAP 자격증 시험. 시스템 실습 시험과 AI 시나리오 시험의 차이, 응시 절차, 꼭 알아야 할 실수까지 정리했습니다.
-pubDate: 2026-04-15
+pubDate: "2026-04-17"
 category: study
 series: 레스토랑으로 배우는 SAP
 level: beginner

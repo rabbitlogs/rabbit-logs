@@ -1,6 +1,6 @@
 # Rabbit Logs 마스터 인덱스 (최종 확정)
 # status: rebuilt(리빌딩+발행 완료) / planned(원본 있음, 리빌딩 예정, 날짜 선확정)
-# 전체 59개, 발행기간 2025-07-02 ~ 2026-06-25 (평균 7.4일 간격)
+# 전체 59개, 발행기간 2025-07-02 ~ 2026-07-10 (카테고리 내 흐름 순서로 재배치)
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -17,10 +17,10 @@
 
 - slug: sap-modules-guide
   mapTitle: "SAP 10개 모듈"
-  title: "SAP 10개 모듈, 레스토랑 주방 전체로 한눈에 보기"
+  title: "SAP 10개 모듈, 레스토랑 전체를 한눈에 보기"
   category: project
   status: rebuilt
-  pubDate: "2025-07-07"
+  pubDate: "2025-07-09"
   level: beginner
   tags: ['SAP프로젝트', 'SAP모듈', 'ERP', 'SAP입문']
   relations:
@@ -30,10 +30,10 @@
 
 - slug: sap-history
   mapTitle: "SAP 역사"
-  title: "SAP 역사, 작은 주방에서 시작된 이야기"
+  title: "SAP 역사, 작은 레스토랑에서 시작된 이야기"
   category: project
   status: rebuilt
-  pubDate: "2025-07-13"
+  pubDate: "2025-07-16"
   level: beginner
   tags: ['SAP프로젝트', 'SAP역사', 'ERP', 'SAP입문']
   relations:
@@ -43,7 +43,7 @@
 
 - slug: sap-now-ai-tour-2025
   mapTitle: "SAP NOW AI Tour 2025"
-  title: "SAP NOW AI Tour 2025 Korea, 현장 기록"
+  title: "SAP NOW AI Tour 2025 Korea, 현장에서 확인한 한 가지"
   category: operations
   status: rebuilt
   pubDate: "2025-07-17"
@@ -56,10 +56,10 @@
 
 - slug: sap-joule-clean-core
   mapTitle: "SAP Joule과 Clean Core"
-  title: "SAP Joule과 Clean Core, 주방장 AI의 조건"
+  title: "SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터"
   category: operations
   status: rebuilt
-  pubDate: "2025-07-20"
+  pubDate: "2026-01-11"
   level: beginner
   tags: ['SAP실무운영', 'SAPJoule', 'CleanCore', 'SAP AI']
   relations:
@@ -72,20 +72,20 @@
   title: "SAP PP, 주방의 생산 계획이 완성되는 법"
   category: study
   status: rebuilt
-  pubDate: "2025-07-25"
+  pubDate: "2025-08-05"
   level: beginner
   tags: ['SAP학습자료', 'SAPPP', 'SAP생산계획', 'SAPBOM']
   relations:
-    prerequisite: ['sap-pp-master-data']
-    related: ['sap-mrp', 'sap-mes-role']
+    prerequisite: []
+    related: ['sap-pp-master-data', 'sap-mrp', 'sap-mes-role']
     deepens: ['sap-planned-vs-production-order']
 
 - slug: sap-pi-overview
   mapTitle: "SAP PI"
-  title: "SAP PI, 레시피를 바꾸지 않으면 주방을 새로 짜도 소용없습니다"
+  title: "SAP PI, 매장만 새로 단장해선 레시피가 안 바뀝니다"
   category: project
   status: rebuilt
-  pubDate: "2025-08-07"
+  pubDate: "2025-08-13"
   level: beginner
   tags: ['SAP프로젝트', 'SAPPI', 'SAP구축', 'SAP프로세스혁신']
   relations:
@@ -108,10 +108,10 @@
 
 - slug: sap-build-project-difficulty
   mapTitle: "SAP 구축 프로젝트"
-  title: "SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?"
+  title: "SAP 구축 프로젝트, 새 매장을 여는 다섯 고비"
   category: project
   status: rebuilt
-  pubDate: "2025-08-14"
+  pubDate: "2025-08-20"
   level: intermediate
   tags: ['SAP프로젝트', 'SAP구축', '프로젝트관리', '안정화']
   relations:
@@ -124,7 +124,7 @@
   title: "SAP Best Practice, 검증된 레시피를 쓰는 이유"
   category: project
   status: rebuilt
-  pubDate: "2025-08-22"
+  pubDate: "2025-08-27"
   level: beginner
   tags: ['SAP프로젝트', 'BestPractice', 'SAP구축', 'SAP표준']
   relations:
@@ -137,7 +137,7 @@
   title: "SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업"
   category: project
   status: rebuilt
-  pubDate: "2025-08-27"
+  pubDate: "2025-07-23"
   level: beginner
   tags: ['SAP프로젝트', 'MES', 'SAPPP', 'SAP생산실행']
   relations:
@@ -150,7 +150,7 @@
   title: "SAP MES 인터페이스, 홀과 주방을 잇는 웨이터의 기술"
   category: project
   status: rebuilt
-  pubDate: "2025-09-03"
+  pubDate: "2025-07-30"
   level: beginner
   tags: ['SAP프로젝트', 'MES', 'SAP인터페이스', 'SAPPI']
   relations:
@@ -189,7 +189,7 @@
   title: "SAP 프로토타입 테스트, 짓기 전에 보는 시범 매장"
   category: project
   status: rebuilt
-  pubDate: "2025-09-25"
+  pubDate: "2025-09-24"
   level: intermediate
   tags: ['SAP프로젝트', '프로토타입', 'SAP테스트', '구축']
   relations:
@@ -202,7 +202,7 @@
   title: "SAP 단위 테스트, 재료 하나하나의 품질 검사"
   category: project
   status: rebuilt
-  pubDate: "2025-10-02"
+  pubDate: "2025-10-01"
   level: intermediate
   tags: ['SAP프로젝트', '단위테스트', 'SAP테스트', '구축']
   relations:
@@ -241,7 +241,7 @@
   title: "SAP 컷오버, 오래된 주방에서 새 주방으로 이사하는 날"
   category: project
   status: rebuilt
-  pubDate: "2025-11-04"
+  pubDate: "2025-11-05"
   level: beginner
   tags: ['SAP프로젝트', 'SAP컷오버', 'SAP구축', 'SAP데이터마이그레이션']
   relations:
@@ -254,7 +254,7 @@
   title: "SAP 컷오버 현장, 전쟁 같은 30시간의 기록"
   category: project
   status: rebuilt
-  pubDate: "2025-11-13"
+  pubDate: "2025-11-12"
   level: intermediate
   tags: ['SAP프로젝트', 'SAP컷오버', 'SAP구축', 'SAP데이터마이그레이션']
   relations:
@@ -267,7 +267,7 @@
   title: "SAP 변화관리, 새 주방을 열기 전에 스탭이 먼저 바뀌어야 합니다"
   category: project
   status: rebuilt
-  pubDate: "2025-12-16"
+  pubDate: "2025-12-17"
   level: beginner
   tags: ['SAP프로젝트', 'SAP변화관리', 'SAP구축', 'SAP도입']
   relations:
@@ -397,7 +397,7 @@
   title: "SAP 조직 구조와 기준정보, 레스토랑을 열기 위한 뼈대와 레시피"
   category: study
   status: rebuilt
-  pubDate: "2026-01-09"
+  pubDate: "2025-07-03"
   level: beginner
   tags: ['SAP학습자료', 'SAP조직구조', 'SAP기준정보', 'SAPBOM']
   relations:
@@ -410,7 +410,7 @@
   title: "SAP PP 기준정보, 핵심 4가지로 이해하기"
   category: operations
   status: rebuilt
-  pubDate: "2026-01-14"
+  pubDate: "2026-01-15"
   level: intermediate
   tags: ['SAP실무운영', 'SAPPP', '기준정보', 'BOM']
   relations:
@@ -436,7 +436,7 @@
   title: "SAP 이동유형, 식자재가 냉장고 드나들 때마다 찍는 도장"
   category: operations
   status: rebuilt
-  pubDate: "2026-01-28"
+  pubDate: "2026-01-29"
   level: intermediate
   tags: ['SAP실무운영', '이동유형', 'MovementType', '재고관리']
   relations:
@@ -449,7 +449,7 @@
   title: "SAP 계획오더 vs 생산오더, 식단표와 실제 조리 지시서"
   category: operations
   status: rebuilt
-  pubDate: "2026-02-03"
+  pubDate: "2026-02-05"
   level: intermediate
   tags: ['SAP실무운영', 'SAPPP', '생산오더', '계획오더']
   relations:
@@ -462,7 +462,7 @@
   title: "SAP 생산오더 상태 코드, 요리 한 접시가 완성되는 순서"
   category: operations
   status: rebuilt
-  pubDate: "2026-02-10"
+  pubDate: "2026-02-12"
   level: intermediate
   tags: ['SAP실무운영', '생산오더', '상태코드', 'SAPPP']
   relations:
@@ -475,7 +475,7 @@
   title: "SAP GI·GR·CNF, 재고가 나가고 들어오고 만들어지는 세 순간"
   category: operations
   status: rebuilt
-  pubDate: "2026-02-18"
+  pubDate: "2026-02-19"
   level: intermediate
   tags: ['SAP실무운영', 'GI', 'GR', 'CNF']
   relations:
@@ -488,7 +488,7 @@
   title: "SAP WIP, 아직 접시에 담기지 않은 요리의 가치"
   category: operations
   status: rebuilt
-  pubDate: "2026-02-23"
+  pubDate: "2026-02-26"
   level: intermediate
   tags: ['SAP실무운영', 'WIP', '재공품', '원가관리']
   relations:
@@ -501,7 +501,7 @@
   title: "SAP 생산오더 번호, 12자리 숫자가 다 차면 어떻게 되나"
   category: operations
   status: rebuilt
-  pubDate: "2026-03-01"
+  pubDate: "2026-03-05"
   level: beginner
   tags: ['SAP실무운영', 'SAP생산오더', 'SAPPP', 'SAP번호범위']
   relations:
@@ -514,7 +514,7 @@
   title: "SAP 생산오더 이월, 월말 마감 때 만들다 만 음식을 처리하는 법"
   category: operations
   status: rebuilt
-  pubDate: "2026-03-07"
+  pubDate: "2026-03-30"
   level: intermediate
   tags: ['SAP실무운영', 'SAP생산오더', 'SAP이월', 'SAPWIP']
   relations:
@@ -540,7 +540,7 @@
   title: "SAP 배치잡, 야간에 혼자 돌아가는 주방의 자동 정산 시스템"
   category: operations
   status: rebuilt
-  pubDate: "2026-03-17"
+  pubDate: "2025-09-18"
   level: beginner
   tags: ['SAP실무운영', 'SAP배치잡', 'SAPSM36', 'SAPSM37']
   relations:
@@ -553,7 +553,7 @@
   title: "SAP Activity와 CNF, 주방일지를 주방장에게 보고하는 순간"
   category: study
   status: rebuilt
-  pubDate: "2026-03-24"
+  pubDate: "2025-08-19"
   level: beginner
   tags: ['SAP학습자료', 'SAPPP', 'SAP생산오더', 'SAPCNF']
   relations:
@@ -566,7 +566,7 @@
   title: "SAP 생산 전략, 뷔페와 스테이크로 구분하는 MTS와 MTO"
   category: study
   status: rebuilt
-  pubDate: "2026-03-30"
+  pubDate: "2025-08-31"
   level: beginner
   tags: ['SAP학습자료', 'SAPPP', 'SAP생산전략', 'SAPMTS', 'SAPMTO']
   relations:
@@ -579,7 +579,7 @@
   title: "SAP 배치 관리, 식재료 이력을 추적하는 주방의 비밀 장부"
   category: study
   status: rebuilt
-  pubDate: "2026-04-05"
+  pubDate: "2025-10-06"
   level: beginner
   tags: ['SAP학습자료', 'SAP배치관리', 'SAPPP', 'SAP재고관리']
   relations:
@@ -605,7 +605,7 @@
   title: "SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장"
   category: study
   status: rebuilt
-  pubDate: "2026-04-15"
+  pubDate: "2026-04-17"
   level: beginner
   tags: ['SAP학습자료', 'SAP자격증', 'SAP시험', 'S4HANA']
   relations:
@@ -644,7 +644,7 @@
   title: "SAP 데이터 필드 이름, 레시피 재료명으로 읽기"
   category: study
   status: rebuilt
-  pubDate: "2026-06-20"
+  pubDate: "2026-06-18"
   level: beginner
   tags: ['SAP학습자료', 'SAP데이터필드', 'SAP테이블', 'AUFK']
   relations:
@@ -674,8 +674,8 @@
   level: beginner
   tags: ['SAP학습자료', 'SAP라우팅', 'SAPP기준정보', 'SAP생산관리']
   relations:
-    prerequisite: ['sap-pp-master-data']
-    related: []
+    prerequisite: []
+    related: ['sap-pp-master-data']
     deepens: ['study-pp-work-center']
 
 - slug: study-pp-work-center
@@ -696,7 +696,7 @@
   title: "기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일"
   category: stats
   status: rebuilt
-  pubDate: "2026-06-25"
+  pubDate: "2026-06-28"
   level: beginner
   tags: ['통계·데이터', '기술통계', '통계개념']
   relations:
@@ -709,7 +709,7 @@
   title: "평균의 함정, KPI 숫자가 목표를 달성했다는 착각"
   category: stats
   status: rebuilt
-  pubDate: "2026-06-25"
+  pubDate: "2026-07-01"
   level: intermediate
   tags: ['통계·데이터', 'KPI분석', '이상치', '기술통계']
   relations:
@@ -722,7 +722,7 @@
   title: "상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것"
   category: stats
   status: rebuilt
-  pubDate: "2026-06-25"
+  pubDate: "2026-07-04"
   level: intermediate
   tags: ['통계·데이터', '상관관계', '인과관계', '통계개념']
   relations:
@@ -735,7 +735,7 @@
   title: "재고 편차, 숫자가 맞는데 현장이 다른 이유"
   category: stats
   status: rebuilt
-  pubDate: "2026-06-25"
+  pubDate: "2026-07-07"
   level: intermediate
   tags: ['통계·데이터', '재고편차', '기술통계', 'SAP실무']
   relations:
@@ -748,7 +748,7 @@
   title: "SAP 데이터를 엑셀에서 제대로 쓰는 법, 파워쿼리에서 피벗까지"
   category: stats
   status: rebuilt
-  pubDate: "2026-06-25"
+  pubDate: "2026-07-10"
   level: beginner
   tags: ['통계·데이터', 'SAP실무', '엑셀파워쿼리', '피벗테이블']
   relations:

@@ -2,7 +2,7 @@
 title: "SAP NOW AI Tour 2025 Korea, 현장에서 확인한 한 가지"
 mapTitle: "SAP NOW AI Tour 2025 Korea"
 description: "2025년 7월 SAP NOW AI Tour 2025 Korea 참관기. 2,500명이 모인 현장의 키노트부터 사례 세션까지, 실무자가 하루 동안 가져온 단 하나의 질문."
-pubDate: 2025-07-17
+pubDate: "2025-07-17"
 category: "operations"
 series: "현장 리포트"
 level: "beginner"
@@ -43,6 +43,6 @@ SAP NOW AI Tour 2025 Korea 키노트와 세션 영상은 [SAP NOW AI Tour 2025 K
 
 **더 읽어보기**
 
-- [SAP Joule과 Clean Core, 주방장 AI의 조건](/blog/sap-joule-clean-core)
+- [SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터](/blog/sap-joule-clean-core)
 
 <!-- 관련글: prerequisite=; related=sap-joule-clean-core; deepens= -->

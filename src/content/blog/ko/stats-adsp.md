@@ -2,7 +2,7 @@
 title: "ADsP 합격, 직장인의 2주 공부법"
 mapTitle: "ADsP"
 description: "SAP 데이터를 감이 아닌 근거로 읽고 싶어서 도전한 ADsP. 47회 합격자가 전하는 직장인 2주 압축 공부법과 AI 모의고사 공유."
-pubDate: 2026-06-25
+pubDate: "2026-06-25"
 category: "stats"
 series: "데이터 자격증"
 level: "beginner"

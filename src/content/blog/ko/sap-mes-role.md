@@ -2,7 +2,7 @@
 title: "SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업"
 mapTitle: "SAP MES"
 description: "SAP는 생산 계획을 세우는 총괄 셰프, MES는 현장에서 실행하는 주방 팀입니다. 두 시스템이 역할을 나눠 맞물릴 때 스마트 팩토리의 기반이 만들어집니다."
-pubDate: 2025-07-17
+pubDate: "2025-07-23"
 category: "study"
 series: "SAP MES 시리즈"
 level: "beginner"

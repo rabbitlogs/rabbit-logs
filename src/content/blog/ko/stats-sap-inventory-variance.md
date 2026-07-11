@@ -2,7 +2,7 @@
 title: "재고 편차, 숫자가 맞는데 현장이 다른 이유"
 mapTitle: "재고 편차"
 description: "SAP 재고와 실사 재고가 다를 때, 편차를 통계적으로 읽는 방법과 원인을 파악하는 실무 접근법을 정리합니다."
-pubDate: "2026-06-25"
+pubDate: "2026-07-07"
 category: "stats"
 series: ""
 level: "intermediate"

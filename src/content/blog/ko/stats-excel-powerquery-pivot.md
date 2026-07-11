@@ -2,7 +2,7 @@
 title: "SAP 데이터를 엑셀에서 제대로 쓰는 법, 파워쿼리에서 피벗까지"
 mapTitle: "파워쿼리 → 피벗"
 description: "SAP 출력물이 엑셀에서 바로 안 되는 이유와 파워쿼리로 전처리하고 피벗테이블로 분석하는 실무 흐름을 설명합니다."
-pubDate: "2026-06-25"
+pubDate: "2026-07-10"
 category: "stats"
 series: ""
 level: "beginner"

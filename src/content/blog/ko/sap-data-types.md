@@ -2,7 +2,7 @@
 title: "SAP 데이터 유형, 레시피·재료·주문서로 구분하기"
 mapTitle: "SAP 데이터 유형"
 description: "SAP 오류의 대부분은 컨피규레이션·마스터·트랜잭션 중 하나에서 시작됩니다. 세 데이터 유형을 매장 운영 규칙·식자재 기준표·주문 기록에 비유해 정리했습니다."
-pubDate: 2026-05-21
+pubDate: "2026-05-21"
 category: "study"
 series: "레스토랑으로 배우는 SAP"
 level: "beginner"

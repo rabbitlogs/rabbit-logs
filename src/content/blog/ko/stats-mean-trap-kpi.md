@@ -2,7 +2,7 @@
 title: "평균의 함정, KPI 숫자가 목표를 달성했다는 착각"
 mapTitle: "평균의 함정"
 description: "KPI를 평균 하나로 관리할 때 생기는 왜곡을 견적 완료일·납기 준수율 실무 사례로 살펴보고, 데이터를 제대로 읽는 시각을 이야기합니다."
-pubDate: "2026-06-25"
+pubDate: "2026-07-01"
 category: "stats"
 series: ""
 level: "intermediate"

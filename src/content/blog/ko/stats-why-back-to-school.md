@@ -2,7 +2,7 @@
 title: "다시 학생이 된 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서"
 mapTitle: "다시 학생이 된 이유"
 description: "SAP·MES로 생산관리를 하던 실무자가 방송통신대 통계·데이터과학과에 편입한 이유. 감이 아닌 데이터로 생산 지표를 말하고 싶었던 과정을 담담하게 기록합니다."
-pubDate: 2026-06-22
+pubDate: "2026-06-22"
 category: "stats"
 series: "SAP 실무자의 데이터 공부"
 tags: ['통계·데이터', '방통대', '편입', '데이터분석', '직장인공부']
@@ -70,6 +70,6 @@ SAP와 MES를 다루는 사람은 사실 누구보다 데이터에 가까이 있
 **더 읽어보기**
 
 - [SAP MRP, 레스토랑 대량 주문처럼 짜는 자재계획](/blog/sap-mrp)
-- [SAP 구축 프로젝트, 왜 새 매장 오픈보다 힘들까?](/blog/sap-build-project-difficulty)
+- [SAP 구축 프로젝트, 새 매장을 여는 다섯 고비](/blog/sap-build-project-difficulty)
 
 <!-- 관련글: prerequisite=; related=sap-mrp,sap-build-project-difficulty; deepens= -->

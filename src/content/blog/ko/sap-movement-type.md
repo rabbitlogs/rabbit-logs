@@ -2,7 +2,7 @@
 title: "SAP 이동유형, 식자재가 냉장고 드나들 때마다 찍는 도장"
 mapTitle: "SAP 이동유형"
 description: "SAP 이동유형(Movement Type)이 무엇이고, PP 생산 과정에서 261·101·311 같은 코드가 왜 필요한지 레스토랑 주방의 식자재 흐름으로 정리했습니다."
-pubDate: 2026-01-28
+pubDate: "2026-01-29"
 category: "operations"
 series: "레스토랑으로 배우는 SAP"
 level: "intermediate"

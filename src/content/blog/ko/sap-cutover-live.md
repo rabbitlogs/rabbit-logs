@@ -2,7 +2,7 @@
 title: "SAP 컷오버 현장, 전쟁 같은 30시간의 기록"
 mapTitle: "SAP 컷오버 현장"
 description: "SAP 컷오버 현장에서 실제로 벌어지는 일들 — 롤백 결정, 데이터 불일치, PP 모듈 체크리스트를 직접 경험한 실무자의 시선으로 기록합니다."
-pubDate: "2025-11-13"
+pubDate: "2025-11-12"
 category: "project"
 series: "SAP 프로젝트 기초"
 level: "intermediate"
