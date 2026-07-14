@@ -164,8 +164,19 @@
               "icon": "lucide-list",
               "title": "sap-what-is-sap-en 의 개요"
             }
+          },
+          {
+            "id": "ef4a930f5b0a3b2f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -184,7 +195,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d5d9b8cc52adba5",
+  "active": "07250d982faf3117",
   "lastOpenFiles": [
     "src/content/blog/ko/sap-pi-vs-implementation.md",
     "public/images/sap-pi-overview-01.jpg",
