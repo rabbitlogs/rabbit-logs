@@ -64,4 +64,4 @@ tags: ["SAP실무운영", "SAPNOW", "SAP행사후기", "자율형기업", "SAPJo
 - [SAP NOW AI Tour 2025 Korea, 현장에서 확인한 한 가지](/blog/sap-now-ai-tour-2025)
 - [SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터](/blog/sap-joule-clean-core)
 
-<!-- 관련글: related=sap-now-ai-tour-2025,sap-joule-clean-core -->
+<!-- 관련글: prerequisite=; related=sap-now-ai-tour-2025,sap-joule-clean-core; deepens= -->

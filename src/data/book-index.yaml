@@ -1,6 +1,7 @@
-# Rabbit Logs 마스터 인덱스 (최종 확정)
-# status: rebuilt(리빌딩+발행 완료) / planned(원본 있음, 리빌딩 예정, 날짜 선확정)
-# 전체 60개, 발행기간 2025-07-02 ~ 2026-07-14 (카테고리 내 흐름 순서로 재배치)
+# Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
+# 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
+# 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
+# 생성 시각: 2026-07-15, 총 60개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -9,11 +10,32 @@
   status: rebuilt
   pubDate: "2025-07-02"
   level: beginner
-  tags: ['SAP프로젝트', 'SAP입문', 'ERP', 'SAP모듈']
+  tags:
+  - "SAP프로젝트"
+  - "SAP입문"
+  - "ERP"
+  - "SAP모듈"
   relations:
     prerequisite: []
-    related: ['sap-history', 'sap-org-structure']
-    deepens: ['sap-modules-guide']
+    related: [sap-history, sap-org-structure]
+    deepens: [sap-modules-guide]
+
+- slug: sap-org-structure
+  mapTitle: "SAP 조직 구조와 기준정보"
+  title: "SAP 조직 구조와 기준정보, 레스토랑을 열기 위한 뼈대와 레시피"
+  category: study
+  status: rebuilt
+  pubDate: "2025-07-03"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAP조직구조"
+  - "SAP기준정보"
+  - "SAPBOM"
+  relations:
+    prerequisite: [sap-what-is-sap]
+    related: [sap-data-types, sap-pp-master-data]
+    deepens: []
 
 - slug: sap-modules-guide
   mapTitle: "SAP 10개 모듈"
@@ -22,9 +44,13 @@
   status: rebuilt
   pubDate: "2025-07-09"
   level: beginner
-  tags: ['SAP프로젝트', 'SAP모듈', 'ERP', 'SAP입문']
+  tags:
+  - "SAP프로젝트"
+  - "SAP모듈"
+  - "ERP"
+  - "SAP입문"
   relations:
-    prerequisite: ['sap-what-is-sap']
+    prerequisite: [sap-what-is-sap]
     related: []
     deepens: []
 
@@ -35,36 +61,66 @@
   status: rebuilt
   pubDate: "2025-07-16"
   level: beginner
-  tags: ['SAP프로젝트', 'SAP역사', 'ERP', 'SAP입문']
+  tags:
+  - "SAP프로젝트"
+  - "SAP역사"
+  - "ERP"
+  - "SAP입문"
   relations:
     prerequisite: []
-    related: ['sap-what-is-sap', 'sap-modules-guide']
+    related: [sap-what-is-sap, sap-modules-guide]
     deepens: []
 
 - slug: sap-now-ai-tour-2025
-  mapTitle: "SAP NOW AI Tour 2025"
+  mapTitle: "SAP NOW AI Tour 2025 Korea"
   title: "SAP NOW AI Tour 2025 Korea, 현장에서 확인한 한 가지"
   category: operations
   status: rebuilt
   pubDate: "2025-07-17"
   level: beginner
-  tags: ['SAP실무운영', 'SAP이벤트', 'SAPJoule', 'CleanCore']
+  tags:
+  - "SAP실무운영"
+  - "SAPNOW"
+  - "SAP행사후기"
+  - "SAPJoule"
+  - "클린코어"
   relations:
     prerequisite: []
-    related: ['sap-joule-clean-core', 'sap-now-ai-tour-korea-2026']
+    related: [sap-joule-clean-core]
     deepens: []
 
-- slug: sap-joule-clean-core
-  mapTitle: "SAP Joule과 Clean Core"
-  title: "SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터"
-  category: operations
+- slug: sap-mes-role
+  mapTitle: "SAP MES"
+  title: "SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업"
+  category: study
   status: rebuilt
-  pubDate: "2026-01-11"
+  pubDate: "2025-07-23"
   level: beginner
-  tags: ['SAP실무운영', 'SAPJoule', 'CleanCore', 'SAP AI']
+  tags:
+  - "SAP학습자료"
+  - "SAPMES"
+  - "SAP생산계획"
+  - "SAPPP"
   relations:
-    prerequisite: ['sap-now-ai-tour-2025']
-    related: ['sap-cbo-z-program']
+    prerequisite: []
+    related: [sap-mes-interface, sap-activity-cnf]
+    deepens: []
+
+- slug: sap-mes-interface
+  mapTitle: "SAP MES 인터페이스"
+  title: "SAP MES 인터페이스, 홀과 주방을 잇는 웨이터의 기술"
+  category: study
+  status: rebuilt
+  pubDate: "2025-07-30"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAPMES"
+  - "SAPRFC"
+  - "SAPPI"
+  relations:
+    prerequisite: [sap-mes-role]
+    related: [sap-activity-cnf]
     deepens: []
 
 - slug: sap-pp-overview
@@ -74,24 +130,15 @@
   status: rebuilt
   pubDate: "2025-08-05"
   level: beginner
-  tags: ['SAP학습자료', 'SAPPP', 'SAP생산계획', 'SAPBOM']
+  tags:
+  - "SAP학습자료"
+  - "SAPPP"
+  - "SAP생산계획"
+  - "SAPBOM"
   relations:
     prerequisite: []
-    related: ['sap-pp-master-data', 'sap-mrp', 'sap-mes-role']
-    deepens: ['sap-planned-vs-production-order']
-
-- slug: sap-pi-overview
-  mapTitle: "SAP PI"
-  title: "SAP PI, 매장만 새로 단장해선 레시피가 안 바뀝니다"
-  category: project
-  status: rebuilt
-  pubDate: "2025-08-13"
-  level: beginner
-  tags: ['SAP프로젝트', 'SAPPI', 'SAP구축', 'SAP프로세스혁신']
-  relations:
-    prerequisite: ['sap-what-is-sap']
-    related: ['sap-build-project-difficulty', 'sap-fit-gap']
-    deepens: ['sap-cutover']
+    related: [sap-pp-master-data, sap-mrp, sap-mes-role]
+    deepens: [sap-planned-vs-production-order]
 
 - slug: sap-pi-vs-implementation
   mapTitle: "SAP PI와 구축"
@@ -100,10 +147,48 @@
   status: rebuilt
   pubDate: "2025-08-06"
   level: intermediate
-  tags: ['SAP프로젝트', 'SAP컨설턴트', 'PI', '구축']
+  tags:
+  - "SAP프로젝트"
+  - "SAP컨설턴트"
+  - "PI"
+  - "구축"
   relations:
     prerequisite: []
-    related: ['sap-build-project-difficulty', 'sap-modules-guide']
+    related: [sap-build-project-difficulty, sap-modules-guide]
+    deepens: []
+
+- slug: sap-pi-overview
+  mapTitle: "SAP PI"
+  title: "SAP PI, 매장만 새로 단장해선 레시피가 안 바뀝니다"
+  category: project
+  status: rebuilt
+  pubDate: "2025-08-13"
+  level: beginner
+  tags:
+  - "SAP프로젝트"
+  - "SAPPI"
+  - "SAP구축"
+  - "SAP프로세스혁신"
+  relations:
+    prerequisite: [sap-what-is-sap]
+    related: [sap-build-project-difficulty, sap-fit-gap]
+    deepens: [sap-cutover]
+
+- slug: sap-activity-cnf
+  mapTitle: "SAP Activity와 CNF"
+  title: "SAP Activity와 CNF, 주방일지를 주방장에게 보고하는 순간"
+  category: study
+  status: rebuilt
+  pubDate: "2025-08-19"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAPPP"
+  - "SAP생산오더"
+  - "SAPCNF"
+  relations:
+    prerequisite: [sap-pp-overview, sap-mes-role]
+    related: [sap-production-order-status, sap-mes-interface]
     deepens: []
 
 - slug: sap-build-project-difficulty
@@ -112,11 +197,15 @@
   category: project
   status: rebuilt
   pubDate: "2025-08-20"
-  level: intermediate
-  tags: ['SAP프로젝트', 'SAP구축', '프로젝트관리', '안정화']
+  level: beginner
+  tags:
+  - "SAP프로젝트"
+  - "SAP구축"
+  - "프로젝트관리"
+  - "안정화"
   relations:
-    prerequisite: ['sap-pi-vs-implementation']
-    related: ['sap-modules-guide']
+    prerequisite: [sap-pi-vs-implementation]
+    related: [sap-modules-guide]
     deepens: []
 
 - slug: sap-best-practice
@@ -126,36 +215,32 @@
   status: rebuilt
   pubDate: "2025-08-27"
   level: beginner
-  tags: ['SAP프로젝트', 'BestPractice', 'SAP구축', 'SAP표준']
+  tags:
+  - "SAP프로젝트"
+  - "SAPBestPractice"
+  - "SAP구축"
+  - "SAP표준"
   relations:
     prerequisite: []
-    related: ['sap-fit-gap', 'sap-build-project-difficulty']
+    related: [sap-fit-gap, sap-build-project-difficulty]
     deepens: []
 
-- slug: sap-mes-role
-  mapTitle: "SAP MES"
-  title: "SAP MES, 총괄 셰프와 주방 팀의 완벽한 분업"
-  category: project
+- slug: sap-production-strategy
+  mapTitle: "SAP 생산 전략"
+  title: "SAP 생산 전략, 뷔페와 스테이크로 구분하는 MTS와 MTO"
+  category: study
   status: rebuilt
-  pubDate: "2025-07-23"
+  pubDate: "2025-08-31"
   level: beginner
-  tags: ['SAP프로젝트', 'MES', 'SAPPP', 'SAP생산실행']
+  tags:
+  - "SAP학습자료"
+  - "SAPPP"
+  - "SAP생산전략"
+  - "SAPMTS"
+  - "SAPMTO"
   relations:
-    prerequisite: []
-    related: ['sap-mes-interface', 'sap-activity-cnf']
-    deepens: []
-
-- slug: sap-mes-interface
-  mapTitle: "SAP MES 인터페이스"
-  title: "SAP MES 인터페이스, 홀과 주방을 잇는 웨이터의 기술"
-  category: project
-  status: rebuilt
-  pubDate: "2025-07-30"
-  level: beginner
-  tags: ['SAP프로젝트', 'MES', 'SAP인터페이스', 'SAPPI']
-  relations:
-    prerequisite: ['sap-mes-role']
-    related: ['sap-activity-cnf']
+    prerequisite: [sap-pp-overview]
+    related: [sap-mrp, sap-planned-vs-production-order]
     deepens: []
 
 - slug: sap-test-overview
@@ -165,9 +250,13 @@
   status: rebuilt
   pubDate: "2025-09-10"
   level: intermediate
-  tags: ['SAP프로젝트', 'SAP테스트', '통합테스트', 'UAT']
+  tags:
+  - "SAP프로젝트"
+  - "SAP테스트"
+  - "통합테스트"
+  - "UAT"
   relations:
-    prerequisite: ['sap-build-project-difficulty']
+    prerequisite: [sap-build-project-difficulty]
     related: []
     deepens: []
 
@@ -178,10 +267,31 @@
   status: rebuilt
   pubDate: "2025-09-17"
   level: intermediate
-  tags: ['SAP프로젝트', 'FitGap', 'SAP테스트', '구축']
+  tags:
+  - "SAP프로젝트"
+  - "FitGap"
+  - "SAP테스트"
+  - "구축"
   relations:
-    prerequisite: ['sap-test-overview']
+    prerequisite: [sap-test-overview]
     related: []
+    deepens: []
+
+- slug: sap-batch-job
+  mapTitle: "SAP 배치잡"
+  title: "SAP 배치잡, 야간에 혼자 돌아가는 주방의 자동 정산 시스템"
+  category: operations
+  status: rebuilt
+  pubDate: "2025-09-18"
+  level: beginner
+  tags:
+  - "SAP실무운영"
+  - "SAP배치잡"
+  - "SAPSM36"
+  - "SAPSM37"
+  relations:
+    prerequisite: []
+    related: [sap-user-parameters, sap-mrp]
     deepens: []
 
 - slug: sap-prototype-test
@@ -191,9 +301,13 @@
   status: rebuilt
   pubDate: "2025-09-24"
   level: intermediate
-  tags: ['SAP프로젝트', '프로토타입', 'SAP테스트', '구축']
+  tags:
+  - "SAP프로젝트"
+  - "프로토타입"
+  - "SAP테스트"
+  - "구축"
   relations:
-    prerequisite: ['sap-fit-gap']
+    prerequisite: [sap-fit-gap]
     related: []
     deepens: []
 
@@ -204,10 +318,31 @@
   status: rebuilt
   pubDate: "2025-10-01"
   level: intermediate
-  tags: ['SAP프로젝트', '단위테스트', 'SAP테스트', '구축']
+  tags:
+  - "SAP프로젝트"
+  - "단위테스트"
+  - "SAP테스트"
+  - "구축"
   relations:
-    prerequisite: ['sap-prototype-test']
+    prerequisite: [sap-prototype-test]
     related: []
+    deepens: []
+
+- slug: sap-batch-management
+  mapTitle: "SAP 배치 관리"
+  title: "SAP 배치 관리, 식재료 이력을 추적하는 주방의 비밀 장부"
+  category: study
+  status: rebuilt
+  pubDate: "2025-10-06"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAP배치관리"
+  - "SAPPP"
+  - "SAP재고관리"
+  relations:
+    prerequisite: []
+    related: [sap-movement-type, sap-gi-gr-cnf, sap-mes-role]
     deepens: []
 
 - slug: sap-integration-test
@@ -217,11 +352,32 @@
   status: rebuilt
   pubDate: "2025-10-08"
   level: intermediate
-  tags: ['SAP프로젝트', '통합테스트', 'SAP테스트', '구축']
+  tags:
+  - "SAP프로젝트"
+  - "통합테스트"
+  - "SAP테스트"
+  - "구축"
   relations:
-    prerequisite: ['sap-unit-test']
+    prerequisite: [sap-unit-test]
     related: []
     deepens: []
+
+- slug: study-pp-routing
+  mapTitle: "라우팅"
+  title: "SAP 라우팅, 레시피대로 요리하는 공정 순서표"
+  category: study
+  status: rebuilt
+  pubDate: "2025-10-15"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAP라우팅"
+  - "SAPP기준정보"
+  - "SAP생산관리"
+  relations:
+    prerequisite: []
+    related: [sap-pp-master-data]
+    deepens: [study-pp-work-center]
 
 - slug: sap-uat
   mapTitle: "SAP UAT"
@@ -230,10 +386,31 @@
   status: rebuilt
   pubDate: "2025-10-16"
   level: intermediate
-  tags: ['SAP프로젝트', 'UAT', 'SAP테스트', '구축']
+  tags:
+  - "SAP프로젝트"
+  - "UAT"
+  - "SAP테스트"
+  - "구축"
   relations:
-    prerequisite: ['sap-integration-test']
-    related: ['sap-test-overview']
+    prerequisite: [sap-integration-test]
+    related: [sap-test-overview]
+    deepens: []
+
+- slug: study-pp-work-center
+  mapTitle: "작업장"
+  title: "SAP 작업장, 공정이 실제로 일어나는 주방 스테이션"
+  category: study
+  status: rebuilt
+  pubDate: "2025-10-22"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAP작업장"
+  - "SAPP기준정보"
+  - "SAP생산관리"
+  relations:
+    prerequisite: [study-pp-routing]
+    related: []
     deepens: []
 
 - slug: sap-cutover
@@ -243,37 +420,15 @@
   status: rebuilt
   pubDate: "2025-11-05"
   level: beginner
-  tags: ['SAP프로젝트', 'SAP컷오버', 'SAP구축', 'SAP데이터마이그레이션']
+  tags:
+  - "SAP프로젝트"
+  - "SAP컷오버"
+  - "SAP구축"
+  - "SAP데이터마이그레이션"
   relations:
-    prerequisite: ['sap-uat', 'sap-pi-overview']
-    related: ['sap-build-project-difficulty']
-    deepens: ['sap-cutover-live']
-
-- slug: sap-cutover-live
-  mapTitle: "SAP 컷오버 현장"
-  title: "SAP 컷오버 현장, 전쟁 같은 30시간의 기록"
-  category: project
-  status: rebuilt
-  pubDate: "2025-11-12"
-  level: intermediate
-  tags: ['SAP프로젝트', 'SAP컷오버', 'SAP구축', 'SAP데이터마이그레이션']
-  relations:
-    prerequisite: ['sap-cutover']
-    related: ['sap-change-management', 'sap-uat']
-    deepens: []
-
-- slug: sap-change-management
-  mapTitle: "SAP 변화관리"
-  title: "SAP 변화관리, 새 주방을 열기 전에 스탭이 먼저 바뀌어야 합니다"
-  category: project
-  status: rebuilt
-  pubDate: "2025-12-17"
-  level: beginner
-  tags: ['SAP프로젝트', 'SAP변화관리', 'SAP구축', 'SAP도입']
-  relations:
-    prerequisite: ['sap-pi-overview', 'sap-cutover']
-    related: ['sap-build-project-difficulty']
-    deepens: []
+    prerequisite: [sap-uat, sap-pi-overview]
+    related: [sap-build-project-difficulty]
+    deepens: [sap-cutover-live]
 
 - slug: sap-tcode-basics
   mapTitle: "SAP T-CODE"
@@ -282,10 +437,31 @@
   status: rebuilt
   pubDate: "2025-11-10"
   level: beginner
-  tags: ['SAP실무운영', 'TCODE', 'SAPGUI', '트랜잭션코드']
+  tags:
+  - "SAP실무운영"
+  - "TCODE"
+  - "SAPGUI"
+  - "트랜잭션코드"
   relations:
     prerequisite: []
-    related: ['sap-font-readability']
+    related: [sap-font-readability]
+    deepens: []
+
+- slug: sap-cutover-live
+  mapTitle: "SAP 컷오버 현장"
+  title: "SAP 컷오버 현장, 전쟁 같은 30시간의 기록"
+  category: project
+  status: rebuilt
+  pubDate: "2025-11-12"
+  level: intermediate
+  tags:
+  - "SAP프로젝트"
+  - "SAP컷오버"
+  - "SAP구축"
+  - "SAP데이터마이그레이션"
+  relations:
+    prerequisite: [sap-cutover]
+    related: [sap-change-management, sap-uat]
     deepens: []
 
 - slug: sap-signature-theme
@@ -295,10 +471,14 @@
   status: rebuilt
   pubDate: "2025-11-15"
   level: beginner
-  tags: ['SAP실무운영', 'SAPGUI', 'SAP테마', 'SAP설정']
+  tags:
+  - "SAP실무운영"
+  - "SAPGUI"
+  - "SAP테마"
+  - "SAP설정"
   relations:
     prerequisite: []
-    related: ['sap-font-readability']
+    related: [sap-font-readability]
     deepens: []
 
 - slug: sap-font-readability
@@ -308,10 +488,14 @@
   status: rebuilt
   pubDate: "2025-11-22"
   level: beginner
-  tags: ['SAP실무운영', 'SAPGUI', 'SAP폰트', 'SAP설정']
+  tags:
+  - "SAP실무운영"
+  - "SAPGUI"
+  - "SAP폰트"
+  - "SAP설정"
   relations:
     prerequisite: []
-    related: ['sap-signature-theme']
+    related: [sap-signature-theme]
     deepens: []
 
 - slug: sap-pp-tcode
@@ -321,10 +505,14 @@
   status: rebuilt
   pubDate: "2025-11-29"
   level: intermediate
-  tags: ['SAP실무운영', 'TCODE', 'SAPPP', '생산관리']
+  tags:
+  - "SAP실무운영"
+  - "TCODE"
+  - "SAPPP"
+  - "생산관리"
   relations:
-    prerequisite: ['sap-tcode-basics']
-    related: ['sap-signature-theme']
+    prerequisite: [sap-tcode-basics]
+    related: [sap-signature-theme]
     deepens: []
 
 - slug: sap-autocomplete
@@ -334,23 +522,48 @@
   status: rebuilt
   pubDate: "2025-12-05"
   level: beginner
-  tags: ['SAP실무운영', 'SAPGUI', 'SAP설정', 'SAP자동완성']
+  tags:
+  - "SAP실무운영"
+  - "SAPGUI"
+  - "SAP설정"
+  - "SAP자동완성"
   relations:
     prerequisite: []
-    related: ['sap-tcode-basics']
+    related: [sap-tcode-basics]
     deepens: []
 
 - slug: sap-dropdown
-  mapTitle: "SAP 드롭다운"
+  mapTitle: "SAP 드롭다운 키 표시"
   title: "SAP 드롭다운 키 표시, 이름표에 사원번호 추가하기"
   category: operations
   status: rebuilt
   pubDate: "2025-12-13"
   level: beginner
-  tags: ['SAP실무운영', 'SAPGUI', 'SAP설정', 'SAP드롭다운']
+  tags:
+  - "SAP실무운영"
+  - "SAPGUI"
+  - "SAP설정"
+  - "SAP드롭다운"
   relations:
     prerequisite: []
-    related: ['sap-tcode-basics']
+    related: [sap-tcode-basics]
+    deepens: []
+
+- slug: sap-change-management
+  mapTitle: "SAP 변화관리"
+  title: "SAP 변화관리, 새 주방을 열기 전에 스탭이 먼저 바뀌어야 합니다"
+  category: project
+  status: rebuilt
+  pubDate: "2025-12-17"
+  level: beginner
+  tags:
+  - "SAP프로젝트"
+  - "SAP변화관리"
+  - "SAP구축"
+  - "SAP도입"
+  relations:
+    prerequisite: [sap-pi-overview, sap-cutover]
+    related: [sap-build-project-difficulty]
     deepens: []
 
 - slug: sap-password-asterisk
@@ -360,10 +573,14 @@
   status: rebuilt
   pubDate: "2025-12-21"
   level: beginner
-  tags: ['SAP실무운영', 'SAPGUI', 'SAP보안', 'SAP설정']
+  tags:
+  - "SAP실무운영"
+  - "SAPGUI"
+  - "SAP보안"
+  - "SAP설정"
   relations:
     prerequisite: []
-    related: ['sap-tcode-basics']
+    related: [sap-tcode-basics]
     deepens: []
 
 - slug: sap-user-parameters
@@ -373,10 +590,14 @@
   status: rebuilt
   pubDate: "2025-12-28"
   level: beginner
-  tags: ['SAP실무운영', 'SAPGUI', 'SAP설정', 'SAP매개변수']
+  tags:
+  - "SAP실무운영"
+  - "SAPGUI"
+  - "SAP설정"
+  - "SAP매개변수"
   relations:
     prerequisite: []
-    related: ['sap-tcode-basics']
+    related: [sap-tcode-basics]
     deepens: []
 
 - slug: sap-cbo-z-program
@@ -386,23 +607,32 @@
   status: rebuilt
   pubDate: "2026-01-04"
   level: intermediate
-  tags: ['SAP실무운영', 'CBO', 'Z코드', '커스터마이징']
+  tags:
+  - "SAP실무운영"
+  - "CBO"
+  - "Z코드"
+  - "커스터마이징"
   relations:
     prerequisite: []
-    related: ['sap-pp-tcode', 'sap-tcode-basics']
+    related: [sap-pp-tcode, sap-tcode-basics]
     deepens: []
 
-- slug: sap-org-structure
-  mapTitle: "SAP 조직 구조와 기준정보"
-  title: "SAP 조직 구조와 기준정보, 레스토랑을 열기 위한 뼈대와 레시피"
-  category: study
+- slug: sap-joule-clean-core
+  mapTitle: "SAP Joule·클린코어"
+  title: "SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터"
+  category: operations
   status: rebuilt
-  pubDate: "2025-07-03"
-  level: beginner
-  tags: ['SAP학습자료', 'SAP조직구조', 'SAP기준정보', 'SAPBOM']
+  pubDate: "2026-01-11"
+  level: intermediate
+  tags:
+  - "SAP실무운영"
+  - "SAPJoule"
+  - "클린코어"
+  - "CleanCore"
+  - "SAP비즈니스AI"
   relations:
-    prerequisite: ['sap-what-is-sap']
-    related: ['sap-data-types', 'sap-pp-master-data']
+    prerequisite: [sap-now-ai-tour-2025]
+    related: [sap-cbo-z-program]
     deepens: []
 
 - slug: sap-pp-master-data
@@ -412,10 +642,14 @@
   status: rebuilt
   pubDate: "2026-01-15"
   level: intermediate
-  tags: ['SAP실무운영', 'SAPPP', '기준정보', 'BOM']
+  tags:
+  - "SAP실무운영"
+  - "SAPPP"
+  - "기준정보"
+  - "BOM"
   relations:
     prerequisite: []
-    related: ['sap-pp-tcode']
+    related: [sap-pp-tcode]
     deepens: []
 
 - slug: sap-mrp
@@ -425,9 +659,13 @@
   status: rebuilt
   pubDate: "2026-01-22"
   level: intermediate
-  tags: ['SAP실무운영', 'MRP', 'SAPPP', '생산계획']
+  tags:
+  - "SAP실무운영"
+  - "MRP"
+  - "SAPPP"
+  - "생산계획"
   relations:
-    prerequisite: ['sap-pp-master-data']
+    prerequisite: [sap-pp-master-data]
     related: []
     deepens: []
 
@@ -438,9 +676,13 @@
   status: rebuilt
   pubDate: "2026-01-29"
   level: intermediate
-  tags: ['SAP실무운영', '이동유형', 'MovementType', '재고관리']
+  tags:
+  - "SAP실무운영"
+  - "이동유형"
+  - "MovementType"
+  - "재고관리"
   relations:
-    prerequisite: ['sap-pp-tcode']
+    prerequisite: [sap-pp-tcode]
     related: []
     deepens: []
 
@@ -451,9 +693,13 @@
   status: rebuilt
   pubDate: "2026-02-05"
   level: intermediate
-  tags: ['SAP실무운영', 'SAPPP', '생산오더', '계획오더']
+  tags:
+  - "SAP실무운영"
+  - "SAPPP"
+  - "생산오더"
+  - "계획오더"
   relations:
-    prerequisite: ['sap-mrp']
+    prerequisite: [sap-mrp]
     related: []
     deepens: []
 
@@ -464,10 +710,14 @@
   status: rebuilt
   pubDate: "2026-02-12"
   level: intermediate
-  tags: ['SAP실무운영', '생산오더', '상태코드', 'SAPPP']
+  tags:
+  - "SAP실무운영"
+  - "생산오더"
+  - "상태코드"
+  - "SAPPP"
   relations:
-    prerequisite: ['sap-planned-vs-production-order']
-    related: ['sap-movement-type']
+    prerequisite: [sap-planned-vs-production-order]
+    related: [sap-movement-type]
     deepens: []
 
 - slug: sap-gi-gr-cnf
@@ -477,10 +727,14 @@
   status: rebuilt
   pubDate: "2026-02-19"
   level: intermediate
-  tags: ['SAP실무운영', 'GI', 'GR', 'CNF']
+  tags:
+  - "SAP실무운영"
+  - "GI"
+  - "GR"
+  - "CNF"
   relations:
-    prerequisite: ['sap-movement-type']
-    related: ['sap-production-order-status']
+    prerequisite: [sap-movement-type]
+    related: [sap-production-order-status]
     deepens: []
 
 - slug: sap-wip
@@ -490,11 +744,15 @@
   status: rebuilt
   pubDate: "2026-02-26"
   level: intermediate
-  tags: ['SAP실무운영', 'WIP', '재공품', '원가관리']
+  tags:
+  - "SAP실무운영"
+  - "WIP"
+  - "재공품"
+  - "원가관리"
   relations:
     prerequisite: []
-    related: ['sap-production-order-status', 'sap-mrp']
-    deepens: ['sap-gi-gr-cnf']
+    related: [sap-production-order-status, sap-mrp]
+    deepens: [sap-gi-gr-cnf]
 
 - slug: sap-production-order-number
   mapTitle: "SAP 생산오더 번호"
@@ -503,23 +761,14 @@
   status: rebuilt
   pubDate: "2026-03-05"
   level: beginner
-  tags: ['SAP실무운영', 'SAP생산오더', 'SAPPP', 'SAP번호범위']
+  tags:
+  - "SAP실무운영"
+  - "SAP생산오더"
+  - "SAPPP"
+  - "SAP번호범위"
   relations:
-    prerequisite: ['sap-planned-vs-production-order']
-    related: ['sap-production-order-status']
-    deepens: []
-
-- slug: sap-production-order-carryover
-  mapTitle: "SAP 생산오더 이월"
-  title: "SAP 생산오더 이월, 월말 마감 때 만들다 만 음식을 처리하는 법"
-  category: operations
-  status: rebuilt
-  pubDate: "2026-03-30"
-  level: intermediate
-  tags: ['SAP실무운영', 'SAP생산오더', 'SAP이월', 'SAPWIP']
-  relations:
-    prerequisite: ['sap-wip', 'sap-activity-cnf']
-    related: ['sap-production-order-status']
+    prerequisite: [sap-planned-vs-production-order]
+    related: [sap-production-order-status]
     deepens: []
 
 - slug: sap-circular-bom
@@ -529,62 +778,31 @@
   status: rebuilt
   pubDate: "2026-03-12"
   level: intermediate
-  tags: ['SAP실무운영', 'SAPBOM', 'SAPPP', 'SAP재작업']
+  tags:
+  - "SAP실무운영"
+  - "SAPBOM"
+  - "SAPPP"
+  - "SAP재작업"
   relations:
-    prerequisite: ['sap-pp-master-data']
-    related: ['sap-movement-type']
+    prerequisite: [sap-pp-master-data]
+    related: [sap-movement-type]
     deepens: []
 
-- slug: sap-batch-job
-  mapTitle: "SAP 배치잡"
-  title: "SAP 배치잡, 야간에 혼자 돌아가는 주방의 자동 정산 시스템"
+- slug: sap-production-order-carryover
+  mapTitle: "SAP 생산오더 이월"
+  title: "SAP 생산오더 이월, 월말 마감 때 만들다 만 음식을 처리하는 법"
   category: operations
   status: rebuilt
-  pubDate: "2025-09-18"
-  level: beginner
-  tags: ['SAP실무운영', 'SAP배치잡', 'SAPSM36', 'SAPSM37']
+  pubDate: "2026-03-30"
+  level: intermediate
+  tags:
+  - "SAP실무운영"
+  - "SAP생산오더"
+  - "SAP이월"
+  - "SAPWIP"
   relations:
-    prerequisite: []
-    related: ['sap-user-parameters', 'sap-mrp']
-    deepens: []
-
-- slug: sap-activity-cnf
-  mapTitle: "SAP Activity와 CNF"
-  title: "SAP Activity와 CNF, 주방일지를 주방장에게 보고하는 순간"
-  category: study
-  status: rebuilt
-  pubDate: "2025-08-19"
-  level: beginner
-  tags: ['SAP학습자료', 'SAPPP', 'SAP생산오더', 'SAPCNF']
-  relations:
-    prerequisite: ['sap-pp-overview', 'sap-mes-role']
-    related: ['sap-production-order-status', 'sap-mes-interface']
-    deepens: []
-
-- slug: sap-production-strategy
-  mapTitle: "SAP 생산 전략"
-  title: "SAP 생산 전략, 뷔페와 스테이크로 구분하는 MTS와 MTO"
-  category: study
-  status: rebuilt
-  pubDate: "2025-08-31"
-  level: beginner
-  tags: ['SAP학습자료', 'SAPPP', 'SAP생산전략', 'SAPMTS', 'SAPMTO']
-  relations:
-    prerequisite: ['sap-pp-overview']
-    related: ['sap-mrp', 'sap-planned-vs-production-order']
-    deepens: []
-
-- slug: sap-batch-management
-  mapTitle: "SAP 배치 관리"
-  title: "SAP 배치 관리, 식재료 이력을 추적하는 주방의 비밀 장부"
-  category: study
-  status: rebuilt
-  pubDate: "2025-10-06"
-  level: beginner
-  tags: ['SAP학습자료', 'SAP배치관리', 'SAPPP', 'SAP재고관리']
-  relations:
-    prerequisite: []
-    related: ['sap-movement-type', 'sap-gi-gr-cnf', 'sap-mes-role']
+    prerequisite: [sap-wip, sap-activity-cnf]
+    related: [sap-production-order-status]
     deepens: []
 
 - slug: sap-certification
@@ -594,11 +812,15 @@
   status: rebuilt
   pubDate: "2026-04-10"
   level: beginner
-  tags: ['SAP학습자료', 'SAP자격증', 'SAP교육', 'StayCertified']
+  tags:
+  - "SAP학습자료"
+  - "SAP자격증"
+  - "SAP교육"
+  - "StayCertified"
   relations:
     prerequisite: []
     related: []
-    deepens: ['sap-exam-format', 'sap-cpim']
+    deepens: [sap-exam-format, sap-cpim]
 
 - slug: sap-exam-format
   mapTitle: "SAP 자격증 시험"
@@ -607,10 +829,14 @@
   status: rebuilt
   pubDate: "2026-04-17"
   level: beginner
-  tags: ['SAP학습자료', 'SAP자격증', 'SAP시험', 'S4HANA']
+  tags:
+  - "SAP학습자료"
+  - "SAP자격증"
+  - "SAP시험"
+  - "S4HANA"
   relations:
-    prerequisite: ['sap-certification']
-    related: ['sap-cpim']
+    prerequisite: [sap-certification]
+    related: [sap-cpim]
     deepens: []
 
 - slug: sap-cpim
@@ -620,10 +846,14 @@
   status: rebuilt
   pubDate: "2026-05-04"
   level: beginner
-  tags: ['SAP학습자료', 'CPIM', 'SAP자격증', 'SCM']
+  tags:
+  - "SAP학습자료"
+  - "CPIM"
+  - "SAP자격증"
+  - "SCM"
   relations:
-    prerequisite: ['sap-certification']
-    related: ['sap-exam-format']
+    prerequisite: [sap-certification]
+    related: [sap-exam-format]
     deepens: []
 
 - slug: sap-data-types
@@ -633,10 +863,14 @@
   status: rebuilt
   pubDate: "2026-05-21"
   level: beginner
-  tags: ['SAP학습자료', 'SAP데이터유형', 'SAP마스터데이터', 'SAP컨피규레이션']
+  tags:
+  - "SAP학습자료"
+  - "SAP데이터유형"
+  - "SAP마스터데이터"
+  - "SAP컨피규레이션"
   relations:
     prerequisite: []
-    related: ['sap-pp-master-data', 'sap-mrp']
+    related: [sap-pp-master-data, sap-mrp]
     deepens: []
 
 - slug: sap-field-names
@@ -646,10 +880,14 @@
   status: rebuilt
   pubDate: "2026-06-18"
   level: beginner
-  tags: ['SAP학습자료', 'SAP데이터필드', 'SAP테이블', 'AUFK']
+  tags:
+  - "SAP학습자료"
+  - "SAP데이터필드"
+  - "SAP테이블"
+  - "AUFK"
   relations:
-    prerequisite: ['sap-data-types']
-    related: ['sap-tcode-basics']
+    prerequisite: [sap-data-types]
+    related: [sap-tcode-basics]
     deepens: []
 
 - slug: stats-why-back-to-school
@@ -659,101 +897,15 @@
   status: rebuilt
   pubDate: "2026-06-22"
   level: beginner
-  tags: ['통계·데이터', '방통대', '편입', '데이터분석', '직장인공부']
+  tags:
+  - "통계·데이터"
+  - "방통대"
+  - "편입"
+  - "데이터분석"
+  - "직장인공부"
   relations:
     prerequisite: []
-    related: ['sap-mrp', 'sap-build-project-difficulty']
-    deepens: []
-
-- slug: study-pp-routing
-  mapTitle: "SAP 라우팅"
-  title: "SAP 라우팅, 레시피대로 요리하는 공정 순서표"
-  category: study
-  status: rebuilt
-  pubDate: "2025-10-15"
-  level: beginner
-  tags: ['SAP학습자료', 'SAP라우팅', 'SAPP기준정보', 'SAP생산관리']
-  relations:
-    prerequisite: []
-    related: ['sap-pp-master-data']
-    deepens: ['study-pp-work-center']
-
-- slug: study-pp-work-center
-  mapTitle: "SAP 작업장"
-  title: "SAP 작업장, 공정이 실제로 일어나는 주방 스테이션"
-  category: study
-  status: rebuilt
-  pubDate: "2025-10-22"
-  level: beginner
-  tags: ['SAP학습자료', 'SAP작업장', 'SAPP기준정보', 'SAP생산관리']
-  relations:
-    prerequisite: ['study-pp-routing']
-    related: []
-    deepens: []
-
-- slug: stats-descriptive-basics
-  mapTitle: "기술통계"
-  title: "기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-06-28"
-  level: beginner
-  tags: ['통계·데이터', '기술통계', '통계개념']
-  relations:
-    prerequisite: ['stats-why-back-to-school']
-    related: []
-    deepens: ['stats-mean-trap-kpi', 'stats-correlation-vs-causation']
-
-- slug: stats-mean-trap-kpi
-  mapTitle: "평균의 함정"
-  title: "평균의 함정, KPI 숫자가 목표를 달성했다는 착각"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-01"
-  level: intermediate
-  tags: ['통계·데이터', 'KPI분석', '이상치', '기술통계']
-  relations:
-    prerequisite: ['stats-descriptive-basics']
-    related: ['stats-sap-inventory-variance']
-    deepens: []
-
-- slug: stats-correlation-vs-causation
-  mapTitle: "상관관계 vs 인과관계"
-  title: "상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-04"
-  level: intermediate
-  tags: ['통계·데이터', '상관관계', '인과관계', '통계개념']
-  relations:
-    prerequisite: ['stats-descriptive-basics']
-    related: ['stats-mean-trap-kpi']
-    deepens: []
-
-- slug: stats-sap-inventory-variance
-  mapTitle: "재고 편차"
-  title: "재고 편차, 숫자가 맞는데 현장이 다른 이유"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-07"
-  level: intermediate
-  tags: ['통계·데이터', '재고편차', '기술통계', 'SAP실무']
-  relations:
-    prerequisite: ['stats-descriptive-basics']
-    related: ['stats-mean-trap-kpi', 'sap-mrp']
-    deepens: []
-
-- slug: stats-excel-powerquery-pivot
-  mapTitle: "파워쿼리 → 피벗"
-  title: "SAP 데이터를 엑셀에서 제대로 쓰는 법, 파워쿼리에서 피벗까지"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-10"
-  level: beginner
-  tags: ['통계·데이터', 'SAP실무', '엑셀파워쿼리', '피벗테이블']
-  relations:
-    prerequisite: []
-    related: ['stats-sap-inventory-variance', 'stats-descriptive-basics']
+    related: [sap-mrp, sap-build-project-difficulty]
     deepens: []
 
 - slug: stats-adsp
@@ -763,10 +915,98 @@
   status: rebuilt
   pubDate: "2026-06-25"
   level: beginner
-  tags: ['통계·데이터', 'ADsP', '데이터자격증', '직장인공부법']
+  tags:
+  - "통계·데이터"
+  - "ADsP"
+  - "데이터자격증"
+  - "직장인공부법"
   relations:
     prerequisite: []
-    related: ['stats-why-back-to-school', 'stats-descriptive-basics']
+    related: [stats-why-back-to-school, stats-descriptive-basics]
+    deepens: []
+
+- slug: stats-descriptive-basics
+  mapTitle: "기술통계"
+  title: "기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-06-28"
+  level: beginner
+  tags:
+  - "통계·데이터"
+  - "기술통계"
+  - "통계개념"
+  relations:
+    prerequisite: [stats-why-back-to-school]
+    related: []
+    deepens: [stats-mean-trap-kpi, stats-correlation-vs-causation]
+
+- slug: stats-mean-trap-kpi
+  mapTitle: "평균의 함정"
+  title: "평균의 함정, KPI 숫자가 목표를 달성했다는 착각"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-07-01"
+  level: intermediate
+  tags:
+  - "통계·데이터"
+  - "KPI분석"
+  - "이상치"
+  - "기술통계"
+  relations:
+    prerequisite: [stats-descriptive-basics]
+    related: [stats-sap-inventory-variance]
+    deepens: []
+
+- slug: stats-correlation-vs-causation
+  mapTitle: "상관관계 vs 인과관계"
+  title: "상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-07-04"
+  level: intermediate
+  tags:
+  - "통계·데이터"
+  - "상관관계"
+  - "인과관계"
+  - "통계개념"
+  relations:
+    prerequisite: [stats-descriptive-basics]
+    related: [stats-mean-trap-kpi]
+    deepens: []
+
+- slug: stats-sap-inventory-variance
+  mapTitle: "재고 편차"
+  title: "재고 편차, 숫자가 맞는데 현장이 다른 이유"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-07-07"
+  level: intermediate
+  tags:
+  - "통계·데이터"
+  - "재고편차"
+  - "기술통계"
+  - "SAP실무"
+  relations:
+    prerequisite: [stats-descriptive-basics]
+    related: [stats-mean-trap-kpi, sap-mrp]
+    deepens: []
+
+- slug: stats-excel-powerquery-pivot
+  mapTitle: "파워쿼리 → 피벗"
+  title: "SAP 데이터를 엑셀에서 제대로 쓰는 법, 파워쿼리에서 피벗까지"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-07-10"
+  level: beginner
+  tags:
+  - "통계·데이터"
+  - "SAP실무"
+  - "엑셀파워쿼리"
+  - "피벗테이블"
+  relations:
+    prerequisite: []
+    related: [stats-sap-inventory-variance, stats-descriptive-basics]
     deepens: []
 
 - slug: sap-now-ai-tour-korea-2026
@@ -776,8 +1016,13 @@
   status: rebuilt
   pubDate: "2026-07-14"
   level: beginner
-  tags: ['SAP실무운영', 'SAPNOW', 'SAP이벤트', 'SAPJoule', '자율형기업']
+  tags:
+  - "SAP실무운영"
+  - "SAPNOW"
+  - "SAP행사후기"
+  - "자율형기업"
+  - "SAPJoule"
   relations:
     prerequisite: []
-    related: ['sap-now-ai-tour-2025', 'sap-joule-clean-core']
+    related: [sap-now-ai-tour-2025, sap-joule-clean-core]
     deepens: []
