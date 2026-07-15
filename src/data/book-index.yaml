@@ -1,6 +1,6 @@
 # Rabbit Logs 마스터 인덱스 (최종 확정)
 # status: rebuilt(리빌딩+발행 완료) / planned(원본 있음, 리빌딩 예정, 날짜 선확정)
-# 전체 59개, 발행기간 2025-07-02 ~ 2026-07-10 (카테고리 내 흐름 순서로 재배치)
+# 전체 60개, 발행기간 2025-07-02 ~ 2026-07-14 (카테고리 내 흐름 순서로 재배치)
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -51,7 +51,7 @@
   tags: ['SAP실무운영', 'SAP이벤트', 'SAPJoule', 'CleanCore']
   relations:
     prerequisite: []
-    related: ['sap-joule-clean-core']
+    related: ['sap-joule-clean-core', 'sap-now-ai-tour-korea-2026']
     deepens: []
 
 - slug: sap-joule-clean-core
@@ -767,4 +767,17 @@
   relations:
     prerequisite: []
     related: ['stats-why-back-to-school', 'stats-descriptive-basics']
+    deepens: []
+
+- slug: sap-now-ai-tour-korea-2026
+  mapTitle: "SAP NOW AI Tour 2026"
+  title: "SAP NOW AI Tour 2026 Korea, 현장에서 확인한 자율형 기업"
+  category: operations
+  status: rebuilt
+  pubDate: "2026-07-14"
+  level: beginner
+  tags: ['SAP실무운영', 'SAPNOW', 'SAP이벤트', 'SAPJoule', '자율형기업']
+  relations:
+    prerequisite: []
+    related: ['sap-now-ai-tour-2025', 'sap-joule-clean-core']
     deepens: []
