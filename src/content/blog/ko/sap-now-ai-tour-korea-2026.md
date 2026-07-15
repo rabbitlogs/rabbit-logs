@@ -11,7 +11,7 @@ tags: ["SAP실무운영", "SAPNOW", "SAP행사후기", "자율형기업", "SAPJo
 
 안녕하세요, Rabbit입니다! 🐰
 
-작년 이맘때도 같은 자리였습니다. 그랜드 인터컨티넨탈 서울 파르나스, SAP NOW AI Tour Korea. 작년 키노트의 주인공이 AI 비서 **Joule**(쥴) 하나였다면, 올해는 그 쥴을 포함한 훨씬 큰 그림이 무대에 올라왔습니다. SAP가 이번에 던진 이름은 **자율형 기업(Autonomous Enterprise)**입니다.
+작년 이맘때도 같은 자리였습니다. 그랜드 인터컨티넨탈 서울 파르나스, SAP NOW AI Tour Korea. 작년 키노트의 주인공이 AI 비서 **Joule**(쥴) 하나였다면, 올해는 그 쥴을 포함한 훨씬 큰 그림이 무대에 올라왔습니다. SAP가 이번에 던진 이름은 **자율형 기업**(Autonomous Enterprise)입니다.
 
 ![SAP NOW AI Tour Korea 2026 행사장 전경. 대형 스크린 세 개에 'SAP NOW AI Tour KOREA' 로고가 떠 있고 원형 테이블마다 참석자들이 앉아 있다](/images/sap-now-ai-tour-korea-2026-01.jpg)
 *그림 1. SAP NOW AI Tour Korea 2026 현장. 무대 세 개를 채운 화면 모두 같은 문구를 가리키고 있었습니다.*
