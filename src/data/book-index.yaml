@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-07-15, 총 60개
+# 생성 시각: 2026-07-16, 총 61개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -1025,4 +1025,22 @@
   relations:
     prerequisite: []
     related: [sap-now-ai-tour-2025, sap-joule-clean-core]
+    deepens: []
+
+- slug: stats-junior-first-semester
+  mapTitle: "3학년 1학기 회고"
+  title: "3학년 1학기, 편입 후 처음 맞이한 학기를 지나며"
+  category: stats
+  status: rebuilt
+  pubDate: "2026-07-16"
+  level: beginner
+  tags:
+  - "통계·데이터"
+  - "방통대"
+  - "편입"
+  - "학교여정"
+  - "직장인공부"
+  relations:
+    prerequisite: [stats-why-back-to-school]
+    related: [stats-adsp]
     deepens: []
