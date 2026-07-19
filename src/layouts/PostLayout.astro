@@ -339,8 +339,9 @@ if (slug) {
 
         const heads = Array.from(prose.querySelectorAll('h2'));
         const takeawayHead = heads.find((h) => {
-          const t = (h.textContent || '').replace(/\s/g, '');
-          return t.includes('Rabbit의한끗') || t.includes("Rabbit'sTakeaway");
+          // 공백과 아포스트로피(일반/스마트따옴표 U+2019)를 제거하고 비교 — smartypants 변환 여부 무관하게 매칭
+          const t = (h.textContent || '').replace(/[\s'\u2019]/g, '');
+          return t.includes('Rabbit의한끗') || t.includes('RabbitsTakeaway');
         });
         if (!takeawayHead) return;
 
