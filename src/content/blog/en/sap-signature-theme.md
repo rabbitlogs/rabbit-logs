@@ -1,5 +1,6 @@
 ---
 title: "Why practitioners recommend the SAP Signature Theme (a collaboration view)"
+mapTitle: "SAP Signature Theme"
 description: "Among many SAP themes, why working practitioners choose the Signature Theme — and how to set it up — explained from a collaboration and efficiency angle."
 pubDate: 2026-06-17
 category: "operations"

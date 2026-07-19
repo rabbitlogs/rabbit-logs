@@ -12,6 +12,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).optional(),
     level: z.enum(['beginner', 'intermediate']).optional(),
     thumbnail: z.string().optional(),
+    essay: z.boolean().optional(),
   }),
 });
 

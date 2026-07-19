@@ -1,5 +1,6 @@
 ---
 title: What is SAP? Understanding it through a restaurant kitchen
+mapTitle: "What is SAP"
 description: A beginner-friendly guide to SAP — the system that ties a whole company together — explained through running a restaurant.
 pubDate: 2026-06-02
 category: project

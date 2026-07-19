@@ -9,6 +9,7 @@ const nav = {
     study: 'SAP 학습자료', studyShort: '학습자료',
     stats: '통계·데이터', statsShort: '통계·데이터',
     about: '소개 & 문의', other: 'EN', otherHref: '/en/', privacy: '개인정보처리방침', terms: '이용약관',
+    mapLabel: '글 지도', rssLabel: 'RSS 피드', mapHref: '/map', rssHref: '/rss.xml',
   },
   en: {
     project: 'SAP Projects', projectShort: 'Projects',
@@ -16,6 +17,7 @@ const nav = {
     study: 'SAP Study Notes', studyShort: 'Study Notes',
     stats: 'Stats & Data', statsShort: 'Stats & Data',
     about: 'About & Contact', other: 'KO', otherHref: '/', privacy: 'Privacy Policy', terms: 'Terms of Use',
+    mapLabel: 'Site map', rssLabel: 'RSS feed', mapHref: '/en/map', rssHref: '/en/rss.xml',
   },
 };
 const t = nav[lang];
@@ -31,7 +33,7 @@ const home = lang === 'en' ? '/en/' : '/';
     <meta name="description" content={description} />
     <meta name="naver-site-verification" content="5ae106a19220bcd3114005c35125285f1c4e4b70" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="alternate" type="application/rss+xml" title="Rabbit Logs RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Rabbit Logs RSS" href={t.rssHref} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -58,7 +60,7 @@ const home = lang === 'en' ? '/en/' : '/';
       <div class="wrap header-inner">
         <a href={home} class="brand"><img src="/rabbit-logo.webp" alt="" class="brand-logo" width="69" height="80" /><span class="brand-name">Rabbit Logs</span></a>
         <div class="header-actions">
-          <a href="/map" class="map-btn" aria-label="글 지도">
+          <a href={t.mapHref} class="map-btn" aria-label={t.mapLabel}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="6" cy="6" r="2.6"></circle>
               <circle cx="18" cy="7" r="2.6"></circle>
@@ -72,7 +74,7 @@ const home = lang === 'en' ? '/en/' : '/';
           </a>
           <Search lang={lang} />
           <a href={t.otherHref} class="lang-switch">{t.other}</a>
-          <a href="/rss.xml" class="rss-btn" aria-label="RSS 피드">
+          <a href={t.rssHref} class="rss-btn" aria-label={t.rssLabel}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 11a9 9 0 0 1 9 9"></path>
               <path d="M4 4a16 16 0 0 1 16 16"></path>
@@ -165,6 +167,46 @@ const home = lang === 'en' ? '/en/' : '/';
       .prose h2 a, .prose h3 a { color: inherit; text-decoration: none; }
       .prose strong { font-weight: 700; }
       .prose strong.key { color: var(--primary); font-weight: 700; }
+
+      /* ── 소제목 자동 번호 (틸 통일색) ── */
+      /* 정보성 글의 h2에 01, 02… 번호를 붙인다. 에세이 글(.prose-essay)은 제외.
+         "Rabbit의 한 끗" 카드로 옮겨진 h2와 목차/콜아웃 안의 제목은 카운트하지 않는다. */
+      .prose:not(.prose-essay) { counter-reset: h2c; }
+      .prose:not(.prose-essay) > h2 { counter-increment: h2c; }
+      .prose:not(.prose-essay) > h2::before {
+        content: counter(h2c, decimal-leading-zero);
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 0.92rem;
+        margin-right: 0.6rem;
+        font-variant-numeric: tabular-nums;
+        vertical-align: 0.12em;
+      }
+      /* 한 끗 카드 안으로 옮겨진 h2는 번호 제외 (카드가 .prose 직계 자식이 되므로 > h2 선택자에서 자동 제외됨) */
+
+      /* ── Rabbit의 한 끗 카드 (카테고리 브랜드 톤, 연한 배경+테두리) ── */
+      .takeaway-card {
+        margin: 2.6rem 0 1.5rem;
+        padding: 1.5rem 1.7rem;
+        border-radius: 16px;
+        background: var(--tk-bg, #eef4f2);
+        border: 1.5px solid var(--tk-line, var(--primary));
+      }
+      .takeaway-card h2 {
+        margin: 0 0 0.55rem;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--tk-fg, var(--primary-deep, #234b45));
+      }
+      .takeaway-card h2::before { content: none; } /* 카드 제목엔 번호 없음 */
+      .takeaway-card > *:last-child { margin-bottom: 0; }
+      .takeaway-card p { margin: 0; color: var(--ink); }
+
+      /* 카테고리별 색 토큰 */
+      .prose-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; }
+      .prose-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; }
+      .prose-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; }
+      .prose-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; }
 
       /* 목차 */
       .prose .toc { margin: 2rem 0; padding: 1.1rem 1.4rem; background: var(--color-bg-soft); border: 1px solid var(--line); border-radius: 10px; }

@@ -2,35 +2,100 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostCard from '../../../components/PostCard.astro';
+import AdSenseList from '../../../components/AdSenseList.astro';
 
 export async function getStaticPaths() {
   return [
     { params: { cat: 'project' } },
     { params: { cat: 'operations' } },
     { params: { cat: 'study' } },
+    { params: { cat: 'stats' } },
   ];
 }
 
 const { cat } = Astro.params;
-const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes' };
+const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' };
+const catDesc = {
+  project: [
+    'A record of the process of first adopting and implementing SAP.',
+    'From PI planning to build, testing, and stabilization — the big picture of a project.',
+  ],
+  operations: [
+    'Stories from actually working with SAP day to day, after go-live.',
+    'T-codes, production and inventory management, and other hands-on operational know-how.',
+  ],
+  study: [
+    'Foundational concepts and certification guides for anyone learning SAP.',
+    'Explaining the parts beginners find confusing, from a practitioner\u2019s point of view.',
+  ],
+  stats: [
+    'Working with SAP eventually means you need an eye for data, too.',
+    'Notes from studying statistics and data analysis alongside SAP work.',
+  ],
+};
 
 const posts = (await getCollection('blog'))
   .filter((p) => p.id.startsWith('en/') && p.data.category === cat)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={`${catName[cat]} article list`} lang="en">
-  <section style="padding-top: 1.2rem;">
-    <h1 style="font-size: 2rem; margin: 0 0 1.5rem;">{catName[cat]}</h1>
-    {posts.map((post) => (
-      <PostCard
-        href={`/en/blog/${post.id.replace('en/', '').replace('.md', '')}`}
-        title={post.data.title}
-        description={post.data.description}
-        category={post.data.category}
-        pubDate={post.data.pubDate}
-        lang="en"
-      />
+<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={catDesc[cat].join(' ')} lang="en" showAds={true}>
+  <section class="cat-list" style="padding-top: 1.2rem;">
+    <h1 style="font-size: 2rem; margin: 0 0 0.6rem;">{catName[cat]}</h1>
+    <p style="font-size: 0.98rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.8rem;">
+      {catDesc[cat].map((line, i) => (<>{i > 0 && <><br class="cat-desc-br" /> </>}{line}</>))}
+    </p>
+    <style>
+      @media (max-width: 640px) { .cat-desc-br { display: none; } }
+    </style>
+    {posts.map((post, i) => (
+      <>
+        <PostCard
+          href={`/en/blog/${post.id.replace('en/', '').replace('.md', '')}`}
+          title={post.data.title}
+          description={post.data.description}
+          category={post.data.category}
+          pubDate={post.data.pubDate}
+          lang="en"
+        />
+        {/* 글 3개마다 광고 1개 (목록 흐름을 해치지 않게 카드 사이에만 삽입) */}
+        {(i + 1) % 4 === 0 && i !== posts.length - 1 && <AdSenseList />}
+      </>
     ))}
   </section>
+
+  <!--
+    목록 페이지 광고 초기화.
+    위치는 이미 정적으로 고정돼 있으므로(3개마다 1개),
+    남은 일은 각 ins.adsbygoogle에 push({})를 호출해 애드센스에 렌더를 요청하고,
+    일정 시간 안에 채워지지 않으면(미충전/광고차단) 빈 박스를 제거하는 것뿐이다.
+  -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slots = document.querySelectorAll('.cat-list .ad-slot');
+      slots.forEach((slot) => {
+        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+
+        const ins = slot.querySelector('ins.adsbygoogle');
+        if (!ins) return;
+
+        let tries = 0;
+        const checker = setInterval(() => {
+          tries++;
+          const status = ins.getAttribute('data-ad-status');
+          const iframe = ins.querySelector('iframe');
+
+          if (status === 'unfilled') {
+            slot.remove();
+            clearInterval(checker);
+          } else if (iframe && iframe.offsetHeight > 0) {
+            clearInterval(checker);
+          } else if (tries >= 12) {
+            slot.remove();
+            clearInterval(checker);
+          }
+        }, 250);
+      });
+    });
+  </script>
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 title: "Why a senior consultant told me to study CPIM before SAP"
+mapTitle: "SAP Cert vs CPIM"
 description: "A working PP consultant recommended CPIM over an SAP certification. Here's the difference between the 'How' of running a system and the 'Why' of understanding the process."
 pubDate: 2026-06-17
 category: "study"

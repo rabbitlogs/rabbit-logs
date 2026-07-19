@@ -1,0 +1,479 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import yaml from 'js-yaml';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// book-index.yaml은 ko 슬러그 기준 관계 데이터를 담고 있다 (scripts/sync-relations.py가 생성).
+// en 콘텐츠는 슬러그를 ko와 동일하게 쓰므로, 관계 그래프는 book-index.yaml을 그대로 재사용하고
+// "실제로 en 번역이 존재하는 슬러그"만 필터링해서 지도에 표시한다.
+const yamlPath = path.resolve('./src/data/book-index.yaml');
+const raw = fs.readFileSync(yamlPath, 'utf-8');
+const allEntries = yaml.load(raw);
+
+const enSlugs = new Set(
+  (await getCollection('blog'))
+    .filter((p) => p.id.startsWith('en/'))
+    .map((p) => p.id.replace('en/', '').replace('.md', ''))
+);
+
+// book-index.yaml에서 rebuilt 상태이면서 실제 en 번역이 있는 글만 지도 대상으로 삼는다
+const rebuilt = allEntries.filter((e) => e.status === 'rebuilt' && enSlugs.has(e.slug));
+const rebuiltIds = new Set(rebuilt.map((e) => e.slug));
+
+const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441', stats: '#a8516e' };
+
+// 카테고리급 1차 태그는 거의 모든 글에 붙어 그래프를 지저분하게 만들어 제외
+const skipTags = new Set(['SAP프로젝트', 'SAP실무운영', 'SAP학습자료', '통계·데이터']);
+
+// en 글의 title/tags는 en 콘텐츠 컬렉션에서 직접 가져온다 (book-index.yaml은 ko 제목만 가짐)
+const enPostsBySlug = {};
+(await getCollection('blog'))
+  .filter((p) => p.id.startsWith('en/'))
+  .forEach((p) => {
+    const slug = p.id.replace('en/', '').replace('.md', '');
+    enPostsBySlug[slug] = p.data;
+  });
+
+const postNodes = rebuilt.map((e) => {
+  const enData = enPostsBySlug[e.slug];
+  return {
+    id: e.slug,
+    title: enData?.title || e.title,
+    displayTitle: enData?.mapTitle || e.mapTitle || enData?.title || e.title,
+    category: e.category,
+    tags: (enData?.tags || e.tags || []).filter((t) => !skipTags.has(t)),
+    isTag: false,
+  };
+});
+
+const tagCount = {};
+postNodes.forEach((n) => n.tags.forEach((t) => (tagCount[t] = (tagCount[t] || 0) + 1)));
+const tagNodes = Object.keys(tagCount).map((t) => ({ id: '#' + t, title: t, isTag: true }));
+
+const postEdges = [];
+rebuilt.forEach((e) => {
+  const rel = e.relations || {};
+  (rel.prerequisite || []).forEach((t) => {
+    if (rebuiltIds.has(t)) postEdges.push({ s: t, t: e.slug, type: 'prerequisite' });
+  });
+  (rel.related || []).forEach((t) => {
+    if (rebuiltIds.has(t)) postEdges.push({ s: e.slug, t, type: 'related' });
+  });
+  (rel.deepens || []).forEach((t) => {
+    if (rebuiltIds.has(t)) postEdges.push({ s: e.slug, t, type: 'deepens' });
+  });
+});
+// related는 양방향 중복 제거
+const seen = new Set();
+const dedupPostEdges = postEdges.filter((e) => {
+  if (e.type !== 'related') return true;
+  const key = [e.s, e.t].sort().join('|');
+  if (seen.has(key)) return false;
+  seen.add(key);
+  return true;
+});
+
+const tagEdges = [];
+postNodes.forEach((n) => n.tags.forEach((t) => tagEdges.push({ s: n.id, t: '#' + t, type: 'tag' })));
+
+const graphData = {
+  nodes: [...postNodes, ...tagNodes],
+  edges: [...dedupPostEdges, ...tagEdges],
+  catColor,
+};
+const graphJson = JSON.stringify(graphData);
+---
+
+<BaseLayout title="Site Map — Rabbit Logs" description="Learning SAP through a restaurant — see how all the articles and tags connect." lang="en">
+  <section style="padding-top: 1.2rem;">
+    <h1 style="font-size: 1.7rem; margin: 0 0 0.7rem;">Site Map</h1>
+
+    <div id="toolbar">
+      <span class="chip active" data-cat="all">All</span>
+      <span class="chip" data-cat="project"><i class="cdot" style="background:#2c5f57"></i>Projects</span>
+      <span class="chip" data-cat="operations"><i class="cdot" style="background:#3b6ea5"></i>Operations</span>
+      <span class="chip" data-cat="study"><i class="cdot" style="background:#d99441"></i>Study Notes</span>
+      <span class="chip" data-cat="stats"><i class="cdot" style="background:#a8516e"></i>Stats & Data</span>
+      <span class="chip" id="tag-toggle">+ Tags</span>
+    </div>
+
+    <div id="legend">
+      <span><i class="line solid"></i> Prerequisite: read first</span>
+      <span><i class="line dashed"></i> Related: see together</span>
+      <span><i class="line thick"></i> Deep dive: go further</span>
+    </div>
+
+    <div id="stage">
+      <svg id="graph-svg"></svg>
+      <div id="panel" hidden></div>
+    </div>
+  </section>
+
+  <script type="application/json" id="graph-data" set:html={graphJson} />
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script is:inline>
+    (function () {
+      function showErr(msg) {
+        var p = document.getElementById('panel');
+        if (p) { p.hidden = false; p.style.color = '#b00'; p.textContent = '⚠ ' + msg; }
+        console.error('[map] ' + msg);
+      }
+      function boot() {
+        if (typeof d3 === 'undefined') { showErr('Failed to load d3 — try refreshing or disabling ad blockers'); return; }
+        const RAW = JSON.parse(document.getElementById('graph-data').textContent);
+        const catColor = RAW.catColor;
+        const postNodes = RAW.nodes.filter((n) => !n.isTag);
+        const postEdges = RAW.edges.filter((e) => e.type !== 'tag');
+
+        const svg = d3.select('#graph-svg');
+        const stage = document.getElementById('stage');
+        let width = stage.clientWidth,
+          height = stage.clientHeight;
+        const g = svg.append('g');
+        svg.call(d3.zoom().scaleExtent([0.3, 4]).on('zoom', (ev) => g.attr('transform', ev.transform)));
+
+        const edgeStyle = {
+          prerequisite: { dash: 'none', width: 1.3, color: '#a8a194', arrow: false },
+          related: { dash: '2,2', width: 0.7, color: '#cfc9ba', arrow: false },
+          deepens: { dash: 'none', width: 1.4, color: '#d99441', arrow: false },
+          tag: { dash: '1,2', width: 0.6, color: '#d9c9de', arrow: false },
+        };
+
+        let activeCat = 'all';
+        let showTags = false;
+        let sim, node, link, label, curNodes, curEdges, curNodesById;
+        const NODE_R = 6.5;
+        const TAG_R = 4.5;
+
+        function buildGraph(withTags) {
+          showTags = withTags;
+          g.selectAll('*').remove();
+          if (sim) sim.stop();
+
+          curNodes = withTags ? RAW.nodes.map((n) => ({ ...n })) : postNodes.map((n) => ({ ...n }));
+          curEdges = withTags ? RAW.edges : postEdges;
+          curNodesById = {};
+          curNodes.forEach((n) => (curNodesById[n.id] = n));
+
+          const linkObjs = curEdges.map((e) => ({ source: e.s, target: e.t, type: e.type }));
+
+          sim = d3
+            .forceSimulation(curNodes)
+            .force(
+              'link',
+              d3
+                .forceLink(linkObjs)
+                .id((d) => d.id)
+                .distance((d) => (d.type === 'tag' ? 30 : d.type === 'prerequisite' ? 46 : 58))
+                .strength((d) => (d.type === 'tag' ? 0.4 : 0.7))
+            )
+            .force('charge', d3.forceManyBody().strength((d) => (d.isTag ? -40 : -140)))
+            .force('center', d3.forceCenter(width / 2, height / 2))
+            .force('collide', d3.forceCollide().radius((d) => (d.isTag ? TAG_R + 18 : NODE_R + 30)))
+            .force('x', d3.forceX(width / 2).strength(0.05))
+            .force('y', d3.forceY(height / 2).strength(0.05));
+
+          link = g
+            .append('g')
+            .selectAll('line')
+            .data(linkObjs)
+            .join('line')
+            .attr('stroke', (d) => edgeStyle[d.type].color)
+            .attr('stroke-width', (d) => edgeStyle[d.type].width)
+            .attr('stroke-dasharray', (d) => edgeStyle[d.type].dash)
+            .attr('marker-end', (d) => (edgeStyle[d.type].arrow ? 'url(#arrow)' : null));
+
+          const nodeGroup = g.append('g').selectAll('.node-g').data(curNodes).join('g').attr('class', 'node-g');
+
+          node = nodeGroup
+            .append('circle')
+            .attr('r', (d) => (d.isTag ? TAG_R : NODE_R))
+            .attr('fill', (d) => (d.isTag ? '#9b7fa6' : catColor[d.category]))
+            .attr('fill-opacity', (d) => (d.isTag ? 0.55 : 1))
+            .attr('stroke', '#fff')
+            .attr('stroke-width', 1.2)
+            .style('cursor', 'pointer')
+            .call(drag(sim));
+
+          label = nodeGroup
+            .append('text')
+            .attr('class', (d) => (d.isTag ? 'tag-label' : 'node-label'))
+            .attr('text-anchor', 'middle')
+            .attr('dy', (d) => (d.isTag ? TAG_R + 11 : NODE_R + 11))
+            .text((d) => (d.isTag ? '#' + d.title : d.displayTitle));
+
+          node.append('title').text((d) => (d.isTag ? '#' + d.title : d.title));
+
+          function neighbors(id) {
+            const s = new Set([id]);
+            curEdges.forEach((e) => {
+              if (e.s === id) s.add(e.t);
+              if (e.t === id) s.add(e.s);
+            });
+            return s;
+          }
+
+          function highlight(id) {
+            const nb = neighbors(id);
+            node.classed('dim', (n) => !nb.has(n.id));
+            label.classed('dim', (n) => !nb.has(n.id));
+            link
+              .classed('dim', (l) => {
+                const sId = l.source.id || l.source;
+                const tId = l.target.id || l.target;
+                return !(sId === id || tId === id);
+              })
+              .style('display', (l) => {
+                if (l.type !== 'related') return null;
+                const sId = l.source.id || l.source;
+                const tId = l.target.id || l.target;
+                return sId === id || tId === id ? null : 'none';
+              });
+          }
+
+          const isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+          let touchActiveId = null;
+
+          if (isTouch) {
+            nodeGroup.on('click', (ev, d) => {
+              ev.stopPropagation();
+              if (d.isTag) {
+                highlight(d.id);
+                touchActiveId = d.id;
+                return;
+              }
+              if (touchActiveId === d.id) {
+                window.location.href = `/en/blog/${d.id}`;
+              } else {
+                highlight(d.id);
+                touchActiveId = d.id;
+              }
+            });
+          } else {
+            nodeGroup
+              .on('mouseenter', (ev, d) => highlight(d.id))
+              .on('mouseleave', () => applyFilters())
+              .on('click', (ev, d) => {
+                ev.stopPropagation();
+                if (!d.isTag) window.location.href = `/en/blog/${d.id}`;
+              });
+          }
+
+          svg.on('click.touchreset', () => {
+            touchActiveId = null;
+            applyFilters();
+          });
+
+          sim.on('tick', () => {
+            link
+              .attr('x1', (d) => d.source.x)
+              .attr('y1', (d) => d.source.y)
+              .attr('x2', (d) => d.target.x)
+              .attr('y2', (d) => d.target.y);
+            nodeGroup.attr('transform', (d) => `translate(${d.x},${d.y})`);
+          });
+
+          sim.alpha(1).restart();
+          applyFilters();
+        }
+
+        document.querySelectorAll('.chip[data-cat]').forEach((chip) => {
+          chip.addEventListener('click', () => {
+            document.querySelectorAll('.chip[data-cat]').forEach((c) => c.classList.remove('active'));
+            chip.classList.add('active');
+            activeCat = chip.dataset.cat;
+            applyFilters();
+          });
+        });
+
+        document.getElementById('tag-toggle').addEventListener('click', (ev) => {
+          const next = !showTags;
+          ev.currentTarget.textContent = next ? '− Tags' : '+ Tags';
+          ev.currentTarget.classList.toggle('active', next);
+          buildGraph(next);
+        });
+
+        function applyFilters() {
+          let visibleTagIds = null;
+          if (activeCat !== 'all') {
+            visibleTagIds = new Set();
+            curEdges.forEach((e) => {
+              if (e.type !== 'tag') return;
+              const postId = String(e.s).startsWith('#') ? e.t : e.s;
+              const tagId = String(e.s).startsWith('#') ? e.s : e.t;
+              const postNode = curNodesById[postId];
+              if (postNode && postNode.category === activeCat) visibleTagIds.add(tagId);
+            });
+          }
+
+          const catOk = (d) => {
+            if (!d) return false;
+            if (activeCat === 'all') return true;
+            if (d.isTag) return visibleTagIds ? visibleTagIds.has(d.id) : true;
+            return d.category === activeCat;
+          };
+
+          node.classed('dim', (d) => !catOk(d));
+          label.classed('dim', (d) => !catOk(d));
+          link
+            .style('display', (d) => (d.type === 'related' ? 'none' : null))
+            .classed('dim', (d) => {
+              const sId = d.source.id || d.source;
+              const tId = d.target.id || d.target;
+              const sNode = curNodesById[sId];
+              const tNode = curNodesById[tId];
+              return !catOk(sNode) || !catOk(tNode);
+            });
+        }
+
+        function drag(simulation) {
+          function started(ev, d) {
+            if (!ev.active) simulation.alphaTarget(0.2).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+          }
+          function dragged(ev, d) {
+            d.fx = ev.x;
+            d.fy = ev.y;
+          }
+          function ended(ev, d) {
+            if (!ev.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+          }
+          return d3.drag().on('start', started).on('drag', dragged).on('end', ended);
+        }
+
+        buildGraph(false);
+
+        window.addEventListener('resize', () => {
+          width = stage.clientWidth;
+          height = stage.clientHeight;
+          sim.force('center', d3.forceCenter(width / 2, height / 2));
+          sim.alpha(0.3).restart();
+        });
+      } // boot 끝
+
+      var tries = 0;
+      function waitAndBoot() {
+        var domReady = document.readyState !== 'loading';
+        if (typeof d3 !== 'undefined' && domReady) { boot(); return; }
+        if (tries++ < 80) { setTimeout(waitAndBoot, 50); return; }
+        boot();
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitAndBoot);
+      } else {
+        waitAndBoot();
+      }
+    })();
+  </script>
+
+  <style is:global>
+    #legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 11.5px;
+      color: #6b6555;
+      margin-top: 0.7rem;
+      margin-bottom: 0.8rem;
+    }
+    #legend i.line {
+      display: inline-block;
+      width: 20px;
+      height: 0;
+      vertical-align: middle;
+      margin-right: 4px;
+      border-top: 2px solid #9a9486;
+    }
+    #legend i.line.dashed {
+      border-top: 2px dashed #9a9486;
+    }
+    #legend i.line.thick {
+      border-top: 3px solid #d99441;
+    }
+    #toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chip {
+      border: 1px solid #d8d2c4;
+      border-radius: 20px;
+      padding: 4px 12px;
+      cursor: pointer;
+      background: #fff;
+      color: #6b6555;
+      font-size: 12px;
+      user-select: none;
+    }
+    .chip .cdot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .chip.active {
+      background: #2c5f57;
+      color: #fff;
+      border-color: #2c5f57;
+    }
+    #stage {
+      position: relative;
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      height: 78vh;
+      min-height: 520px;
+      margin-top: 0.4rem;
+      border-bottom: 1px solid #d8d2c4;
+      background: #faf8f3;
+      overflow: hidden;
+    }
+    #graph-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .node-label {
+      font-size: 9.5px;
+      fill: #44413a;
+      pointer-events: none;
+      text-anchor: middle;
+      transition: opacity 0.15s;
+    }
+    .tag-label {
+      font-size: 8px;
+      fill: #7a5d83;
+      pointer-events: none;
+      text-anchor: middle;
+      transition: opacity 0.15s;
+    }
+    .node-g circle {
+      transition: opacity 0.15s;
+      filter: drop-shadow(0 1px 1.5px rgba(42, 42, 38, 0.22));
+    }
+    .dim {
+      opacity: 0.1 !important;
+    }
+    #panel {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: #fff;
+      border: 1px solid #d8d2c4;
+      border-radius: 10px;
+      padding: 8px 11px;
+      font-size: 10.5px;
+      max-width: 230px;
+      color: #6b6555;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</BaseLayout>

@@ -12,8 +12,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const slug = post.id.replace('en/', '').replace('.md', '');
 ---
 
-<PostLayout {...post.data} lang="en">
+<PostLayout {...post.data} slug={slug} lang="en">
   <Content />
 </PostLayout>

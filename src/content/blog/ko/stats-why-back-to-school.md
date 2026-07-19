@@ -7,6 +7,7 @@ category: "stats"
 series: "SAP 실무자의 데이터 공부"
 tags: ['통계·데이터', '방통대', '편입', '데이터분석', '직장인공부']
 level: "beginner"
+essay: true
 ---
 
 "이거 납기 언제 가능해요?"

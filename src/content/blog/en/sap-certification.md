@@ -1,5 +1,6 @@
 ---
 title: "The SAP certification guide: cost, renewal, and whether you need it (2026)"
+mapTitle: "SAP Certification"
 description: From exam eligibility to training costs, Stay Certified renewal fees, and whether it's actually worth it — an SAP certification guide at a beginner's eye level.
 pubDate: 2026-06-15
 category: study

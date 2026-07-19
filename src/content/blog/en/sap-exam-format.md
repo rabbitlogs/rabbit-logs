@@ -1,5 +1,6 @@
 ---
 title: How the SAP certification exam works after the practical shift (2026)
+mapTitle: "SAP Exam Format"
 description: The SAP certification exam moved from multiple-choice to hands-on. Here's the difference between the system-based exam and the AI scenario exam, the process, and the mistakes you must avoid.
 pubDate: 2026-06-16
 category: study

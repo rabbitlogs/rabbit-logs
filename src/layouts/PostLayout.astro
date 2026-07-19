@@ -2,15 +2,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import { getCollection } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import AdSense from '../components/AdSense.astro';
 
-const { title, description, pubDate, category, lang = 'ko', tags = [], slug, thumbnail } = Astro.props;
+const { title, description, pubDate, category, lang = 'ko', tags = [], slug, thumbnail, essay = false } = Astro.props;
 
 const catName = {
   ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', stats: '통계·데이터' },
   en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' },
 };
+const miniMapText = {
+  ko: { label: '🗺️ 이 글과 연결된 글', allLink: '전체 지도 보기 →', mapHref: '/map', prerequisite: '선행', related: '관련', deepens: '심화' },
+  en: { label: '🗺️ Related articles', allLink: 'View full map →', mapHref: '/en/map', prerequisite: 'Prerequisite', related: 'Related', deepens: 'Deep dive' },
+};
+const mmt = miniMapText[lang] || miniMapText.ko;
 const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
@@ -50,17 +56,38 @@ const jsonLd = {
   },
 };
 
-// ── 1-hop 미니맵: book-index.yaml에서 이 글과 직접 연결된 글만 모은다 (ko 전용) ──
+// ── 1-hop 미니맵: book-index.yaml(ko 슬러그 기준 관계)에서 이 글과 직접 연결된 글만 모은다 ──
+// en 글은 슬러그를 ko와 동일하게 쓰므로 관계 그래프는 그대로 재사용하고,
+// "실제로 그 언어의 번역이 존재하는 슬러그"만 이웃으로 남긴다.
 const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441', stats: '#a8516e' };
 let miniMap = null;
-if (lang === 'ko' && slug) {
+if (slug) {
   try {
     const yamlPath = path.resolve('./src/data/book-index.yaml');
     const entries = yaml.load(fs.readFileSync(yamlPath, 'utf-8'));
     const bySlug = {};
     entries.forEach((e) => (bySlug[e.slug] = e));
     const me = bySlug[slug];
-    if (me && me.status === 'rebuilt') {
+
+    // 이 글의 언어에 실제로 존재하는 슬러그 집합 (en이면 en 콘텐츠만, ko면 ko 콘텐츠만)
+    const existingSlugs = new Set(
+      (await getCollection('blog'))
+        .filter((p) => p.id.startsWith(lang + '/'))
+        .map((p) => p.id.replace(lang + '/', '').replace('.md', ''))
+    );
+
+    // 언어별 제목/mapTitle 오버라이드 (book-index.yaml은 ko 제목만 가지므로 en일 땐 실제 en 콘텐츠에서 가져온다)
+    const titleOverride = {};
+    if (lang === 'en') {
+      (await getCollection('blog'))
+        .filter((p) => p.id.startsWith('en/'))
+        .forEach((p) => {
+          const s = p.id.replace('en/', '').replace('.md', '');
+          titleOverride[s] = { title: p.data.title, mapTitle: p.data.mapTitle };
+        });
+    }
+
+    if (me && me.status === 'rebuilt' && existingSlugs.has(slug)) {
       // 이 글이 직접 가리키는 관계(나가는 edge) + 다른 글이 이 글을 가리키는 관계(들어오는 edge)
       // 들어오는 쪽은 방향을 뒤집어 같은 타입으로 표시한다
       //   (A가 B의 prerequisite ⇒ B 입장에선 A가 "먼저 읽으면 좋은 글"이므로 동일하게 prerequisite로 취급)
@@ -77,16 +104,20 @@ if (lang === 'ko' && slug) {
         if ((e.relations.deepens || []).includes(slug)) neighborType[e.slug] = 'deepens';
       });
 
-      const neighborIds = Object.keys(neighborType).filter((id) => bySlug[id] && bySlug[id].status === 'rebuilt');
+      // rebuilt 상태 + 실제로 이 언어의 번역이 존재하는 슬러그만 이웃으로 남긴다
+      const neighborIds = Object.keys(neighborType).filter(
+        (id) => bySlug[id] && bySlug[id].status === 'rebuilt' && existingSlugs.has(id)
+      );
 
       if (neighborIds.length > 0) {
         const cx = 150, cy = 110, R = 72;
         const N = neighborIds.length;
         const neighbors = neighborIds.map((id, i) => {
           const angle = -Math.PI / 2 + (i * 2 * Math.PI) / N;
+          const ov = titleOverride[id];
           return {
             slug: id,
-            title: bySlug[id].mapTitle || bySlug[id].title,
+            title: (ov && (ov.mapTitle || ov.title)) || bySlug[id].mapTitle || bySlug[id].title,
             category: bySlug[id].category,
             type: neighborType[id],
             x: Math.round(cx + R * Math.cos(angle)),
@@ -94,8 +125,14 @@ if (lang === 'ko' && slug) {
           };
         });
 
+        const meOv = titleOverride[slug];
         miniMap = {
-          center: { title: me.mapTitle || me.title, category: me.category, x: cx, y: cy },
+          center: {
+            title: (meOv && (meOv.mapTitle || meOv.title)) || me.mapTitle || me.title,
+            category: me.category,
+            x: cx,
+            y: cy,
+          },
           neighbors,
         };
       }
@@ -116,17 +153,17 @@ if (lang === 'ko' && slug) {
     <h1>{title}</h1>
     <p class="subtitle">{description}</p>
 
-    <div class="prose">
+    <div class={`prose prose-${category}${essay ? ' prose-essay' : ''}`}>
       <slot />
     </div>
 
     {miniMap && (
       <div class="mini-map">
         <div class="mini-map-head">
-          <span class="mini-map-label">🗺️ 이 글과 연결된 글</span>
-          <a href="/map" class="mini-map-all">전체 지도 보기 →</a>
+          <span class="mini-map-label">{mmt.label}</span>
+          <a href={mmt.mapHref} class="mini-map-all">{mmt.allLink}</a>
         </div>
-        <svg viewBox="0 0 300 220" class="mini-map-svg" role="img" aria-label="관련 글 관계도">
+        <svg viewBox="0 0 300 220" class="mini-map-svg" role="img" aria-label={lang === 'en' ? 'Related articles diagram' : '관련 글 관계도'}>
           {miniMap.neighbors.map((n) => (
             <line
               x1={miniMap.center.x} y1={miniMap.center.y}
@@ -139,16 +176,16 @@ if (lang === 'ko' && slug) {
           <circle cx={miniMap.center.x} cy={miniMap.center.y} r="9" fill={catColor[miniMap.center.category]} stroke="#fff" stroke-width="1.5" />
           <text x={miniMap.center.x} y={miniMap.center.y + 22} text-anchor="middle" class="mm-center-label">{miniMap.center.title}</text>
           {miniMap.neighbors.map((n) => (
-            <a href={`/blog/${n.slug}`}>
+            <a href={`${lang === 'en' ? '/en' : ''}/blog/${n.slug}`}>
               <circle cx={n.x} cy={n.y} r="6" fill={catColor[n.category]} stroke="#fff" stroke-width="1.2" />
               <text x={n.x} y={n.y + (n.y > miniMap.center.y ? 16 : -10)} text-anchor="middle" class="mm-label">{n.title}</text>
             </a>
           ))}
         </svg>
         <div class="mini-map-legend">
-          <span><i class="mm-line solid"></i> 선행</span>
-          <span><i class="mm-line dashed"></i> 관련</span>
-          <span><i class="mm-line thick"></i> 심화</span>
+          <span><i class="mm-line solid"></i> {mmt.prerequisite}</span>
+          <span><i class="mm-line dashed"></i> {mmt.related}</span>
+          <span><i class="mm-line thick"></i> {mmt.deepens}</span>
         </div>
       </div>
     )}
@@ -286,6 +323,50 @@ if (lang === 'ko' && slug) {
             }
           }, 250);
         });
+      });
+    </script>
+
+    <!--
+      "Rabbit의 한 끗" 마무리 섹션을 카테고리 색 카드로 감싼다.
+      기존 글은 `## Rabbit의 한 끗`(h2)로 쓰므로, 그 h2부터 다음 h2(또는 "더 읽어보기") 전까지를
+      하나의 카드(div.takeaway)로 묶는다. 글 본문을 고치지 않아도 자동 적용된다.
+      에세이 글(.prose-essay)에는 적용하지 않는다(마무리 소제목 자체가 없음).
+    -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const prose = document.querySelector('.prose');
+        if (!prose || prose.classList.contains('prose-essay')) return;
+
+        const heads = Array.from(prose.querySelectorAll('h2'));
+        const takeawayHead = heads.find((h) => {
+          const t = (h.textContent || '').replace(/\s/g, '');
+          return t.includes('Rabbit의한끗') || t.includes("Rabbit'sTakeaway");
+        });
+        if (!takeawayHead) return;
+
+        // 카드로 옮길 노드: 이 h2부터 다음 h2/"더 읽어보기"(strong) 블록 전까지
+        const card = document.createElement('div');
+        card.className = 'takeaway-card';
+
+        const collected = [];
+        let node = takeawayHead;
+        while (node) {
+          const next = node.nextElementSibling;
+          // 다음 h2를 만나면 종료
+          if (node !== takeawayHead && node.tagName === 'H2') break;
+          // "더 읽어보기 / Read more" 문단(strong만 있는 p)을 만나면 종료
+          if (node.tagName === 'P') {
+            const strong = node.querySelector('strong');
+            const txt = (node.textContent || '').replace(/\s/g, '');
+            if (strong && (txt.includes('더읽어보기') || txt.includes('Readmore'))) break;
+          }
+          collected.push(node);
+          node = next;
+        }
+        if (collected.length === 0) return;
+
+        takeawayHead.parentNode.insertBefore(card, takeawayHead);
+        collected.forEach((n) => card.appendChild(n));
       });
     </script>
 

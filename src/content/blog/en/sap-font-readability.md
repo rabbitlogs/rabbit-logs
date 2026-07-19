@@ -1,5 +1,6 @@
 ---
 title: "Improving SAP readability with font settings (D2Coding and Pretendard)"
+mapTitle: "SAP Font Settings"
 description: "How to fix SAP's default font readability with D2Coding and Pretendard — from download to applying them in SAP GUI, step by step."
 pubDate: 2026-06-18
 category: "operations"
