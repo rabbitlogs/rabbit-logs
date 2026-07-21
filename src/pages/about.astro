@@ -10,57 +10,249 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <article class="prose page about">
     <div class="about-hero">
       <img src="/images/hero-rabbit.png" alt="Rabbit Logs 토끼 캐릭터" class="about-logo" />
-      <h1>Rabbit Logs에 오신 걸 환영합니다</h1>
-      <p class="tagline">코드는 몰라도, 프로세스는 잘 아는 사람.</p>
+      <h1>코드는 몰라도,<br />프로세스는 잘 아는 사람</h1>
     </div>
 
     <p class="lead">생산 PI와 SAP PP 구축, 안정화 프로젝트를 거쳐,<br />지금도 SAP를 <strong>'사용하는' 현업 실무자</strong>로 일하고 있습니다.</p>
 
     <p class="lead">일하면서 배운 것을, 일하는 사람의 언어로 기록합니다.<br />그리고 데이터로 시야를 넓혀가는 과정도 함께 남깁니다.</p>
 
+    <ul class="timeline">
+      <li><div class="tl-body">
+        <p class="tl-title">생산 PI</p>
+        <p class="tl-desc">현장 프로세스 분석·개선</p>
+      </div></li>
+      <li><div class="tl-body">
+        <p class="tl-title">SAP PP 구축</p>
+        <p class="tl-desc">To-Be 설계·개발·테스트</p>
+      </div></li>
+      <li><div class="tl-body">
+        <p class="tl-title">SAP PP 안정화</p>
+        <p class="tl-desc">Go-Live 이후 이슈 대응</p>
+      </div></li>
+      <li><div class="tl-body">
+        <p class="tl-title">SAP PP 보완</p>
+        <p class="tl-desc">운영 중 개선·추가 개발</p>
+      </div></li>
+      <li><div class="tl-body">
+        <p class="tl-title">現 현업 실무자</p>
+        <p class="tl-desc">SAP를 쓰는 쪽에서 기록</p>
+      </div></li>
+    </ul>
+
     <div class="motto">
       <p class="motto-main">기능보다 프로세스, 화면보다 사람.</p>
-      <p class="motto-sub">실제 업무에 도움이 되는 내용을 공유합니다.</p>
+      <p class="motto-sub">T-code 목록보다, 그 화면을 왜 그렇게 쓰는지를 씁니다.</p>
     </div>
 
-    <h2>📬 문의</h2>
+    <div class="section-label"><h2>무엇을 기록하나요</h2></div>
+    <div class="cat-grid">
+      <a href="/category/project" class="cat-card cat-project">
+        <p class="cat-name">SAP 프로젝트</p>
+        <p class="cat-desc">구축 현장의 판단과 시행착오</p>
+      </a>
+      <a href="/category/operations" class="cat-card cat-operations">
+        <p class="cat-name">SAP 실무운영</p>
+        <p class="cat-desc">화면 뒤에서 벌어지는 일</p>
+      </a>
+      <a href="/category/study" class="cat-card cat-study">
+        <p class="cat-name">SAP 학습자료</p>
+        <p class="cat-desc">처음 배우는 눈높이의 개념 정리</p>
+      </a>
+      <a href="/category/stats" class="cat-card cat-stats">
+        <p class="cat-name">통계·데이터</p>
+        <p class="cat-desc">숫자로 업무를 다시 보는 연습</p>
+      </a>
+    </div>
 
-    <p>궁금한 점이나 나누고 싶은 이야기가 있다면 메일 주세요.</p>
-
-    <p class="contact-box">
-      <span class="contact-label">E-mail</span>
-      <a href="mailto:contact@rabbitlogs.com" class="contact-mail">contact@rabbitlogs.com</a>
-    </p>
+    <div class="section-label"><h2>문의</h2></div>
+    <div class="cta-row">
+      <a href="mailto:contact@rabbitlogs.com" class="cta-card">
+        <span class="cta-label">MAIL</span>
+        <span class="cta-text">
+          <span class="cta-value">contact@rabbitlogs.com</span>
+          <span class="cta-hint">나누고 싶은 이야기가 있다면</span>
+        </span>
+      </a>
+      <a href="/rss.xml" class="cta-card">
+        <span class="cta-label">RSS</span>
+        <span class="cta-text">
+          <span class="cta-value">새 글 구독하기</span>
+          <span class="cta-hint">알림 없이, 읽고 싶을 때만</span>
+        </span>
+      </a>
+    </div>
   </article>
 
   <style>
     .about { max-width: 640px; }
-    .about-hero { text-align: center; margin: 0.5rem 0 1.8rem; }
-    .about-logo { width: 110px; height: auto; margin: 0 auto 0.8rem; display: block; }
-    .about-hero h1 { font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
-    .tagline { color: var(--muted); font-size: 1rem; margin: 0; }
 
-    /* 본문 — 한 문단 한 흐름(줄바꿈은 브라우저가 자동) */
-    .about .lead { font-size: 1.02rem; line-height: 1.8; color: var(--ink); margin: 1.2rem 0; text-align: center; }
+    /* ── 히어로 ── */
+    .about-hero {
+      text-align: center;
+      margin: 0 0 1.6rem;
+      padding: 1.8rem 1rem 1.4rem;
+      position: relative;
+    }
+    .about-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 35%, rgba(44,95,87,0.07) 0%, rgba(44,95,87,0) 70%);
+      pointer-events: none;
+    }
+    .about-logo { width: 118px; height: auto; margin: 0 auto 0.9rem; display: block; position: relative; }
+    .about-hero h1 { font-weight: 800; font-size: 2rem; letter-spacing: -0.03em; margin: 0; line-height: 1.35; position: relative; }
+
+    .about .lead { font-size: 1rem; line-height: 1.75; color: var(--ink); margin: 0.9rem 0; text-align: center; }
     .about .lead strong { color: var(--primary); font-weight: 700; }
 
-    /* 핵심 모토 — 위아래 구분선 + 가운데 정렬 + 청록 강조 */
-    .motto { text-align: center; margin: 1.8rem 0; padding: 1.3rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .motto-main { font-size: 1.2rem; font-weight: 700; color: var(--primary); line-height: 1.6; margin: 0; letter-spacing: -0.01em; }
-    .motto-sub { font-size: 0.96rem; color: var(--muted); margin: 0.6rem 0 0; }
+    /* ── 섹션 라벨 ── */
+    .section-label {
+      display: flex; align-items: center; gap: 0.7rem;
+      margin: 2.2rem 0 0.9rem;
+    }
+    .about .section-label h2 {
+      font-size: 1.08rem; font-weight: 700; margin: 0;
+      white-space: nowrap; letter-spacing: -0.01em; text-align: left;
+    }
+    .about .section-label h2::before { content: none; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
-    .about h2 { font-size: 1.2rem; margin-top: 1.8rem; margin-bottom: 0.6rem; text-align: center; }
-    .about > p:not([class]) { text-align: center; margin: 0.8rem 0; }
-    .contact-box {
-      display: flex; align-items: center; justify-content: center; gap: 0.9rem;
+    /* ── 가로 타임라인 (점 위아래 교차) ── */
+    .timeline {
+      list-style: none; padding: 0 9%; margin: 2.8rem 0; position: relative;
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      min-height: 150px; align-items: center;
+    }
+    .timeline::before {
+      content: ''; position: absolute; left: 9%; right: 9%; top: 50%;
+      transform: translateY(-50%); height: 2px;
+      background: linear-gradient(to right, rgba(44,95,87,0.22), var(--primary));
+    }
+    .timeline li {
+      position: relative; padding: 0; margin: 0; text-align: center; height: 100%;
+    }
+    .tl-body {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      width: 155px; bottom: calc(50% + 34px);
+    }
+    .timeline li:nth-child(even) .tl-body {
+      bottom: auto; top: calc(50% + 34px);
+    }
+    .timeline li::before {
+      content: ''; position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--paper); border: 2.5px solid rgba(44,95,87,0.5);
+      z-index: 1;
+    }
+    .timeline li::after {
+      content: ''; position: absolute; left: 50%; width: 1px;
+      background: rgba(44,95,87,0.28);
+      top: calc(50% - 28px); height: 22px;
+    }
+    .timeline li:nth-child(even)::after { top: auto; bottom: calc(50% - 28px); }
+    .timeline li:last-child::before {
+      background: var(--primary); border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(44,95,87,0.14);
+    }
+    .tl-title { font-weight: 700; font-size: 0.95rem; margin: 0; color: var(--ink); letter-spacing: -0.02em; line-height: 1.35; white-space: nowrap; }
+    .timeline li:last-child .tl-title { color: var(--primary); }
+    .tl-desc { font-size: 0.79rem; color: var(--muted); margin: 0.18rem 0 0; line-height: 1.4; white-space: nowrap; }
+
+    /* ── 모토 ── */
+    .motto {
+      text-align: center; margin: 3rem 0; padding: 0 1rem;
+    }
+    .motto::before,
+    .motto::after {
+      content: ''; display: block; width: 32px; height: 2px;
+      background: var(--primary); opacity: 0.5; margin: 0 auto;
+    }
+    .motto::before { margin-bottom: 1.4rem; }
+    .motto::after { margin-top: 1.4rem; }
+    .motto-main {
+      font-size: 1.32rem; font-weight: 700; color: var(--primary);
+      line-height: 1.5; margin: 0; letter-spacing: -0.02em; word-break: keep-all;
+    }
+    .motto-sub {
+      font-size: 0.92rem; color: var(--muted); margin: 0.65rem 0 0;
+      line-height: 1.65; word-break: keep-all;
+    }
+
+    /* ── 카테고리 카드 ── */
+    .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin: 0; }
+    .cat-card {
+      display: block; text-decoration: none; color: inherit;
+      background: var(--tk-bg); border: 1px solid var(--tk-border);
+      border-left: 3px solid var(--tk-line);
+      border-radius: 0 8px 8px 0; padding: 0.7rem 0.85rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cat-card:hover { transform: translateY(-2px); box-shadow: 0 3px 10px rgba(32,37,31,0.08); }
+    .cat-name { font-weight: 700; font-size: 0.9rem; color: var(--tk-fg); margin: 0 0 0.12rem; line-height: 1.35; }
+    .cat-desc { font-size: 0.78rem; color: var(--muted); margin: 0; line-height: 1.45; word-break: keep-all; }
+    .cat-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; --tk-border: #cfe3de; }
+    .cat-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; --tk-border: #cddced; }
+    .cat-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; --tk-border: #f0dbb3; }
+    .cat-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; --tk-border: #eccfd9; }
+
+    /* ── 문의 + 구독 CTA ── */
+    .cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 0; }
+    .cta-card {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: inherit;
       background: var(--color-bg-soft); border: 1px solid var(--line);
-      border-radius: 10px; padding: 0.9rem 1.25rem; margin: 1rem 0;
+      border-radius: 8px; padding: 0.65rem 0.85rem; text-align: left;
+      transition: border-color 0.15s ease, background 0.15s ease;
     }
-    .contact-label {
-      font-size: 0.78rem; font-weight: 700; color: #fff; background: var(--primary);
-      padding: 0.22rem 0.6rem; border-radius: 6px; letter-spacing: 0.03em; white-space: nowrap;
+    .cta-card:hover { border-color: var(--primary); background: #eef4f2; }
+    .cta-label {
+      flex-shrink: 0; font-size: 0.66rem; font-weight: 700; color: #fff;
+      background: var(--primary); padding: 0.2rem 0.45rem; border-radius: 5px;
+      letter-spacing: 0.04em;
     }
-    .contact-mail { font-weight: 600; font-size: 1.05rem; text-decoration: none; }
-    .contact-mail:hover { text-decoration: underline; }
+    .cta-text { min-width: 0; }
+    .cta-value {
+      display: block; font-weight: 700; font-size: 0.85rem; color: var(--primary);
+      line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .cta-hint { display: block; font-size: 0.73rem; color: var(--muted); line-height: 1.4; }
+
+    /* ── 모바일: 타임라인 세로 전환 ── */
+    @media (max-width: 640px) {
+      .about-hero h1 { font-size: 1.75rem; }
+      .about-logo { width: 115px; }
+      .cat-grid, .cta-row { grid-template-columns: 1fr; }
+      .motto-main { font-size: 1.15rem; }
+
+      .timeline {
+        display: block; min-height: 0; margin: 2.6rem 0;
+        width: 100%; padding: 0; transform: none;
+      }
+      .tl-body,
+      .timeline li:nth-child(even) .tl-body {
+        position: static; width: auto; transform: none;
+        top: auto; bottom: auto;
+      }
+      .timeline::before {
+        left: 5px; right: auto; top: 0.5rem; bottom: 0.5rem;
+        width: 2px; height: auto; transform: none;
+        background: linear-gradient(to bottom, rgba(44,95,87,0.22), var(--primary));
+      }
+      .timeline li,
+      .timeline li:nth-child(even) {
+        display: block; height: auto; text-align: left;
+        padding: 0 0 0 1.9rem; margin-bottom: 1.5rem;
+      }
+      .timeline li:last-child { margin-bottom: 0; }
+      .timeline li::before,
+      .timeline li:nth-child(even)::before {
+        left: -1px; top: 0.45rem; transform: none;
+      }
+      .timeline li::after,
+      .timeline li:nth-child(even)::after { display: none; }
+      .tl-title { font-size: 1rem; white-space: normal; }
+      .tl-desc { font-size: 0.88rem; white-space: normal; }
+    }
   </style>
 </BaseLayout>
