@@ -1,87 +1,90 @@
 ---
-title: "Improving SAP readability with font settings (D2Coding and Pretendard)"
-mapTitle: "SAP Font Settings"
-description: "How to fix SAP's default font readability with D2Coding and Pretendard — from download to applying them in SAP GUI, step by step."
-pubDate: 2026-06-18
-category: "operations"
-series: "SAP, Explained Like a Restaurant"
-level: "beginner"
-tags: ["SAP-Operations", "SAP-GUI", "SAP-font", "SAP-settings"]
+title: "SAP font settings: reading the screen as clearly as a menu board"
+mapTitle: "SAP font settings"
+description: "How to fix SAP's default font readability problems using D2Coding and Pretendard fonts. Covers everything from download to applying them in SAP GUI, step by step."
+pubDate: "2025-11-22"
+category: operations
+series: Learning SAP through a restaurant
+level: beginner
+tags:
+  - SAPOperations
+  - SAPGUI
+  - SAPFont
+  - SAPSettings
 ---
 
 Hi, this is Rabbit! 🐰
 
-Does your daily SAP screen feel somehow stuffy and hard to read — like wearing glasses with the wrong prescription? The cause is surprisingly simple: the **font**.
+Ever feel like the SAP screen you stare at every day is oddly hard on the eyes — like wearing glasses with the wrong prescription? The cause of that discomfort is surprisingly simple. It's the **font**.
 
-Today I'll cover how to dramatically improve SAP readability just by swapping fonts. It takes five minutes, and once you change it, going back is hard.
+Today I'll walk through how swapping fonts alone can meaningfully improve SAP's readability. It takes about 5 minutes, and the difference is big enough that it's hard to go back once you've made the switch.
 
-> **In 3 lines**
-> - SAP's default font (Gulim) makes numbers and letters hard to tell apart, tiring the eyes.
-> - Use D2Coding for fixed-width and Pretendard for proportional.
-> - Install the fonts, set both in SAP GUI options, and you're done.
+> **3-line summary**
+> - SAP's default font (Gulim) makes it hard to distinguish numbers from letters, which tires your eyes quickly.
+> - D2Coding is recommended for the fixed-width font, and Pretendard for the variable-width font.
+> - Just install the fonts and set the two in SAP GUI's options, and you're done.
 
 [[TOC]]
 
 ## Why start with the font
 
-SAP GUI's default font is usually 'Gulim.' Honestly, its readability is dated, and it becomes a problem when working with data.
+SAP GUI's default font is usually Gulim. Honestly, its readability doesn't hold up by today's standards, and it becomes a real problem especially when you're working with data.
 
-The number '0' and the letter 'O' get confused; the letter 'l' and the number '1' look like twins. These small differences pile up, tire your eyes, and sometimes lead to mistakes — like working through a foggy lens. No matter how good the features are, they're useless if you can't read clearly.
+The number '0' and the letter 'O' are easy to confuse, and the letter 'l' and the number '1' look like twins. These small differences pile up and tire your eyes, and sometimes lead to real work mistakes. It's a bit like working while wearing blurry glasses — no matter how good the underlying features are, they're useless if you can't see them clearly.
 
-That's why font comes first when we talk about readability. You take off the old glasses and put on a new pair that fits.
+That's why the font is the first thing to change when talking about readability. It's swapping out old glasses for a new pair that actually fits.
 
 ## Two pairs of glasses: D2Coding and Pretendard
 
-Depending on the use, I recommend two fonts — like coding glasses and everyday glasses.
+Two fonts are recommended, depending on use — like a pair for coding and a pair for everyday use.
 
-**D2Coding — for fixed-width.** A free font Naver made for developers. Its biggest strength is clearly distinguishing similar-looking characters. It shines for fixed-width text like T-codes, numbers, and material codes. In SAP, set it as the 'fixed-width font.'
+**D2Coding — for fixed-width.** A free font built by Naver for developers. Its biggest strength is clearly distinguishing characters that otherwise look alike. It really shines on fixed-width content like T-codes, numbers, and material codes. In SAP, set this as your "fixed-width font."
 
-**Pretendard — for proportional.** A clean, widely used modern font, similar to Apple's system font. It makes variable-length text like material descriptions easy on the eyes. Set it as the 'proportional font' in SAP, and the once-rigid screen looks much tidier.
+**Pretendard — for variable-width.** A clean, widely used font these days, similar to Apple's system font, giving screens a more modern feel. It makes general text of varying lengths — like material descriptions — comfortable to read. Set this as your "variable-width font" in SAP, and the once-stiff screen looks noticeably more polished.
 
-Splitting these two fonts by purpose makes SAP readability noticeably better.
+Splitting these two fonts by purpose makes a visible difference in SAP's overall readability.
 
-## Install and apply (about 5 minutes)
+## Installing and applying (about 5 minutes)
 
 ### 1. Download the fonts
 
-Get both first — both are free and available on official GitHub.
+Grab both fonts first. Both are free and available on their official GitHub pages.
 
 - D2Coding: [github.com/naver/d2codingfont](https://github.com/naver/d2codingfont)
 - Pretendard: [github.com/orioncactus/pretendard](https://github.com/orioncactus/pretendard)
 
 ### 2. Install the fonts
 
-Unzip and install. The two fonts install a bit differently.
+Unzip and install the downloaded files. The installation steps differ slightly between the two fonts.
 
-**D2Coding** unzips to a single `.ttc` file. It bundles Regular and Bold together, so installing just that one applies both weights.
+**D2Coding** comes as a single `.ttc` file once unzipped. It bundles Regular and Bold together, so installing this one file applies both weights at once.
 
-**Pretendard** unzips to a folder; go into `public → static` and you'll see multiple files. Select all with `Ctrl+A`, then in the right-click menu be sure to choose **'Install for all users.'**
+**Pretendard** requires navigating into the `public → static` folder inside the unzipped folder, where you'll find several files. Select all with `Ctrl+A`, right-click, and be sure to choose **"Install for all users."**
 
-> ⚠️ **Note**: For Pretendard, choose **'Install for all users,'** not just 'Install.' Miss this and the font may not appear in SAP.
+> ⚠️ **Note**: For Pretendard, you need to click "Install for all users," not just "Install." Skip this and the font may not show up in SAP.
 
 ### 3. Apply in SAP GUI
 
 Now assign the new fonts in SAP.
 
-1. Click the top-left icon in the SAP Logon window and go to **Options**.
+1. In the SAP Logon window, click the icon in the top-left corner to open **Options**.
 2. Go to **Visual Design → Font Settings**.
 3. Click **Select** to open the popup.
 4. **Fixed-width font**: D2Coding, size 11 or 12
-5. **Proportional font**: Pretendard, size 11 or 12
-6. Click **Apply** and you're done.
+5. **Variable-width font**: Pretendard, size 11 or 12
+6. Click **Apply**, and you're done.
 
-![SAP font settings with D2Coding as fixed-width and Pretendard as proportional](/images/sap-font-readability-01_en.jpg)
-*Figure 1. Fixed-width as D2Coding, proportional as Pretendard*
+![SAP font settings screen showing D2Coding assigned as the fixed-width font and Pretendard as the variable-width font](/images/sap-font-readability-01.jpg)
+*Figure 1. Fixed-width set to D2Coding, variable-width set to Pretendard*
 
 ## Rabbit's Takeaway
 
-"How much can one font really change?" you might think. But just making your daily screen comfortable cuts stress and reduces small mistakes too.
+"How much difference can changing one font really make?" is a fair question. But just making the screen you look at every day more comfortable cuts down on work stress, and small mistakes drop right along with it.
 
-Using good tools well is part of a practitioner's skill. A five-minute investment to sharpen your screen makes every day of SAP work a little smoother. 😎
+Knowing how to use good tools well is a skill in its own right. A 5-minute investment in sharpening your screen will make your everyday SAP work noticeably smoother. 😎
 
 **Read more**
 
-- [Why practitioners recommend the SAP Signature Theme](/en/blog/sap-signature-theme)
-- [What is SAP? Understanding it through a restaurant kitchen](/en/blog/sap-what-is-sap)
+- [SAP Signature theme: a shared uniform that makes collaboration easier](/en/blog/sap-signature-theme)
 
-<!-- 관련글: sap-signature-theme, sap-what-is-sap -->
+<!-- Related posts: prerequisite=; related=sap-signature-theme; deepens= -->

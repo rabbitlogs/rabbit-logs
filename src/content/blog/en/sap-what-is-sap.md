@@ -1,73 +1,73 @@
 ---
-title: What is SAP? Understanding it through a restaurant kitchen
-mapTitle: "What is SAP"
-description: A beginner-friendly guide to SAP — the system that ties a whole company together — explained through running a restaurant.
-pubDate: 2026-06-02
-category: project
-series: SAP, Explained Like a Restaurant
-level: beginner
-tags:
-  - SAP-Projects
-  - SAP-basics
-  - ERP
-  - SAP-modules
+title: "SAP for beginners: the integrated brain behind a restaurant kitchen"
+mapTitle: "SAP for beginners"
+description: "For anyone puzzled about what SAP actually is, this post breaks down the system that ties a whole company together, using the analogy of running a restaurant."
+pubDate: "2025-07-02"
+category: "project"
+series: "SAP basics"
+level: "beginner"
+tags: ["SAPProjects", "SAPBasics", "ERP", "SAPModules"]
 ---
 
 Hi, this is Rabbit! 🐰
 
-You've probably heard SAP mentioned at work as if everyone already knows what it is. But the moment someone asks "so what exactly is SAP?", it turns out to be surprisingly hard to explain.
+Ask someone to explain exactly what SAP is, and it's surprisingly hard to answer. It sounds like accounting software, sounds like inventory management, and somehow sounds like all of it at once.
 
-Today, let's pin it down using one simple idea: a well-run restaurant.
+The easiest way to understand it is through a restaurant. A single place where orders, cooking, inventory, and the register all run together in real time — that's essentially how SAP works. Today, let's unpack SAP through that lens.
 
-> **In 3 lines**
-> - SAP is a company's unified operating system that ties scattered departments into one.
-> - The front, kitchen, storeroom, and register all share the same information in real time.
-> - It's the world's leading ERP brand, built from modules you pick like LEGO blocks.
+> **3-line summary**
+>
+> - SAP is a company's "integrated operating system" that ties scattered departments together.
+> - The dining floor, kitchen, storeroom, and register all share the same information in real time.
+> - It's the world's leading ERP brand, letting you pick and choose functionality like Lego blocks (modules).
 
 [[TOC]]
 
-## Seeing SAP as a restaurant
+## Picture SAP as a restaurant
 
-In a well-run restaurant, an order taken out front goes straight to the kitchen, the storeroom checks stock and restocks, and the register tallies sales. Nobody calls another station to ask what's happening. Everyone sees the same information in real time and moves as one.
+Picture a restaurant that runs like a well-oiled machine. An order taken on the floor goes straight to the kitchen, the storeroom checks stock and restocks as needed, and the register keeps the sales tally. Nobody has to call another station to double-check anything. Everyone sees the same information in real time and moves as one.
 
-The system that ties an entire company together like this is <strong class="key">SAP</strong>.
+Real companies usually don't work that way. Each department uses its own tools — sales runs on spreadsheets, production keeps its own notes, accounting has a separate program. When everything runs separately like this, the same information gets entered twice, inventory numbers stop matching, and mistakes creep in.
 
-Normally, each part of a company uses different tools — paper tickets out front, an accounting app at the register, the kitchen's own notes. When they don't talk to each other, the same data gets entered twice, stock goes out of sync, and mistakes pile up. SAP removes that waste by linking every station, so an order entered out front flows automatically to the kitchen, storeroom, and register.
+==SAP is the system that turns a scattered company into that well-run restaurant.==
 
-![A restaurant-analogy diagram showing the hall, storeroom, kitchen, and register connected to a central SAP system in real time](/images/sap-what-is-sap-01.jpg)
-*Figure 1. One entry connects every department — the core structure of SAP (restaurant-kitchen analogy)*
+Just as an order entered on the floor automatically flows to the kitchen, storeroom, and register, a single entry in SAP connects to every department that needs it.
+
+![Diagram showing the dining floor, storeroom, kitchen, and register all connecting in real time through a central SAP system](/images/sap-what-is-sap-01.jpg)
+*Figure 1. How one entry connects every department — SAP's core structure, through a restaurant analogy*
 
 ## Starting with ERP
 
-Talk about SAP and the word ERP always follows. ERP stands for **Enterprise Resource Planning**.
+Whenever SAP comes up, the word <strong class="key">ERP</strong> follows right behind it. ERP stands for Enterprise Resource Planning.
 
-It's easier to grasp through the restaurant again: knowing how much stock is left (inventory), how many orders came in (sales), and how much you spent on ingredients (accounting) — all on one screen. The tool that unifies this is ERP, and <strong class="key">SAP is the world's leading ERP brand</strong>.
+This is easier to grasp through the restaurant, too. Managing how much stock is left (inventory), how many orders came in (sales), and how much was spent on ingredients (accounting) — all on one screen. The tool that ties all of this together is ERP, and **SAP is the world's leading brand in that space**.
 
-## A modular structure you pick like LEGO
+## A module structure you build like Lego
 
-A key strength of SAP is that it delivers features as building blocks called modules. Like LEGO, you bring in only the stations your company needs, and expand later.
+One of SAP's biggest strengths is that it delivers functionality in <strong class="key">module</strong> blocks. Like Lego bricks, a company picks only the pieces it needs, and can expand later without much trouble.
 
-| Code | Name | In this restaurant |
+| Abbreviation | Name | Role in this restaurant |
 | --- | --- | --- |
 | SD | Sales | Taking customer orders |
-| MM | Materials | Buying & storing ingredients |
+| MM | Materials | Purchasing ingredients, managing the storeroom |
 | PP | Production | Cooking in the kitchen |
-| CO | Controlling | Costing each menu item |
-| FI | Finance | The restaurant's ledger |
+| CO | Controlling | Costing each dish on the menu |
+| FI | Finance | The restaurant's overall ledger |
 
-*Table 1. Five core SAP modules (all 10 in a separate post)*
+*Table 1. SAP's five core modules (the rest are covered in a separate post)*
 
-> 💡 **Key**: Modules aren't separate — they connect. An order in Sales (SD) flows automatically into the kitchen (PP) and storeroom (MM).
+> 💡 **Key point**: Modules aren't isolated — they're connected as one. An order from the floor (SD) automatically flows through to the kitchen (PP) and the storeroom (MM).
 
 ## Rabbit's Takeaway
 
-The first SAP screen overwhelms everyone, with its cryptic codes and buttons. But remember one thing: SAP is, in the end, **a system for people**.
+Everyone feels a little lost the first time they see an SAP screen — all those cryptic codes and buttons. But there's one thing worth remembering: SAP is, at its core, **a system built for people**.
 
-It gathers scattered work into one kitchen so we can work more accurately and with less strain. Tour this restaurant one station at a time, and SAP becomes far more approachable. 😎
+It ties scattered departments into a single restaurant, so everyone can work more accurately and with less friction. As we tour this restaurant one station at a time in future posts, SAP should start to feel a lot more familiar. 😎
 
 **Read more**
 
-- [Where did SAP come from? The story that began in 1972 Germany](/en/blog/sap-history)
-- [The complete guide to all 10 SAP modules (FI to PM)](/en/blog/sap-modules-guide)
+- [SAP's 10 core modules: the whole restaurant at a glance](/en/blog/sap-modules-guide)
+- [The history of SAP: it all started with a small restaurant](/en/blog/sap-history)
+- [SAP organizational structure and master data, the skeleton and recipes behind opening a restaurant](/en/blog/sap-org-structure)
 
-<!-- 관련글: sap-history, sap-modules-guide -->
+<!-- Related posts: prerequisite=; related=sap-history,sap-org-structure; deepens=sap-modules-guide -->
