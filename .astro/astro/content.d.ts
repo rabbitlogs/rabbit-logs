@@ -386,6 +386,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"ko/sap-now-ai-tour-korea-2026.md": {
+	id: "ko/sap-now-ai-tour-korea-2026.md";
+  slug: "ko/sap-now-ai-tour-korea-2026";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "ko/sap-org-structure.md": {
 	id: "ko/sap-org-structure.md";
   slug: "ko/sap-org-structure";
@@ -557,6 +564,13 @@ declare module 'astro:content' {
 "ko/stats-excel-powerquery-pivot.md": {
 	id: "ko/stats-excel-powerquery-pivot.md";
   slug: "ko/stats-excel-powerquery-pivot";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"ko/stats-junior-first-semester.md": {
+	id: "ko/stats-junior-first-semester.md";
+  slug: "ko/stats-junior-first-semester";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

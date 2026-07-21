@@ -145,6 +145,13 @@ if (slug) {
 
 <BaseLayout title={title} description={description} lang={lang} showAds={true}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- 읽기 진행바: 화면 최상단 고정, 본문(article) 기준 스크롤 진행률 표시 -->
+  <div id="reading-progress" class="reading-progress" aria-hidden="true">
+    <div class="reading-progress-bar"></div>
+  </div>
+
+  <div class="post-grid">
   <article class="post">
     <div class="post-meta">
       <span class="cat">{catName[lang][category]}</span>
@@ -355,6 +362,8 @@ if (slug) {
           const next = node.nextElementSibling;
           // 다음 h2를 만나면 종료
           if (node !== takeawayHead && node.tagName === 'H2') break;
+          // 수평선(마크다운 ---)을 만나면 종료 — "더 읽어보기" 앞 구분선이 카드 안에 딸려 들어가지 않게 함
+          if (node.tagName === 'HR') break;
           // "더 읽어보기 / Read more" 문단(strong만 있는 p)을 만나면 종료
           if (node.tagName === 'P') {
             const strong = node.querySelector('strong');
@@ -448,6 +457,261 @@ if (slug) {
       });
     </script>
   </article>
+
+  <!-- 사이드바 TOC: 본문 안 [[TOC]] 결과(nav.toc)를 JS로 여기 옮겨 데스크탑에서 sticky로 계속 보이게 한다.
+       모바일(폭 좁음)에서는 CSS로 사이드바를 숨기고 본문 원래 위치의 목차를 그대로 보여준다. -->
+  <aside class="toc-sidebar" id="toc-sidebar" aria-hidden="true"></aside>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prose = document.querySelector('.prose');
+      const sidebar = document.getElementById('toc-sidebar');
+      const sourceToc = prose && prose.querySelector('.toc');
+      if (!prose || !sidebar || !sourceToc) return;
+
+      // 원본 목차는 모바일용으로 본문에 그대로 두고, 사이드바용으로는 복제본을 사용한다.
+      const sidebarToc = sourceToc.cloneNode(true);
+      sidebarToc.removeAttribute('aria-label');
+
+      const wrapTitle = document.createElement('div');
+      wrapTitle.className = 'toc-sidebar-head';
+      wrapTitle.innerHTML = '<span class="toc-sidebar-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></span><span>' + (document.documentElement.lang === 'en' ? 'Contents' : '목차') + '</span>';
+
+      const titleEl = sidebarToc.querySelector('.toc-title');
+      if (titleEl) titleEl.remove();
+
+      sidebar.appendChild(wrapTitle);
+      sidebar.appendChild(sidebarToc);
+      sidebar.removeAttribute('aria-hidden');
+      sidebar.classList.add('is-ready');
+
+      // ── 스크롤스파이: 현재 화면에 보이는 h2/h3 섹션을 감지해 사이드바 항목에 active 표시 ──
+      const links = Array.from(sidebarToc.querySelectorAll('a[href^="#"]'));
+      if (links.length === 0) return;
+
+      const linkBySlug = new Map();
+      links.forEach((a) => linkBySlug.set(decodeURIComponent(a.getAttribute('href').slice(1)), a));
+
+      const headings = Array.from(prose.querySelectorAll('h2[id], h3[id]')).filter((h) => linkBySlug.has(h.id));
+      if (headings.length === 0) return;
+
+      let activeLink = null;
+      const setActive = (link) => {
+        if (activeLink === link) return;
+        if (activeLink) {
+          activeLink.classList.remove('is-active');
+          activeLink.closest('li') && activeLink.closest('li').classList.remove('is-active');
+        }
+        if (link) {
+          link.classList.add('is-active');
+          link.closest('li') && link.closest('li').classList.add('is-active');
+        }
+        activeLink = link;
+      };
+
+      const visibleSet = new Set();
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) visibleSet.add(entry.target.id);
+            else visibleSet.delete(entry.target.id);
+          });
+
+          if (visibleSet.size > 0) {
+            // 화면에 여러 섹션이 보이면 문서 순서상 가장 앞선(첫) 섹션을 현재 위치로 삼는다.
+            const firstVisible = headings.find((h) => visibleSet.has(h.id));
+            if (firstVisible) setActive(linkBySlug.get(firstVisible.id));
+          } else {
+            // 관찰 영역(마진) 안에 걸린 섹션이 없으면, 스크롤 위치보다 위에 있는
+            // 마지막 헤딩을 현재 섹션으로 간주한다(빠르게 스크롤해 지나친 경우 대비).
+            const scrollY = window.scrollY + window.innerHeight * 0.2;
+            let candidate = headings[0];
+            for (const h of headings) {
+              if (h.getBoundingClientRect().top + window.scrollY <= scrollY) candidate = h;
+              else break;
+            }
+            setActive(linkBySlug.get(candidate.id));
+          }
+        },
+        { rootMargin: '-15% 0px -70% 0px', threshold: 0 }
+      );
+
+      headings.forEach((h) => observer.observe(h));
+      setActive(linkBySlug.get(headings[0].id));
+
+      // 사이드바 항목 클릭 시 부드럽게 스크롤(전역 scroll-behavior가 이미 처리하지만 명시적으로 처리).
+      links.forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const id = decodeURIComponent(a.getAttribute('href').slice(1));
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', '#' + id);
+        });
+      });
+    });
+  </script>
+
+  <!-- 읽기 진행바 스크립트: article(.post) 기준 스크롤 진행률을 0~100%로 계산 -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bar = document.querySelector('.reading-progress-bar');
+      const article = document.querySelector('.post');
+      if (!bar || !article) return;
+
+      let ticking = false;
+      const update = () => {
+        ticking = false;
+        const rect = article.getBoundingClientRect();
+        const articleTop = rect.top + window.scrollY;
+        const articleHeight = article.offsetHeight;
+        const viewportH = window.innerHeight;
+
+        const scrolled = window.scrollY - articleTop + viewportH * 0.4;
+        const total = Math.max(articleHeight - viewportH * 0.4, 1);
+        const pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        bar.style.width = pct + '%';
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    });
+  </script>
+
+  <style is:global>
+    /* 읽기 진행바: 화면 최상단 고정, 헤더보다 위 레이어 */
+    .reading-progress {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: 3px; background: transparent;
+    }
+    .reading-progress-bar {
+      height: 100%; width: 0%;
+      background: var(--primary);
+      transition: width 0.1s linear;
+    }
+
+    /* 글 페이지는 사이드바를 위해 컨테이너 폭을 넓힌다(다른 페이지의 .wrap 720px은 그대로 유지). */
+    .wrap:has(.post-grid) { max-width: 980px; }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* sticky 사이드바: 헤더 높이(대략 4.5rem) + 여유 여백만큼 top을 띄워서
+       처음 스크롤할 때 카드가 헤더에 바짝 붙지 않게 한다. */
+    .toc-sidebar {
+      position: sticky;
+      top: 5.5rem;
+      align-self: start;
+      max-height: calc(100vh - 7rem);
+      overflow-y: auto;
+      margin-top: 2.5rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(32, 37, 31, 0.06);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .toc-sidebar::-webkit-scrollbar { width: 4px; }
+    .toc-sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+    .toc-sidebar.is-ready { opacity: 1; }
+    .toc-sidebar:empty,
+    .toc-sidebar:not(.is-ready) { display: none; }
+
+    /* 카드 헤더 바(아이콘 + "목차" 타이틀) — 참고 디자인의 toc-header와 동일한 구조 */
+    .toc-sidebar-head {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-weight: 700; font-size: 0.95rem; color: var(--primary);
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .toc-sidebar-icon {
+      width: 24px; height: 24px; border-radius: 7px; flex-shrink: 0;
+      background: var(--color-bg-soft); color: var(--primary);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .toc-sidebar .toc {
+      margin: 0; padding: 0.7rem 1.2rem 0.7rem 0; background: none; border: none;
+      border-radius: 0; box-shadow: none; position: relative;
+    }
+    .toc-sidebar .toc-hint { display: none; }
+    .toc-sidebar .toc ul { list-style: none; margin: 0; padding: 0; }
+
+    /* 좌측 세로 트랙 + 진행 표시(참고 디자인의 toc-track/toc-progress에 해당).
+       Rabbit Logs는 별도 progress bar 없이 트랙 라인만 얇게 둔다 — 항목별 원이 진행을 대신 표시. */
+    .toc-sidebar .toc ul {
+      position: relative;
+    }
+    .toc-sidebar .toc ul::before {
+      content: '';
+      position: absolute; left: 1.2rem; top: 0.35rem; bottom: 0.35rem; width: 2px;
+      background: var(--line); border-radius: 2px;
+    }
+
+    .toc-sidebar .toc li {
+      margin: 0; padding: 0.55rem 1.2rem 0.55rem 2.3rem;
+      position: relative;
+      font-size: 0.88rem; line-height: 1.45;
+    }
+    .toc-sidebar .toc li.sub { padding-left: 3.1rem; font-size: 0.82em; }
+
+    /* 원형 인디케이터: 빈 원(기본) / 채운 원+은은한 글로우(현재 섹션) */
+    .toc-sidebar .toc li::before {
+      content: '';
+      position: absolute; left: 0.95rem; top: 1rem;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #fff; border: 2px solid var(--line);
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+      z-index: 1;
+    }
+    .toc-sidebar .toc li.sub::before {
+      left: 1.13rem; top: 1.05rem;
+      width: 5px; height: 5px; border: none; background: var(--muted);
+    }
+    .toc-sidebar .toc li.is-active::before {
+      background: var(--primary); border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(44, 95, 87, 0.15);
+    }
+    .toc-sidebar .toc a {
+      color: var(--muted); text-decoration: none; display: block;
+      transition: color 0.15s;
+    }
+    .toc-sidebar .toc a:hover { color: var(--primary); }
+    .toc-sidebar .toc a.is-active {
+      color: var(--primary); font-weight: 700;
+    }
+    .toc-sidebar .toc-num {
+      color: var(--muted); font-weight: 700; margin-right: 0.4rem;
+      font-variant-numeric: tabular-nums; font-size: 0.85em;
+    }
+    .toc-sidebar .toc a.is-active .toc-num { color: var(--primary); }
+
+    /* 데스크탑(사이드바 있음): 본문 안 원본 목차는 사이드바로 옮겨졌으니 중복 방지를 위해 숨긴다. */
+    @media (min-width: 901px) {
+      .prose > .toc { display: none; }
+    }
+
+    /* 모바일/좁은 화면: 사이드바 숨기고 본문 원래 위치의 목차를 그대로 보여준다 */
+    @media (max-width: 900px) {
+      .wrap:has(.post-grid) { max-width: 720px; }
+      .post-grid { display: block; }
+      .toc-sidebar { display: none !important; }
+    }
+  </style>
 
   <style>
     .post { padding: 2.5rem 0; }

@@ -21,6 +21,81 @@ export function remarkHighlight() {
   };
 }
 
+// > **3줄 요약**
+// > - ...
+// > - ...
+// > - ...
+//
+// 형태의 blockquote를 감지해 "3줄 요약" 전용 카드(.tldr-box)로 변환한다.
+// 일반 인용구(blockquote)를 재활용하는 대신 완전히 별도 마크업을 그려서,
+// 나중에 진짜 인용구를 쓰더라도 스타일이 충돌하지 않게 한다.
+// 리스트 항목은 순서 목록(1. 2. 3.)이든 불릿 목록(-)이든 둘 다 인식하되,
+// 화면에는 항상 불릿(•)으로 통일해서 그린다.
+// mdast 인라인 노드에서 순수 텍스트만 재귀적으로 추출한다(strong/emphasis 등 안의 텍스트 포함).
+function plainText(node) {
+  if (!node) return '';
+  if (node.type === 'text' || node.type === 'inlineCode') return node.value;
+  if (node.children) return node.children.map(plainText).join('');
+  return '';
+}
+
+export function remarkTldrBox() {
+  return (tree) => {
+    visit(tree, 'blockquote', (node, index, parent) => {
+      if (!parent || !node.children || node.children.length < 2) return;
+
+      const firstPara = node.children[0];
+      if (firstPara.type !== 'paragraph') return;
+      // Rabbit Logs는 "> **3줄 요약**"처럼 strong 노드로 감싸 쓰므로, 순수 텍스트뿐 아니라
+      // strong 등 인라인 노드 안의 텍스트까지 재귀적으로 모아야 헤더 문구를 인식할 수 있다.
+      const headerText = firstPara.children.map(plainText).join('').trim();
+      const isKo = headerText.includes('3줄 요약');
+      const isEn = /in 3 lines/i.test(headerText);
+      if (!isKo && !isEn) return;
+
+      const listNode = node.children.find((c) => c.type === 'list');
+      if (!listNode || !listNode.children || listNode.children.length === 0) return;
+
+      const items = listNode.children.map((li) => {
+        const inlineHtml = (li.children || [])
+          .filter((c) => c.type === 'paragraph')
+          .flatMap((p) => p.children)
+          .map((c) => inlineToHtml(c))
+          .join('');
+        return `<li>${inlineHtml}</li>`;
+      });
+
+      const badgeLabel = isKo ? '3줄 요약' : 'In 3 lines';
+      const boxHtml =
+        '<div class="tldr-box">' +
+        '<div class="tldr-header"><span class="tldr-badge">' +
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"></path></svg>' +
+        badgeLabel + '</span></div>' +
+        `<ul class="tldr-list">${items.join('')}</ul>` +
+        '</div>';
+
+      parent.children.splice(index, 1, { type: 'html', value: boxHtml });
+    });
+  };
+}
+
+// mdast 인라인 노드를 최소 HTML로 직렬화한다(3줄 요약 안의 **굵게** 등 간단한 서식 지원용).
+function inlineToHtml(node) {
+  if (!node) return '';
+  if (node.type === 'text') return node.value;
+  if (node.type === 'html') return node.value;
+  if (node.type === 'break') return '<br />';
+  if (node.type === 'strong') {
+    return `<strong>${(node.children || []).map(inlineToHtml).join('')}</strong>`;
+  }
+  if (node.type === 'emphasis') {
+    return `<em>${(node.children || []).map(inlineToHtml).join('')}</em>`;
+  }
+  if (node.type === 'inlineCode') return `<code>${node.value}</code>`;
+  if (node.children) return node.children.map(inlineToHtml).join('');
+  return '';
+}
+
 // 헤딩에서 순수 텍스트만 추출
 function headingText(node) {
   let text = '';

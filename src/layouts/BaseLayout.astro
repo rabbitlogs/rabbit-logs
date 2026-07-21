@@ -184,29 +184,53 @@ const home = lang === 'en' ? '/en/' : '/';
       }
       /* 한 끗 카드 안으로 옮겨진 h2는 번호 제외 (카드가 .prose 직계 자식이 되므로 > h2 선택자에서 자동 제외됨) */
 
-      /* ── Rabbit의 한 끗 카드 (카테고리 브랜드 톤, 연한 배경+테두리) ── */
+      /* ── Rabbit의 한 끗 카드 — 3줄 요약(tldr-box)과 짝을 이루는 톤: 그라데이션 배경 +
+         좌측 굵은 바 + 뱃지 헤더(전구 아이콘). 카테고리별 색은 --tk-* 변수로 유지한다. ── */
       .takeaway-card {
+        position: relative;
         margin: 2.6rem 0 1.5rem;
-        padding: 1.5rem 1.7rem;
-        border-radius: 16px;
-        background: var(--tk-bg, #eef4f2);
-        border: 1.5px solid var(--tk-line, var(--primary));
+        padding: 1.4rem 1.6rem 1.3rem 1.9rem;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--tk-bg, #eef4f2) 0%, #faf8f3 100%);
+        border: 1px solid var(--tk-border, #cfe3de);
+        overflow: hidden;
+      }
+      .takeaway-card::before {
+        content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 5px;
+        background: var(--tk-line, var(--primary));
       }
       .takeaway-card h2 {
-        margin: 0 0 0.55rem;
-        font-size: 1.15rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin: 0 0 0.9rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.78rem;
         font-weight: 700;
-        color: var(--tk-fg, var(--primary-deep, #234b45));
+        letter-spacing: 0.01em;
+        background: var(--tk-line, var(--primary));
+        color: #fff;
       }
-      .takeaway-card h2::before { content: none; } /* 카드 제목엔 번호 없음 */
+      .takeaway-card h2::before {
+        /* 소제목 번호 대신 전구 아이콘 */
+        content: '';
+        display: inline-block;
+        width: 13px; height: 13px;
+        background: currentColor;
+        -webkit-mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3Cpath d='M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z'/%3E%3C/svg%3E") no-repeat center / contain;
+        mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3Cpath d='M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z'/%3E%3C/svg%3E") no-repeat center / contain;
+        margin-right: 0.1rem;
+        vertical-align: -0.1em;
+      }
       .takeaway-card > *:last-child { margin-bottom: 0; }
-      .takeaway-card p { margin: 0; color: var(--ink); }
+      .takeaway-card p { margin: 0; color: var(--ink); line-height: 1.75; }
 
       /* 카테고리별 색 토큰 */
-      .prose-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; }
-      .prose-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; }
-      .prose-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; }
-      .prose-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; }
+      .prose-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; --tk-border: #cfe3de; }
+      .prose-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; --tk-border: #cddced; }
+      .prose-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; --tk-border: #f0dbb3; }
+      .prose-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; --tk-border: #eccfd9; }
 
       /* 목차 */
       .prose .toc { margin: 2rem 0; padding: 1.1rem 1.4rem; background: var(--color-bg-soft); border: 1px solid var(--line); border-radius: 10px; }
@@ -225,6 +249,43 @@ const home = lang === 'en' ? '/en/' : '/';
       .prose blockquote p { margin: 0.4rem 0; }
       .prose blockquote p:first-child { margin-top: 0; }
       .prose blockquote p:last-child { margin-bottom: 0; }
+
+      /* ===== 3줄 요약: 전용 카드(remarkTldrBox가 생성) — blockquote 재활용 아님 ===== */
+      .prose .tldr-box {
+        position: relative;
+        background: linear-gradient(135deg, #eef4f2 0%, #faf8f3 100%);
+        border: 1px solid #cfe3de;
+        border-radius: 14px;
+        padding: 1.4rem 1.5rem 1.3rem 1.7rem;
+        margin: 1.8rem 0;
+        overflow: hidden;
+      }
+      .prose .tldr-box::before {
+        content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 5px;
+        background: var(--primary);
+      }
+      .prose .tldr-header { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.9rem; }
+      .prose .tldr-badge {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: var(--primary); color: #fff;
+        font-size: 0.78rem; font-weight: 700;
+        padding: 0.3rem 0.7rem; border-radius: 20px;
+        letter-spacing: 0.01em;
+      }
+      .prose .tldr-list {
+        list-style: none; margin: 0; padding: 0;
+        display: flex; flex-direction: column; gap: 0.6rem;
+      }
+      .prose .tldr-list li {
+        display: flex; align-items: baseline; gap: 0.6rem;
+        font-size: 0.98em; line-height: 1.6; color: var(--ink);
+        margin: 0;
+      }
+      .prose .tldr-list li::before {
+        content: '•'; color: var(--primary); font-weight: 700; font-size: 1.1em; flex-shrink: 0;
+      }
+      .prose .tldr-list li strong { color: var(--primary); font-weight: 700; }
+
       .prose ul, .prose ol { padding-left: 1.4rem; }
       .prose li { margin: 0.4rem 0; }
       .prose img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 1.5rem auto 0; }
