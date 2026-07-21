@@ -1,5 +1,7 @@
 import { visit } from 'unist-util-visit';
 import GithubSlugger from 'github-slugger';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // ==중요== → <mark> 하이라이트로 변환
 export function remarkHighlight() {
@@ -156,6 +158,52 @@ export function remarkInlineToc() {
         const html = `<nav class="toc" aria-label="목차"><p class="toc-title">목차 <span class="toc-hint">— 클릭하면 해당 위치로 이동해요</span></p><ul>${lis}</ul></nav>`;
         parent.children.splice(index, 1, { type: 'html', value: html });
       }
+    });
+  };
+}
+
+// 영문 글(src/content/blog/en/)의 이미지 경로를 자동으로 `_en` 버전으로 바꾼다.
+// 규칙(마스터 프롬프트 §8): 이미지는 한글·영문 2개 버전으로 만들고 영문만 `_en` 접미사를 붙인다.
+//
+// 동작: /images/foo-01.jpg  →  public/images/foo-01_en.jpg 가 실제로 있으면 그 경로로 교체,
+//       없으면 원래(한글) 경로를 그대로 둔다. 즉 "en 있으면 en, 없으면 국문" 폴백이다.
+// 덕분에 영문 .md는 한글과 동일한 경로를 그대로 써도 되고, 나중에 `_en` 이미지를 만들어
+// public/images/에 넣기만 하면 마크다운을 손대지 않아도 자동으로 반영된다.
+//
+// 빌드 시점에 파일 존재 여부를 확인하므로 런타임 비용은 없다. 같은 경로를 여러 번 조회하는
+// 것을 막기 위해 결과를 캐시한다(글 61개 × 이미지 여러 개 → fs 호출 폭증 방지).
+const EN_IMAGE_CACHE = new Map();
+const PUBLIC_DIR = path.resolve('public');
+
+function resolveEnImage(src) {
+  if (EN_IMAGE_CACHE.has(src)) return EN_IMAGE_CACHE.get(src);
+
+  let resolved = src;
+  // /images/... 형태의 내부 경로만 처리한다(외부 URL·data URI 제외).
+  if (src.startsWith('/images/')) {
+    const ext = path.extname(src);
+    const base = src.slice(0, -ext.length);
+    // 이미 _en이 붙어 있으면 그대로 둔다(중복 부착 방지).
+    if (!base.endsWith('_en')) {
+      const enSrc = `${base}_en${ext}`;
+      if (fs.existsSync(path.join(PUBLIC_DIR, enSrc))) {
+        resolved = enSrc;
+      }
+    }
+  }
+
+  EN_IMAGE_CACHE.set(src, resolved);
+  return resolved;
+}
+
+export function remarkEnImages() {
+  return (tree, file) => {
+    // 이 글이 영문 글인지 파일 경로로 판별한다. 윈도우 경로(\)도 함께 처리.
+    const filePath = (file?.history?.[0] || file?.path || '').replace(/\\/g, '/');
+    if (!filePath.includes('/content/blog/en/')) return;
+
+    visit(tree, 'image', (node) => {
+      node.url = resolveEnImage(node.url);
     });
   };
 }
