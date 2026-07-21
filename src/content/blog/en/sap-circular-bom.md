@@ -1,110 +1,135 @@
 ---
-title: "SAP circular BOM: the kitchen logic behind reintroducing reworked ingredients"
+title: "SAP circular BOM: pouring a failed broth back into the pot"
 mapTitle: "SAP circular BOM"
-description: "Explains what an SAP circular BOM is, how to set it up for a rework scenario, and how it affects cost calculation, using a kalguksu broth analogy."
+description: "Explains what an SAP circular BOM is, why rework situations need one, and how to set it up, using a simple broth analogy."
 pubDate: "2026-03-12"
 category: "operations"
 series: ""
-level: "intermediate"
+level: "beginner"
 tags: ["SAPOperations", "SAPBOM", "SAPPP", "SAPRework"]
 ---
 
 Hi, this is Rabbit! 🐰
 
-Picture a broth that's been simmering in the kitchen for a long time. When making today's kalguksu (knife-cut noodle) broth, you ladle in some of yesterday's leftover broth to deepen the flavor. But something odd happens in that moment: "kalguksu broth" becomes an ingredient in making "kalguksu broth."
+You've just finished a whole pot of broth. You taste it one last time, and it's flat. It can't go out to the dining room like this.
 
-In SAP, this structure is called a <strong class="key">circular BOM (recursive BOM)</strong> — a structure where the finished product itself is included again as a component within its own BOM. In theory it looks like an infinite loop, but in practice it's actually used to represent rework scenarios.
+But you can't throw out an entire pot either. So the chef puts it back on the heat, adds more ingredients, and brings it back to a proper broth.
+
+Write that process down as a recipe, though, and something looks strange.
+
+> How to make kalguksu broth
+> Ingredients: anchovies, kelp, radish, **and one pot of under-seasoned kalguksu broth**
+
+The recipe for kalguksu broth has kalguksu broth in its ingredient list. In SAP, this kind of recipe is called a <strong class="key">circular BOM (recursive BOM)</strong> — a structure where a finished product appears again in its own list of components.
+
+It sounds impossible, but it happens on factory floors every day.
 
 > **3-line summary**
-> - A circular BOM is a structure where a finished product is included as a component within its own BOM.
-> - It's used in rework scenarios, where a defective finished product is reintroduced to produce a good one.
-> - To avoid an infinite-loop error, you must check "Allow cycles" on the BOM item detail screen.
+> - A circular BOM is a structure where a finished product appears again in its own component list.
+> - It's used for rework — fixing a defective unit and turning it back into a good one.
+> - You have to check "Allow cycles" on the BOM item screen, or the system throws an error.
 
 [[TOC]]
 
-## When a circular BOM comes up
+## Why a recipe like this happens
 
-A BOM is the list of materials needed to make a finished product. A typical BOM runs in one direction — making kimchi jjigae requires pork, kimchi, and tofu, for instance.
+A BOM (bill of materials) is essentially a **recipe**. It's the list of what you need, and how much, to make something.
 
-But in a rework process, the direction gets tangled.
+Most recipes run in one direction. Put anchovies, kelp, and radish in a pot, simmer, and you get broth. Ingredients become food, and that's the end of it.
 
-Say finished product F was produced and received into the warehouse, but a quality inspection found it defective. That defective F needs to go into rework process H to be turned back into a good F.
+The failed broth above runs differently. Written out as a recipe, it looks like this.
 
-Expressed as a BOM, the flow looks like this.
+- To make **proper broth** → you need a "re-simmer" step
+- The **"re-simmer" step** → takes under-seasoned broth as input
 
-- Making F requires H
-- Making H requires F (the defective unit)
+Broth goes through a process and comes back out as broth. The starting point and the end point are the same material.
 
-F → H → F. A structure where each needs the other. When the system tries to explode the BOM to calculate material requirements, it falls into an endless loop.
+The important part is that **nothing gets thrown away — it gets recovered**. This isn't the same as carrying yesterday's broth forward for flavor. It's taking something that came out wrong and returning it to what you meant to make in the first place.
 
-Handling this circular structure correctly is what resolves this logical contradiction.
+On a factory floor this is called <strong class="key">rework</strong>. A finished product goes into the warehouse, quality inspection flags it as defective, and rather than scrap it, you fix it and bring it back as a good unit. It happens constantly in manufacturing.
 
-## The "Allow cycles" setting
+## Why the system gets stuck in a loop
 
-You need to tell SAP, "this loop isn't an error — it's an intentional structure." When registering F (the defective unit) as a component in H's BOM, check the **"Allow cycles"** checkbox on the item detail screen.
+The problem is that SAP reads this recipe literally.
 
-This single checkbox is the safeguard that stops the system from calculating an infinite loop.
+When SAP calculates "how much material do I need to make 100 of these," it expands the recipe one level at a time. 100 servings of broth → check the ingredient list → check the ingredients of those ingredients → keep going down.
 
-> ⚠️ **Note**: If you forget to check "Allow cycles," either the BOM won't save at all, or an error occurs when running MRP. This setting is easy to miss when building a rework BOM, so be sure to check it.
+But a rework recipe loops back to where it started. Broth → re-simmer → broth → re-simmer → broth…
 
-![SAP circular BOM rework flow — diagram showing the F→H→F cycle and where the "Allow cycles" checkbox sits](/images/sap-circular-bom-01.jpg)
-*Figure 1. The F→H→F circular BOM structure in a rework scenario, and the "Allow cycles" setting*
+There's no end to it. The system can't find a place to stop and keeps recalculating. That's an <strong class="key">infinite loop</strong>.
 
-## Viewing a circular BOM at multiple levels
+So by default, SAP treats this structure as an error. Try to save it as-is and it blocks you.
 
-Once the setup is complete, checking the structure with T-code CS12 (multi-level BOM display) shows something like this.
+## One checkbox solves it
+
+The fix is simpler than you'd expect. You just have to tell SAP, "this isn't a mistake — I built it this way on purpose."
+
+When you register the defective unit as a component in the rework BOM, check the **"Allow cycles"** checkbox on the item detail screen. That single check is the signal that says "a cycle here is expected, so stop calculating."
+
+> ⚠️ **Note**: Miss this checkbox and either the BOM won't save at all, or MRP throws an error later. It's the most commonly overlooked step when building a rework BOM, so make a point of confirming it.
+
+![SAP circular BOM rework flow — diagram showing a finished product going through a rework step and returning as the same finished product, and where the "Allow cycles" checkbox sits](/images/sap-circular-bom-01_en_new.jpg)
+*Figure 1. The circular BOM structure in a rework scenario, and the "Allow cycles" setting*
+
+## Checking that it worked
+
+Once you've saved the setting, verify the structure with `CS12` (multi-level BOM display). It's the screen that expands a recipe from top to bottom.
+
+If everything is set up correctly, you'll see something like this.
 
 ```
-F (top-level material)
-└─ .1  H (rework process)
-       └─ ..2  F (defective unit reintroduced ← cycle occurs here)
+Finished product
+└─ Rework step
+      └─ Finished product (defective)   ← stops here
 ```
 
-You can see the system recognize the circular structure and stop the explosion at level .2 — successfully representing the structure without an infinite loop.
+The finished product shows up again on the third line, but the system stops there instead of expanding further. That means it recognized the cycle.
 
-This display is useful for confirming that a rework BOM was registered correctly. Making it a habit to verify the structure with CS12 after setup helps prevent MRP errors down the line.
+Getting into the habit of checking this screen right after setup will save you from MRP errors down the line.
 
-## Circular BOM and cost calculation
+## When to use one, and when not to
 
-=="Doesn't a circular structure mean cost keeps adding up infinitely?"==
+There are three common situations where circular BOMs come up in practice.
 
-No. SAP doesn't perform infinite recursive calculation when costing a circular structure. Instead, it breaks the calculation loop by referencing the **current standard cost** already calculated in the material master.
+**Rework**: fixing a defective finished product and turning it back into a good one. By far the most common.
 
-When a single material has multiple BOMs (for normal production, for rework, etc.), which BOM serves as the basis for standard cost calculation is determined by the **production version**. The BOM tied to the production version with the highest priority, as set in the material master's Costing 1 view, is used for standard cost calculation.
+**Byproduct recycling**: feeding a byproduct from production back into the same process. Common in chemical and food manufacturing.
 
-> 💡 **Key point**: For the rework BOM to not affect standard cost, the normal production BOM needs to be given higher priority. You can find more detail on the production version concept in [SAP PP master data](/en/blog/sap-pp-master-data).
+**Catalyst reuse**: recovering a catalyst after the reaction and putting it back into the same process.
 
-## When circular BOMs are used
+What they share is that **something already made, or something that came out of it, goes back in**.
 
-Here are three common real-world situations where circular BOMs come into play.
+There are also cases where you don't need one. If reworked units are managed under a different material code entirely, the start and end points become different materials, and no cycle forms. Which way to go depends on cost accounting policy and traceability requirements, and it should be settled during project design.
 
-**Rework**: reintroducing a defective finished product to turn it back into a good one — the most common use case.
+## What happens to cost
 
-**Byproduct recycling**: feeding a byproduct from the production process back into the same process. Common in chemical and food industries.
+There's a natural worry here.
 
-**Catalyst reuse**: a catalyst introduced into a process is recovered after the reaction and fed back into the same process.
+=="If the structure is circular, doesn't the cost just keep adding up forever?"==
 
-What these situations have in common is a structure where "something already made, or something that came out of it" gets reintroduced.
+It doesn't. When SAP costs a circular structure, it doesn't expand the recipe all the way down. Instead it pulls the **current standard cost** already assigned to the material. It breaks the loop by saying, in effect, "this ingredient's value is already settled, so there's nothing more to work out."
 
-There are also cases where a circular BOM isn't needed. If the rework process is managed under a completely separate material code, it can be handled without a circular structure. Which approach to use should be decided during project design, based on cost accounting policy and traceability requirements.
+There is one thing to watch, though. When a single material has more than one recipe (one for normal production, one for rework), you have to decide which one costing should be based on. That's what the **production version** is for. The recipe tied to the highest-priority production version, set in the material master's costing view, is what gets used for standard cost.
 
-## What to check before setting up a circular BOM
+> 💡 **Key point**: To keep the rework recipe from disturbing standard cost, give the normal production version higher priority. If production versions are new to you, start with [SAP PP master data](/en/blog/sap-pp-master-data).
 
-Check three things before setting up a circular BOM.
+## Three things to check before you set it up
 
-First, confirm that the rework material codes are registered in the system. Both the F code (finished product) and H code (rework process) must exist in the material master before you can build the BOM.
+Get these sorted before building a circular BOM.
 
-Second, decide whether the finished product after rework will be managed under the same material code as normal product, or a separate code. This decision affects the circular BOM structure.
+**First, make sure the material codes exist.** Both the finished product code and the rework step code have to be in the material master before you can build the BOM.
 
-Third, coordinate with the costing team in advance. You need to jointly determine production version priority so the circular BOM doesn't affect standard cost calculation.
+**Second, decide how the reworked product will be coded.** Same code as normal product, or a separate one? That choice determines whether you need a circular BOM at all.
+
+**Third, talk to the costing team first.** Agree on production version priority together, or standard cost will drift.
 
 ## Rabbit's Takeaway
 
-A circular BOM looks theoretically impossible at first glance. But rework happens routinely on real production floors.
+A circular BOM looks impossible the first time you see one. A thing being its own ingredient doesn't seem to add up.
 
-SAP supports this structure precisely so it can accurately capture the complex reality of production flows inside the system. A small setting like the "Allow cycles" checkbox is what makes an entire complicated rework flow traceable within the system.
+But in a real kitchen, pouring a failed broth back into the pot is ordinary. And on a factory floor, fixing defective units happens every day. **SAP supports this structure for one reason: that's how reality works.**
 
-If you're running SAP somewhere rework happens, and this setting isn't configured properly, both inventory and cost can end up diverging from reality. Get the concept down once, and you won't be caught off guard when you run into it in practice. 😎
+A system isn't a tool for tidying reality up — it's a tool for holding reality as it actually is. A single "Allow cycles" checkbox quietly makes that point. Leave it off, and both your inventory and your costs start drifting away from what's really on the floor. 😎
 
 **Read more**
 

@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-07-21, 총 61개
+# 생성 시각: 2026-07-22, 총 61개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -773,11 +773,11 @@
 
 - slug: sap-circular-bom
   mapTitle: "SAP 순환 BOM"
-  title: "SAP 순환 BOM, 재작업 재료를 다시 투입하는 주방의 논리"
+  title: "SAP 순환 BOM, 실패한 육수를 다시 냄비에 붓는 주방"
   category: operations
   status: rebuilt
   pubDate: "2026-03-12"
-  level: intermediate
+  level: beginner
   tags:
   - "SAP실무운영"
   - "SAPBOM"
