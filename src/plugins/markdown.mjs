@@ -50,7 +50,7 @@ export function remarkTldrBox() {
       // strong 등 인라인 노드 안의 텍스트까지 재귀적으로 모아야 헤더 문구를 인식할 수 있다.
       const headerText = firstPara.children.map(plainText).join('').trim();
       const isKo = headerText.includes('3줄 요약');
-      const isEn = /in 3 lines/i.test(headerText);
+      const isEn = /3-line summary/i.test(headerText);
       if (!isKo && !isEn) return;
 
       const listNode = node.children.find((c) => c.type === 'list');
@@ -65,7 +65,7 @@ export function remarkTldrBox() {
         return `<li>${inlineHtml}</li>`;
       });
 
-      const badgeLabel = isKo ? '3줄 요약' : 'In 3 lines';
+      const badgeLabel = isKo ? '3줄 요약' : '3-line summary';
       const boxHtml =
         '<div class="tldr-box">' +
         '<div class="tldr-header"><span class="tldr-badge">' +
