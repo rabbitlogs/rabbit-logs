@@ -40,23 +40,23 @@ EXAM_FORMAT = {
     "ko": dict(banner="SAP 자격증 시험, 두 가지 유형", sub="응시자가 고르는 것이 아니라, 과목이 유형을 정한다",
         headline="시스템 실습 시험과 AI 시나리오 시험",
         left=("시스템 실습 시험", "System Based Exam",
-              ["직접 시스템에 들어가 수행", "개발 · 세팅 위주 과목",
-               "8개 실습 과제, 최대 3시간", "영어로만 평가 (번역 끄기)",
-               "SAP GUI · Fiori · BTP · Eclipse"]),
+              ["개발 · 세팅 위주 과목", "8개 실습 과제, 최대 3시간",
+               "영어로만 평가 (번역 끄기)", "SAP GUI · Fiori · BTP · Eclipse"],
+              "직접 시스템에 들어가 수행", "실제 SAP 서버에 접속해 과제 수행"),
         right=("AI 시나리오 시험", "AI Scenario Exam",
-               ["손님 응대를 롤플레잉", "컨설팅 · 영업 위주 과목",
-                "예약 없이 즉시 응시", "한국어 완벽 지원",
-                "카메라 켜고 진행"])),
+               ["컨설팅 · 영업 위주 과목", "예약 없이 즉시 응시",
+                "한국어 완벽 지원", "카메라 켜고 진행"],
+               "손님 응대를 롤플레잉", "AI와 대화하며 컨설팅 제안")),
     "en": dict(banner="Two SAP exam formats", sub="the subject decides the format, not the candidate",
         headline="A hands-on system exam and an AI scenario exam",
-        left=("System based exam", "Hands-on in the system",
-              ["Performed inside a real system", "Development and configuration subjects",
-               "Eight tasks, up to three hours", "Assessed in English only",
-               "SAP GUI · Fiori · BTP · Eclipse"]),
-        right=("AI scenario exam", "Role-play with an AI",
-               ["Role-play a client conversation", "Consulting and sales subjects",
-                "Sit it immediately, no booking", "Full Korean language support",
-                "Taken with the camera on"])),
+        left=("System based exam", "System Based Exam",
+              ["Development and config subjects", "Eight tasks, up to three hours",
+               "Assessed in English only", "SAP GUI · Fiori · BTP · Eclipse"],
+              "Work inside the system", "Connect to a real SAP server and perform tasks"),
+        right=("AI scenario exam", "AI Scenario Exam",
+               ["Consulting and sales subjects", "Sit it immediately, no booking",
+                "Full Korean support", "Taken with the camera on"],
+               "Role-play a client", "Propose consulting while talking with an AI")),
 }
 
 FIELD_NAMES = {
@@ -109,21 +109,17 @@ PI_OVERVIEW = {
 
 UAT = {
     "ko": dict(banner="성공하는 UAT의 4가지 조건", sub="현업이 직접 여는 최종 리허설",
-        headline="준비 없는 UAT는 형식적인 사인에 그칩니다",
-        cards=[("현실 기반 시나리오", ["단순 기능이 아니라", "주문 접수부터", "세금계산서 발행까지", "실제 업무의 처음과 끝"]),
-               ("실제 데이터", ["'테스트'가 아니라", "㈜대한전자 같은", "실제 운영 데이터로", "숨은 오류를 잡는다"]),
-               ("사용자 주도", ["주인공은 컨설턴트가", "아니라 현업 사용자", "사소한 불편도", "모두 이야기한다"]),
-               ("사전 교육", ["조작법을 먼저 익혀야", "조작 미숙을 결함으로", "오해하지 않고", "테스트가 효율적이다"])]),
+        headline="이 네 가지가 빠지면, UAT는 요식 행위가 됩니다",
+        cards=[("현실 기반 시나리오", ["주문부터 세금계산서까지", "실제 업무 흐름대로 테스트"]),
+               ("실제 데이터", ["실제 거래처 · 운영 데이터로", "숨은 오류까지 잡아낸다"]),
+               ("사용자 주도", ["현업 사용자가 직접 조작하며", "불편한 점을 그 자리에서 말한다"]),
+               ("사전 교육", ["조작법을 먼저 익혀야", "미숙함을 결함으로 오해하지 않는다"])]),
     "en": dict(banner="Four conditions for a successful UAT", sub="the final rehearsal, led by the business",
-        headline="Without preparation, UAT becomes a formality and a signature",
-        cards=[("Realistic scenarios", ["Not isolated features but", "the whole job end to end,",
-                                        "from taking an order", "to issuing the invoice"]),
-               ("Real data", ["Not \"test test test\" but", "actual operational data",
-                              "with real customer names —", "it surfaces hidden errors"]),
-               ("User-led", ["The lead role belongs to", "business users, not consultants",
-                             "Every small annoyance", "gets raised out loud"]),
-               ("Training first", ["Learn the operations first", "so clumsiness is not",
-                                   "mistaken for a defect —", "the test stays efficient"])]),
+        headline="Miss any of these four, and UAT is just a formality",
+        cards=[("Realistic scenarios", ["The real flow end to end —", "order intake to invoice"]),
+               ("Real data", ["Real accounts and live data", "to surface hidden errors"]),
+               ("User-led", ["Business users drive it,", "not consultants"]),
+               ("Training first", ["Train on the operations first,", "so mistakes aren't", "misread as defects"])]),
 }
 
 WORK_CENTER = {
@@ -158,20 +154,6 @@ ROUTING = {
                                    "The basis for scheduling"])]),
 }
 
-CLEAN_CORE = {
-    "ko": dict(banner="Joule로 가는 길, 순서가 거꾸로다", sub="쓰고 싶은 것은 맨 위지만, 손대야 할 것은 맨 아래부터",
-        headline="",
-        cards=[("최종 목표 — SAP Joule", ["자연어로 지시하는", "SAP 전용 AI 비서"]),
-               ("전제 조건 — 클린코어", ["표준은 깨끗하게,", "확장은 BTP에 얹어", "붙이는 구조"]),
-               ("선결 과제 — Z-코드 정리", ["표준을 직접 고쳐 쌓인", "커스텀 코드부터 진단"])]),
-    "en": dict(banner="The road to Joule runs backwards", sub="what you want is at the top; what you must fix is at the bottom",
-        headline="",
-        cards=[("The goal — SAP Joule", ["An SAP-native AI assistant", "you instruct in plain language"]),
-               ("The prerequisite — clean core", ["Keep the standard clean and", "put extensions on BTP",
-                                                  "instead of in the core"]),
-               ("The first task — Z-code cleanup", ["Start by auditing the custom", "code piled onto the standard"])]),
-}
-
 
 def _steps(spec):
     def build(lang, out):
@@ -197,12 +179,9 @@ def _matrix(spec):
 
 BUILDERS = {
     "sap-autocomplete-01":     _duo(AUTOCOMPLETE),
-    "sap-batch-job-01":        _duo(BATCH_JOB),
     "sap-exam-format-02":      _duo(EXAM_FORMAT),
-    "sap-pi-overview-01":      _duo(PI_OVERVIEW),
     "sap-field-names-01":      _matrix(FIELD_NAMES),
     "sap-uat-01":              _steps(UAT),
     "study-pp-work-center-01": _steps(WORK_CENTER),
     "study-pp-routing-01":     _steps(ROUTING),
-    "clean-core-dependency":   _steps(CLEAN_CORE),
 }

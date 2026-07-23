@@ -28,11 +28,11 @@ Integration testing gathers each module that has already passed unit testing and
 
 If unit testing was about checking the quality of a single onion or a single cut of meat, integration testing is about watching those ingredients actually become a dish and make it out to the dining floor. It confirms connections like: "when the floor places an order, does it show up correctly on the kitchen monitor?" and "when the kitchen finishes, does the floor get notified?"
 
-When an order comes in through Sales (SD), Inventory (MM) needs to pick up the signal and prepare the shipment, and Finance (FI) needs to issue the billing document. Integration testing verifies that these connections mesh precisely — that the output of one step lands correctly as the input of the next.
+When an order comes in through Sales (SD), Production (PP) needs to pick up the signal and process the order, Inventory (MM) needs to prepare the shipment, and Finance (FI) needs to issue the billing document. Integration testing verifies that these connections mesh precisely — that the output of one step lands correctly as the input of the next.
 
 ## Why it matters
 
-![Diagram of the integration test flow from sales order (SD) to goods issue (MM) to invoice (FI) to payment (FI), with the connection points marked](/images/sap-integration-test-flow.jpg)
+![Diagram of the integration test flow from sales order (SD) to production order (PP) to goods issue (MM) to invoice (FI), with the connection points marked](/images/sap-integration-test-flow.jpg)
 *Figure 1. The business flow crossing modules, and where the seams are*
 
 
@@ -40,7 +40,7 @@ Why bother running everything together? To prevent the absurd situation after go
 
 **Are the connections between modules solid?** When Sales creates an order, Inventory needs to pick up the signal and act. This checks whether that connection meshes precisely — whether the kitchen and the floor are moving on the same signal.
 
-**Does the overall flow hold together as designed?** It checks the full sequence — customer order → product shipment → billing — for missing steps or breaks along the way.
+**Does the overall flow hold together as designed?** It checks the full sequence — customer order → production → shipment → billing — for missing steps or breaks along the way.
 
 **Does it connect properly with external systems?** SAP doesn't run in isolation. It has to connect to outside systems like a warehouse system (WMS) or a production system (MES). This is where those connection points (interfaces) get tested carefully against spec.
 
@@ -48,7 +48,7 @@ Why bother running everything together? To prevent the absurd situation after go
 
 Integration testing follows a structured sequence.
 
-First, you build **test scenarios** — a detailed "script" laying out the business flow that needs to work, step by step. For an "order-to-cash" flow, for example: Sales registers a sales order (SD), Logistics ships the product (MM), Finance issues the invoice (FI), and Finance processes the payment (FI).
+First, you build **test scenarios** — a detailed "script" laying out the business flow that needs to work, step by step. For an "order-to-invoice" flow, for example: Sales registers a sales order (SD), Production processes the production order (PP), Logistics ships the product (MM), and Finance issues the invoice (FI).
 
 Next, you prepare **an environment and data that mirror production.** You set up a clean test server (QAS) identical to the production environment and use master data (customer and product information) close to the real thing. Fake data won't surface realistic errors.
 

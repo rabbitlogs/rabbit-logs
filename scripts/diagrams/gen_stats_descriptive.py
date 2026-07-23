@@ -84,11 +84,14 @@ def build(lang, out):
         x0 = MARGIN + i * (card_w + gap_x)
         x1 = x0 + card_w
         cx = (x0 + x1) / 2
+        # 카드 본체(흰 배경 + 테두리)
         d.rounded_rectangle([x0, top, x1, top + card_h], radius=16,
                             fill=WHITE, outline=LINE, width=2)
-        # 헤더
-        d.rounded_rectangle([x0, top, x1, top + head_h], radius=16, fill=HEAD_BG[i])
-        d.rectangle([x0, top + head_h - 16, x1, top + head_h], fill=HEAD_BG[i])
+        # 헤더 — 카드 테두리(2px) 안쪽에 그려 좌우 경계가 어긋나지 않게 한다.
+        # 상단만 둥글고 하단은 각지게: 둥근 사각형 위에 하단부를 직사각형으로 덮는다.
+        hx0, hx1 = x0 + 2, x1 - 2
+        d.rounded_rectangle([hx0, top + 2, hx1, top + head_h], radius=14, fill=HEAD_BG[i])
+        d.rectangle([hx0, top + head_h - 14, hx1, top + head_h], fill=HEAD_BG[i])
 
         center_x_text(d, cx, top + 12, t["tags"][i], f_tag, "#ffffff")
         center_x_text(d, cx, top + 34, t["heads"][i], f_head, WHITE)

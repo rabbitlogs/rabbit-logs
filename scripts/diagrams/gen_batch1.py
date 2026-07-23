@@ -54,6 +54,7 @@ PROTOTYPE = {
         cards=[("시범 매장 오픈", ["종이 설계도 대신", "실제로 만져보는", "최소한의 시제품"]),
                ("현업이 직접 확인", ["\"이건 우리 일과 달라요\"", "머리로 상상할 때 놓친", "진짜 요구사항 발견"]),
                ("설계 확정 · 수정", ["오픈 전에 고치면 싸고", "오픈 후에 고치면 비싸다", "큰 방향을 먼저 잡는다"])],
+        foot=("먼저 만져보게 하라", "상상으로 놓친 요구사항은 시제품 앞에서야 드러난다"),
     ),
     "en": dict(
         banner="The prototype test flow", sub="a pilot store before you build",
@@ -61,6 +62,7 @@ PROTOTYPE = {
         cards=[("Open the pilot", ["A minimal working build", "you can actually touch,", "not a paper design"]),
                ("Users try it", ["\"This isn't how we work\"", "Surfaces real requirements", "imagination would miss"]),
                ("Lock the design", ["Cheap to fix before launch,", "expensive after —", "settle direction first"])],
+        foot=("Let them touch it first", "requirements missed in the mind surface only in front of a prototype"),
     ),
 }
 
@@ -127,20 +129,24 @@ PI_VS = {
         headline="이상을 그리는 사람과, 현실로 만드는 사람",
         left=("PI", "Process Innovation",
               ["비즈니스 컨설턴트 중심", "As-Is 분석 → To-Be 설계",
-               "예산 · 기술 제약보다 이상 우선", "\"어떻게 일해야 최적인가?\""]),
+               "예산 · 기술 제약보다 이상 우선", "\"어떻게 일해야 최적인가?\""],
+              "설계자", "미래의 청사진을 그린다"),
         right=("구축", "Implementation",
                ["모듈 · 기술 컨설턴트 중심", "To-Be → 실제 SAP 구현",
-                "예산 · 인프라 · 표준 기능 고려", "\"현실에서 잘 돌아가게 하려면?\""]),
+                "예산 · 인프라 · 표준 기능 고려", "\"현실에서 잘 돌아가게 하려면?\""],
+               "시공자", "청사진을 현실로 만든다"),
     ),
     "en": dict(
         banner="PI and implementation", sub="the architect and the builder",
         headline="One draws the ideal; the other makes it real",
         left=("PI", "Process Innovation",
               ["Led by business consultants", "As-Is analysis → To-Be design",
-               "Ideal first, before budget and tech limits", "\"What is the best way to work?\""]),
+               "Ideal before budget and tech limits", "\"What is the best way to work?\""],
+              "Architect", "draws the future blueprint"),
         right=("Implementation", "Build",
                ["Led by module and tech consultants", "To-Be → actual SAP build",
-                "Budget, infrastructure, standard features", "\"How do we make it run in practice?\""]),
+                "Budget, infrastructure, standards", "\"How do we make it run in practice?\""],
+               "Builder", "turns the blueprint into reality"),
     ),
 }
 
@@ -187,7 +193,8 @@ DROPDOWN = {
 def _steps(spec):
     def build(lang, out):
         t = spec[lang]
-        steps(out, t["banner"], t["headline"], t["cards"], sub=t.get("sub"))
+        steps(out, t["banner"], t["headline"], t["cards"], sub=t.get("sub"),
+              foot=t.get("foot"))
     return build
 
 

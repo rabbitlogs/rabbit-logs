@@ -19,7 +19,7 @@ Because production management spans the entire process from sales order to produ
 
 [[TOC]]
 
-![The order-production-material-shipment workflow in SAP PP practice, with representative T-codes at each stage](/images/sap-pp-flow.jpg)
+![The order-production-material-shipment workflow in SAP PP practice, with representative T-codes at each stage](/images/sap-pp-tcode-01.jpg)
 *Figure 1. The PP workflow and representative T-codes at each stage*
 
 ## 1. Orders (Sales Order)

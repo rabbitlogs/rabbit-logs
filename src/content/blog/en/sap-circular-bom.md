@@ -68,7 +68,7 @@ When you register the defective unit as a component in the rework BOM, check the
 
 > ⚠️ **Note**: Miss this checkbox and either the BOM won't save at all, or MRP throws an error later. It's the most commonly overlooked step when building a rework BOM, so make a point of confirming it.
 
-![SAP circular BOM rework flow — diagram showing a finished product going through a rework step and returning as the same finished product, and where the "Allow cycles" checkbox sits](/images/sap-circular-bom-01_en_new.jpg)
+![SAP circular BOM rework flow — diagram showing a finished product going through a rework step and returning as the same finished product, and where the "Allow cycles" checkbox sits](/images/sap-circular-bom-01.jpg)
 *Figure 1. The circular BOM structure in a rework scenario, and the "Allow cycles" setting*
 
 ## Checking that it worked

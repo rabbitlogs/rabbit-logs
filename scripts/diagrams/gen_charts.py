@@ -37,6 +37,8 @@ MEAN = {
         chart_title="견적 완료일 분포",
         labels=["1~4일", "5~8일", "9~12일", "13~16일"],
         values=[3, 1, 0, 1],
+        bins=[(1, 4), (5, 8), (9, 12), (13, 16)],   # 각 막대의 일수 구간
+        median_val=4.0, mean_val=6.0,               # 점선을 찍을 실제 x값(일)
         unit="건수",
         mean_label="평균 6.0일", med_label="중앙값 4.0일",
         head="이 데이터가 말하는 것",
@@ -50,6 +52,8 @@ MEAN = {
         chart_title="Distribution of quotation lead times",
         labels=["1–4 days", "5–8 days", "9–12 days", "13–16 days"],
         values=[3, 1, 0, 1],
+        bins=[(1, 4), (5, 8), (9, 12), (13, 16)],
+        median_val=4.0, mean_val=6.0,
         unit="Count",
         mean_label="Mean 6.0 days", med_label="Median 4.0 days",
         head="What this data is saying",
@@ -186,15 +190,15 @@ def build_mean(lang, out):
     card_w = 470
     top = BANNER_H + 26
     chart_x0, chart_x1 = MARGIN, W - MARGIN - card_w - 24
-    chart_h = 300
+    chart_h = 326          # 뱃지 2단 공간 확보를 위해 플롯을 내린 만큼 높이도 키운다
     img_h = int(top + chart_h + 72)
 
     img, d = new_canvas(img_h)
     draw_banner(d, t["banner"])
     center_x_text(d, (chart_x0 + chart_x1) / 2, top, t["chart_title"], f_ct, INK)
 
-    # 평균·중앙값 뱃지가 차트 제목을 가리지 않도록 플롯 영역을 충분히 내린다.
-    py0, py1 = top + 62, top + chart_h - 30
+    # 평균·중앙값 뱃지(가까우면 위/아래 2단)가 차트 제목을 가리지 않도록 플롯을 충분히 내린다.
+    py0, py1 = top + 88, top + chart_h - 30
     vals = t["values"]
     vmax = max(vals)
     for g in range(vmax + 1):
@@ -207,23 +211,40 @@ def build_mean(lang, out):
     inner = chart_x1 - (chart_x0 + 40)
     bar_w = inner / (n + (n + 1) / 2.0)
     space = bar_w / 2
+    bar_cx = []                     # 각 막대의 중심 x
     for i, v in enumerate(vals):
         bx = chart_x0 + 40 + space + i * (bar_w + space)
+        bar_cx.append(bx + bar_w / 2)
         bh = (v / vmax) * (py1 - py0)
         if v:
             d.rectangle([bx, py1 - bh, bx + bar_w, py1], fill=TEAL)
             center_x_text(d, bx + bar_w / 2, py1 - bh - 22, f"{v}", font("Bold", 15), TEAL)
         center_x_text(d, bx + bar_w / 2, py1 + 8, t["labels"][i], f_ax, INK)
 
-    # 중앙값·평균 세로 점선
-    for frac, lbl, col in [(0.30, t["med_label"], MARIGOLD_D), (0.52, t["mean_label"], BERRY)]:
-        vx = chart_x0 + 40 + inner * frac
+    # 일수 값 → x좌표 매핑. 각 막대는 구간 중앙(예: 1~4일 → 2.5일)에 위치한다.
+    # 두 막대의 (일수중앙, 중심x)를 지나는 직선으로 임의의 일수를 x로 선형 변환한다.
+    bins = t["bins"]
+    day_centers = [(a + b) / 2 for a, b in bins]          # [2.5, 6.5, 10.5, 14.5]
+    step_x = (bar_cx[-1] - bar_cx[0]) / (day_centers[-1] - day_centers[0])
+
+    def day_to_x(day):
+        return bar_cx[0] + (day - day_centers[0]) * step_x
+
+    # 중앙값·평균 세로 점선 — 실제 값 위치에 찍는다.
+    marks = [(t["median_val"], t["med_label"], MARIGOLD_D),
+             (t["mean_val"],   t["mean_label"], BERRY)]
+    # 라벨 뱃지가 겹치지 않도록, 두 점선이 가까우면 뱃지를 위/아래 두 단으로 나눈다.
+    xs_marks = [day_to_x(m[0]) for m in marks]
+    close = abs(xs_marks[1] - xs_marks[0]) < 150
+    for k, (val, lbl, col) in enumerate(marks):
+        vx = xs_marks[k]
         for yy in range(int(py0), int(py1), 8):
             d.line([(vx, yy), (vx, yy + 4)], fill=col, width=2)
         tw = text_w(d, lbl, font("Bold", 13))
-        d.rounded_rectangle([vx - tw / 2 - 8, py0 - 26, vx + tw / 2 + 8, py0 - 4],
+        by = py0 - 26 if (not close or k == 0) else py0 - 52
+        d.rounded_rectangle([vx - tw / 2 - 8, by, vx + tw / 2 + 8, by + 22],
                             radius=8, fill=col)
-        true_center_text(d, vx, py0 - 15, lbl, font("Bold", 13), WHITE)
+        true_center_text(d, vx, by + 11, lbl, font("Bold", 13), WHITE)
 
     cx0 = W - MARGIN - card_w
     d.text((cx0, top), t["head"], font=f_hd, fill=INK)

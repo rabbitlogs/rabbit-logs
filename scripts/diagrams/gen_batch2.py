@@ -74,20 +74,22 @@ CIRCULAR_BOM = {
 }
 
 BATCH_MGMT = {
-    "ko": dict(banner="배치에 담기는 정보", sub="다섯 가지 핵심 항목",
+    "ko": dict(banner="배치에 담기는 정보", sub="여섯 가지 핵심 항목",
         headline="배치 하나로 이력 전체를 추적합니다",
-        cards=[("배치 번호", ["자재코드+배치번호로", "재고를 특정"]),
+        cards=[("배치 번호", ["자재코드+배치번호", "로 재고 특정"]),
                ("생산일자 · 플랜트", ["언제, 어느 공장에서", "만들었는지"]),
                ("원자재 정보", ["어떤 공급업체의", "원자재를 사용했는지"]),
                ("품질 데이터", ["당도 · 수분 · 순도 등", "측정값(특성값)"]),
-               ("유통기한", ["유통기한 또는", "최소 보관 기간"])]),
-    "en": dict(banner="What a batch records", sub="five essential fields",
+               ("유통기한", ["유통기한 또는", "최소 보관 기간"]),
+               ("상태", ["사용가능 · 검사중", "· 잠금 여부"])]),
+    "en": dict(banner="What a batch records", sub="six essential fields",
         headline="One batch number traces the entire history",
-        cards=[("Batch number", ["Material code plus batch", "pinpoints the stock"]),
-               ("Date · plant", ["When and at which", "plant it was made"]),
+        cards=[("Batch number", ["Material code plus", "batch pinpoints", "the stock"]),
+               ("Date · plant", ["When and where", "it was made"]),
                ("Raw material", ["Which supplier's", "materials went in"]),
-               ("Quality data", ["Measured values such as", "sugar, moisture, purity"]),
-               ("Shelf life", ["Expiry date or the", "minimum storage period"])]),
+               ("Quality data", ["Sugar, moisture,", "purity, and more"]),
+               ("Shelf life", ["Expiry or minimum", "storage period"]),
+               ("Status", ["Unrestricted,", "inspection, or", "blocked"])]),
 }
 
 FIT_GAP = {
@@ -196,15 +198,10 @@ def _duo(spec):
 
 
 BUILDERS = {
-    "sap-gi-gr-cnf-flow":                _steps(GI_GR_CNF),
     "sap-movement-type-flow":            _steps(MOVEMENT),
     "sap-org-structure-master-data-01":  _steps(ORG_STRUCTURE),
     "sap-user-parameters-01":            _steps(USER_PARAMS),
     "sap-circular-bom-01":               _steps(CIRCULAR_BOM),
-    "sap-batch-management-01":           _steps(BATCH_MGMT),
     "sap-cutover-live-01":               _steps(CUTOVER_LIVE),
     "sap-fit-gap-ways":                  _duo(FIT_GAP),
-    "sap-mes-interface-01":              _duo(MES_INTERFACE),
-    "sap-production-order-carryover-01": _duo(CARRYOVER),
-    "sap-production-order-number-01":    _duo(ORDER_NUMBER),
 }

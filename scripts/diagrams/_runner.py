@@ -50,16 +50,26 @@ DIAGRAMS = [
 
 
 # 여러 도식을 BUILDERS 딕셔너리로 묶어 제공하는 모듈들(템플릿 기반)
-BATCH_MODULES = ["gen_batch1", "gen_batch2", "gen_batch3", "gen_batch4", "gen_charts"]
+# gen_v2_shapes가 마지막에 오는 이유: 같은 슬러그를 정의하면 v2가 이긴다.
+# (§9 관계→형태 대응표에 따라 카드형에서 곡선·순환·계층·허브·타임라인으로 교체한 것들)
+BATCH_MODULES = ["gen_batch1", "gen_batch2", "gen_batch3", "gen_batch4", "gen_charts",
+                 "gen_v2_shapes", "gen_v2_flowtable", "gen_v2_stack", "gen_v2_fitgap",
+                 "gen_v2_ppmaster", "gen_v2_mesif", "gen_v2_datatypes", "gen_v2_gigrcnf",
+                 "gen_v2_integtest", "gen_v2_pptcode", "gen_v2_wip", "gen_v2_mesrole",
+                 "gen_v2_pioverview", "gen_v2_ordernum", "gen_v2_batchinfo",
+                 "gen_v2_batchjob", "gen_v2_carryover", "gen_v2_orgstructure"]
+
+# 출력 접미사 — 검수용. 기존 파일을 덮어쓰지 않는다.
+SUFFIX = "_new2"
 
 
 def _targets():
-    """(슬러그, build함수) 목록을 만든다."""
-    out = []
+    """(슬러그, build함수) 목록. 같은 슬러그는 나중에 등록된 것이 이긴다."""
+    reg = {}
     for mod_name, slug in DIAGRAMS:
         mod = importlib.import_module(mod_name)
         importlib.reload(mod)
-        out.append((slug, mod.build))
+        reg[slug] = mod.build
     for mod_name in BATCH_MODULES:
         try:
             mod = importlib.import_module(mod_name)
@@ -67,8 +77,8 @@ def _targets():
             continue
         importlib.reload(mod)
         for slug, fn in mod.BUILDERS.items():
-            out.append((slug, fn))
-    return out
+            reg[slug] = fn
+    return list(reg.items())
 
 
 def run(filters=None):
@@ -80,8 +90,8 @@ def run(filters=None):
             print(f"[{slug}]")
             # 마크다운이 실제로 참조하는 확장자를 따른다.
             ext = REF_EXT.get(slug, ".jpg")
-            fn("ko", os.path.join(OUT, f"{slug}_new{ext}"))
-            fn("en", os.path.join(OUT, f"{slug}_en_new{ext}"))
+            fn("ko", os.path.join(OUT, f"{slug}{SUFFIX}{ext}"))
+            fn("en", os.path.join(OUT, f"{slug}_en{SUFFIX}{ext}"))
             ok.append(slug)
         except Exception:
             fail.append(slug)

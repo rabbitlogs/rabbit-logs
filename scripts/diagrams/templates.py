@@ -24,10 +24,15 @@ def _wrap(d, text, f, max_w):
     return lines
 
 
-def steps(out, banner, headline, cards, badge=True, sub=None):
-    """N단계 카드 + 화살표. cards = [(제목, [본문줄...]), ...]"""
+def steps(out, banner, headline, cards, badge=True, sub=None, foot=None):
+    """
+    N단계 카드 + 화살표. cards = [(제목, [본문줄...]), ...]
+    foot = (키포인트, 간단설명) — 하단 요약 바. 키포인트는 강조색, 설명은 보조색으로 한 줄에 나란히.
+    """
     f_title = font("Bold", 21)
     f_body  = font("Regular", 16)
+    f_key   = font("Bold", 16)
+    f_note  = font("Regular", 15)
 
     n = len(cards)
     gap_x = 46 if n <= 3 else 30
@@ -36,7 +41,8 @@ def steps(out, banner, headline, cards, badge=True, sub=None):
     card_h = (62 + 27 + 24 if badge else 34) + 30 + 22 + 26 + body_lines * 29 + 30
     top = BANNER_H + (96 if headline else 46)
 
-    img, d = new_canvas(int(top + card_h + 44))
+    foot_h = 52 if foot else 0
+    img, d = new_canvas(int(top + card_h + foot_h + 44))
     draw_banner(d, banner, sub)
     if headline:
         draw_headline(d, BANNER_H + 30, headline)
@@ -69,26 +75,55 @@ def steps(out, banner, headline, cards, badge=True, sub=None):
             center_x_text(d, cx, ty, line, f_body, MUTED)
             ty += 29
 
-    gap = 13
     ay = top + card_h / 2
     for i in range(n - 1):
-        arrow(d, bounds[i][1] + gap, ay, bounds[i + 1][0] - gap,
-              color=MARIGOLD, width=6, head=15)
+        flow_arrow(d, bounds[i][1], bounds[i + 1][0], ay)
+
+    # 하단 요약 바 — 키포인트(강조색) + 간단설명(보조색)을 한 줄에 나란히.
+    if foot:
+        key, note = foot
+        fy = top + card_h + 16
+        bar_h = 40
+        d.rounded_rectangle([MARGIN, fy, W - MARGIN, fy + bar_h], radius=11, fill=TEAL_PALE)
+        kw = text_w(d, key, f_key)
+        sep = 14
+        nw = text_w(d, note, f_note) if note else 0
+        total = kw + (sep + nw if note else 0)
+        sx = (W - total) / 2
+        d.text((sx, fy + (bar_h - 20) / 2), key, font=f_key, fill=TEAL)
+        if note:
+            d.text((sx + kw + sep, fy + (bar_h - 19) / 2), note, font=f_note, fill=MUTED)
 
     save(img, out)
 
 
 def duo(out, banner, headline, left, right, sub=None):
-    """2열 비교 카드. left/right = (헤더, 부제 or None, [항목...])"""
+    """
+    2열 비교 카드.
+    left/right = (헤더, 부제 or None, [항목...])
+              또는 (헤더, 부제, [항목...], 큰키포인트)
+              또는 (헤더, 부제, [항목...], 큰키포인트, 키포인트부제)
+    큰키포인트가 있으면 헤더와 항목 사이에 크게 얹는다(원본 "만능 도구/Why" 양식).
+    """
     f_head = font("Bold", 22)
     f_hsub = font("Medium", 14)
     f_item = font("Regular", 17)
+    f_key  = font("Black", 46)          # 큰 키포인트
+    f_ksub = font("Bold", 17)           # 키포인트 부제
+
+    # 큰 키포인트 유무 판별
+    has_key = len(left) >= 4 or len(right) >= 4
+    key_block_h = 0
+    if has_key:
+        key_block_h = 66                # 큰 글자(46px) 영역
+        if len(left) >= 5 or len(right) >= 5:
+            key_block_h += 26           # 키포인트 부제까지
 
     gap_x = 40
     card_w = (W - MARGIN * 2 - gap_x) / 2
     head_h = 62
     rows = max(len(left[2]), len(right[2]))
-    card_h = head_h + 26 + rows * 32 + 24
+    card_h = head_h + key_block_h + 22 + rows * 32 + 24
     top = BANNER_H + (96 if headline else 44)
 
     img, d = new_canvas(int(top + card_h + 42))
@@ -96,7 +131,10 @@ def duo(out, banner, headline, left, right, sub=None):
     if headline:
         draw_headline(d, BANNER_H + 30, headline)
 
-    for i, (head, hsub, items) in enumerate([left, right]):
+    for i, spec in enumerate([left, right]):
+        head, hsub, items = spec[0], spec[1], spec[2]
+        big = spec[3] if len(spec) >= 4 else None
+        bigsub = spec[4] if len(spec) >= 5 else None
         x0 = MARGIN + i * (card_w + gap_x)
         x1 = x0 + card_w
         cx = (x0 + x1) / 2
@@ -114,7 +152,17 @@ def duo(out, banner, headline, left, right, sub=None):
         else:
             true_center_text(d, cx, top + head_h / 2, head, f_head, WHITE)
 
-        y = top + head_h + 22
+        y = top + head_h + 20
+        # 큰 키포인트
+        if has_key:
+            if big:
+                center_x_text(d, cx, y, big, f_key, col)
+                _, k0, _, k1 = d.textbbox((0, 0), big, font=f_key)
+                ky = y + (k1 - k0) + 14
+                if bigsub:
+                    center_x_text(d, cx, ky, bigsub, f_ksub, INK)
+            y = top + head_h + key_block_h + 20   # 항목 시작 위치를 층에 맞춰 고정
+
         for it in items:
             d.ellipse([x0 + 24, y + 7, x0 + 31, y + 14], fill=col)
             for j, ln in enumerate(_wrap(d, it, f_item, card_w - 66)):

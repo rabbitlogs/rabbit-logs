@@ -87,11 +87,8 @@ def build(lang, out):
                             radius=10, fill="#f2ece1")
         true_center_text(d, cx, chip_y + chip_h / 2, chip, f_chip, INK)
 
-    gap = 12
     ay = top + card_h / 2
     for i in range(n - 1):
-        col = MARIGOLD if i % 2 == 0 else TEAL
-        arrow(d, centers[i][1] + gap, ay, centers[i + 1][0] - gap,
-              color=col, width=6, head=14)
+        flow_arrow(d, centers[i][1], centers[i + 1][0], ay)
 
     save(img, out)

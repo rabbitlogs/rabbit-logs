@@ -37,18 +37,23 @@ BANNER_H    = 54          # 상단 배너 높이
 BANNER_FS   = 25          # 배너 폰트
 RADIUS      = 16          # 카드 반경 (14~18)
 
-FONT_DIR = "/tmp/fonts"
+# 폰트는 저장소 안(scripts/diagrams/fonts/)에 두고 이를 1순위로 쓴다.
+# 세션이 초기화돼도 저장소 폰트는 남으므로 매번 다시 받을 필요가 없다.
+# /tmp/fonts 는 예전 방식과의 호환을 위한 2순위 대체 경로일 뿐이다.
+_REPO_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+FONT_DIRS = [_REPO_FONT_DIR, "/tmp/fonts"]
 
 def font(weight="Regular", size=20):
     """Pretendard 로드. 실패하면 조용히 대체하지 않고 예외를 던진다(§8 규칙)."""
-    path = os.path.join(FONT_DIR, f"Pretendard-{weight}.otf")
-    if not os.path.exists(path):
-        raise RuntimeError(
-            f"Pretendard 폰트를 찾을 수 없습니다: {path}\n"
-            "npm pack pretendard 로 받아 /tmp/fonts 에 배치하세요. "
-            "다른 폰트로 임의 대체하지 않습니다(블로그 본문과 통일감이 깨짐)."
-        )
-    return ImageFont.truetype(path, size)
+    for d in FONT_DIRS:
+        path = os.path.join(d, f"Pretendard-{weight}.otf")
+        if os.path.exists(path):
+            return ImageFont.truetype(path, size)
+    raise RuntimeError(
+        f"Pretendard 폰트를 찾을 수 없습니다 (탐색 경로: {FONT_DIRS}).\n"
+        "저장소의 scripts/diagrams/fonts/ 에 Pretendard-*.otf 를 두세요. "
+        "다른 폰트로 임의 대체하지 않습니다(블로그 본문과 통일감이 깨짐)."
+    )
 
 
 def true_center_text(d, cx, cy, text, f, fill):
@@ -125,6 +130,21 @@ def arrow(d, x0, y, x1, color=ARROW, width=5, head=11):
     """수평 화살표. 호출부에서 도형 경계 + gap 을 계산해 좌표를 넘긴다(§8 화살표 규칙)."""
     d.line([(x0, y), (x1 - head, y)], fill=color, width=width)
     d.polygon([(x1, y), (x1 - head, y - head * 0.62), (x1 - head, y + head * 0.62)], fill=color)
+
+
+def flow_arrow(d, gap_x0, gap_x1, y, color=MARIGOLD):
+    """
+    카드 사이 표준 화살표 — 모든 단계형 도식이 공유한다.
+    gap_x0/gap_x1 = 왼쪽 카드 오른쪽 경계 / 오른쪽 카드 왼쪽 경계.
+    §9 규칙: gap·head를 간격에 비례시키고, 선이 사라지지 않게 보장한다.
+    카드 사이 화살표는 항상 이 함수를 쓴다(직접 arrow()를 부르지 않는다).
+    """
+    span = gap_x1 - gap_x0
+    gap = max(8, span * 0.26)
+    head = max(11, span * 0.30)
+    if span - gap * 2 - head < 8:          # 선이 소멸하는 구간 → 머리만 축소
+        head = max(10, span - gap * 2 - 8)
+    arrow(d, gap_x0 + gap, y, gap_x1 - gap, color=color, width=6, head=int(head))
 
 
 def dotted_line(d, x0, x1, y, color=LINE, step=7, seg=3):
