@@ -143,14 +143,15 @@ const home = lang === 'en' ? '/en/' : '/';
       .lbl-short { display: none; }
 
       /* 모바일: 카테고리 라벨에서 'SAP' 접두어 생략(짧은 라벨).
-         한 줄에 다 안 들어가면 균등 압축하는 대신 가로 스크롤로 전환한다. */
+         기본은 균등 배분하되, 글자가 길어 한 줄에 안 들어가면(min-width로 더는
+         못 줄어들면) 자동으로 가로 스크롤로 전환된다. */
       @media (max-width: 640px) {
         .header-inner { gap: 0.6rem 0.5rem; }
         .brand { margin-left: 0.5rem; }
         .lang-switch { margin-right: 0.5rem; }
         .header-actions { margin-right: 0.5rem; }
         .nav {
-          justify-content: flex-start; flex-wrap: nowrap; gap: 0.3rem;
+          justify-content: space-between; flex-wrap: nowrap; gap: 0.3rem;
           overflow-x: auto;
           scrollbar-width: none;
           -webkit-overflow-scrolling: touch;
@@ -159,7 +160,7 @@ const home = lang === 'en' ? '/en/' : '/';
         }
         .nav::-webkit-scrollbar { display: none; }
         .nav a {
-          font-size: 0.8rem; flex: none; text-align: center;
+          font-size: 0.8rem; flex: 1 1 auto; min-width: fit-content; text-align: center;
           white-space: nowrap;
           padding: 0.4rem 0.3rem;
         }
