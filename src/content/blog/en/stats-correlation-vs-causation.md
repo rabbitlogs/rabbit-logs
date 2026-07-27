@@ -38,8 +38,11 @@ The key word is "tendency." Correlation isn't an exceptionless law — it means 
 
 The direction and strength of a correlation, expressed as a single number, is the <strong class="key">correlation coefficient r</strong>. It ranges from −1 to +1.
 
-![Four scatter plots showing correlation coefficient r at different magnitudes — strong positive, weak positive, no correlation, strong negative](/images/stats-correlation-vs-causation.jpg)
-*Figure 1. Scatter plot patterns by r value — the closer points sit to a straight line, the closer |r| is to 1*
+![Positive correlation scatter plots — comparing strong positive (r=+0.92) and weak positive (r=+0.45)](/images/stats-correlation-vs-causation-01.jpg)
+*Figure 1. Positive correlation — the more they rise together, the closer r gets to +1 (left: strong, right: weak)*
+
+![No-correlation and negative-correlation scatter plots — comparing no correlation (r≈0) and strong negative (r=−0.90)](/images/stats-correlation-vs-causation-02.jpg)
+*Figure 2. No correlation vs. negative correlation — 0 when there's no relationship, near −1 when they move in opposite directions*
 
 Rough guidelines for interpreting r:
 
