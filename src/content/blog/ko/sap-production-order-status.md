@@ -32,7 +32,7 @@ SAP 화면에서 생산오더를 열면 'CRTD', 'REL', 'TECO' 같은 상태 코�
 
 ## 핵심 상태 코드 다섯 가지
 
-![CRTD, REL, CNF, DLV, TECO로 이어지는 생산오더 상태 5단계 흐름도](/images/sap-production-order-status-flow.jpg)
+![CRTD, REL, CNF, DLV, TECO로 이어지는 생산오더 상태 5단계 흐름도](/images/sap-production-order-status.jpg)
 *그림 1. 생산오더 상태가 요리 순서처럼 이어지는 흐름*
 
 

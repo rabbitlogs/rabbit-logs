@@ -37,7 +37,7 @@ Not just anyone can walk up and take an SAP exam. You first need to qualify. The
 
 > 💡 **Key point**: Most people go through the "formal training" or "subscription" route. Getting eligibility through self-study alone is practically difficult.
 
-![Illustration comparing SAP certification to a membership renewed every year, showing a chef holding an SAP certification](/images/sap-certification-01.jpg)
+![Illustration comparing SAP certification to a membership renewed every year, showing a chef holding an SAP certification](/images/sap-certification.jpg)
 *Figure 1. SAP certification isn't a one-and-done credential — it's closer to a membership you renew every year*
 
 ## The real cost driver isn't the exam fee — it's training

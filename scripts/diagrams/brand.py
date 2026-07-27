@@ -152,13 +152,22 @@ def dotted_line(d, x0, x1, y, color=LINE, step=7, seg=3):
         d.line([(x, y), (x + seg, y)], fill=color, width=2)
 
 
-def save(img, path, quality=90):
-    """JPG 저장 + 규격 검증 출력(§8: 생성 후 반드시 크기 검증)."""
+def save(img, path, quality=90, scale=1):
+    """JPG 저장. [수정] 2배 고품질 업스케일로 선명도·크기 확보(신규 규격)."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    if scale and scale != 1:
+        img = img.resize((img.width*scale, img.height*scale), Image.LANCZOS)
     if path.lower().endswith(".png"):
         img.save(path, optimize=True)
     else:
-        img.save(path, quality=quality, optimize=True, subsampling=0)
+        # 200KB 넘으면 품질 단계적으로 낮춰 맞춤
+        q = quality
+        while True:
+            img.save(path, quality=q, optimize=True, subsampling=0)
+            kb = os.path.getsize(path) / 1024
+            if kb <= 200 or q <= 72:
+                break
+            q -= 4
     kb = os.path.getsize(path) / 1024
     flag = "OK" if kb <= 200 else "!! 200KB 초과"
     print(f"  {os.path.basename(path):<42} 캔버스: {img.width}x{img.height}px  {kb:6.1f}KB  {flag}")

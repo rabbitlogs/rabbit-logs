@@ -22,7 +22,7 @@ tags: ["SAP실무운영", "GI", "GR", "CNF"]
 
 [[TOC]]
 
-![GI 출고, GR 입고, CNF 생산실적확정의 세 개념을 비교한 도식](/images/sap-gi-gr-cnf-flow.jpg)
+![GI 출고, GR 입고, CNF 생산실적확정의 세 개념을 비교한 도식](/images/sap-gi-gr-cnf.jpg)
 *그림 1. GI·GR·CNF, 재고가 나가고 들어오고 만들어지는 세 순간*
 
 ## GI — 재고가 나가는 순간

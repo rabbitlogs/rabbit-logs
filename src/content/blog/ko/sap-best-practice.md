@@ -52,7 +52,7 @@ Best Practice 도입 방식은 프로젝트 기간에도 영향을 줍니다. �
 
 Best Practice는 '정답'이 아니라 '좋은 출발점'입니다. 표준을 충분히 이해한 뒤, 우리 회사에 꼭 필요한 부분에 한해 조정을 가하는 것이 현명한 접근입니다.
 
-![SAP Best Practice 흐름 — 글로벌 표준 프로세스를 기반으로 Fit/Gap 분석을 거쳐 회사별 맞춤 설정으로 이어지는 흐름 도식](/images/sap-best-practice-01.jpg)
+![SAP Best Practice 흐름 — 글로벌 표준 프로세스를 기반으로 Fit/Gap 분석을 거쳐 회사별 맞춤 설정으로 이어지는 흐름 도식](/images/sap-best-practice.jpg)
 *그림 1. Best Practice에서 시작해 Fit/Gap 분석을 거쳐 우리 회사 설정으로 완성되는 흐름*
 
 ## 어디서 확인하고 어떻게 활용하는가

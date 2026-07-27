@@ -54,7 +54,7 @@ PI's "ideal" sets the direction the company should move toward — without direc
 
 When the two worlds understand each other and find balance, ==SAP sheds its reputation as an "expensive, complicated spreadsheet" and becomes a genuine engine of digital transformation.==
 
-![Diagram comparing the roles of PI (designer) and implementation (contractor)](/images/sap-pi-vs-implementation-01.jpg)
+![Diagram comparing the roles of PI (designer) and implementation (contractor)](/images/sap-pi-vs-implementation.jpg)
 *Figure 1. PI draws the future blueprint; implementation turns that blueprint into reality*
 
 ## Four ways to strike the balance

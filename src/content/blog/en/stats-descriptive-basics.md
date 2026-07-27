@@ -32,7 +32,7 @@ Descriptive statistics summarizes the data you already have, as it is. It answer
 
 Descriptive statistics is built around three questions: where is the data **clustered** (center), how **spread out** is it (spread), and how is it **divided up** (position). Answer those three questions, and the shape of the data comes into focus.
 
-![Diagram of the three pillars of descriptive statistics — center, spread, and position — laid out as concept cards](/images/stats-descriptive-basics-01.jpg)
+![Diagram of the three pillars of descriptive statistics — center, spread, and position — laid out as concept cards](/images/stats-descriptive-basics.jpg)
 *Figure 1. The three questions of descriptive statistics, and the measures for each*
 
 ## First question: where is the data clustered

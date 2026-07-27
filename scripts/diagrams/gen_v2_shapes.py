@@ -7,6 +7,25 @@ v2 — 본문 내용에 맞춰 카드형이 아닌 형태를 배정한 도식들
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from brand import *
+
+# ── [수정] 배너 좌측정렬 + 진한 부제색 오버라이드 (통일 기준) ──
+_SUBTLE = "#5f5a4e"
+MUTED = _SUBTLE
+def draw_banner(d, title, subtitle=None):
+    """좌측정렬 배너(컴팩트): 세로 컬러 룰 + 제목 + 부제. 배너 높이(BANNER_H) 유지."""
+    x = MARGIN
+    cy = BANNER_H / 2
+    d.rectangle([x, cy - 13, x + 5, cy + 13], fill=TEAL)
+    tx = x + 16
+    ft = font("Bold", 23)
+    _, y0, _, y1 = d.textbbox((0, 0), title, font=ft)
+    d.text((tx, cy - (y1 + y0) / 2), title, font=ft, fill=TEAL_DARK)
+    if subtitle:
+        tw = text_w(d, title, ft)
+        fs = font("Medium", 16)
+        sx = tx + tw + 14
+        _, y0s, _, y1s = d.textbbox((0, 0), subtitle, font=fs)
+        d.text((sx, cy - (y1s + y0s) / 2), subtitle, font=fs, fill=_SUBTLE)
 from shapes import curve, cycle, hierarchy, hub, timeline, quadrant
 
 # ── 변화 저항 곡선 → 곡선형 ────────────────────────────────────────────────

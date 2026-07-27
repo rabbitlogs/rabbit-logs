@@ -13,7 +13,7 @@ Hi, this is Rabbit! 🐰
 
 Same spot as this time last year: the Grand InterContinental Seoul Parnas, SAP NOW AI Tour Korea. If last year's keynote had one star — the AI assistant **Joule** — this year put a much bigger picture on stage, Joule included. The name SAP put forward this time was the **Autonomous Enterprise**.
 
-![Wide shot of the SAP NOW AI Tour Korea 2026 venue. Three large screens display the "SAP NOW AI Tour KOREA" logo, with attendees seated at round tables throughout](/images/sap-now-ai-tour-korea-2026-01.jpg)
+![Wide shot of the SAP NOW AI Tour Korea 2026 venue. Three large screens display the "SAP NOW AI Tour KOREA" logo, with attendees seated at round tables throughout](/images/sap-now-ai-tour-korea-2026.jpg)
 *Figure 1. The SAP NOW AI Tour Korea 2026 venue. All three stage screens pointed at the same phrase.*
 
 > **3-line summary**

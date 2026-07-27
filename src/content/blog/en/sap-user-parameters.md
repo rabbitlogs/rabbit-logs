@@ -42,6 +42,12 @@ For example, pressing F1 on the production plant field and opening technical inf
 
 > 💡 **Key point**: F1 is the key you should reach for first whenever you run into an unfamiliar field in SAP. It shows the field description, data type, and parameter ID all on one screen — it's worth building the habit of checking there before asking a colleague.
 
+![SAP screen with the cursor on a field and the Performance Assistant help window opened via F1](/images/sap-user-parameters-01.png)
+*Figure 1. Place the cursor on the field you want to fix a value for and press F1 to open the field description*
+
+![SAP Technical Information popup showing the parameter ID (CFV) under the Field Data section](/images/sap-user-parameters-02.png)
+*Figure 2. Open "Technical Information" in the help window to find the parameter ID under the Field Data section*
+
 ## How to register a parameter ID
 
 Once you've found the parameter ID, register it in your user profile.
@@ -57,8 +63,8 @@ Save (Ctrl+S), and you're done. Now, every time you open a screen that asks for 
 
 ==You can register several fields at once. Set up plant, production supervisor, and MRP controller together, and all three fields will auto-fill every time you open a T-code.==
 
-![Flow diagram of SAP parameter ID setup — checking the parameter ID with F1, then registering it in SU3](/images/sap-user-parameters-01.jpg)
-*Figure 1. Checking the parameter ID with F1, then registering it in your user profile via SU3*
+![SU3 user profile maintenance Parameters tab — parameter ID CFV registered with value 100](/images/sap-user-parameters-03.png)
+*Figure 3. In SU3 → Parameters tab, enter the parameter ID and value, then save (e.g., CFV = 100)*
 
 ## Commonly used parameter IDs in practice
 

@@ -46,14 +46,14 @@ SAP 메뉴를 보다 보면 기능명만 있고 코드가 안 보일 때가 있�
 
 이제 메뉴 항목 옆에 CA01, CA02 같은 코드가 함께 표시됩니다. 익숙하지 않은 메뉴도 어떤 코드인지 바로 알 수 있어, 학습 속도가 빨라지고 실수도 줄어듭니다.
 
-![SAP 메뉴에 기술적 이름(T-CODE)이 함께 표시된 화면](/images/sap-tcode-technical-names.jpg)
+![SAP 메뉴에 기술적 이름(T-CODE)이 함께 표시된 화면](/images/sap-tcode-basics-01.jpg)
 *그림 1. 기술적 이름 표시를 켜면 메뉴 옆에 T-CODE가 나타난다*
 
 ## T-CODE는 어디에 입력하나
 
 T-CODE는 SAP GUI 상단의 **명령어 입력창**(Command Field)에 넣습니다. 화면 위쪽의 하얀 입력창에 코드를 입력하면 해당 화면으로 이동합니다.
 
-![SAP GUI 상단의 명령어 입력창 위치](/images/sap-tcode-command-field.jpg)
+![SAP GUI 상단의 명령어 입력창 위치](/images/sap-tcode-basics-02.jpg)
 *그림 2. SAP GUI 상단의 명령어 입력창 위치*
 
 ## 알아두면 편한 단축 명령어
@@ -81,7 +81,7 @@ SAP는 여러 창(세션)을 동시에 띄울 수 있어서, `/o`만 잘 써도 
 2. MM01, ME21N처럼 자주 쓰는 코드 입력
 3. 저장
 
-![SAP 즐겨찾기 메뉴에서 트랜잭션을 삽입하는 화면](/images/sap-tcode-favorites.jpg)
+![SAP 즐겨찾기 메뉴에서 트랜잭션을 삽입하는 화면](/images/sap-tcode-basics-03.jpg)
 *그림 3. 즐겨찾기에 자주 쓰는 T-CODE 등록하기*
 
 즐겨찾기는 업무 영역별로 폴더를 나눠 관리하면 더 편합니다. '구매', '생산', '재고'처럼 묶어두면 찾기 쉽죠. 자주 쓰는 코드를 정리해두는 것만으로 매일의 작업이 한결 가벼워집니다.

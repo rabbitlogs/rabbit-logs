@@ -56,7 +56,7 @@ You'll sometimes see an "E" attached after a movement type. This marks "sales or
 
 ## Key movement types at a glance
 
-![Flow diagram showing movement types from 261 (goods issue) to 101 (goods receipt) to 311 (storage location transfer) to 531 (by-product receipt)](/images/sap-movement-type-flow.jpg)
+![Flow diagram showing movement types from 261 (goods issue) to 101 (goods receipt) to 311 (storage location transfer) to 531 (by-product receipt)](/images/sap-movement-type.jpg)
 *Figure 1. Movement types tracing the flow of inventory*
 
 Here's a summary of the movement types covered so far, including their effect on inventory and whether they generate an accounting document. Keeping them in one table makes it easy to look up when you need it.

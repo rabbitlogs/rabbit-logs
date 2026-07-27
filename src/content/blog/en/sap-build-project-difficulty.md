@@ -23,7 +23,7 @@ Imagine opening a new restaurant. Finding a good location, designing the kitchen
 
 [[TOC]]
 
-![Diagram mapping the five stages of an SAP implementation project to the process of building a new restaurant](/images/sap-build-project-difficulty-01.jpg)
+![Diagram mapping the five stages of an SAP implementation project to the process of building a new restaurant](/images/sap-build-project-difficulty.jpg)
 *Figure 1. The five stages of an SAP implementation — the process of building a new store*
 
 ## 1. Choosing the location — project kickoff

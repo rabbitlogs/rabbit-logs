@@ -81,7 +81,7 @@ Instead, at month-end close, the cost that's already gone into this order but ha
 
 > 💡 **Key point**: Which approach is right depends on the company's cost accounting policy and ERP design. Companies with a defined close policy often lean toward WIP carryover; environments where quality tracking and history matter tend to prefer order carryover. This decision should always be made together with accounting.
 
-![Comparison of SAP production order carryover methods — showing the processing flow of order carryover and WIP carryover side by side](/images/sap-production-order-carryover-01.jpg)
+![Comparison of SAP production order carryover methods — showing the processing flow of order carryover and WIP carryover side by side](/images/sap-production-order-carryover.jpg)
 *Figure 1. Comparing the two production order carryover methods*
 
 ## Common problems in practice

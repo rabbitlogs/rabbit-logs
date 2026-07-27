@@ -11,6 +11,24 @@ import math
 from PIL import Image, ImageDraw
 from brand import *
 
+# ── [수정] 배너 좌측정렬 + 진한 부제색 오버라이드 (통일 기준) ──
+_SUBTLE = "#5f5a4e"
+MUTED = _SUBTLE
+def draw_banner(d, title, subtitle=None):
+    x = MARGIN
+    cy = BANNER_H / 2
+    d.rectangle([x, cy - 13, x + 5, cy + 13], fill=TEAL)
+    tx = x + 16
+    ft = font("Bold", 23)
+    _, y0, _, y1 = d.textbbox((0, 0), title, font=ft)
+    d.text((tx, cy - (y1 + y0) / 2), title, font=ft, fill=TEAL_DARK)
+    if subtitle:
+        tw = text_w(d, title, ft)
+        fs = font("Medium", 16)
+        sx = tx + tw + 14
+        _, y0s, _, y1s = d.textbbox((0, 0), subtitle, font=fs)
+        d.text((sx, cy - (y1s + y0s) / 2), subtitle, font=fs, fill=_SUBTLE)
+
 
 def _wrap(d, text, f, max_w):
     words, lines, cur = text.split(), [], ""
@@ -39,7 +57,7 @@ def arrow_between(d, x0, x1, y, gap_px, color=MARIGOLD):
 def curve(out, banner, headline, points, sub=None, ylabel=None):
     """points = [(라벨, 인용구, 상대높이 0~1), ...] — U자 곡선 위에 배치."""
     f_lbl = font("Bold", 19)
-    f_q   = font("Regular", 15)
+    f_q   = font("Medium", 15)
     f_y   = font("Medium", 14)
 
     # 곡선 위/아래에 라벨과 인용구가 붙으므로 상하 여백을 넉넉히 확보한다.
@@ -310,7 +328,7 @@ def timeline(out, banner, headline, stops, sub=None, foot=None):
     """stops = [(시각, 라벨, 설명, 강조여부), ...] — 가로 트랙 위 지그재그 배치."""
     f_time = font("Bold", 17)
     f_lbl  = font("Bold", 18)
-    f_desc = font("Regular", 14)
+    f_desc = font("Medium", 15)
 
     top = BANNER_H + (88 if headline else 42)
     track_y = top + 132

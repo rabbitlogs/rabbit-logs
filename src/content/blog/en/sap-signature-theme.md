@@ -44,13 +44,13 @@ The setup is simple — it takes about a minute.
 
 1. Click the icon in the top-left corner of the SAP Logon screen, then go into the **Options** menu.
 
-![Screen showing the top-left icon in SAP being clicked to open the Options menu](/images/sap-option-menu.jpg)
+![Screen showing the top-left icon in SAP being clicked to open the Options menu](/images/sap-signature-theme-02.jpg)
 *Figure 1. Top-left icon → entering the Options menu*
 
 2. In the left-hand menu tree, navigate to **Visual Design → Theme Settings**.
 3. From the "Select Theme" dropdown, **choose "SAP Signature Theme"** and click **OK** at the bottom.
 
-![Screen showing "SAP Signature Theme" being selected under Visual Design → Theme Settings](/images/sap-signature-theme-01.jpg)
+![Screen showing "SAP Signature Theme" being selected under Visual Design → Theme Settings](/images/sap-signature-theme-02.jpg)
 *Figure 2. Selecting "SAP Signature Theme" under Visual Design → Theme Settings*
 
 4. Restart SAP, and the change takes effect immediately.

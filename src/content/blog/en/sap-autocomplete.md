@@ -34,6 +34,12 @@ That said, it remembers not just T-codes but also the user ID on the login scree
 
 This history is stored on your local PC, not on the SAP server. If you're on a shared PC used by multiple people, a previous user's entries might show up on your screen — worth keeping in mind.
 
+![SAP login screen showing an autocomplete list (rabbit3, rabbit2, rabbit1) on the user ID field](/images/sap-autocomplete-01.png)
+*Figure 1. Pressing the space bar in the user ID field shows previously entered values as a list*
+
+![SAP screen showing an autocomplete list (mb51, mmbe, mm02, etc.) on the T-code input field](/images/sap-autocomplete-02.png)
+*Figure 2. The T-code input field also lists previously executed codes*
+
 ## Deleting a single entry
 
 If there's only one entry you want to remove, this is the simplest method.
@@ -43,6 +49,9 @@ Bring up the autocomplete list in the field where you want to delete something b
 ==It's deleted immediately, with no confirmation prompt. There's no undo if you delete the wrong one by mistake, so make sure you've selected the right entry with the arrow keys before pressing Delete.==
 
 This method only removes one entry at a time. It's the fastest way to clean up a wrong T-code or a few values entered during testing. To delete multiple entries at once or turn off the feature entirely, you need to go into the options screen.
+
+![SAP screen showing the rabbit1 entry selected in the autocomplete list with arrow keys](/images/sap-autocomplete-03.png)
+*Figure 3. Select the entry to delete with the ↑↓ arrow keys, then press Delete to remove it instantly*
 
 ## Clearing everything or turning the feature off
 
@@ -60,8 +69,8 @@ From this screen you can do two things.
 
 > 💡 **Key point**: This setting is local to your PC only. It doesn't affect anyone else's SAP screen, and logging in from a different PC keeps that PC's history managed separately.
 
-![SAP autocomplete settings screen — diagram showing where to turn off history and clear all entries in the Options window](/images/sap-autocomplete-01.jpg)
-*Figure 1. Managing autocomplete via Options → Local Data → History*
+![SAP GUI Options window, Local Data History screen — Off/On radio buttons and the Delete History button](/images/sap-autocomplete-04.jpg)
+*Figure 4. The Options → Local Data → History screen. Set to "Off" to disable the feature, or click "Delete History" to clear all records*
 
 ## Autocomplete vs. user parameters
 

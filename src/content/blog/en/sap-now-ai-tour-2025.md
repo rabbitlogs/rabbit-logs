@@ -13,7 +13,7 @@ Hi, this is Rabbit! 🐰
 
 On July 15, **SAP NOW AI Tour 2025 Korea** was held at the Grand InterContinental Seoul Parnas. Pre-registration alone topped 2,500 people, and the Grand Ballroom where the keynote was held filled up early. I ended up watching the keynote from a separate overflow room on a large screen — and that room had no empty seats either. Just trying to find a seat gave me an early sense of how much interest the industry has in SAP and business AI right now.
 
-![Wide shot of the SAP NOW AI Tour 2025 Korea venue. A large screen displays the event logo, and every round table is packed with attendees](/images/sap-now-ai-tour-hall.jpg)
+![Wide shot of the SAP NOW AI Tour 2025 Korea venue. A large screen displays the event logo, and every round table is packed with attendees](/images/sap-now-ai-tour-2025.jpg)
 *Figure 1. A packed venue with no empty seats. The interest in SAP and business AI was something I felt in the density of the room, not just the numbers.*
 
 ## The question the keynote raised

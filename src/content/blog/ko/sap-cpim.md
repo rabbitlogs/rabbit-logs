@@ -43,7 +43,7 @@ tags: ["SAP학습자료", "CPIM", "SAP자격증", "SCM"]
 
 요리로 비유하면, SAP 자격증은 "이 주방의 오븐 사용법"이고, CPIM은 "요리의 원리"입니다. 오븐 다루는 법은 주방을 옮기면 다시 배워야 하지만, 요리의 원리를 알면 어느 주방에서도 통합니다.
 
-![CPIM과 SAP 자격증의 차이를 Why와 How로 비교한 도식](/images/sap-cpim-01.jpg)
+![CPIM과 SAP 자격증의 차이를 Why와 How로 비교한 도식](/images/sap-cpim.jpg)
 *그림 1. CPIM은 프로세스의 'Why', SAP 자격증은 시스템의 'How'*
 
 ## 왜 '원리'가 신뢰를 만드는가

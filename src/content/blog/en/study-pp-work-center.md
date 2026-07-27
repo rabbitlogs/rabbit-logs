@@ -30,7 +30,7 @@ In restaurant terms, it's **each individual station inside the kitchen**. A stov
 
 ## What information goes into a work center
 
-![Diagram of SAP work center master data structure — person in charge, capacity, cost center, and category, linked to routing](/images/study-pp-work-center-01.jpg)
+![Diagram of SAP work center master data structure — person in charge, capacity, cost center, and category, linked to routing](/images/study-pp-work-center.jpg)
 *Figure 1. The four core components of a work center master and how it connects to routing*
 
 The work center master holds four main pieces of information.

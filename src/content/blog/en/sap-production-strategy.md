@@ -52,7 +52,7 @@ In SAP, **strategy code 20** is the standard MTO approach. Once a sales order is
 
 MTO suits **customized products** — items where standard inventory is hard to maintain, like industrial machinery built to customer spec, custom-made furniture, or specialty chemicals.
 
-![Diagram comparing SAP production strategies MTS vs. MTO — the difference in lead time and inventory characteristics between the buffet (make-to-stock) and steakhouse (make-to-order) models](/images/sap-production-strategy-01.jpg)
+![Diagram comparing SAP production strategies MTS vs. MTO — the difference in lead time and inventory characteristics between the buffet (make-to-stock) and steakhouse (make-to-order) models](/images/sap-production-strategy.jpg)
 *Figure 1. Comparing lead time and inventory characteristics between MTS and MTO*
 
 ## A middle ground: preparing only up to the semi-finished stage

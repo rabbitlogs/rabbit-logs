@@ -61,7 +61,7 @@ If only 70% of the plan was completed, the status becomes **PCNF** (Partially Co
 
 > ⚠️ **Note**: If a PCNF status is still open when the production order closes, the remaining quantity is treated as incomplete. Even if the work was actually finished on the floor, it stays PCNF unless it's reported in the system. Accumulated reporting gaps throw off inventory and cost figures significantly.
 
-![SAP Activity/CNF flow diagram — from production order release to Activity status changing to CNF](/images/sap-activity-cnf-01.jpg)
+![SAP Activity/CNF flow diagram — from production order release to Activity status changing to CNF](/images/sap-activity-cnf.jpg)
 *Figure 1. The results-confirmation flow from Activity to CNF*
 
 ## Two reasons CNF matters

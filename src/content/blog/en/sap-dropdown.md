@@ -40,6 +40,12 @@ Third, new hires or anyone new to a role take longer to get a feel for SAP's dat
 
 Turning this setting on early, especially when you're new to SAP, helps you pick up the code system naturally. Seeing "Domestic Sales Team is Z001" over and over means you'll eventually recognize the code alone at a glance.==
 
+![SAP dropdown list showing item names only (default state)](/images/sap-dropdown-01.png)
+*Figure 1. Default setting — the dropdown shows names only, so you can't tell which code each is*
+
+![SAP dropdown list showing keys (110, 120, 130) alongside names (after enabling)](/images/sap-dropdown-02.png)
+*Figure 2. With key display on, the code and name appear together so you can identify each item precisely*
+
 ## How to set it up
 
 Click the **[Customize Local Layout]** icon (the monitor-shaped one) in the top-right corner of SAP GUI, and select **[Options]**. You can also use the shortcut Alt+F12 → O.
@@ -50,8 +56,8 @@ In the "Controls" section on the right, find **[Show Keys in All Dropdown Lists]
 
 From then on, opening a dropdown shows both the code and the name, like `[Z001] Domestic Sales Team`.
 
-![Before-and-after comparison of the SAP dropdown key display setting — text-only by default versus code and text shown together after enabling the option](/images/sap-dropdown-01.jpg)
-*Figure 1. Dropdown display before (text only) and after (code + text) enabling the setting*
+![SAP GUI Options window — the "Show Keys in All Dropdown Lists" checkbox under Interaction Design → Visualization 1](/images/sap-dropdown-03.jpg)
+*Figure 3. Check "Show Keys in All Dropdown Lists" under Options → Interaction Design → Visualization 1*
 
 ## Makes talking to developers and IT easier
 

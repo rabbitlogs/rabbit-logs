@@ -74,7 +74,7 @@ SAP GUI의 기본 폰트는 대개 '굴림'입니다. 솔직히 지금 시대에
 5. **가변폭 글꼴**: Pretendard, 크기 11 또는 12
 6. **적용**을 누르면 끝입니다.
 
-![SAP 글꼴 설정에서 고정폭 D2Coding, 가변폭 Pretendard를 지정한 화면](/images/sap-font-readability-01.jpg)
+![SAP 글꼴 설정에서 고정폭 D2Coding, 가변폭 Pretendard를 지정한 화면](/images/sap-font-readability.jpg)
 *그림 1. 고정폭은 D2Coding, 가변폭은 Pretendard로 설정*
 
 ## Rabbit의 한 끗

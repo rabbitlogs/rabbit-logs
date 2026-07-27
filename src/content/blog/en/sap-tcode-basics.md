@@ -46,14 +46,14 @@ Sometimes you'll browse the SAP menu and see only function names, with no code i
 
 Now codes like CA01 and CA02 appear right next to the menu items. Even an unfamiliar menu instantly shows you which code it corresponds to, which speeds up learning and cuts down on mistakes.
 
-![SAP menu showing technical names (T-codes) displayed alongside menu items](/images/sap-tcode-technical-names.jpg)
+![SAP menu showing technical names (T-codes) displayed alongside menu items](/images/sap-tcode-basics-01.jpg)
 *Figure 1. Turning on technical names makes T-codes appear next to menu items*
 
 ## Where do you type a T-code
 
 You enter a T-code into the **command field** at the top of SAP GUI. Type the code into the white input box at the top of the screen, and it jumps to that screen.
 
-![Location of the command field at the top of SAP GUI](/images/sap-tcode-command-field.jpg)
+![Location of the command field at the top of SAP GUI](/images/sap-tcode-basics-02.jpg)
 *Figure 2. Location of the command field at the top of SAP GUI*
 
 ## Handy shortcut commands to know
@@ -81,7 +81,7 @@ If typing the same code every time feels tedious, use SAP's Favorites feature.
 2. Enter frequently used codes like MM01, ME21N
 3. Save
 
-![Screen showing a transaction being inserted into the SAP Favorites menu](/images/sap-tcode-favorites.jpg)
+![Screen showing a transaction being inserted into the SAP Favorites menu](/images/sap-tcode-basics-03.jpg)
 *Figure 3. Adding frequently used T-codes to Favorites*
 
 Favorites are easier to manage when you organize them into folders by work area — grouping them under labels like "Purchasing," "Production," "Inventory" makes them easier to find. Just organizing your go-to codes this way makes everyday work noticeably lighter.

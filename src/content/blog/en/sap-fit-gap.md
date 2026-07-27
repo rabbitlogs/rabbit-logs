@@ -42,7 +42,7 @@ In restaurant terms: you decide on a concept (To-Be design), try applying the he
 
 ## Three ways to resolve a Gap
 
-![Diagram distinguishing Fit from Gap, and outlining the three ways to resolve a Gap: development, process change, or acceptance](/images/sap-fit-gap-ways.jpg)
+![Diagram distinguishing Fit from Gap, and outlining the three ways to resolve a Gap: development, process change, or acceptance](/images/sap-fit-gap.jpg)
 *Figure 1. Distinguishing Fit from Gap, and three ways to resolve a Gap*
 
 

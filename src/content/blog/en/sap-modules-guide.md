@@ -47,7 +47,7 @@ Here's the full picture in table form first.
 
 *Table 1. SAP's 10 core modules, mapped to a restaurant*
 
-![Diagram of a restaurant kitchen layout showing SAP's 10 core modules connected around the central SAP system](/images/sap-modules-map.jpg)
+![Diagram of a restaurant kitchen layout showing SAP's 10 core modules connected around the central SAP system](/images/sap-modules-guide.jpg)
 *Figure 1. The 10 modules connect as one, centered on SAP*
 
 Now let's go a bit deeper, station by station.

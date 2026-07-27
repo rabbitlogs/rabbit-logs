@@ -23,7 +23,7 @@ tags: ["SAP프로젝트", "SAP구축", "프로젝트관리", "안정화"]
 
 [[TOC]]
 
-![SAP 구축 프로젝트의 5단계를 새 매장 짓기에 비유한 흐름도](/images/sap-build-project-difficulty-01.jpg)
+![SAP 구축 프로젝트의 5단계를 새 매장 짓기에 비유한 흐름도](/images/sap-build-project-difficulty.jpg)
 *그림 1. SAP 구축 5단계 — 새 매장을 짓는 과정*
 
 ## 1. 자리 잡기 — 프로젝트 착수

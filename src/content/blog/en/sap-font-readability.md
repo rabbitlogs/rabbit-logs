@@ -74,7 +74,7 @@ Now assign the new fonts in SAP.
 5. **Variable-width font**: Pretendard, size 11 or 12
 6. Click **Apply**, and you're done.
 
-![SAP font settings screen showing D2Coding assigned as the fixed-width font and Pretendard as the variable-width font](/images/sap-font-readability-01.jpg)
+![SAP font settings screen showing D2Coding assigned as the fixed-width font and Pretendard as the variable-width font](/images/sap-font-readability.jpg)
 *Figure 1. Fixed-width set to D2Coding, variable-width set to Pretendard*
 
 ## Rabbit's Takeaway

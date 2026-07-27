@@ -32,7 +32,7 @@ tags: ["SAP프로젝트", "통합테스트", "SAP테스트", "구축"]
 
 ## 왜 필요할까
 
-![판매오더(SD)→생산오더(PP)→출고(MM)→세금계산서(FI)로 이어지는 통합 테스트 흐름과 결합 부위를 표시한 도식](/images/sap-integration-test-flow.jpg)
+![판매오더(SD)→생산오더(PP)→출고(MM)→세금계산서(FI)로 이어지는 통합 테스트 흐름과 결합 부위를 표시한 도식](/images/sap-integration-test.jpg)
 *그림 1. 모듈을 넘나드는 업무 흐름과 결합 부위*
 
 

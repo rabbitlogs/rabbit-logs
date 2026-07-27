@@ -42,7 +42,7 @@ PI 단계를 거쳐 "앞으로 우리 회사는 이렇게 일하겠다"는 미�
 
 ## Gap을 푸는 세 가지 길
 
-![Fit와 Gap의 구분, 그리고 Gap을 개발·프로세스 변경·수용으로 푸는 세 가지 길을 정리한 도식](/images/sap-fit-gap-ways.jpg)
+![Fit와 Gap의 구분, 그리고 Gap을 개발·프로세스 변경·수용으로 푸는 세 가지 길을 정리한 도식](/images/sap-fit-gap.jpg)
 *그림 1. Fit/Gap의 구분과 Gap 해결 3가지 길*
 
 

@@ -44,7 +44,7 @@ So the order falls into place: **want to use Joule → Clean Core is the precond
 
 ## The real gate: years of accumulated Z-code
 
-![Dependency diagram running from SAP Joule to Clean Core to Z-code cleanup. The goal sits at the top (Joule), but the work has to start at the bottom (Z-code)](/images/clean-core-dependency.jpg)
+![Dependency diagram running from SAP Joule to Clean Core to Z-code cleanup. The goal sits at the top (Joule), but the work has to start at the bottom (Z-code)](/images/sap-joule-clean-core.jpg)
 *Figure 1. The backwards order of AI adoption. The goal sits at the top (Joule), but the work has to start at the bottom (Z-code).*
 
 Many companies' systems have already drifted well away from standard. That's because, in order to handle work that standard functionality alone couldn't cover, companies have spent years piling up custom code they built themselves — [Z-code, or CBO](/en/blog/sap-cbo-z-program). Corners of the system end up filled with programs whose names start with "Z."

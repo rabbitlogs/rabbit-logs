@@ -38,6 +38,9 @@ Second, if the existing asterisks aren't fully cleared before you start typing, 
 
 ==So even when you type the correct password, the system ends up receiving the wrong value. Repeat this a few times, and the account locks.==
 
+![SAP login screen with the password field pre-filled with asterisks](/images/sap-password-asterisk-01.jpg)
+*Figure 1. When the placeholder setting is on, the password field is already filled with asterisks right from the login screen*
+
 ## How to turn the setting off
 
 Click the **[Customize Local Layout]** icon (the monitor icon) in the top right of SAP GUI and select **[Options]**. You can also use the shortcut Alt+F12 → O.
@@ -48,8 +51,11 @@ On the right, find **"Password Field – Display Placeholder Characters"** and *
 
 The next time you open the login screen, the password field starts empty. Each keystroke adds one asterisk, so you can confirm exactly how many characters you've typed.
 
-![SAP password settings screen — showing where to uncheck Display Placeholder Characters under Options](/images/sap-password-asterisk-01.jpg)
-*Figure 1. Turning off the placeholder setting under Options → Visualization 2*
+![SAP GUI Options window — the "Display Placeholder Characters" checkbox under Interaction Design → Visualization 2](/images/sap-password-asterisk-02.jpg)
+*Figure 2. Uncheck "Display Placeholder Characters" under Options → Interaction Design → Visualization 2*
+
+![SAP login screen with the password field empty](/images/sap-password-asterisk-03.jpg)
+*Figure 3. After turning off the setting, the password field starts empty*
 
 ## A related issue: switching between multiple servers
 

@@ -61,7 +61,7 @@ MES에서 실적 데이터가 SAP에 도착하면, Activity의 상태가 바뀝�
 
 > ⚠️ **주의**: PCNF 상태가 생산오더 마감 시점까지 남아 있으면 잔여 수량이 미완료로 처리됩니다. 현장에서 실제로 완료됐더라도 시스템에 보고되지 않으면 PCNF로 남습니다. 보고 누락이 쌓이면 재고와 원가가 크게 어긋납니다.
 
-![SAP Activity·CNF 흐름 — 생산오더 발행부터 Activity 상태가 CNF로 변경되기까지 흐름 도식](/images/sap-activity-cnf-01.jpg)
+![SAP Activity·CNF 흐름 — 생산오더 발행부터 Activity 상태가 CNF로 변경되기까지 흐름 도식](/images/sap-activity-cnf.jpg)
 *그림 1. Activity에서 CNF로 이어지는 실적 확정 흐름*
 
 ## CNF가 중요한 두 가지 이유

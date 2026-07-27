@@ -57,7 +57,7 @@ A single batch holds information like the following.
 
 This information integrates with SAP's MM and QM modules and is automatically referenced during stock movements, quality inspections, and shipping.
 
-![SAP batch management concept diagram — multiple batches created for the same material, with history managed per batch](/images/sap-batch-management-01.jpg)
+![SAP batch management concept diagram — multiple batches created for the same material, with history managed per batch](/images/sap-batch-management.jpg)
 *Figure 1. Multiple batches of the same material and the structure for managing history per batch*
 
 ## Three reasons batch management matters

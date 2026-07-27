@@ -20,7 +20,7 @@ tags: ["SAP프로젝트", "SAP역사", "ERP", "SAP입문"]
 
 [[TOC]]
 
-![1972년 창업부터 R/2, R/3, HANA, S/4HANA까지 SAP의 발전 과정을 보여주는 타임라인](/images/sap-history-timeline.jpg)
+![1972년 창업부터 R/2, R/3, HANA, S/4HANA까지 SAP의 발전 과정을 보여주는 타임라인](/images/sap-history.jpg)
 *그림 1. SAP 50여 년의 주요 발자취*
 
 ## 다섯 사람이 IBM을 떠난 이유

@@ -30,7 +30,7 @@ Raw materials sit in the storeroom — individual ingredients like onions, meat,
 
 WIP sits right in the middle of the production process. It's a living asset — raw material with labor and skill already being added to it.
 
-![Diagram showing the flow from raw material through WIP to finished product, and the three perspectives of PP, CO, and MM](/images/sap-wip-overview.jpg)
+![Diagram showing the flow from raw material through WIP to finished product, and the three perspectives of PP, CO, and MM](/images/sap-wip.jpg)
 *Figure 1. Where WIP sits, and the three perspectives on it*
 
 ## The production (PP) perspective — a stethoscope for the line

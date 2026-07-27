@@ -43,7 +43,7 @@ The key is that CPIM is **vendor-neutral**. That knowledge applies to any ERP yo
 
 Put it in kitchen terms: SAP certification is "how to use this particular kitchen's oven." CPIM is "the principles of cooking." Learn to use one oven, and you have to relearn it in a different kitchen. Learn the principles of cooking, and they travel with you to any kitchen.
 
-![Diagram comparing CPIM and SAP certification as Why versus How](/images/sap-cpim-01.jpg)
+![Diagram comparing CPIM and SAP certification as Why versus How](/images/sap-cpim.jpg)
 *Figure 1. CPIM teaches the process's 'Why'; SAP certification teaches the system's 'How'*
 
 ## Why 'principles' build trust

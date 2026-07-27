@@ -34,7 +34,7 @@ A new restaurant works the same way. You don't bring in kitchen equipment and st
 
 Just as a new restaurant goes through concept confirmation, a trial run, ingredient inspection, kitchen-and-floor integration, and a final check before opening, SAP testing flows through five stages as well.
 
-![Flow diagram of SAP's five testing stages: Fit/Gap, prototype, unit, integration, UAT](/images/sap-test-flow.jpg)
+![Flow diagram of SAP's five testing stages: Fit/Gap, prototype, unit, integration, UAT](/images/sap-test-overview.jpg)
 *Figure 1. SAP's five testing stages — the verification journey of opening a new restaurant*
 
 ### Stage 1: Fit/Gap analysis — does the concept fit our restaurant
