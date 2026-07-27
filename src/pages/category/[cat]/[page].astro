@@ -6,45 +6,50 @@ import AdSenseList from '../../../components/AdSenseList.astro';
 
 const PER_PAGE = 8;
 
-export async function getStaticPaths() {
-  return [
-    { params: { cat: 'project' } },
-    { params: { cat: 'operations' } },
-    { params: { cat: 'study' } },
-    { params: { cat: 'stats' } },
-  ];
+export async function getStaticPaths({ paginate }) {
+  const PER_PAGE = 8;
+  const cats = ['project', 'operations', 'study', 'stats'];
+  const all = (await getCollection('blog')).filter((p) => p.id.startsWith('ko/'));
+  return cats.flatMap((cat) => {
+    const posts = all
+      .filter((p) => p.data.category === cat)
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    // 1페이지는 /category/[cat].astro 가 담당 → 2페이지부터만 생성
+    return paginate(posts, { params: { cat }, pageSize: PER_PAGE })
+      .filter((entry) => entry.params.page && Number(entry.params.page) >= 2);
+  });
 }
 
 const { cat } = Astro.params;
-const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' };
+const { page } = Astro.props;
+
+const catName = { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', stats: '통계·데이터' };
 const catDesc = {
   project: [
-    'A record of the process of first adopting and implementing SAP.',
-    'From PI planning to build, testing, and stabilization — the big picture of a project.',
+    'SAP를 처음 도입하고 구축하는 과정의 기록입니다.',
+    'PI 기획부터 구축, 테스트, 안정화까지 프로젝트의 큰 흐름을 다룹니다.',
   ],
   operations: [
-    'Stories from actually working with SAP day to day, after go-live.',
-    'T-codes, production and inventory management, and other hands-on operational know-how.',
+    '구축이 끝난 뒤, 매일의 업무에서 SAP를 실제로 다루는 이야기입니다.',
+    'T-CODE, 생산·재고 관리 등 현업 운영 노하우를 정리합니다.',
   ],
   study: [
-    'Foundational concepts and certification guides for anyone learning SAP.',
-    'Explaining the parts beginners find confusing, from a practitioner’s point of view.',
+    'SAP를 공부하는 사람을 위한 기초 개념과 자격증 가이드입니다.',
+    '입문자가 막막해하는 지점을 실무자 관점에서 풀어냅니다.',
   ],
   stats: [
-    'Working with SAP eventually means you need an eye for data, too.',
-    'Notes from studying statistics and data analysis alongside SAP work.',
+    'SAP 실무를 하다 보면 결국 데이터를 보는 눈이 필요해집니다.',
+    '통계와 데이터 분석을 공부하며 남기는 기록입니다.',
   ],
 };
 
-const allPosts = (await getCollection('blog'))
-  .filter((p) => p.id.startsWith('en/') && p.data.category === cat)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = page.data;
 
-const lastPage = Math.max(1, Math.ceil(allPosts.length / PER_PAGE));
-const posts = allPosts.slice(0, PER_PAGE);
+// paginate의 prev가 1페이지면 /2/ 대신 base 경로(/category/[cat]/)를 가리키도록 보정
+const prevUrl = page.currentPage === 2 ? `/category/${cat}/` : page.url.prev;
 ---
 
-<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={catDesc[cat].join(' ')} lang="en" showAds={true}>
+<BaseLayout title={`${catName[cat]} — Rabbit Logs${page.currentPage > 1 ? ` (${page.currentPage}페이지)` : ''}`} description={catDesc[cat].join(' ')} lang="ko" showAds={true}>
   <section class="cat-list" style="padding-top: 1.2rem;">
     <h1 style="font-size: 2rem; margin: 0 0 0.6rem;">{catName[cat]}</h1>
     <p style="font-size: 0.98rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.8rem;">
@@ -56,22 +61,31 @@ const posts = allPosts.slice(0, PER_PAGE);
     {posts.map((post, i) => (
       <>
         <PostCard
-          href={`/en/blog/${post.id.replace('en/', '').replace('.md', '')}`}
+          href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
           title={post.data.title}
           description={post.data.description}
           category={post.data.category}
           pubDate={post.data.pubDate}
-          lang="en"
+          lang="ko"
         />
+        {/* 글 4개마다 광고 1개 (페이지 내 기준) */}
         {(i + 1) % 4 === 0 && i !== posts.length - 1 && <AdSenseList />}
       </>
     ))}
 
-    {lastPage > 1 && (
-      <nav class="pagination" aria-label="Pagination">
-        <span class="page-btn is-disabled">← Prev</span>
-        <span class="page-info">1 / {lastPage}</span>
-        <a href={`/en/category/${cat}/2/`} class="page-btn" rel="next">Next →</a>
+    {page.lastPage > 1 && (
+      <nav class="pagination" aria-label="페이지 이동">
+        {prevUrl ? (
+          <a href={prevUrl} class="page-btn" rel="prev">← 이전</a>
+        ) : (
+          <span class="page-btn is-disabled">← 이전</span>
+        )}
+        <span class="page-info">{page.currentPage} / {page.lastPage}</span>
+        {page.url.next ? (
+          <a href={page.url.next} class="page-btn" rel="next">다음 →</a>
+        ) : (
+          <span class="page-btn is-disabled">다음 →</span>
+        )}
       </nav>
     )}
   </section>
@@ -92,6 +106,11 @@ const posts = allPosts.slice(0, PER_PAGE);
     .page-info { font-size: 0.95rem; color: var(--muted, #888); min-width: 3.5rem; text-align: center; }
   </style>
 
+  <!--
+    목록 페이지 광고 초기화.
+    각 ins.adsbygoogle에 push({})를 호출해 렌더를 요청하고,
+    일정 시간 안에 채워지지 않으면(미충전/광고차단) 빈 박스를 제거한다.
+  -->
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       const slots = document.querySelectorAll('.cat-list .ad-slot');

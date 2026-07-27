@@ -141,9 +141,72 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"en/sap-activity-cnf.md": {
+	id: "en/sap-activity-cnf.md";
+  slug: "en/sap-activity-cnf";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-autocomplete.md": {
+	id: "en/sap-autocomplete.md";
+  slug: "en/sap-autocomplete";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-batch-job.md": {
+	id: "en/sap-batch-job.md";
+  slug: "en/sap-batch-job";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-batch-management.md": {
+	id: "en/sap-batch-management.md";
+  slug: "en/sap-batch-management";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-best-practice.md": {
+	id: "en/sap-best-practice.md";
+  slug: "en/sap-best-practice";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-build-project-difficulty.md": {
+	id: "en/sap-build-project-difficulty.md";
+  slug: "en/sap-build-project-difficulty";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-cbo-z-program.md": {
+	id: "en/sap-cbo-z-program.md";
+  slug: "en/sap-cbo-z-program";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "en/sap-certification.md": {
 	id: "en/sap-certification.md";
   slug: "en/sap-certification";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-change-management.md": {
+	id: "en/sap-change-management.md";
+  slug: "en/sap-change-management";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-circular-bom.md": {
+	id: "en/sap-circular-bom.md";
+  slug: "en/sap-circular-bom";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -155,9 +218,51 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"en/sap-cutover-live.md": {
+	id: "en/sap-cutover-live.md";
+  slug: "en/sap-cutover-live";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-cutover.md": {
+	id: "en/sap-cutover.md";
+  slug: "en/sap-cutover";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-data-types.md": {
+	id: "en/sap-data-types.md";
+  slug: "en/sap-data-types";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-dropdown.md": {
+	id: "en/sap-dropdown.md";
+  slug: "en/sap-dropdown";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "en/sap-exam-format.md": {
 	id: "en/sap-exam-format.md";
   slug: "en/sap-exam-format";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-field-names.md": {
+	id: "en/sap-field-names.md";
+  slug: "en/sap-field-names";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-fit-gap.md": {
+	id: "en/sap-fit-gap.md";
+  slug: "en/sap-fit-gap";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -169,6 +274,174 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"en/sap-gi-gr-cnf.md": {
+	id: "en/sap-gi-gr-cnf.md";
+  slug: "en/sap-gi-gr-cnf";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-history.md": {
+	id: "en/sap-history.md";
+  slug: "en/sap-history";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-integration-test.md": {
+	id: "en/sap-integration-test.md";
+  slug: "en/sap-integration-test";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-joule-clean-core.md": {
+	id: "en/sap-joule-clean-core.md";
+  slug: "en/sap-joule-clean-core";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-mes-interface.md": {
+	id: "en/sap-mes-interface.md";
+  slug: "en/sap-mes-interface";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-mes-role.md": {
+	id: "en/sap-mes-role.md";
+  slug: "en/sap-mes-role";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-modules-guide.md": {
+	id: "en/sap-modules-guide.md";
+  slug: "en/sap-modules-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-movement-type.md": {
+	id: "en/sap-movement-type.md";
+  slug: "en/sap-movement-type";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-mrp.md": {
+	id: "en/sap-mrp.md";
+  slug: "en/sap-mrp";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-now-ai-tour-2025.md": {
+	id: "en/sap-now-ai-tour-2025.md";
+  slug: "en/sap-now-ai-tour-2025";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-now-ai-tour-korea-2026.md": {
+	id: "en/sap-now-ai-tour-korea-2026.md";
+  slug: "en/sap-now-ai-tour-korea-2026";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-org-structure.md": {
+	id: "en/sap-org-structure.md";
+  slug: "en/sap-org-structure";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-password-asterisk.md": {
+	id: "en/sap-password-asterisk.md";
+  slug: "en/sap-password-asterisk";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-pi-overview.md": {
+	id: "en/sap-pi-overview.md";
+  slug: "en/sap-pi-overview";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-pi-vs-implementation.md": {
+	id: "en/sap-pi-vs-implementation.md";
+  slug: "en/sap-pi-vs-implementation";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-planned-vs-production-order.md": {
+	id: "en/sap-planned-vs-production-order.md";
+  slug: "en/sap-planned-vs-production-order";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-pp-master-data.md": {
+	id: "en/sap-pp-master-data.md";
+  slug: "en/sap-pp-master-data";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-pp-overview.md": {
+	id: "en/sap-pp-overview.md";
+  slug: "en/sap-pp-overview";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-pp-tcode.md": {
+	id: "en/sap-pp-tcode.md";
+  slug: "en/sap-pp-tcode";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-production-order-carryover.md": {
+	id: "en/sap-production-order-carryover.md";
+  slug: "en/sap-production-order-carryover";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-production-order-number.md": {
+	id: "en/sap-production-order-number.md";
+  slug: "en/sap-production-order-number";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-production-order-status.md": {
+	id: "en/sap-production-order-status.md";
+  slug: "en/sap-production-order-status";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-production-strategy.md": {
+	id: "en/sap-production-strategy.md";
+  slug: "en/sap-production-strategy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-prototype-test.md": {
+	id: "en/sap-prototype-test.md";
+  slug: "en/sap-prototype-test";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "en/sap-signature-theme.md": {
 	id: "en/sap-signature-theme.md";
   slug: "en/sap-signature-theme";
@@ -176,9 +449,121 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"en/sap-tcode-basics.md": {
+	id: "en/sap-tcode-basics.md";
+  slug: "en/sap-tcode-basics";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-test-overview.md": {
+	id: "en/sap-test-overview.md";
+  slug: "en/sap-test-overview";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-uat.md": {
+	id: "en/sap-uat.md";
+  slug: "en/sap-uat";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-unit-test.md": {
+	id: "en/sap-unit-test.md";
+  slug: "en/sap-unit-test";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-user-parameters.md": {
+	id: "en/sap-user-parameters.md";
+  slug: "en/sap-user-parameters";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "en/sap-what-is-sap.md": {
 	id: "en/sap-what-is-sap.md";
   slug: "en/sap-what-is-sap";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/sap-wip.md": {
+	id: "en/sap-wip.md";
+  slug: "en/sap-wip";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-adsp.md": {
+	id: "en/stats-adsp.md";
+  slug: "en/stats-adsp";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-correlation-vs-causation.md": {
+	id: "en/stats-correlation-vs-causation.md";
+  slug: "en/stats-correlation-vs-causation";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-descriptive-basics.md": {
+	id: "en/stats-descriptive-basics.md";
+  slug: "en/stats-descriptive-basics";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-excel-powerquery-pivot.md": {
+	id: "en/stats-excel-powerquery-pivot.md";
+  slug: "en/stats-excel-powerquery-pivot";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-junior-first-semester.md": {
+	id: "en/stats-junior-first-semester.md";
+  slug: "en/stats-junior-first-semester";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-mean-trap-kpi.md": {
+	id: "en/stats-mean-trap-kpi.md";
+  slug: "en/stats-mean-trap-kpi";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-sap-inventory-variance.md": {
+	id: "en/stats-sap-inventory-variance.md";
+  slug: "en/stats-sap-inventory-variance";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/stats-why-back-to-school.md": {
+	id: "en/stats-why-back-to-school.md";
+  slug: "en/stats-why-back-to-school";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/study-pp-routing.md": {
+	id: "en/study-pp-routing.md";
+  slug: "en/study-pp-routing";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/study-pp-work-center.md": {
+	id: "en/study-pp-work-center.md";
+  slug: "en/study-pp-work-center";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

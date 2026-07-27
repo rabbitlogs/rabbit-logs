@@ -1,21 +1,28 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PostCard from '../../../components/PostCard.astro';
-import AdSenseList from '../../../components/AdSenseList.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PostCard from '../../../../components/PostCard.astro';
+import AdSenseList from '../../../../components/AdSenseList.astro';
 
 const PER_PAGE = 8;
 
-export async function getStaticPaths() {
-  return [
-    { params: { cat: 'project' } },
-    { params: { cat: 'operations' } },
-    { params: { cat: 'study' } },
-    { params: { cat: 'stats' } },
-  ];
+export async function getStaticPaths({ paginate }) {
+  const PER_PAGE = 8;
+  const cats = ['project', 'operations', 'study', 'stats'];
+  const all = (await getCollection('blog')).filter((p) => p.id.startsWith('en/'));
+  return cats.flatMap((cat) => {
+    const posts = all
+      .filter((p) => p.data.category === cat)
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    // Page 1 is served by /en/category/[cat].astro → generate page 2+ only
+    return paginate(posts, { params: { cat }, pageSize: PER_PAGE })
+      .filter((entry) => entry.params.page && Number(entry.params.page) >= 2);
+  });
 }
 
 const { cat } = Astro.params;
+const { page } = Astro.props;
+
 const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' };
 const catDesc = {
   project: [
@@ -36,15 +43,12 @@ const catDesc = {
   ],
 };
 
-const allPosts = (await getCollection('blog'))
-  .filter((p) => p.id.startsWith('en/') && p.data.category === cat)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const lastPage = Math.max(1, Math.ceil(allPosts.length / PER_PAGE));
-const posts = allPosts.slice(0, PER_PAGE);
+const posts = page.data;
+// Correct the prev link on page 2 to the base URL (/en/category/[cat]/)
+const prevUrl = page.currentPage === 2 ? `/en/category/${cat}/` : page.url.prev;
 ---
 
-<BaseLayout title={`${catName[cat]} — Rabbit Logs`} description={catDesc[cat].join(' ')} lang="en" showAds={true}>
+<BaseLayout title={`${catName[cat]} — Rabbit Logs (Page ${page.currentPage})`} description={catDesc[cat].join(' ')} lang="en" showAds={true}>
   <section class="cat-list" style="padding-top: 1.2rem;">
     <h1 style="font-size: 2rem; margin: 0 0 0.6rem;">{catName[cat]}</h1>
     <p style="font-size: 0.98rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.8rem;">
@@ -67,11 +71,19 @@ const posts = allPosts.slice(0, PER_PAGE);
       </>
     ))}
 
-    {lastPage > 1 && (
+    {page.lastPage > 1 && (
       <nav class="pagination" aria-label="Pagination">
-        <span class="page-btn is-disabled">← Prev</span>
-        <span class="page-info">1 / {lastPage}</span>
-        <a href={`/en/category/${cat}/2/`} class="page-btn" rel="next">Next →</a>
+        {prevUrl ? (
+          <a href={prevUrl} class="page-btn" rel="prev">← Prev</a>
+        ) : (
+          <span class="page-btn is-disabled">← Prev</span>
+        )}
+        <span class="page-info">{page.currentPage} / {page.lastPage}</span>
+        {page.url.next ? (
+          <a href={page.url.next} class="page-btn" rel="next">Next →</a>
+        ) : (
+          <span class="page-btn is-disabled">Next →</span>
+        )}
       </nav>
     )}
   </section>
