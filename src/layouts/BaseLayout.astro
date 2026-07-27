@@ -142,14 +142,27 @@ const home = lang === 'en' ? '/en/' : '/';
       .nav a:hover { color: var(--primary); }
       .lbl-short { display: none; }
 
-      /* 모바일: 카테고리 라벨에서 'SAP' 접두어 생략(짧은 라벨), 한 줄에 균등 배분 */
+      /* 모바일: 카테고리 라벨에서 'SAP' 접두어 생략(짧은 라벨).
+         한 줄에 다 안 들어가면 균등 압축하는 대신 가로 스크롤로 전환한다. */
       @media (max-width: 640px) {
         .header-inner { gap: 0.6rem 0.5rem; }
         .brand { margin-left: 0.5rem; }
         .lang-switch { margin-right: 0.5rem; }
         .header-actions { margin-right: 0.5rem; }
-        .nav { justify-content: space-between; gap: 0.3rem; }
-        .nav a { font-size: 0.8rem; flex: 1; text-align: center; }
+        .nav {
+          justify-content: flex-start; flex-wrap: nowrap; gap: 0.3rem;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+          margin: 0 -1.25rem; padding: 0.3rem 1.25rem 0.2rem;
+          mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 24px), transparent);
+        }
+        .nav::-webkit-scrollbar { display: none; }
+        .nav a {
+          font-size: 0.8rem; flex: none; text-align: center;
+          white-space: nowrap;
+          padding: 0.4rem 0.3rem;
+        }
         .lbl-full { display: none; }
         .lbl-short { display: inline; }
       }
