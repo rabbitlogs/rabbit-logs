@@ -69,7 +69,8 @@ const prevUrl = page.currentPage === 2 ? `/category/${cat}/` : page.url.prev;
           lang="ko"
         />
         {/* 글 4개마다 광고 1개 (페이지 내 기준) */}
-        {(i + 1) % 4 === 0 && i !== posts.length - 1 && <AdSenseList />}
+        {/* 3번째, 6번째 글 뒤에 광고 (8개 기준 총 2개, 마지막 글 뒤엔 안 붙음) */}
+        {(i === 2 || i === 5) && <AdSenseList />}
       </>
     ))}
 
@@ -131,7 +132,7 @@ const prevUrl = page.currentPage === 2 ? `/category/${cat}/` : page.url.prev;
             clearInterval(checker);
           } else if (iframe && iframe.offsetHeight > 0) {
             clearInterval(checker);
-          } else if (tries >= 12) {
+          } else if (tries >= 24) {
             slot.remove();
             clearInterval(checker);
           }

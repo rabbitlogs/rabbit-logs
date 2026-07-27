@@ -63,7 +63,8 @@ const posts = allPosts.slice(0, PER_PAGE);
           pubDate={post.data.pubDate}
           lang="en"
         />
-        {(i + 1) % 4 === 0 && i !== posts.length - 1 && <AdSenseList />}
+        {/* Ads after the 3rd and 6th posts (2 ads for 8 posts, none after the last post) */}
+        {(i === 2 || i === 5) && <AdSenseList />}
       </>
     ))}
 
@@ -112,7 +113,7 @@ const posts = allPosts.slice(0, PER_PAGE);
             clearInterval(checker);
           } else if (iframe && iframe.offsetHeight > 0) {
             clearInterval(checker);
-          } else if (tries >= 12) {
+          } else if (tries >= 24) {
             slot.remove();
             clearInterval(checker);
           }
