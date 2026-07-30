@@ -105,4 +105,4 @@ MRP가 계획오더를 안 만들었다는 건, 대부분 **계산이 실패한 
 - [SAP PP 기준정보, 핵심 4가지로 이해하기](/blog/sap-pp-master-data)
 - [SAP 계획오더 vs 생산오더, 식단표와 실제 조리 지시서](/blog/sap-planned-vs-production-order)
 
-<!-- 관련글: prerequisite=sap-mrp,sap-pp-master-data; related=sap-planned-vs-production-order -->
+<!-- 관련글: prerequisite=sap-mrp,sap-pp-master-data; related=sap-planned-vs-production-order; deepens= -->

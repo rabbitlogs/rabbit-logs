@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-07-22, 총 61개
+# 생성 시각: 2026-07-30, 총 64개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -1043,4 +1043,55 @@
   relations:
     prerequisite: [stats-why-back-to-school]
     related: [stats-adsp]
+    deepens: []
+
+- slug: sap-mrp-no-planned-order
+  mapTitle: "SAP MRP 계획오더 미생성"
+  title: "SAP MRP 계획오더 미생성, 텅 빈 준비대로 시작하는 아침"
+  category: operations
+  status: rebuilt
+  pubDate: "2026-07-23"
+  level: beginner
+  tags:
+  - "SAP실무운영"
+  - "SAPMRP"
+  - "SAP계획오더"
+  - "SAP자재마스터"
+  relations:
+    prerequisite: [sap-mrp, sap-pp-master-data]
+    related: [sap-planned-vs-production-order]
+    deepens: []
+
+- slug: sap-production-order-teco
+  mapTitle: "SAP 생산오더 TECO"
+  title: "SAP 생산오더 TECO, 덮어둔 냄비를 언제 내리는가"
+  category: operations
+  status: rebuilt
+  pubDate: "2026-07-28"
+  level: intermediate
+  tags:
+  - "SAP실무운영"
+  - "SAP생산오더"
+  - "SAPTECO"
+  - "SAP원가정산"
+  relations:
+    prerequisite: [sap-production-order-status]
+    related: [sap-wip]
+    deepens: [sap-production-order-carryover]
+
+- slug: sap-project-decision-log
+  mapTitle: "SAP 프로젝트 의사결정 기록"
+  title: "SAP 프로젝트 의사결정 기록, 아무도 안 읽는 주방 게시판"
+  category: project
+  status: rebuilt
+  pubDate: "2026-08-06"
+  level: beginner
+  tags:
+  - "SAP프로젝트"
+  - "SAP의사결정"
+  - "SAP구축"
+  - "SAP회의록"
+  relations:
+    prerequisite: [sap-build-project-difficulty]
+    related: [sap-fit-gap, sap-change-management]
     deepens: []

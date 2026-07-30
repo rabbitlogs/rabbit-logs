@@ -94,4 +94,4 @@ SAP 구축 프로젝트에서 가장 자주 반복되는 일입니다. 회의록
 - [SAP Fit/Gap 분석, 표준과 우리 매장 사이의 간격 재기](/blog/sap-fit-gap)
 - [SAP 변화관리, 새 주방을 열기 전에 스탭이 먼저 바뀌어야 합니다](/blog/sap-change-management)
 
-<!-- 관련글: prerequisite=sap-build-project-difficulty; related=sap-fit-gap,sap-change-management -->
+<!-- 관련글: prerequisite=sap-build-project-difficulty; related=sap-fit-gap,sap-change-management; deepens= -->
