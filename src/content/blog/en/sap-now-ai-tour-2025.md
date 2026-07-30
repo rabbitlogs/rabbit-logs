@@ -4,7 +4,7 @@ mapTitle: "SAP NOW AI Tour 2025 Korea"
 description: "A firsthand account of SAP NOW AI Tour 2025 Korea in July 2025 — from the keynote to the case-study sessions, in front of a crowd of 2,500, down to the one question a practitioner walked away with."
 pubDate: "2025-07-17"
 category: "operations"
-series: "Field reports"
+series: "SAP Operations"
 level: "beginner"
 tags: ["SAPOperations", "SAPNOW", "EventRecap", "SAPJoule", "CleanCore"]
 ---
@@ -15,6 +15,13 @@ On July 15, **SAP NOW AI Tour 2025 Korea** was held at the Grand InterContinenta
 
 ![Wide shot of the SAP NOW AI Tour 2025 Korea venue. A large screen displays the event logo, and every round table is packed with attendees](/images/sap-now-ai-tour-2025.jpg)
 *Figure 1. A packed venue with no empty seats. The interest in SAP and business AI was something I felt in the density of the room, not just the numbers.*
+
+> **3-line summary**
+> - The keynote at SAP NOW AI Tour 2025 Korea centered on the AI assistant <strong class="key">Joule</strong>.
+> - Joule was introduced not as a chatbot but as AI that actually processes transactions, with the framing centered on "what work does it change" rather than "how smart is it."
+> - The catch: session after session across the tracks kept circling back to the same prerequisite — Joule doesn't work without Clean Core in place first.
+
+[[TOC]]
 
 ## The question the keynote raised
 
@@ -28,17 +35,17 @@ What stood out was how they framed it. The emphasis wasn't on "how smart is it,"
 
 ## What I confirmed in Track 3
 
-In the afternoon, I focused on Track 3, "Business Suite with AI," out of the four available tracks. Session after session converged on the same point: for Joule to actually work, it needs a Clean Core foundation, and getting to Clean Core means cleaning up the custom code that's piled up in the system first. It was an afternoon where the appeal of the new feature and the weight of the prerequisite needed to adopt it were both equally present.
+In the afternoon, I focused on Track 3, "Business Suite with AI," out of the four available tracks. Session after session converged on the same point: for Joule to actually work, it needs a <strong class="key">Clean Core</strong> foundation, and getting to Clean Core means cleaning up the custom code that's piled up in the system first. It was an afternoon where the appeal of the new feature and the weight of the prerequisite needed to adopt it were both equally present.
 
-## Walking out of the venue
-
-What stuck with me walking out wasn't the name of some new feature — it was a single question.
-
-> **"I want to use Joule — but is our system actually ready to receive it?"**
-
-The weight of that reality, sitting behind the flashy demo, was heavier than I expected. I've laid out that thinking in the post below.
+> ⚠️ **Note**: Clean Core isn't a new topic that showed up just at this event — it's a prerequisite SAP keeps re-emphasizing every time a new AI feature gets layered on. The more features get added, the heavier this homework gets.
 
 The keynote and session recordings from SAP NOW AI Tour 2025 Korea are available on the [official SAP NOW AI Tour 2025 Korea on-demand page](https://events.sap.com/kr-post-sapnowkorea/ko_kr/home.html).
+
+## Rabbit's Takeaway
+
+What stuck with me walking out wasn't the name of some new feature — it was a single question. ==I want to use Joule — but is our system actually ready to receive it?==
+
+The weight of that reality, sitting behind the flashy demo, was heavier than I expected. New features get flashier every year, but what's ready to receive them is only ever as much as the system has actually been cleaned up to handle 😎
 
 ---
 
