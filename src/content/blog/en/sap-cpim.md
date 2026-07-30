@@ -82,6 +82,8 @@ This is exactly what this blog keeps coming back to: process and workflow matter
 
 Honestly, I plan to take it on myself someday. But given the time and money required, I want to wait until I can commit fully and approach it carefully. When I do take the plunge, I'll document that journey here too. 😎
 
+---
+
 **Read more**
 
 - [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)

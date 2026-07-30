@@ -64,6 +64,8 @@ Everyone feels a little lost the first time they see an SAP screen — all those
 
 It ties scattered departments into a single restaurant, so everyone can work more accurately and with less friction. As we tour this restaurant one station at a time in future posts, SAP should start to feel a lot more familiar. 😎
 
+---
+
 **Read more**
 
 - [SAP's 10 core modules: the whole restaurant at a glance](/en/blog/sap-modules-guide)

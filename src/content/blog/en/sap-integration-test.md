@@ -62,6 +62,8 @@ Integration testing isn't just about putting the pieces together — it's about 
 
 That said, integration testing is still, ultimately, an "expert's-eye view" of how the systems connect. UAT, where real users try the system themselves and give final sign-off, is a different story. 😎
 
+---
+
 **Read more**
 
 - [SAP unit testing: checking the quality of every single ingredient](/en/blog/sap-unit-test)

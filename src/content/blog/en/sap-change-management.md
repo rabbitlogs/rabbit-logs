@@ -93,6 +93,8 @@ Ask people who've used SAP for a long time, and you hear the same thing over and
 
 Change management is what shortens that "really hated it at first" period and helps people push through it. People's readiness matters as much as the system's completeness. No matter how good the new kitchen equipment is, the food only comes out if the staff are comfortable using it. 😎
 
+---
+
 **Read more**
 
 - [SAP PI: a fresh coat of paint on the store doesn't change the recipe](/en/blog/sap-pi-overview)

@@ -102,6 +102,8 @@ It's the same as deciding whether to book today's half-cooked food's ingredient 
 
 What matters is applying whichever method you choose consistently. Mixing methods — WIP carryover this month, order carryover next month — makes cost analysis meaningless. 😎
 
+---
+
 **Read more**
 
 - [SAP WIP, the value of a dish not yet on the plate](/en/blog/sap-wip)

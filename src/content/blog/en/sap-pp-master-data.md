@@ -83,6 +83,8 @@ The four pieces of master data can be summed up in one line: material master ans
 
 A large share of the problems that trip people up in PP, once you dig in, trace back to weak master data. That's why accurate master data comes before flashy functionality — the same way great cooking depends on good ingredients and a precise recipe. Nail down these four, and you've understood half of PP. 😎
 
+---
+
 **Read more**
 
 - [SAP PP T-codes, the kitchen's workflow mapped out step by step](/en/blog/sap-pp-tcode)

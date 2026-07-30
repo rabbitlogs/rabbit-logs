@@ -59,6 +59,8 @@ This case lines up precisely with the prerequisite covered earlier. For AI to ex
 
 Walking out of the venue last year, the question that stuck with me was, "I want to use Joule — but is our system ready to receive it?" This year, one more question got attached to that: ==how much can we actually trust the data we're handing AI as the basis for its judgment?== The name "autonomous enterprise" sounds impressive, but what actually carries that name is the quality of the data piling up in the system every single day. 😎
 
+---
+
 **Read more**
 
 - [SAP NOW AI Tour 2025 Korea: one thing I confirmed on-site](/en/blog/sap-now-ai-tour-2025)

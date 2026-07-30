@@ -59,6 +59,8 @@ SAP's history boils down to one line: ==bring scattered work together, and proce
 
 Behind the complicated SAP screens we use every day is a simple, stubborn idea: bring a company's work together as one. Once you know that bigger picture, even the unfamiliar screens start to look a little different. 😎
 
+---
+
 **Read more**
 
 - [SAP for beginners: the integrated brain behind a restaurant kitchen](/en/blog/sap-what-is-sap)

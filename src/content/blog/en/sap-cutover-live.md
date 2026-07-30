@@ -81,6 +81,8 @@ But what comes next matters even more. The period right after go-live is the mos
 
 Cutover isn't the end. It's that feeling of closing out the first day of business in the new kitchen — that's when the real restaurant begins. 😎
 
+---
+
 **Read more**
 
 - [SAP cutover: moving day from the old kitchen to the new one](/en/blog/sap-cutover)

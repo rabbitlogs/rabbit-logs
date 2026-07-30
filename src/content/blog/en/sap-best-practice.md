@@ -73,6 +73,8 @@ Reality sits in between. Follow the standard as closely as possible where it fit
 
 Respecting the meal-kit recipe while adding only the seasoning your family really needs — that's the best way to make the most of Best Practice. 😎
 
+---
+
 **Read more**
 
 - [SAP Fit/Gap analysis: measuring the gap between the standard and your store](/en/blog/sap-fit-gap)

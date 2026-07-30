@@ -96,6 +96,8 @@ The more you use SAP, the more naturally you'll recognize when a parameter ID wo
 
 If you're just getting started with SAP, try opening three to five of your most-used T-codes and checking whether there's a field you keep retyping. Press F1 on that field, find its parameter ID, and register it in SU3 — it's the most effective SAP setup you can do today. 😎
 
+---
+
 **Read more**
 
 - [SAP T-codes: how to pull up your go-to kitchen order in one shot](/en/blog/sap-tcode-basics)

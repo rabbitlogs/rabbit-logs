@@ -80,6 +80,8 @@ Assuming developers can just design the interface on their own is only half righ
 
 Having a clear answer to "does this task need real-time confirmation, or does reliable bulk delivery matter more" makes conversations with developers far more concrete. When an SAP PP practitioner can bring well-defined requirements into an interface design meeting, the quality of the whole project changes. 😎
 
+---
+
 **Read more**
 
 - [SAP MES: the perfect division of labor between the head chef and the kitchen team](/en/blog/sap-mes-role)

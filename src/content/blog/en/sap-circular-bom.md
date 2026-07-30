@@ -131,6 +131,8 @@ But in a real kitchen, pouring a failed broth back into the pot is ordinary. And
 
 A system isn't a tool for tidying reality up — it's a tool for holding reality as it actually is. A single "Allow cycles" checkbox quietly makes that point. Leave it off, and both your inventory and your costs start drifting away from what's really on the floor. 😎
 
+---
+
 **Read more**
 
 - [SAP PP master data: understanding the four essentials](/en/blog/sap-pp-master-data)

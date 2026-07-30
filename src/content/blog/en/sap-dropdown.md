@@ -98,6 +98,8 @@ The more experience you build with SAP, the more familiar the code numbers thems
 
 Once you go from reading only names to seeing the codes alongside them, the same SAP screen reads completely differently. Watching how the system distinguishes its data, right there on screen, is one of the fastest ways to really understand SAP. 😎
 
+---
+
 **Read more**
 
 - [SAP T-code: calling up your regular kitchen orders fast](/en/blog/sap-tcode-basics)

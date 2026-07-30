@@ -86,6 +86,8 @@ You don't need to memorize all 10. What matters is the picture: SAP divides a co
 
 So it's enough to have a feel for the fact that touching one station ripples into the others. An order on the floor (SD) sets the kitchen (PP) moving, pulls ingredients from the storeroom (MM), and lands in the ledger (FI) — that connection is the essence of SAP. As we look at each station more closely going forward, this whole kitchen will come into sharper focus. 😎
 
+---
+
 **Read more**
 
 - [SAP for beginners: the integrated brain behind a restaurant kitchen](/en/blog/sap-what-is-sap)

@@ -96,6 +96,8 @@ Whether to adopt batch management depends on the industry and product characteri
 
 In an SAP project, whether to adopt batch management should be decided early in the build. Adding it midway makes converting existing inventory data much harder. It's worth carefully reviewing business requirements from the start. 😎
 
+---
+
 **Read more**
 
 - [SAP movement types: the stamp ingredients get every time they go in and out of the fridge](/en/blog/sap-movement-type)

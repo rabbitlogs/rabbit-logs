@@ -88,6 +88,8 @@ The first question is answered in the manual. The second one usually isn't answe
 
 ==A system only retains as much explanation as the business side left reasons for.== No matter how good the judgment was in the room, if the reasoning behind it never gets written down, four months later it's just a setting nobody can explain. 😎
 
+---
+
 **Read more**
 
 - [SAP implementation projects: the five hurdles of opening a new store](/en/blog/sap-build-project-difficulty)

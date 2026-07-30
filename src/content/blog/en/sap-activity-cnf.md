@@ -97,6 +97,8 @@ But in practice, this often breaks down. When the floor gets busy, CNF entry fal
 
 ==If timely CNF entry doesn't become a habit, inventory accuracy and cost reliability break down together.== That's exactly why it's worth spending time early in a system rollout to walk floor staff through this flow thoroughly. 😎
 
+---
+
 **Read more**
 
 - [SAP PP: how a kitchen's production plan comes together](/en/blog/sap-pp-overview)

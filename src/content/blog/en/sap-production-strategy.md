@@ -93,6 +93,8 @@ But underneath it all, there's really just one question: **"When does production
 
 Choosing between a buffet and a steakhouse isn't just a difference in operating style — it's a decision about what you're promising your customer. 😎
 
+---
+
 **Read more**
 
 - [SAP PP: how a kitchen's production plan comes together](/en/blog/sap-pp-overview)

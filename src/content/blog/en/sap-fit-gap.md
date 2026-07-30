@@ -62,6 +62,8 @@ Fit/Gap analysis is more than just comparing functionality against requirements 
 
 A thorough, realistic Fit/Gap analysis isn't just "an expensive spreadsheet" — it's the first real step toward building a system that truly fits your company. 😎
 
+---
+
 **Read more**
 
 - [SAP testing's five stages: the verification journey of opening a new restaurant](/en/blog/sap-test-overview)

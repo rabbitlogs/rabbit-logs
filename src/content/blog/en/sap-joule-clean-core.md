@@ -73,6 +73,8 @@ The real gate for AI adoption isn't "how smart is Joule" — it's **"how close t
 
 A flashy new dish makes you want to put it on the menu right away, but the kitchen has to be able to handle it before it ever reaches a customer's table. Before getting swept up in a feature demo, open up your own system and look at the Z-code piled up inside it first. That diagnosis is page one of any AI adoption roadmap. I went to see a new dish, and ended up pulling out the blueprints for our own kitchen instead. 😎
 
+---
+
 **Read more**
 
 - [SAP NOW AI Tour 2025 Korea: one thing I confirmed on-site](/en/blog/sap-now-ai-tour-2025)

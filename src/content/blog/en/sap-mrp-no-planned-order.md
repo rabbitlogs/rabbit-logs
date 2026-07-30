@@ -99,6 +99,8 @@ When MRP doesn't produce a planned order, it's usually not that **the calculatio
 
 It's the same as checking the order, the recipe, and the fridge instead of scolding the manager for not restocking the prep station. ==MRP isn't a system that manufactures answers — it's a system that faithfully calculates and shows you whatever you fed into it.== 😎
 
+---
+
 **Read more**
 
 - [SAP MRP: planning materials like a restaurant prepping a big group order](/en/blog/sap-mrp)

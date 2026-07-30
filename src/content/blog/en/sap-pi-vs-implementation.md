@@ -75,6 +75,8 @@ Projects succeed when PI's big picture meets implementation's practical executio
 
 Having gone through both roles myself, I've come to see that neither side is simply right and the other wrong. ==Understanding each other's language is, honestly, the most practical way to make a project run smoothly.== 😎
 
+---
+
 **Read more**
 
 - [SAP implementation projects, the five hurdles of opening a new store](/en/blog/sap-build-project-difficulty)

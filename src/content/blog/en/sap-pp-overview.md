@@ -88,6 +88,8 @@ In restaurant terms, this is exactly the same flow as writing the recipe and coo
 
 Once this flow settles into your head, no matter which screen you open in SAP, you'll naturally be able to place it: "where in this flow does this screen sit?" 😎
 
+---
+
 **Read more**
 
 - [SAP planned order vs. production order: the meal plan and the actual cooking ticket](/en/blog/sap-planned-vs-production-order)

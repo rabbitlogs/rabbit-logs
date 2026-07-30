@@ -71,6 +71,8 @@ When you get an SAP error message, the instinct is to jump straight to "so what 
 
 Once you sort that out, where to look and who to ask both become clear. The person who pinpoints exactly which layer an error lives in is the real expert — more than the person who's just fast at fixing things. 😎
 
+---
+
 **Read more**
 
 - [SAP PP master data: understanding the 4 essentials](/en/blog/sap-pp-master-data)

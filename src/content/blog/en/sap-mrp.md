@@ -78,6 +78,8 @@ MRP looks complicated, but underneath, it's just a logical process: set the targ
 
 That's why what really drives MRP isn't fancy functionality — it's accurate input. The target (MPS), recipe (BOM), and inventory all need to be correct for MRP to be correct. It's the same as needing good ingredients to make a good dish. Next time, let's look at the PP master data that forms the foundation of this whole calculation. 😎
 
+---
+
 **Read more**
 
 - [SAP PP master data: the 4 essentials to know](/en/blog/sap-pp-master-data)

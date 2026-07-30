@@ -92,6 +92,8 @@ That's exactly why "SAP-MES integration is the key" keeps coming up on the shop 
 
 Getting into the habit of thinking about MES as a package deal whenever you're learning SAP pays off quite a bit on the ground. 😎
 
+---
+
 **Read more**
 
 - [SAP MES interfaces: the waiter's craft of connecting floor and kitchen](/en/blog/sap-mes-interface)

@@ -65,6 +65,8 @@ WIP is the same "dish still cooking" seen through three different sets of eyes. 
 
 Only when you understand all three perspectives can you accurately read the invisible flow of assets inside a plant. The dish hasn't hit the plate yet — but it's already carrying clear value. 😎
 
+---
+
 **Read more**
 
 - [SAP GI, GR, CNF: the three moments inventory leaves, arrives, and gets made](/en/blog/sap-gi-gr-cnf)

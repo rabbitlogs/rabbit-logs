@@ -59,6 +59,8 @@ Summed up in one line: GI is inventory going out (decrease), GR is inventory com
 
 Next time you hear "please process the GI," "did the GR post?", or "why hasn't the CNF been done?" — you won't be caught off guard. It's all just the same flow of ingredients going out, coming in, and turning into dishes. 😎
 
+---
+
 **Read more**
 
 - [SAP movement types: the stamp every ingredient gets each time it moves through the fridge](/en/blog/sap-movement-type)

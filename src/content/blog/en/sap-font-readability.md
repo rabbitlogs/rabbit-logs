@@ -83,6 +83,8 @@ Now assign the new fonts in SAP.
 
 Knowing how to use good tools well is a skill in its own right. A 5-minute investment in sharpening your screen will make your everyday SAP work noticeably smoother. 😎
 
+---
+
 **Read more**
 
 - [SAP Signature theme: a shared uniform that makes collaboration easier](/en/blog/sap-signature-theme)

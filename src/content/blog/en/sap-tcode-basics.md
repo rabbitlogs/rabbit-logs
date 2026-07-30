@@ -96,6 +96,8 @@ Navigating through menus is something you do while you're still learning — onc
 
 And the last command before you leave for the day is `/nex` — it closes every session and takes you back to the logon screen. Just make sure to check that your work is saved first, because anything unsaved will be lost. 😎
 
+---
+
 **Read more**
 
 - [SAP font settings: reading the screen as clearly as a menu board](/en/blog/sap-font-readability)

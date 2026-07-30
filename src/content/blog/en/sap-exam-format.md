@@ -79,6 +79,8 @@ The Learning Hub includes a practice server identical to the actual exam environ
 
 It's gone from an exam you pass by memorizing and guessing to one you pass by having actually done the work. That makes your prep direction clear too: not a question bank, but hands-on time on a practice server. Keep that one shift in mind, and the exam should feel a lot more manageable. 😎
 
+---
+
 **Read more**
 
 - [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)

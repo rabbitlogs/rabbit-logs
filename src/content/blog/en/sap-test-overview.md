@@ -63,6 +63,8 @@ These five stages form a tightly connected journey that can't be skipped or reor
 
 Starting with the next post, we'll walk through each stage in detail. Keep this overview in your head like a map, and even SAP testing — which looks complicated at first — will start to feel like the natural process of preparing to open a new restaurant. 😎
 
+---
+
 **Read more**
 
 - [SAP implementation projects: the five hurdles of opening a new store](/en/blog/sap-build-project-difficulty)

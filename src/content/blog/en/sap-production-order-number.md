@@ -79,6 +79,8 @@ Production order numbering doesn't behave the way intuition suggests it would �
 
 Number range management isn't something you touch often in daily work, but if the system suddenly can't create a new order, it's worth remembering that a depleted number range could be the cause — that recollection makes diagnosing the problem much faster. 😎
 
+---
+
 **Read more**
 
 - [SAP planned order vs. production order: the meal plan and the actual cooking ticket](/en/blog/sap-planned-vs-production-order)

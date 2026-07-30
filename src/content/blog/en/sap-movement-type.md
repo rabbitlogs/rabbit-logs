@@ -79,6 +79,8 @@ Movement types are easier to understand as a flow than to memorize outright. Gro
 
 Instead of just memorizing T-codes and moving on, try asking yourself: "what journey is this piece of inventory on right now?" Do that, and movement types stop being numbers and start reading like a compass for tracking the flow of inventory. 😎
 
+---
+
 **Read more**
 
 - [SAP PP T-codes: kitchen workflow organized by process](/en/blog/sap-pp-tcode)

@@ -83,6 +83,8 @@ SAP certification is no longer just a line on a resume — it's become a "member
 
 So reframe the question, and the decision gets easier. Instead of "should I get certified or not," ask "am I at a stage where I can keep up this membership every year?" That one shift in framing makes the answer much clearer. 😎
 
+---
+
 **Read more**
 
 - [SAP certification exams: from a written test to a hands-on kitchen exam room](/en/blog/sap-exam-format)

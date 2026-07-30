@@ -106,6 +106,8 @@ Get the order wrong and problems follow. Build the system first and force the wo
 
 ==The recipes and the kitchen flow have to change first for the new equipment to mean anything.== The success of a system rollout is decided by design, not technology. 😎
 
+---
+
 **Read more**
 
 - [What is SAP? Understanding it as an integrated kitchen brain](/en/blog/sap-what-is-sap)

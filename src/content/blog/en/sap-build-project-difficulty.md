@@ -70,6 +70,8 @@ An SAP implementation project isn't an IT project that swaps an old system for a
 
 That's why people matter more than technology, and communication matters more than the system itself. Knowing these five stages ahead of time means you'll be less caught off guard when you hit these traps, and able to respond a beat faster. 😎
 
+---
+
 **Read more**
 
 - [SAP PI vs. implementation: the person who designs the store and the person who builds it](/en/blog/sap-pi-vs-implementation)

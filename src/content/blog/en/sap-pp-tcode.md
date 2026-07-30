@@ -103,6 +103,8 @@ For example, registering a frequent sequence like order (VA01) → production or
 
 Hopefully this post becomes the quick reference you reach for whenever you're thinking, "what was that code again?" 😎
 
+---
+
 **Read more**
 
 - [SAP T-codes, quickly calling up your kitchen's regular menu items](/en/blog/sap-tcode-basics)

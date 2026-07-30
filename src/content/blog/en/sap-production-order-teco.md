@@ -82,6 +82,8 @@ TECO trips people up because it looks like "the end." It sits last in the list o
 
 But TECO is the end of production, not the end of the order. Taking the pot off the burner and closing out the day's ingredient cost in the books are two different things. ==Because the person who closes out production and the person who closes out cost aren't the same, assuming TECO wraps everything up leaves you with a mystery balance at month-end.== 😎
 
+---
+
 **Read more**
 
 - [SAP production order status codes: the order in which a dish comes together](/en/blog/sap-production-order-status)

@@ -80,6 +80,8 @@ CBO (Z-code) is a useful tool for giving a company exactly the functionality it 
 
 Before building a CBO, it always helps to ask: "Does this really need to be a CBO?" "Could standard functionality or configuration handle this instead?" "If we build this now, will we actually be able to manage it well later?" Build the CBOs you truly need, but pair them with development standards and documentation — that's how to turn the love-hate relationship with Z-code into something you can actually love. 😎
 
+---
+
 **Read more**
 
 - [SAP PP T-codes: kitchen workflow organized by process](/en/blog/sap-pp-tcode)

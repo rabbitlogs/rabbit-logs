@@ -67,6 +67,8 @@ And with that, the curtain falls on SAP's five testing stages. Together, we've d
 
 The moment a user signs off with an "OK" in UAT, the project finishes its long tunnel called "implementation" and gets ready to step into a new world called "operations." Passing this final check means the system we built has been officially recognized as more than just "a machine that works" — it's "a tool that adds real value to the business." 😎
 
+---
+
 **Read more**
 
 - [SAP integration testing: do the kitchen and the floor actually work as one](/en/blog/sap-integration-test)

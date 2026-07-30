@@ -89,6 +89,8 @@ The password asterisk setting was built to strengthen security, but in practice 
 
 When you first install SAP or open SAP GUI on a new PC, it's worth checking this setting and turning it off. A 30-second fix now saves you unnecessary account lockouts and IT tickets later. 😎
 
+---
+
 **Read more**
 
 - [SAP T-codes, quickly calling up your kitchen's regular menu items](/en/blog/sap-tcode-basics)

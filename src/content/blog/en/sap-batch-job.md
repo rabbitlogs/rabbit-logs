@@ -99,6 +99,8 @@ Once set up well, a batch job is a quiet convenience that keeps work running eve
 
 ==The real value of a batch job isn't "running smoothly" — it's "catching problems quickly when they occur."== Making a daily SM37 check part of your morning routine is the single most important habit for anyone running batch jobs. 😎
 
+---
+
 **Read more**
 
 - [SAP user parameters: saving your everyday default values in one shot](/en/blog/sap-user-parameters)

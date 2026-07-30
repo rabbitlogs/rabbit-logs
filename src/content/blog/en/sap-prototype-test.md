@@ -63,6 +63,8 @@ The core of prototype testing is "show it early, fix it early." A meeting held o
 
 Once the big-picture direction of the functionality is locked in this way, the next step is unit testing — checking things one small piece at a time. 😎
 
+---
+
 **Read more**
 
 - [SAP Fit/Gap analysis: measuring the distance between standard and your restaurant](/en/blog/sap-fit-gap)

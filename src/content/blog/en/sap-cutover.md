@@ -89,6 +89,8 @@ It's the day that months of work gets applied to real operations for the first t
 
 A well-built runbook, thoroughly validated data, and the experience gained from rehearsal are what build that responsiveness. If you want opening day in the new kitchen to feel calm rather than nerve-wracking, everything comes down to how well you prepared the day before. 😎
 
+---
+
 **Read more**
 
 - [SAP UAT: the owner's final walkthrough before opening the doors](/en/blog/sap-uat)

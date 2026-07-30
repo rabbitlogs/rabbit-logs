@@ -63,6 +63,8 @@ Unit testing is small and repetitive, so it doesn't stand out much from the outs
 
 Gathering these verified parts and confirming they all mesh together properly is the job of the next stage: integration testing. 😎
 
+---
+
 **Read more**
 
 - [SAP prototype testing: the trial store you visit before construction begins](/en/blog/sap-prototype-test)

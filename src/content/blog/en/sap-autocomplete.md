@@ -102,6 +102,8 @@ Knowing that a single Delete key press removes one entry, and that the options w
 
 If you're just starting out with SAP, a good approach is to keep autocomplete on and use it as-is at first, then clean up unnecessary entries once some history has built up. 😎
 
+---
+
 **Read more**
 
 - [SAP T-code: how to quickly call up a kitchen's regular menu items](/en/blog/sap-tcode-basics)

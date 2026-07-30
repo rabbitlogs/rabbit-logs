@@ -82,6 +82,8 @@ Trying to memorize field names one by one is a losing game. Instead, build the h
 
 ==Once this way of reading clicks, even a table you've never seen before stops feeling like alien code.== A chef who can read a recipe card picks up a new dish quickly — and a practitioner who knows the rules behind field names reads an unfamiliar screen just as fast. 😎
 
+---
+
 **Read more**
 
 - [SAP data types: sorting recipes, ingredients, and order slips](/en/blog/sap-data-types)

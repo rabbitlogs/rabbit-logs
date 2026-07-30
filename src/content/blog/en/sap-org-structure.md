@@ -83,6 +83,8 @@ Master data is different. Updating the material master, changing a BOM, managing
 
 Consultants design the organizational structure, but master data is what business users keep alive. 😎
 
+---
+
 **Read more**
 
 - [What is SAP? Understanding it as an integrated kitchen brain](/en/blog/sap-what-is-sap)

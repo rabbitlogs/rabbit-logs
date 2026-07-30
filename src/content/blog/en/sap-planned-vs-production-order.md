@@ -70,6 +70,8 @@ The difference between a planned order and a production order boils down to one 
 
 MRP sketches the big picture and proposes it as a planned order; a person reviews it and confirms it as a production order. Once you get a feel for that distinction, the backbone of PP production instructions becomes clear. It's exactly like drafting a rough plan ahead of a big group order, then locking it in, reserving the ingredients, and giving the kitchen the go-ahead. 😎
 
+---
+
 **Read more**
 
 - [SAP MRP, planning materials like a restaurant preparing for a large order](/en/blog/sap-mrp)

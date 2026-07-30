@@ -67,6 +67,8 @@ Production order status codes are easier to understand as a cooking process than
 
 Once you know this sequence, you can look at the status code on any production order and instantly tell "ah, this one's at this stage right now." From there, things like why material issue is blocked, or why you can't edit an order, start to make sense naturally. 😎
 
+---
+
 **Read more**
 
 - [SAP planned order vs. production order: the meal plan and the actual cooking ticket](/en/blog/sap-planned-vs-production-order)

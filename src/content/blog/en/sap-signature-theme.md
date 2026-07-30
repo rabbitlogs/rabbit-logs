@@ -63,6 +63,8 @@ Standardizing a theme in SAP isn't about aligning everyone's personal taste. Whe
 
 Through the lens this blog keeps coming back to — the flow of work and how well a team collaborates — standardizing the theme is a small step with a clear payoff. Thinking "what helps us work well together" before "what looks flashy" — that's the practitioner's perspective. 😎
 
+---
+
 **Read more**
 
 - [SAP font settings: reading the screen as clearly as a menu board](/en/blog/sap-font-readability)

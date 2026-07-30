@@ -106,6 +106,8 @@ I had a similar feeling when I first learned SAP. Don't try to memorize the manu
 
 Hope the AI mock exams I shared here help. 😎
 
+---
+
 **Read more**
 
 - [Why I went back to school: wanting to say in data what I used to say by gut feeling](/en/blog/stats-why-back-to-school)
