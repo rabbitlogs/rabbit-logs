@@ -68,7 +68,7 @@ The **procurement type** on the material master's MRP view decides whether to ma
 
 If the setting allows both, the special procurement type determines which way it goes. If an in-house material is generating a purchase requisition instead of a planned order, this field being set differently than intended is usually the reason.
 
-![Screen showing the procurement type field on the material master's MRP view](/images/sap-mrp-no-planned-order-01_en.png)
+![Screen showing the procurement type field on the material master's MRP view](/images/sap-mrp-no-planned-order-01.png)
 *Figure 1. Procurement type setting on the material master's MRP view*
 
 ## 5. This material was never meant to be planned
@@ -79,7 +79,7 @@ Open the material master with `MM03` — if **there's no MRP view at all** for t
 
 If the MRP view exists, the next thing to check is the **MRP type**. Materials meant to be planned generally carry `PD` (MRP). If this value is different, the material drops out of the calculation — and in practice, two values come up most often.
 
-![Material master MRP view MRP type dropdown showing the ND no planning entry highlighted](/images/sap-mrp-no-planned-order-02_en.png)
+![Material master MRP view MRP type dropdown showing the ND no planning entry highlighted](/images/sap-mrp-no-planned-order-02.png)
 *Figure 2. MRP type `ND` — no planning*
 
 **ND** (no planning) does exactly what it says: this material won't be planned at all. It's used for consumables or materials managed manually. With this set, no planned order gets created no matter how much requirement exists.
@@ -88,7 +88,7 @@ If the MRP view exists, the next thing to check is the **MRP type**. Materials m
 
 If everything downstream shows up except this one item, `X0` is worth suspecting. If the setting is intentional, this is normal behavior; if it got set unintentionally, this is your cause.
 
-![MRP type dropdown showing the X0 no MRP BOM explosion entry](/images/sap-mrp-no-planned-order-03_en.png)
+![MRP type dropdown showing the X0 no MRP BOM explosion entry](/images/sap-mrp-no-planned-order-03.png)
 *Figure 3. MRP type `X0` — no MRP, BOM explosion included*
 
 > ⚠️ **Note**: The MRP type and procurement type values shown here follow SAP standard defaults. Many companies add custom types, so check against your actual system's dropdown values.
