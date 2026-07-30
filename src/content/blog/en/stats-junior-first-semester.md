@@ -55,6 +55,8 @@ I got through the semester in something of a blur. Once it was over and I got my
 
 I spent most of the semester not knowing things — the assignment format, how finals worked, the nights racing deadlines. But each thing I fumbled through became part of my own manual for next semester. ==I was late this time because I didn't know. Next time, I can start already knowing.== It was a tough semester, but that alone made it worth something.
 
+---
+
 **Read more**
 
 - [Why I went back to school: wanting to say in data what I used to say by gut feeling](/en/blog/stats-why-back-to-school)

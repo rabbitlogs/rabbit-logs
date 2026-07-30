@@ -68,6 +68,8 @@ I'm only writing this first post after finishing my first semester, but I'll try
 
 Things I used to say by gut feeling — I hope I can gradually start saying them in data instead.
 
+---
+
 **Read more**
 
 - [SAP MRP: planning materials like a restaurant prepping a big group order](/en/blog/sap-mrp)

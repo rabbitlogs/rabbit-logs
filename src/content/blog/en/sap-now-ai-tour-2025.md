@@ -40,6 +40,8 @@ The weight of that reality, sitting behind the flashy demo, was heavier than I e
 
 The keynote and session recordings from SAP NOW AI Tour 2025 Korea are available on the [official SAP NOW AI Tour 2025 Korea on-demand page](https://events.sap.com/kr-post-sapnowkorea/ko_kr/home.html).
 
+---
+
 **Read more**
 
 - [SAP Joule and Clean Core: clean the kitchen before you add the new dish](/en/blog/sap-joule-clean-core)

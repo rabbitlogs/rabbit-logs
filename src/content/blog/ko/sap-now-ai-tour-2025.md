@@ -41,6 +41,8 @@ tags: ["SAP실무운영", "SAPNOW", "SAP행사후기", "SAPJoule", "클린코어
 
 SAP NOW AI Tour 2025 Korea 키노트와 세션 영상은 [SAP NOW AI Tour 2025 Korea 공식 온디맨드 페이지](https://events.sap.com/kr-post-sapnowkorea/ko_kr/home.html)에서 확인할 수 있습니다.
 
+---
+
 **더 읽어보기**
 
 - [SAP Joule와 클린코어, 새 메뉴를 올리기 전에 주방부터](/blog/sap-joule-clean-core)
