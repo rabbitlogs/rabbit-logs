@@ -20,7 +20,7 @@ In [SAP for beginners: the integrated brain behind a restaurant kitchen](/en/blo
 
 [[TOC]]
 
-![Timeline showing SAP's development from its 1972 founding through R/2, R/3, HANA, and S/4HANA](/images/sap-history.jpg)
+![Timeline showing SAP's development from its 1972 founding through R/2, R/3, HANA, and S/4HANA](/images/sap-history_en.png)
 *Figure 1. SAP's major milestones over 50-plus years*
 
 ## Why five people left IBM

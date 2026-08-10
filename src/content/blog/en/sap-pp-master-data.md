@@ -22,7 +22,7 @@ In restaurant terms, master data is "the set of agreements decided ahead of time
 
 [[TOC]]
 
-![Diagram summarizing the four essential pieces of PP master data (material master, BOM, routing, production version)](/images/sap-pp-master-data.jpg)
+![Diagram summarizing the four essential pieces of PP master data (material master, BOM, routing, production version)](/images/sap-pp-master-data_en.png)
 *Figure 1. The four types of PP master data, mapped to the restaurant analogy*
 
 ## 1. Material master — what (the star of the show)

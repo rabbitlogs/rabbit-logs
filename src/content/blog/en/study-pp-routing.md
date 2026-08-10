@@ -32,7 +32,7 @@ In restaurant terms, it's the **cooking sequence sheet**. If the recipe (BOM) sa
 
 A single line of routing carries four pieces of information.
 
-![SAP routing operation flow diagram and master data table — operation number, operation name, work center, standard time](/images/study-pp-routing.jpg)
+![SAP routing operation flow diagram and master data table — operation number, operation name, work center, standard time](/images/study-pp-routing_en.png)
 *Figure 1. Example smartphone production routing — the sequence, work centers, and standard times for operations 10 through 40*
 
 **Operation number** marks the sequence. Usually numbered in increments of 10 — 10, 20, 30 — leaving room to insert operation 11 later if a step needs to be added.

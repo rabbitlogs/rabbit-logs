@@ -48,7 +48,7 @@ Both times, we made the call to roll back.
 
 > 💡 **Key point**: Rollback isn't a "Ctrl+Z." It's a formal declaration that the cutover is off, and it takes a month of root-cause analysis and fixes before you can try again. But forcing a go-live when you're not ready leads to far bigger chaos over the following months. The courage to decide on a rollback is what saves the project.
 
-![SAP cutover-on-the-ground timeline diagram — flow from downtime start through the rollback decision point to go-live](/images/sap-cutover-live.jpg)
+![SAP cutover-on-the-ground timeline diagram — flow from downtime start through the rollback decision point to go-live](/images/sap-cutover-live_en.png)
 *Figure 1. Cutover flow and the rollback decision point*
 
 ## Why a PP module cutover is especially tricky

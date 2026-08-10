@@ -22,7 +22,7 @@ Today I'll break these three down using the flow of ingredients in a restaurant 
 
 [[TOC]]
 
-![Diagram comparing the three concepts of GI (goods issue), GR (goods receipt), and CNF (production confirmation)](/images/sap-gi-gr-cnf.jpg)
+![Diagram comparing the three concepts of GI (goods issue), GR (goods receipt), and CNF (production confirmation)](/images/sap-gi-gr-cnf_en.png)
 *Figure 1. GI, GR, CNF — the three moments inventory leaves, arrives, and gets made*
 
 ## GI — the moment inventory goes out

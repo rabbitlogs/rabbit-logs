@@ -40,7 +40,7 @@ A production order's characteristics are the exact opposite of a planned order's
 
 ## The key differences at a glance
 
-![Diagram comparing planned orders and production orders](/images/sap-planned-vs-production-order.jpg)
+![Diagram comparing planned orders and production orders](/images/sap-planned-vs-production-order_en.png)
 *Figure 1. The difference between a planned order (prep draft) and a production order (execution instruction)*
 
 

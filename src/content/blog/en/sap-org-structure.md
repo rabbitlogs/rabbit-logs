@@ -60,7 +60,7 @@ A **work center** is the equipment or line where actual production happens — t
 
 **Routing** is the cooking sequence for making a finished item. Like the steps for cooking doenjang jjigae, it defines which work center handles which step, in what order, and how long each takes. Routing is what lets you calculate production lead time and reflect the processing cost of each step in the product cost.
 
-![Diagram of the relationship between SAP organizational structure and master data — showing the client, company code, and plant hierarchy with the four types of master data layered on top](/images/sap-org-structure.jpg)
+![Diagram of the relationship between SAP organizational structure and master data — showing the client, company code, and plant hierarchy with the four types of master data layered on top](/images/sap-modules-guide_en.png)
 *Figure 1. The relationship between SAP organizational structure and master data*
 
 ## How the two relate: building and furniture

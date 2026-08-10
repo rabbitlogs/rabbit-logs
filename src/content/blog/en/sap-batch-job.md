@@ -68,7 +68,7 @@ If there's an error, you can click into that batch job to check the log. Since t
 
 In practice, checking batch job monitoring every morning before starting work is standard. Confirm that the batch jobs run overnight completed normally first, and handle any errors before the day's work begins.
 
-![SAP batch job flow diagram — from SM36 scheduling to SM37 monitoring](/images/sap-batch-job.jpg)
+![SAP batch job flow diagram — from SM36 scheduling to SM37 monitoring](/images/sap-batch-job_en.png)
 *Figure 1. The batch job flow from SM36 scheduling to SM37 results monitoring*
 
 ## Collaboration in practice: who builds it, who manages it

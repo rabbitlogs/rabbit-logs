@@ -46,7 +46,7 @@ Once downtime begins, three things happen at the same time.
 
 All of this has to finish within the downtime window. If it runs over, the business stays down longer.
 
-![SAP cutover timeline diagram — flow of key checkpoints from downtime declaration to go-live](/images/sap-cutover.jpg)
+![SAP cutover timeline diagram — flow of key checkpoints from downtime declaration to go-live](/images/sap-cutover_en.png)
 *Figure 1. Cutover timeline and key checkpoints*
 
 ## Three things to prepare for a successful cutover

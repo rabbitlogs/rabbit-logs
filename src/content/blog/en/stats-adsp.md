@@ -28,7 +28,7 @@ Working with data, you hear this kind of thing a lot: "This should be fine." "It
 
 The exam is a single written test. No practical component. It's 3 subjects, 50 multiple-choice questions with four options each, 100 minutes, and costs 50,000 KRW to take.
 
-![Diagram of the ADsP's 3 subjects and passing criteria. Subject 1 is data understanding, Subject 2 is data analysis planning, Subject 3 is data analysis — passing requires an average of 60+ across all subjects and 40%+ in each.](/images/stats-adsp.jpg)
+![Diagram of the ADsP's 3 subjects and passing criteria. Subject 1 is data understanding, Subject 2 is data analysis planning, Subject 3 is data analysis — passing requires an average of 60+ across all subjects and 40%+ in each.](/images/stats-adsp_en.png)
 *Figure 1. ADsP's 3-subject structure and passing criteria (per K-DATA)*
 
 The subjects break down like this:

@@ -60,7 +60,7 @@ So is it the right answer for everyone to just use standard T-codes? Not really.
 
 In the end, the answer isn't "which side is right" — it's "how do you capture the strengths of both while minimizing the weaknesses."
 
-![Diagram comparing the characteristics of a standard T-code versus a Z-code (CBO)](/images/sap-cbo-z-program.jpg)
+![Diagram comparing the characteristics of a standard T-code versus a Z-code (CBO)](/images/sap-cbo-z-program_en.png)
 *Figure 1. The difference between a standard T-code (all-purpose tool) and Z-code (custom assistant)*
 
 Laying out the character, strengths, and weaknesses of each in a table makes the difference clearer.

@@ -32,7 +32,7 @@ When an order comes in through Sales (SD), Production (PP) needs to pick up the 
 
 ## Why it matters
 
-![Diagram of the integration test flow from sales order (SD) to production order (PP) to goods issue (MM) to invoice (FI), with the connection points marked](/images/sap-integration-test.jpg)
+![Diagram of the integration test flow from sales order (SD) to production order (PP) to goods issue (MM) to invoice (FI), with the connection points marked](/images/sap-integration-test_en.png)
 *Figure 1. The business flow crossing modules, and where the seams are*
 
 

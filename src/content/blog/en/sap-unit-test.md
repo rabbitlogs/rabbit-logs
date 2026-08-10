@@ -40,7 +40,7 @@ Say a developer just finished a new order-entry program. They check various scen
 
 ## Unit testing vs. integration testing
 
-![Table comparing unit testing and integration testing across five criteria, using the analogy of ingredient inspection vs. dish inspection](/images/sap-unit-test.jpg)
+![Table comparing unit testing and integration testing across five criteria, using the analogy of ingredient inspection vs. dish inspection](/images/sap-unit-test_en.png)
 *Figure 1. The difference between unit testing and integration testing — ingredient inspection vs. dish inspection*
 
 A lot of people mix up unit testing with the next stage, integration testing. Here's the clear distinction.

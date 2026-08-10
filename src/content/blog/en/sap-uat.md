@@ -48,7 +48,7 @@ The kitchen expert checks whether the equipment connects properly, while the per
 
 ## Four conditions for a successful UAT
 
-![Cards outlining the four conditions for a successful UAT: realistic scenarios, real data, user-led testing, prior training](/images/sap-uat.jpg)
+![Cards outlining the four conditions for a successful UAT: realistic scenarios, real data, user-led testing, prior training](/images/sap-uat_en.png)
 *Figure 1. Four conditions for a successful UAT*
 
 "Just gather the business users and have them try it once" doesn't cut it — that approach fails. A good UAT only happens with thorough preparation behind it.
