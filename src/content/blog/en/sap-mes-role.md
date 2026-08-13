@@ -57,7 +57,7 @@ With MES in place, you can tell in real time that "the defect rate on line 3 is 
 
 Let's trace how SAP and MES actually mesh together, following the flow of producing 50 servings of steak.
 
-![Diagram showing the roles and data flow between SAP (head chef) and MES (kitchen team)](/images/sap-mes-role.png)
+![Diagram showing the roles and data flow between SAP (head chef) and MES (kitchen team)](/images/sap-mes-role.jpg)
 *Figure 1. How SAP (planning) and MES (execution) divide roles and collaborate*
 
 **① Work instruction (SAP → MES)**

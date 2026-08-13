@@ -44,7 +44,7 @@ The setup is simple — it takes about a minute.
 
 1. Click the icon in the top-left corner of the SAP Logon screen, then go into the **Options** menu.
 
-![Screen showing the top-left icon in SAP being clicked to open the Options menu](/images/sap-signature-theme-02.jpg)
+![Screen showing the top-left icon in SAP being clicked to open the Options menu](/images/sap-signature-theme-01.jpg)
 *Figure 1. Top-left icon → entering the Options menu*
 
 2. In the left-hand menu tree, navigate to **Visual Design → Theme Settings**.

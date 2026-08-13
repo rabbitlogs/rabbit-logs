@@ -34,10 +34,10 @@ T-CODE 입력창에 스페이스바를 한 번 누르면 이전에 실행했던 
 
 이 기록은 SAP 서버가 아닌 내 PC에 저장됩니다. 같은 PC를 여러 사람이 쓰는 공용 환경이라면, 이전 사용자의 입력 기록이 내 화면에 뜰 수 있어 주의가 필요합니다.
 
-![로그인 화면 사용자 ID 필드에 자동완성 목록(rabbit3·rabbit2·rabbit1)이 뜬 SAP 화면](/images/sap-autocomplete-01.png)
+![로그인 화면 사용자 ID 필드에 자동완성 목록(rabbit3·rabbit2·rabbit1)이 뜬 SAP 화면](/images/sap-autocomplete-01.jpg)
 *그림 1. 사용자 ID 필드에 스페이스바를 누르면 이전에 입력한 값들이 목록으로 나타난다*
 
-![T-CODE 입력창에 자동완성 목록(mb51·mmbe·mm02 등)이 뜬 SAP 화면](/images/sap-autocomplete-02.png)
+![T-CODE 입력창에 자동완성 목록(mb51·mmbe·mm02 등)이 뜬 SAP 화면](/images/sap-autocomplete-02.jpg)
 *그림 2. T-CODE 입력창도 이전에 실행한 코드들을 목록으로 보여준다*
 
 ## 특정 항목만 삭제하는 법
@@ -50,7 +50,7 @@ T-CODE 입력창에 스페이스바를 한 번 누르면 이전에 실행했던 
 
 이 방법은 한 항목씩만 지울 수 있습니다. 잘못된 T-CODE나 테스트 과정에서 입력한 값 몇 개를 정리할 때는 이 방법이 가장 빠릅니다. 여러 항목을 한꺼번에 지우거나 기능 자체를 끄려면 옵션 화면으로 들어가야 합니다.
 
-![자동완성 목록에서 rabbit1 항목이 방향키로 선택된 SAP 화면](/images/sap-autocomplete-03.png)
+![자동완성 목록에서 rabbit1 항목이 방향키로 선택된 SAP 화면](/images/sap-autocomplete-03.jpg)
 *그림 3. 지울 항목을 ↑↓ 방향키로 선택한 뒤 Delete 키를 누르면 바로 삭제된다*
 
 ## 전체 삭제 또는 기능 끄기

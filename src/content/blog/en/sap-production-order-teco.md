@@ -67,7 +67,7 @@ So the actual sequence runs like this: **TECO (production ends) → settlement (
 
 Fortunately, TECO can be reversed. Open the order in `CO02` and go to **Functions → Restrict Processing → Revoke Technical Completion** to undo it — it sits directly below the **Restrict Processing → Technically Complete** menu used to trigger TECO in the first place.
 
-![CO02 Functions menu showing Technically Complete and Revoke Technical Completion listed under Restrict Processing](/images/sap-production-order-teco-02.png)
+![CO02 Functions menu showing Technically Complete and Revoke Technical Completion listed under Restrict Processing](/images/sap-production-order-teco-02.jpg)
 *Figure 2. CO02 Functions menu — TECO and its reversal under Restrict Processing*
 
 That said, **deleted reservations don't come back automatically.** You can put the pot back on the burner, but the ingredients you already cleared away don't reappear on their own. After reversing TECO, check `CO03` to confirm the material reservations and capacity requirements were restored as intended.
