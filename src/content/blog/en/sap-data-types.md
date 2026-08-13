@@ -28,7 +28,7 @@ First up is **configuration data**. Think of it as the operating rules you set b
 
 These rules are set once and rarely changed. But since they're the basic framework the whole system runs on, the entire operation stops if one is missing. If the rule for auto-assigning order numbers gets dropped, for instance, no one can register a new order. In SAP, this is set up in a screen called `SPRO` (IMG, Implementation Guide). Consultants or IT usually handle it, but it helps for regular practitioners to at least have a sense of "this might be a configuration issue."
 
-![Diagram comparing SAP's three data types to house operating rules, an ingredient reference sheet, and order records](/images/sap-data-types_en.png)
+![Diagram comparing SAP's three data types to house operating rules, an ingredient reference sheet, and order records](/images/sap-data-types.jpg)
 *Figure 1. SAP's three data types — operating rules and reference sheets come together to make the daily record*
 
 ## The ingredient reference sheet: master data

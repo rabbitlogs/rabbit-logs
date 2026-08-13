@@ -52,7 +52,7 @@ Ignoring these gaps and following Best Practice as-is creates two problems. Firs
 
 Best Practice isn't "the answer" — it's "a good starting point." The wise approach is to understand the standard thoroughly, then apply adjustments only where your company genuinely needs them.
 
-![SAP Best Practice flow — starting from the global standard process, going through Fit/Gap analysis, and arriving at company-specific configuration](/images/sap-best-practice_en.png)
+![SAP Best Practice flow — starting from the global standard process, going through Fit/Gap analysis, and arriving at company-specific configuration](/images/sap-best-practice.jpg)
 *Figure 1. The flow from Best Practice through Fit/Gap analysis to your company's final configuration*
 
 ## Where to find it and how to use it

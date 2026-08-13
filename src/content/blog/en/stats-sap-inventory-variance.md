@@ -48,7 +48,7 @@ Say a physical count for 5 items comes back like this.
 
 *Table 1. Example of per-item inventory variance*
 
-![Bar chart and statistics summary card showing per-item variance between SAP inventory and physical count](/images/stats-sap-inventory-variance_en.png)
+![Bar chart and statistics summary card showing per-item variance between SAP inventory and physical count](/images/stats-sap-inventory-variance.jpg)
 *Figure 1. Distribution of per-item inventory variance — teal is physical-count surplus, berry is physical-count shortfall*
 
 ### Average variance — reading the overall direction

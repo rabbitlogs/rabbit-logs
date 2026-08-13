@@ -75,7 +75,7 @@ It doesn't need to be elaborate. Four things attached to every decision are enou
 
 The fourth is the one that gets skipped most often, and needed most often.
 
-![Four things to leave behind every time a decision gets made — what was decided, what the alternatives were, why this one, what conditions apply](/images/sap-project-decision-log-01_en.jpg)
+![Four things to leave behind every time a decision gets made — what was decided, what the alternatives were, why this one, what conditions apply](/images/sap-project-decision-log-01.jpg)
 *Figure 1. Four things to leave behind every time a decision gets made*
 
 This record matters especially during [SAP Fit/Gap analysis: measuring the distance between standard and your restaurant](/en/blog/sap-fit-gap), when you're measuring the distance between the standard and your own way of working and deciding what to adjust. The reasoning behind that judgment needs to survive so the gap can be revisited later.

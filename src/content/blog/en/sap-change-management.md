@@ -50,7 +50,7 @@ Mapped onto the restaurant transition, it flows like this.
 
 > 💡 **Key point**: Knowing this curve lets you recognize "we're currently going through stage 2." Just knowing that everyone goes through this eases the psychological burden on the ground.
 
-![SAP change resistance curve — diagram of productivity and psychological state across shock, denial, anger, exploration, and integration stages](/images/sap-change-management_en.png)
+![SAP change resistance curve — diagram of productivity and psychological state across shock, denial, anger, exploration, and integration stages](/images/sap-change-management.jpg)
 *Figure 1. The change resistance curve team members experience during an SAP rollout*
 
 ## Three change management strategies

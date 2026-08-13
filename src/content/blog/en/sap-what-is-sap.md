@@ -33,7 +33,7 @@ Real companies usually don't work that way. Each department uses its own tools â
 
 Just as an order entered on the floor automatically flows to the kitchen, storeroom, and register, a single entry in SAP connects to every department that needs it.
 
-![Diagram showing the dining floor, storeroom, kitchen, and register all connecting in real time through a central SAP system](/images/sap-what-is-sap_en.png)
+![Diagram showing the dining floor, storeroom, kitchen, and register all connecting in real time through a central SAP system](/images/sap-what-is-sap.jpg)
 *Figure 1. How one entry connects every department â€” SAP's core structure, through a restaurant analogy*
 
 ## Starting with ERP

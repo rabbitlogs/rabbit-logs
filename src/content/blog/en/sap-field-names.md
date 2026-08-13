@@ -32,7 +32,7 @@ SAP field names work the same way. In SAP, "creating a production order" is like
 
 Today's main dish is the "production order" recipe card — the `AUFK` table. It's the core table holding a production order's header information. Let's look at what "ingredients" it contains.
 
-![Diagram mapping the AUFK table's key fields to recipe card ingredient names](/images/sap-field-names_en.png)
+![Diagram mapping the AUFK table's key fields to recipe card ingredient names](/images/sap-field-names.jpg)
 *Figure 1. AUFK table's key fields — read as recipe card ingredient names*
 
 Rather than listing fields at random, grouping ones with similar character makes the pattern easier to see. And writing out the original German alongside each one makes it instantly clear why those three letters ended up there.

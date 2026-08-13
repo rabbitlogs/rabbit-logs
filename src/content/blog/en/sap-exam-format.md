@@ -38,7 +38,7 @@ The revised SAP exam comes in two formats. One important thing: you don't get to
 
 In kitchen terms, a cooking certification has you actually cook (hands-on), while a manager certification has you role-play handling a customer situation. Both give you up to 3 hours, and you can take the same subject up to 4 times a year.
 
-![Diagram comparing SAP certification's system-based exam and AI scenario exam](/images/sap-exam-format-02_en.png)
+![Diagram comparing SAP certification's system-based exam and AI scenario exam](/images/sap-exam-format-02.jpg)
 *Figure 2. Comparing the two exam formats — system-based exam and AI scenario exam*
 
 ## System-based exam: completing tasks on a real server

@@ -69,7 +69,7 @@ The moment a customer order is entered at the dining room POS, it appears automa
 
 Same restaurant, same SAP system — but whether PI happened or not completely changes how the floor experiences it.
 
-![Comparison of restaurant operations before and after SAP PI — showing the broken manual workflow side by side with the SAP-integrated flow](/images/sap-pi-overview_en.png)
+![Comparison of restaurant operations before and after SAP PI — showing the broken manual workflow side by side with the SAP-integrated flow](/images/sap-pi-overview.jpg)
 *Figure 1. Restaurant operations before and after PI*
 
 ## How PI actually runs

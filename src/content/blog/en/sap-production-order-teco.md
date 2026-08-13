@@ -60,7 +60,7 @@ Even after TECO, things remain unresolved on the order. Knowing this in advance 
 
 So the actual sequence runs like this: **TECO (production ends) → settlement (cost ends) → CLSD (order closes).** CLSD is the final state that fully closes out an order once cost has been fully settled — it won't attach to an order where settlement hasn't finished.
 
-![Three-step flow showing a production order closing fully through TECO, settlement, and CLSD](/images/sap-production-order-teco-01_en.jpg)
+![Three-step flow showing a production order closing fully through TECO, settlement, and CLSD](/images/sap-production-order-teco-01.jpg)
 *Figure 1. Three steps to fully close a production order*
 
 ## Undoing it

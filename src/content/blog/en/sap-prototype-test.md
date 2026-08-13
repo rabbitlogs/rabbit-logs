@@ -30,7 +30,7 @@ When you open a new store, you don't jump straight into construction just becaus
 
 SAP is no different. Imagine pouring in all that time and budget to build a system, only to hear the user say, "this isn't what we asked for." That's a nightmare scenario. Prototype testing is the safety net that prevents it.
 
-![Three-stage flow of prototype testing — opening a trial store, business users trying it out, finalizing or revising the design — connected with arrows](/images/sap-prototype-test_en.png)
+![Three-stage flow of prototype testing — opening a trial store, business users trying it out, finalizing or revising the design — connected with arrows](/images/sap-prototype-test.jpg)
 *Figure 1. The flow of prototype testing — try it before you build it, and fix it early*
 
 ## Why you have to see the trial store

@@ -50,7 +50,7 @@ With this, MRP has everything it needs: the target (MPS), the recipe (BOM), and 
 
 ## How MRP calculates
 
-![Four-step flow diagram showing MRP calculating total requirements, net requirements, order timing, and the planned order](/images/sap-mrp_en.png)
+![Four-step flow diagram showing MRP calculating total requirements, net requirements, order timing, and the planned order](/images/sap-mrp.jpg)
 *Figure 1. MRP's four-step calculation, using the big kimchi-prep example*
 
 

@@ -30,7 +30,7 @@ Back to the example above: the mean of 3, 4, 5, 4, 14 is 6.0. Drop the 14, and i
 
 ==The mean treats every member of the group equally. The 14-day external procurement case and the 3-day case are weighted exactly the same.==
 
-![Bar chart showing how the mean shifts depending on whether the external procurement case is included or excluded](/images/stats-mean-trap-kpi_en.png)
+![Bar chart showing how the mean shifts depending on whether the external procurement case is included or excluded](/images/stats-mean-trap-kpi.jpg)
 *Figure 1. Mean of 6.0 days (KPI missed) with external procurement included vs. 4.0 days (KPI met) excluded*
 
 ## Is it an outlier, or a different population

@@ -67,7 +67,7 @@ Third, **CNF (confirmation)**. As each operation finishes, the results get repor
 
 Finally, once production is complete, the finished goods land in the warehouse through **goods receipt (GR)**. This triggers movement type 101, and the production order closes out with a technical completion (TECO) status.
 
-![SAP PP production flow — a diagram showing the step-by-step flow from master data through to production order completion](/images/sap-pp-overview_en.png)
+![SAP PP production flow — a diagram showing the step-by-step flow from master data through to production order completion](/images/sap-pp-overview.jpg)
 *Figure 1. Overview of the SAP PP planning and execution flow*
 
 ## Modules PP connects to

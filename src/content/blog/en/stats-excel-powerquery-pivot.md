@@ -40,7 +40,7 @@ Power Query is a data preprocessing tool built into Excel. No separate installat
 
 Power Query's core advantage is that **it records your steps**. Save a sequence like "convert this column to numbers, delete row 3, fill blank cells with the value above" and the next time you load a new file, the same steps run automatically. One click of Refresh, and you're done.
 
-![Three-step diagram of the SAP data analysis flow — from Power Query cleanup to pivot table analysis](/images/stats-excel-powerquery-pivot_en.png)
+![Three-step diagram of the SAP data analysis flow — from Power Query cleanup to pivot table analysis](/images/stats-excel-powerquery-pivot.jpg)
 *Figure 1. Three-step flow: SAP export → Power Query cleanup → pivot analysis*
 
 The main cleanup steps are these:

@@ -32,7 +32,7 @@ You can check an order's current status at a glance in the "Status" field on the
 
 ## The five core status codes
 
-![Flow diagram of the five production order status stages: CRTD, REL, CNF, DLV, TECO](/images/sap-production-order-status_en.png)
+![Flow diagram of the five production order status stages: CRTD, REL, CNF, DLV, TECO](/images/sap-production-order-status.jpg)
 *Figure 1. Production order status flowing like the sequence of preparing a dish*
 
 Let's walk through the five stages you'll run into most often in practice, mapped to the cooking process.

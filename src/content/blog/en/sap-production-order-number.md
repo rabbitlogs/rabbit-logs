@@ -42,7 +42,7 @@ For example, if production order number 10000001 was created at plant A, plant B
 
 Because of this, when multiple plants run on a single SAP system, number ranges are typically split and assigned by plant from the start. Setting plant A to use the 10-million range and plant B to use the 20-million range, for instance, prevents collisions.
 
-![Structure of SAP production order number ranges — showing client-level uniqueness and number range separation by plant](/images/sap-production-order-number_en.png)
+![Structure of SAP production order number ranges — showing client-level uniqueness and number range separation by plant](/images/sap-production-order-number.jpg)
 *Figure 1. Client-level uniqueness and number range separation by plant*
 
 ## What happens when a number range runs out

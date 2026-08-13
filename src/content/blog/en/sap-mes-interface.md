@@ -56,7 +56,7 @@ PI/PO adds one more layer of structure compared to RFC, but there are three reas
 
 These three strengths are exactly why large-scale manufacturing projects tend to favor PI/PO.
 
-![Comparison diagram of SAP MES interface structures — RFC vs. PI/PO connection methods](/images/sap-mes-interface-01_en.png)
+![Comparison diagram of SAP MES interface structures — RFC vs. PI/PO connection methods](/images/sap-mes-interface-01.jpg)
 *Figure 1. RFC versus PI/PO structure*
 
 ## Synchronous vs. asynchronous: choosing a conversation style
@@ -67,7 +67,7 @@ Once you've settled on a connection method (RFC or PI/PO), the next decision is 
 
 **Asynchronous**: the "reply whenever" approach. SAP dumps hundreds of today's production plans onto MES at once and moves on to the next task without waiting for a response. This fits large-volume production plans that need to get delivered reliably.
 
-![Comparison diagram of SAP MES interface communication styles — synchronous vs. asynchronous](/images/sap-mes-interface-02_en.png)
+![Comparison diagram of SAP MES interface communication styles — synchronous vs. asynchronous](/images/sap-mes-interface-02.jpg)
 *Figure 2. Synchronous versus asynchronous communication*
 
 > ⚠️ **Note**: With asynchronous communication, SAP can't immediately confirm right after sending whether MES actually received it. A separate monitoring or error-alert system needs to be designed alongside it.
