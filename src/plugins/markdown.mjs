@@ -112,7 +112,13 @@ function headingText(node) {
 // h2에는 본문과 동일한 번호(01, 02…)를 붙인다. 단 "Rabbit의 한 끗"은 본문에서 카드로
 // 옮겨지며 번호가 빠지므로, 목차에서도 번호를 붙이지 않는다(본문과 항상 일치시킴).
 export function remarkInlineToc() {
-  return (tree) => {
+  return (tree, file) => {
+    // 영문 글 여부를 파일 경로로 판별한다(remarkEnImages와 동일한 방식).
+    const filePath = (file?.history?.[0] || file?.path || '').replace(/\\/g, '/');
+    const isEn = filePath.includes('/content/blog/en/');
+    const tocLabel = isEn ? 'Contents' : '목차';
+    const tocHint = isEn ? '— tap a heading to jump there' : '— 클릭하면 해당 위치로 이동해요';
+
     const slugger = new GithubSlugger();
     const items = [];
     visit(tree, 'heading', (node) => {
@@ -155,7 +161,7 @@ export function remarkInlineToc() {
             return `<li><a href="#${it.slug}"><span class="toc-num">${num}</span>${it.text}</a></li>`;
           })
           .join('');
-        const html = `<nav class="toc" aria-label="목차"><p class="toc-title">목차 <span class="toc-hint">— 클릭하면 해당 위치로 이동해요</span></p><ul>${lis}</ul></nav>`;
+        const html = `<nav class="toc" aria-label="${tocLabel}"><p class="toc-title">${tocLabel} <span class="toc-hint">${tocHint}</span></p><ul>${lis}</ul></nav>`;
         parent.children.splice(index, 1, { type: 'html', value: html });
       }
     });

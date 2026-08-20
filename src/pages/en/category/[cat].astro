@@ -64,7 +64,7 @@ const posts = allPosts.slice(0, PER_PAGE);
           lang="en"
         />
         {/* Ads after the 3rd and 6th posts (2 ads for 8 posts, none after the last post) */}
-        {(i === 2 || i === 5) && <AdSenseList />}
+        {(i === 2 || i === 5) && <AdSenseList lang="en" />}
       </>
     ))}
 

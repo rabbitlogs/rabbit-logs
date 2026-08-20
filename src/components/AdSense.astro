@@ -7,10 +7,12 @@
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
 const AD_SLOT = '3094787370';
+const { lang = 'ko' } = Astro.props;
+const adLabel = lang === 'en' ? 'Advertisement' : '광고';
 ---
 
-<div class="ad-slot" aria-label="광고">
-  <span class="ad-label">광고</span>
+<div class="ad-slot" aria-label={adLabel}>
+  <span class="ad-label">{adLabel}</span>
   <ins
     class="adsbygoogle"
     style="display:block;"

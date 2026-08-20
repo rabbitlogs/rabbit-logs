@@ -261,7 +261,7 @@ if (slug) {
       ※ 마지막 광고는 본문(.prose)이 아니라 태그(.post-tags) 다음, article 끝에 둔다.
       ※ 광고가 채워진 뒤 iframe 실제 높이를 읽어 ins 높이를 맞춘다(모바일 빈 공간 제거).
     -->
-    <template id="ad-template"><AdSense /></template>
+    <template id="ad-template"><AdSense lang={lang} /></template>
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
