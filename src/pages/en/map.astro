@@ -245,7 +245,7 @@ const graphJson = JSON.stringify(graphData);
                 return;
               }
               if (touchActiveId === d.id) {
-                window.location.href = `/en/blog/${d.id}`;
+                window.location.href = `/en/blog/${d.id}/`;
               } else {
                 highlight(d.id);
                 touchActiveId = d.id;
@@ -257,7 +257,7 @@ const graphJson = JSON.stringify(graphData);
               .on('mouseleave', () => applyFilters())
               .on('click', (ev, d) => {
                 ev.stopPropagation();
-                if (!d.isTag) window.location.href = `/en/blog/${d.id}`;
+                if (!d.isTag) window.location.href = `/en/blog/${d.id}/`;
               });
           }
 

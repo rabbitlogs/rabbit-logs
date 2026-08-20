@@ -56,7 +56,7 @@ const posts = allPosts.slice(0, PER_PAGE);
     {posts.map((post, i) => (
       <>
         <PostCard
-          href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
+          href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}/`}
           title={post.data.title}
           description={post.data.description}
           category={post.data.category}

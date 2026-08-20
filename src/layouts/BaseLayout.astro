@@ -9,7 +9,7 @@ const nav = {
     study: 'SAP 학습자료', studyShort: '학습자료',
     stats: '통계·데이터', statsShort: '통계·데이터',
     about: '소개 & 문의', other: 'EN', otherHref: '/en/', privacy: '개인정보처리방침', terms: '이용약관',
-    mapLabel: '글 지도', rssLabel: 'RSS 피드', mapHref: '/map', rssHref: '/rss.xml',
+    mapLabel: '글 지도', rssLabel: 'RSS 피드', mapHref: '/map/', rssHref: '/rss.xml',
   },
   en: {
     project: 'SAP Projects', projectShort: 'Projects',
@@ -17,11 +17,22 @@ const nav = {
     study: 'SAP Study Notes', studyShort: 'Study Notes',
     stats: 'Stats & Data', statsShort: 'Stats & Data',
     about: 'About & Contact', other: 'KO', otherHref: '/', privacy: 'Privacy Policy', terms: 'Terms of Use',
-    mapLabel: 'Site map', rssLabel: 'RSS feed', mapHref: '/en/map', rssHref: '/en/rss.xml',
+    mapLabel: 'Site map', rssLabel: 'RSS feed', mapHref: '/en/map/', rssHref: '/en/rss.xml',
   },
 };
 const t = nav[lang];
 const home = lang === 'en' ? '/en/' : '/';
+
+// ── SEO: canonical + hreflang ──
+// trailingSlash:'always' 이므로 경로 끝은 항상 / 로 맞춘다.
+// ko 경로와 en 경로를 서로 짝지어 hreflang 상호참조를 만든다.
+const rawPath = Astro.url.pathname;
+const path = rawPath.endsWith('/') ? rawPath : rawPath + '/';
+const koPath = path.startsWith('/en/') ? path.replace('/en/', '/') : path;
+const enPath = path.startsWith('/en/') ? path : '/en' + path;
+const canonicalUrl = new URL(path, Astro.site).href;
+const koUrl = new URL(koPath, Astro.site).href;
+const enUrl = new URL(enPath, Astro.site).href;
 ---
 
 <!doctype html>
@@ -32,6 +43,10 @@ const home = lang === 'en' ? '/en/' : '/';
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="naver-site-verification" content="5ae106a19220bcd3114005c35125285f1c4e4b70" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="ko" href={koUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={koUrl} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="alternate" type="application/rss+xml" title="Rabbit Logs RSS" href={t.rssHref} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -83,11 +98,11 @@ const home = lang === 'en' ? '/en/' : '/';
           </a>
         </div>
         <nav class="nav">
-          <a href={`${home}category/project`}><span class="lbl-full">{t.project}</span><span class="lbl-short">{t.projectShort}</span></a>
-          <a href={`${home}category/operations`}><span class="lbl-full">{t.operations}</span><span class="lbl-short">{t.operationsShort}</span></a>
-          <a href={`${home}category/study`}><span class="lbl-full">{t.study}</span><span class="lbl-short">{t.studyShort}</span></a>
-          <a href={`${home}category/stats`}><span class="lbl-full">{t.stats}</span><span class="lbl-short">{t.statsShort}</span></a>
-          <a href={`${home}about`}>{t.about}</a>
+          <a href={`${home}category/project/`}><span class="lbl-full">{t.project}</span><span class="lbl-short">{t.projectShort}</span></a>
+          <a href={`${home}category/operations/`}><span class="lbl-full">{t.operations}</span><span class="lbl-short">{t.operationsShort}</span></a>
+          <a href={`${home}category/study/`}><span class="lbl-full">{t.study}</span><span class="lbl-short">{t.studyShort}</span></a>
+          <a href={`${home}category/stats/`}><span class="lbl-full">{t.stats}</span><span class="lbl-short">{t.statsShort}</span></a>
+          <a href={`${home}about/`}>{t.about}</a>
         </nav>
       </div>
     </header>
@@ -96,9 +111,9 @@ const home = lang === 'en' ? '/en/' : '/';
 
     <footer class="site-footer"><div class="wrap">
       <nav class="footer-links">
-        <a href={`${home}about`}>{t.about}</a>
-        <a href={`${home}privacy`}>{t.privacy}</a>
-        <a href={`${home}terms`}>{t.terms}</a>
+        <a href={`${home}about/`}>{t.about}</a>
+        <a href={`${home}privacy/`}>{t.privacy}</a>
+        <a href={`${home}terms/`}>{t.terms}</a>
       </nav>
       <p>Hop! Log! Repeat! · © 2025 Rabbit Logs</p>
     </div></footer>

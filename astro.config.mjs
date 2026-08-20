@@ -7,6 +7,7 @@ import { remarkHighlight, remarkInlineToc, remarkTldrBox, remarkEnImages } from 
 
 export default defineConfig({
   site: 'https://rabbitlogs.com',
+  trailingSlash: 'always',
   integrations: [sitemap()],
   build: {
     inlineStylesheets: 'always',

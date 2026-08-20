@@ -61,7 +61,7 @@ const prevUrl = page.currentPage === 2 ? `/category/${cat}/` : page.url.prev;
     {posts.map((post, i) => (
       <>
         <PostCard
-          href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
+          href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}/`}
           title={post.data.title}
           description={post.data.description}
           category={post.data.category}

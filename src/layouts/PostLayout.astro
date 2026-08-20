@@ -13,8 +13,8 @@ const catName = {
   en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' },
 };
 const miniMapText = {
-  ko: { label: '🗺️ 이 글과 연결된 글', allLink: '전체 지도 보기 →', mapHref: '/map', prerequisite: '선행', related: '관련', deepens: '심화' },
-  en: { label: '🗺️ Related articles', allLink: 'View full map →', mapHref: '/en/map', prerequisite: 'Prerequisite', related: 'Related', deepens: 'Deep dive' },
+  ko: { label: '🗺️ 이 글과 연결된 글', allLink: '전체 지도 보기 →', mapHref: '/map/', prerequisite: '선행', related: '관련', deepens: '심화' },
+  en: { label: '🗺️ Related articles', allLink: 'View full map →', mapHref: '/en/map/', prerequisite: 'Prerequisite', related: 'Related', deepens: 'Deep dive' },
 };
 const mmt = miniMapText[lang] || miniMapText.ko;
 const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', {
@@ -25,7 +25,7 @@ const dateStr = new Date(pubDate).toLocaleDateString(lang === 'en' ? 'en-US' : '
 // 검색엔진이 이 글의 제목, 저자, 작성일, 이미지를 명확히 인식하도록 돕는 메타데이터.
 // 화면에는 아무 것도 렌더링되지 않고, head에 application/ld+json 스크립트로만 삽입된다.
 const siteUrl = 'https://rabbitlogs.com';
-const pageUrl = lang === 'en' ? siteUrl + '/en/blog/' + slug : siteUrl + '/blog/' + slug;
+const pageUrl = lang === 'en' ? siteUrl + '/en/blog/' + slug + '/' : siteUrl + '/blog/' + slug + '/';
 const ogImage = thumbnail ? siteUrl + thumbnail : siteUrl + '/og-thumbnail.jpg';
 const isoDate = new Date(pubDate).toISOString();
 
@@ -195,7 +195,7 @@ if (slug) {
           <circle cx={miniMap.center.x} cy={miniMap.center.y} r="9" fill={catColor[miniMap.center.category]} stroke="#fff" stroke-width="1.5" />
           <text x={miniMap.center.x} y={miniMap.center.y + 22} text-anchor="middle" class="mm-center-label">{miniMap.center.title}</text>
           {miniMap.neighbors.map((n) => (
-            <a href={`${lang === 'en' ? '/en' : ''}/blog/${n.slug}`}>
+            <a href={`${lang === 'en' ? '/en' : ''}/blog/${n.slug}/`}>
               <circle cx={n.x} cy={n.y} r="6" fill={catColor[n.category]} stroke="#fff" stroke-width="1.2" />
               <text x={n.x} y={n.y + (n.y > miniMap.center.y ? 16 : -10)} text-anchor="middle" class="mm-label">{n.title}</text>
             </a>

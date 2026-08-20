@@ -28,7 +28,7 @@ const posts = (await getCollection('blog'))
     <h2 class="section-title">최신 글</h2>
     {posts.map((post) => (
       <PostCard
-        href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}`}
+        href={`/blog/${post.id.replace('ko/', '').replace('.md', '')}/`}
         title={post.data.title}
         description={post.data.description}
         category={post.data.category}
