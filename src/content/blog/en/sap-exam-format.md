@@ -47,6 +47,8 @@ This exam isn't a simulated screen — you log into an actual SAP cloud server a
 
 The exam consists of about 8 major hands-on tasks, each broken into sub-tasks. You're given 3 hours on the clock, but if your practical skills are solid, it's realistically a 40-minute-to-1-hour exam. The grading standard is essentially "can you go into the menu and set up the instance following the guide," so for someone who's practiced, there are no tricks — if anything, it's fairly intuitive.
 
+> 💡 **Update**: when I actually took C_TS452 (MM), even after plenty of practice it took 80–90 minutes just to work through the tasks without getting stuck, and about 2 hours including verification before submitting. If the module is new to you, budget more time. I wrote up the details in [my first C_TS452 attempt review](/en/blog/sap-mm-c-ts452-certification-2).
+
 The flow goes: Enroll → review instructions → Access Practice System to launch the server → complete the tasks. But there are two traps you absolutely need to know about.
 
 > ⚠️ **Trap 1 — the `Confirm completion` button**: This button at the bottom of the screen doesn't mean "one task is done" — it means **"submit the entire exam, final."** Click it after finishing just one task, and the exam ends immediately with no way to undo it. Only click it once you've completed every single task.
@@ -71,7 +73,7 @@ If you pass, you'll get an email within 2 weeks with instructions for claiming y
 
 Since it's a hands-on exam, memorizing past questions doesn't work anymore, and no sample questions are provided either. So preparation really comes down to one thing: SAP Learning Hub.
 
-The Learning Hub includes a practice server identical to the actual exam environment, along with hands-on guide materials. Repeating the steps in the guide until they're second nature is the most reliable path — you're essentially rehearsing the exact environment you'll face in the exam room. Whether it's worth getting certified at all, and what it costs, is covered in [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification).
+The Learning Hub includes a practice server identical to the actual exam environment, along with hands-on guide materials. Repeating the steps in the guide until they're second nature is the most reliable path — you're essentially rehearsing the exact environment you'll face in the exam room. Whether it's worth getting certified at all, and what it costs, is covered in [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification).
 
 ## Rabbit's Takeaway
 
@@ -83,7 +85,7 @@ It's gone from an exam you pass by memorizing and guessing to one you pass by ha
 
 **Read more**
 
-- [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)
+- [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification)
 - [SAP certification vs. CPIM: why you learn your customer's palate before the recipe](/en/blog/sap-cpim)
 
 <!-- Related posts: prerequisite=sap-certification; related=sap-cpim; deepens= -->

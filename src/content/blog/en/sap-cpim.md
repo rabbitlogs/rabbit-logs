@@ -11,7 +11,7 @@ tags: ["SAPLearning", "CPIM", "SAPCertification", "SCM"]
 
 Hi, this is Rabbit! 🐰
 
-After I posted [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification), I got a lot of questions along the lines of "what else should I study to become an SAP expert?" Today's answer is one certification that's deeply connected to SAP: **[CPIM](https://www.ascm.org/learning-development/certifications-credentials/cpim/)** (Certified in Planning and Inventory Management).
+After I posted [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification), I got a lot of questions along the lines of "what else should I study to become an SAP expert?" Today's answer is one certification that's deeply connected to SAP: **[CPIM](https://www.ascm.org/learning-development/certifications-credentials/cpim/)** (Certified in Planning and Inventory Management).
 
 Among people actually working in SAP PP (Production Planning), it's often recommended even more strongly than SAP certification itself. I have a personal story behind why I say this.
 
@@ -86,7 +86,7 @@ Honestly, I plan to take it on myself someday. But given the time and money requ
 
 **Read more**
 
-- [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)
+- [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification)
 - [SAP certification exams: from a written test to a hands-on kitchen exam room](/en/blog/sap-exam-format)
 
 <!-- Related posts: prerequisite=sap-certification; related=sap-exam-format; deepens= -->

@@ -255,9 +255,9 @@ if (slug) {
     </script>
 
     <!--
-      광고 원본 1칸(숨김). JS가 본문 글자수를 재서 2~3개로 복제·배치한다.
-        0~3,500자 : 2개 (첫 소제목 뒤 + 태그 뒤)
-        3,500자+  : 3개 (도입 뒤 + 중간 소제목 뒤 + 태그 뒤)
+      광고 원본 1칸(숨김, 인아티클 광고). JS가 본문 글자수와 소제목 수를 재서 2~3개로 복제·배치한다.
+        기본          : 2개 (두 번째 소제목 앞 + 태그 뒤)
+        2,000자 이상이고 소제목 4개 이상 : 3개 (두 번째 소제목 앞 + 그보다 2칸 이상 뒤의 중간 소제목 앞 + 태그 뒤)
       ※ 마지막 광고는 본문(.prose)이 아니라 태그(.post-tags) 다음, article 끝에 둔다.
       ※ 광고가 채워진 뒤 iframe 실제 높이를 읽어 ins 높이를 맞춘다(모바일 빈 공간 제거).
     -->
@@ -271,9 +271,10 @@ if (slug) {
         const tpl = document.getElementById('ad-template');
         if (!article || !prose || !tpl) return;
 
-        // 1) 본문 글자수로 광고 개수 결정 (1개짜리 없음)
+        // 1) 본문 글자수·소제목 수로 광고 개수 결정 (1개짜리 없음)
         const len = (prose.textContent || '').replace(/\s/g, '').length;
-        const count = len >= 3500 ? 3 : 2;
+        const h2s = Array.from(prose.querySelectorAll('h2'));
+        const count = len >= 2000 && h2s.length >= 4 ? 3 : 2;
 
         const makeAd = () => tpl.content.firstElementChild.cloneNode(true);
         const placed = [];
@@ -291,24 +292,19 @@ if (slug) {
           placed.push(ad);
         };
 
-        const h2s = prose.querySelectorAll('h2');
+        // 첫 광고: 두 번째 소제목 앞(체감 광고 밀도를 낮추기 위해 한 칸 미룸).
+        // 소제목이 1개뿐인 짧은 글은 첫 소제목 앞으로 폴백한다.
+        const firstIdx = h2s.length >= 2 ? 1 : 0;
+        if (h2s[firstIdx]) insertBeforeInProse(h2s[firstIdx]);
 
-        // 첫 광고 위치: 두 번째 소제목 앞으로 한 칸 미룸(체감 광고 밀도를 낮추기 위함).
-        // 소제목이 1개뿐인 짧은 글은 h2s[1]이 없으므로 h2s[0]으로 폴백한다.
-        const firstAdAnchor = h2s[1] || h2s[0];
-
-        if (count === 2) {
-          if (firstAdAnchor) insertBeforeInProse(firstAdAnchor);
-          appendAfterTags();
-        } else {
-          if (firstAdAnchor) insertBeforeInProse(firstAdAnchor);
-          if (h2s.length >= 3) {
-            insertBeforeInProse(h2s[Math.floor(h2s.length / 2)]);
-          } else if (h2s[1] && h2s[1] !== firstAdAnchor) {
-            insertBeforeInProse(h2s[1]);
-          }
-          appendAfterTags();
+        // 중간 광고(3개일 때만): 첫 광고와 최소 2칸 떨어진 중간 소제목 앞.
+        // 소제목이 4개뿐이면 마지막 소제목("Rabbit의 한 끗") 앞에 들어간다.
+        if (count === 3) {
+          const midIdx = Math.max(firstIdx + 2, Math.floor(h2s.length / 2));
+          if (midIdx < h2s.length) insertBeforeInProse(h2s[midIdx]);
         }
+
+        appendAfterTags();
 
         // 2) 애드센스 렌더 요청
         placed.forEach(() => {
@@ -334,9 +330,10 @@ if (slug) {
               clearInterval(checker);
             } else if (iframe && iframe.offsetHeight > 0) {
               clearInterval(checker);     // 광고 정상 표시 → 그대로 둠
-            } else if (tries >= 12) {
-              // 약 3초(250ms*12) 지나도 광고(iframe)가 안 생기면
+            } else if (tries >= 40) {
+              // 약 10초(250ms*40) 지나도 광고(iframe)가 안 생기면
               // 광고차단 프로그램 등으로 못 뜬 것 → 빈 박스 제거
+              // (3초는 느린 모바일 회선에서 늦게 뜨는 광고까지 지워버려 10초로 늘림)
               slot.remove();
               clearInterval(checker);
             }

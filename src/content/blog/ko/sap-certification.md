@@ -1,7 +1,7 @@
 ---
-title: "SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법"
-mapTitle: "SAP 자격증 가이드"
-description: SAP 자격증 응시 자격부터 교육비, Stay Certified 갱신 비용, 그리고 정말 필요한지까지 입문자 눈높이로 정리했습니다.
+title: "SAP 자격증 종류·비용·응시 방법, 자격증이라는 메뉴판 읽는 법"
+mapTitle: "SAP 자격증 종류·비용"
+description: "2026년 기준 SAP 자격증 종류와 응시 비용, 시험 방식, 매년 갱신하는 Stay Certified까지 정리했습니다. 실제 MM 자격증 합격 후기도 함께 연결했습니다."
 pubDate: "2026-04-10"
 category: study
 series: 레스토랑으로 배우는 SAP
@@ -77,6 +77,8 @@ SAP 제품이 빠르게 바뀌다 보니, 이제 모든 자격증 보유자는 �
 
 반대로 신중해야 할 경우도 있습니다. 경력 많은 현직자라면 자격증보다 프로젝트 성공 경험이 훨씬 강력한 무기입니다. 자격증이 연봉 인상을 보장하지는 않습니다. 비용이 부담되는 분이라면 그 돈으로 다른 기술을 배우거나 실무 경험을 쌓는 편이 나을 수 있습니다.
 
+제가 직접 MM 자격증(C_TS452)에 응시해 세 번 만에 합격한 과정은 [SAP MM 자격증 응시 후기 연재](/blog/sap-mm-c-ts452-certification-1)에 정리했습니다. 실기 시험이 실제로 어떤지 궁금하다면 함께 보세요.
+
 ## Rabbit의 한 끗
 
 이제 SAP 자격증은 단순한 스펙 한 줄이 아니라, 지속적인 학습과 투자를 약속하는 '내 전문성에 대한 멤버십'이 되었습니다. 레스토랑 위생등급을 매년 갱신하듯, 따는 순간이 끝이 아니라 시작인 셈입니다.
@@ -89,5 +91,6 @@ SAP 제품이 빠르게 바뀌다 보니, 이제 모든 자격증 보유자는 �
 
 - [SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장](/blog/sap-exam-format)
 - [SAP 자격증 vs CPIM, 조리법보다 손님 입맛을 먼저 배우는 이유](/blog/sap-cpim)
+- [SAP MM 자격증 C_TS452 시험 구조, 실습 주방에 들어가기 전에](/blog/sap-mm-c-ts452-certification-1)
 
-<!-- 관련글: prerequisite=; related=; deepens=sap-exam-format,sap-cpim -->
+<!-- 관련글: prerequisite=; related=sap-mm-c-ts452-certification-1; deepens=sap-exam-format,sap-cpim -->

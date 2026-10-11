@@ -11,7 +11,7 @@ tags: ["SAP학습자료", "CPIM", "SAP자격증", "SCM"]
 
 안녕하세요, Rabbit입니다! 🐰
 
-지난 [SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법](/blog/sap-certification)를 올린 뒤, "SAP 전문가가 되려면 또 무엇을 공부해야 하느냐"는 질문을 많이 받았습니다. 오늘은 그 답으로, SAP와 깊이 연결된 자격증 하나를 소개합니다. 바로 **[CPIM](https://www.ascm.org/learning-development/certifications-credentials/cpim/)**(Certified in Planning and Inventory Management)입니다.
+지난 [SAP 자격증 종류·비용·응시 방법, 자격증이라는 메뉴판 읽는 법](/blog/sap-certification)를 올린 뒤, "SAP 전문가가 되려면 또 무엇을 공부해야 하느냐"는 질문을 많이 받았습니다. 오늘은 그 답으로, SAP와 깊이 연결된 자격증 하나를 소개합니다. 바로 **[CPIM](https://www.ascm.org/learning-development/certifications-credentials/cpim/)**(Certified in Planning and Inventory Management)입니다.
 
 특히 SAP PP(생산 계획) 현직자들 사이에서, SAP 자격증보다 더 강하게 추천받는 자격증입니다. 제가 이렇게 말씀드리는 데는 개인적인 경험이 있습니다.
 
@@ -86,7 +86,7 @@ CPIM은 SAP 자격증의 '대안'이 아닙니다. 오히려 SAP 전문가의 �
 
 **더 읽어보기**
 
-- [SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법](/blog/sap-certification)
+- [SAP 자격증 종류·비용·응시 방법, 자격증이라는 메뉴판 읽는 법](/blog/sap-certification)
 - [SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장](/blog/sap-exam-format)
 
 <!-- 관련글: prerequisite=sap-certification; related=sap-exam-format; deepens= -->

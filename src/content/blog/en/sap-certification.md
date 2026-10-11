@@ -1,7 +1,7 @@
 ---
-title: "SAP certification guide: how to actually read the certification menu"
-mapTitle: "SAP certification guide"
-description: "Covers SAP certification eligibility, training costs, Stay Certified renewal fees, and whether you actually need one, from a beginner's perspective."
+title: "SAP certification types, costs, and how to take the exam: reading the certification menu"
+mapTitle: "SAP certification types and costs"
+description: "SAP certification types, exam costs, exam format, and annual Stay Certified renewal as of 2026, with links to my own SAP MM certification exam review."
 pubDate: "2026-04-10"
 category: study
 series: Learning SAP through a restaurant
@@ -77,6 +77,8 @@ Recommended cases: for job seekers and new grads without hands-on experience, it
 
 On the flip side, there are cases worth being cautious about. For experienced professionals, project success stories are a far stronger asset than a certification. Certification doesn't guarantee a raise. If the cost is a real burden, that money might be better spent learning a different skill or gaining hands-on experience.
 
+I took the MM certification (C_TS452) myself and passed on my third attempt; I wrote up the whole process in [my SAP MM certification exam review series](/en/blog/sap-mm-c-ts452-certification-1). If you want to know what the hands-on exam is really like, read it alongside this one.
+
 ## Rabbit's Takeaway
 
 SAP certification is no longer just a line on a resume — it's become a "membership in your own expertise" that requires ongoing learning and investment. Like renewing a restaurant's hygiene rating every year, earning it isn't the finish line — it's the start.
@@ -89,5 +91,6 @@ So reframe the question, and the decision gets easier. Instead of "should I get 
 
 - [SAP certification exams: from a written test to a hands-on kitchen exam room](/en/blog/sap-exam-format)
 - [SAP certification vs. CPIM: why you learn your customer's palate before the recipe](/en/blog/sap-cpim)
+- [SAP MM certification C_TS452 exam structure: before you step into the practice kitchen](/en/blog/sap-mm-c-ts452-certification-1)
 
-<!-- Related posts: prerequisite=; related=; deepens=sap-exam-format,sap-cpim -->
+<!-- Related posts: prerequisite=; related=sap-mm-c-ts452-certification-1; deepens=sap-exam-format,sap-cpim -->

@@ -100,7 +100,7 @@ In [SAP certification exams](/en/blog/sap-exam-format) I wrote that the exam now
 **Read more**
 
 - [SAP certification exams: from a written test to a hands-on kitchen exam room](/en/blog/sap-exam-format)
-- [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)
-- [SAP certification vs. CPIM: why you learn your customer's palate before the recipe](/en/blog/sap-cpim)
+- [SAP MM certification C_TS452 first attempt failed: cooking from a mistranslated recipe](/en/blog/sap-mm-c-ts452-certification-2)
+- [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification)
 
-<!-- Related posts: prerequisite=sap-exam-format; related=sap-certification,sap-cpim; deepens= -->
+<!-- Related posts: prerequisite=sap-exam-format; related=sap-certification,sap-cpim; deepens=sap-mm-c-ts452-certification-2 -->
