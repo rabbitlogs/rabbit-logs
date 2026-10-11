@@ -60,7 +60,7 @@ T_2_01 = {
         "sub": "몰라서가 아니라, 해내지 못해서",
         "head": ("원인", "무슨 일이 있었나", "그 뒤로 바꾼 것"),
         "rows": [
-            ("기계번역 지침", "한국어 지침에서 수량과 날짜가 뒤바뀌어 있었다", "지침은 영어로 읽는다"),
+            ("기계번역 지침", "번역된 숫자와 구성이 원문과 다르게 읽혔다", "지침은 영어로 읽는다"),
             ("한 과제에 쏠린 시간", "설정 비중이 큰 과제 하나에 약 100분을 썼다", "3분 룰: 한 화면에서 3분 막히면 넘어간다"),
             ("저장 전 대조 없음", "0 하나 더, 필수 필드 누락, 습관대로 한 단계 추가", "Save 전에 지침과 필드를 1:1로 대조한다"),
         ],
@@ -71,7 +71,7 @@ T_2_01 = {
         "head": ("Cause", "What happened", "What I changed"),
         "rows": [
             ("Machine-translated instructions",
-             "Quantities and dates were swapped in the Korean version",
+             "Numbers and structure read differently from the original",
              "Read the instructions in English"),
             ("Time sink",
              "About 100 minutes went into one configuration-heavy task",

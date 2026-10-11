@@ -18,7 +18,7 @@ On September 14, 2026, I took my first **SAP MM certification, C_TS452** exam. T
 In [SAP certification exams](/en/blog/sap-exam-format) I once wrote that "if your practical skills are solid, it's realistically a 40-minute-to-1-hour exam." At least for a module I was learning for the first time, that was not true. Even on my third attempt, after plenty of practice, simply working through the tasks without getting stuck took 80–90 minutes, and with verification before submitting it took about 2 hours. This post is also that correction.
 
 > **Three-line summary**
-> - The first cause was the machine-translated Korean instructions. Sentences with swapped quantities and dates turned straight into zero points.
+> - The first cause was the machine-translated Korean instructions. Places where numbers and structure read differently from the original turned straight into zero points.
 > - I spent about 100 minutes on one configuration-heavy task and never touched the last tasks.
 > - The biggest cause was not checking against the instructions before saving. I lost more points on things I knew than on things I didn't.
 
@@ -28,10 +28,7 @@ In [SAP certification exams](/en/blog/sap-exam-format) I once wrote that "if you
 
 When the exam starts, you can choose the language of the task instructions. I naturally chose Korean, and that was my first mistake.
 
-The Korean instructions are machine-translated. Most of it is readable, but **some of the numbers and structure that the grading depends on were distorted**. When I later compared them with the English version, I found differences like these.
-
-- A sentence where the quantity and the date were swapped in translation
-- A sentence where a setup with "two items" in the original read like "one item" in Korean
+The Korean instructions are machine-translated. Most of it is readable, but **some of the numbers and structure that the grading depends on read differently from the original**. Reordered sentences made it unclear which value went where, or made a setup read differently from what the original meant. Reading the English original would have avoided that confusion.
 
 As I explained in [Part 1](/en/blog/sap-mm-c-ts452-certification-1), a SyBA exam checks whether the saved values match the instructions exactly. If the translation is wrong, you score zero even when you follow it. And because later tasks use the output of earlier ones, one wrong first step brings down everything after it. I lost an entire group of tasks this way.
 
@@ -48,10 +45,10 @@ In my first attempt I spent **about 100 minutes** on one configuration-heavy gro
 This was the most painful cause. Chased by the clock, I filled in a screen, pressed Save, and moved straight on. The results looked like this.
 
 - One extra zero typed into an amount field
-- A required field left out, creating an item of the wrong type
+- A required field left out, saving a result different from what was intended
 - One extra step, not in the instructions, done out of work habit, so a later task did not behave as intended
 
-The last one stuck with me. At work there are settings that make life easier, but the exam had built its later tasks on the assumption that those settings were not there. It is like adding a seasoning that is not in the recipe because you think the customer will like it. **It is a trap that people who know the system well fall into most easily.**
+The last one stuck with me. At work there are habits that make life easier, but the instructions assumed the process would run without that step. It is like adding a seasoning that is not in the recipe because you think the customer will like it. **It is a trap that people who know the system well fall into most easily.**
 
 ## The first attempt in numbers
 
@@ -65,14 +62,16 @@ I lost more on **things I knew but got wrong** than on things I did not know.
 
 The failure stung, but it clearly gave me something.
 
-1. **A feel for the real exam**: which areas appear in what proportion, and which screens eat up time.
-2. **The need for English**: from then on, I switched all my study material to the English courses and English instructions.
+1. **A feel for the hands-on format**: how the screens flow, how much time pressure there is, and how unforgiving it is when earlier tasks feed later ones.
+2. **The need for English**: from then on, I switched all my study to the English course material.
 3. **The need for a procedure**: one step, "check before you save," mattered more than piling up more knowledge.
 
 Here are the three causes, and what I changed afterward, on one page.
 
 ![Table of the three causes of my first SAP MM certification C_TS452 failure: machine-translated instructions fixed by reading in English, time sunk into one task fixed by a 3-minute rule, and no check before saving fixed by comparing every field before Save](/images/sap-mm-c-ts452-certification-2-01.jpg)
 *Figure 1. The causes of my 31% first attempt and what I changed afterward*
+
+> In line with the candidate agreement, this series does not cover exam questions or answer values. What I describe here are only my own mistakes and how I prepared.
 
 ## Rabbit's Takeaway
 
