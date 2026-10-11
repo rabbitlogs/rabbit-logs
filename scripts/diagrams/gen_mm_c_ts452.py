@@ -2,8 +2,8 @@
 """
 SAP MM 자격증 C_TS452 연재 도식 (brand_v3)
 
-운영자 결정: 이 연재의 도식은 영문 라벨 1종만 만들어 한글판·영문판 글에 함께 쓴다.
-(_en 파일을 따로 두지 않는다.)
+마스터 프롬프트 9절대로 한글판(기본 파일명)과 영문판(_en)을 함께 만든다.
+영문 글은 remarkEnImages 폴백으로 _en 파일을 자동으로 쓴다.
 
 사용법 (저장소 루트에서):
   python3 scripts/diagrams/gen_mm_c_ts452.py            # 전부 생성
@@ -54,22 +54,40 @@ def _wrap(c, text, font, width):
 
 
 # ---------------------------------------------------------------- 2편
-def build_2_01(out):
+T_2_01 = {
+    "ko": {
+        "title": "1차 시험이 31%에 그친 이유",
+        "sub": "몰라서가 아니라, 해내지 못해서",
+        "head": ("원인", "무슨 일이 있었나", "그 뒤로 바꾼 것"),
+        "rows": [
+            ("기계번역 지침", "한국어 지침에서 수량과 날짜가 뒤바뀌어 있었다", "지침은 영어로 읽는다"),
+            ("한 과제에 쏠린 시간", "설정 비중이 큰 과제 하나에 약 100분을 썼다", "3분 룰: 한 화면에서 3분 막히면 넘어간다"),
+            ("저장 전 대조 없음", "0 하나 더, 필수 필드 누락, 습관대로 한 단계 추가", "Save 전에 지침과 필드를 1:1로 대조한다"),
+        ],
+    },
+    "en": {
+        "title": "Why my first attempt scored 31%",
+        "sub": "Not a knowledge gap, but an execution gap",
+        "head": ("Cause", "What happened", "What I changed"),
+        "rows": [
+            ("Machine-translated instructions",
+             "Quantities and dates were swapped in the Korean version",
+             "Read the instructions in English"),
+            ("Time sink",
+             "About 100 minutes went into one configuration-heavy task",
+             "3-minute rule: stuck on a screen, move on"),
+            ("No check before Save",
+             "An extra zero, a missing field, one step added out of habit",
+             "Compare every field with the instructions before saving"),
+        ],
+    },
+}
+
+
+def build_2_01(lang, out):
     """1차 31% — 원인 3가지를 '원인 / 무슨 일이 있었나 / 바꾼 것' 미니 표로."""
-    title = "Why my first attempt scored 31%"
-    sub = "Not a knowledge gap, but an execution gap"
-    head = ("Cause", "What happened", "What I changed")
-    rows = [
-        ("Machine-translated instructions",
-         "Quantities and dates were swapped in the Korean version",
-         "Read the instructions in English"),
-        ("Time sink",
-         "About 100 minutes went into one configuration-heavy task",
-         "3-minute rule: stuck on a screen, move on"),
-        ("No check before Save",
-         "An extra zero, a missing field, one step added out of habit",
-         "Compare every field with the instructions before saving"),
-    ]
+    t = T_2_01[lang]
+    title, sub, head, rows = t["title"], t["sub"], t["head"], t["rows"]
     W = 800
     cols = [B.PAD, 250, 520]           # 열 시작 x
     widths = [cols[1] - cols[0] - 20, cols[2] - cols[1] - 20, W - B.PAD - cols[2]]
@@ -96,7 +114,7 @@ def build_2_01(out):
     # 헤더
     for i, h in enumerate(head):
         col = B.BERRY_S[1] if i == 0 else (B.NEUT_S[1] if i == 1 else B.TEAL_S[1])
-        c.text((cols[i], y + 8), h.upper(), f_head, fill=col)
+        c.text((cols[i], y + 8), h.upper() if lang == "en" else h, f_head, fill=col)
     y += head_h
     c.line([B.PAD, y, W - B.PAD, y], fill=B.NEUT_S[2], width=1.5)
 
@@ -115,11 +133,12 @@ def build_2_01(out):
 
 
 BUILDERS = {
-    "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01.jpg"),
+    "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01"),
 }
 
 if __name__ == "__main__":
     keys = sys.argv[1:] or list(BUILDERS)
     for k in keys:
-        fn, name = BUILDERS[k]
-        fn(os.path.join(OUT, name))
+        fn, base = BUILDERS[k]
+        fn("ko", os.path.join(OUT, base + ".jpg"))
+        fn("en", os.path.join(OUT, base + "_en.jpg"))
