@@ -80,6 +80,7 @@ tags: ["SAP학습자료", "SAP자격증", "SAPMM", "C_TS452", "SAP자격증후�
 **더 읽어보기**
 
 - [SAP MM 자격증 C_TS452 시험 구조, 실습 주방에 들어가기 전에](/blog/sap-mm-c-ts452-certification-1)
+- [SAP MM 자격증 C_TS452 연습 전략, 같은 요리를 빠르고 정확하게](/blog/sap-mm-c-ts452-certification-3)
 - [SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장](/blog/sap-exam-format)
 
-<!-- 관련글: prerequisite=sap-mm-c-ts452-certification-1; related=sap-exam-format; deepens= -->
+<!-- 관련글: prerequisite=sap-mm-c-ts452-certification-1; related=sap-exam-format; deepens=sap-mm-c-ts452-certification-3 -->
