@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-10-11, 총 65개
+# 생성 시각: 2026-10-11, 총 66개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -1111,4 +1111,22 @@
   relations:
     prerequisite: [sap-exam-format]
     related: [sap-certification, sap-cpim]
+    deepens: [sap-mm-c-ts452-certification-2]
+
+- slug: sap-mm-c-ts452-certification-2
+  mapTitle: "SAP MM 자격증 C_TS452 1차 불합격"
+  title: "SAP MM 자격증 C_TS452 1차 불합격, 번역이 틀린 레시피로 만든 첫 요리"
+  category: study
+  status: rebuilt
+  pubDate: "2026-10-14"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAP자격증"
+  - "SAPMM"
+  - "C_TS452"
+  - "SAP자격증후기"
+  relations:
+    prerequisite: [sap-mm-c-ts452-certification-1]
+    related: [sap-exam-format]
     deepens: []
