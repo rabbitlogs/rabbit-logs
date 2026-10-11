@@ -47,7 +47,7 @@ The exam allowed 3 hours, but I actually submitted after about 2.
 - **Full verification**: about 35 minutes
 - **Time left over**: about 1 hour
 
-During the tasks I kept the 3-minute rule (stuck on one screen for 3 minutes, skip) and the check right before saving. Whenever a document number was generated, I noted it immediately, so I would not waste time hunting for numbers during verification.
+During the tasks I never skipped the check right before saving. The 3-minute check from practice never came up, because I hardly got stuck anywhere; that was a sign of how well the practice had stuck. Whenever a document number was generated, I noted it immediately, so I would not waste time hunting for numbers during verification.
 
 ## Final full verification
 

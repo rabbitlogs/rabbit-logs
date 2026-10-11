@@ -68,7 +68,7 @@ tags: ["SAP학습자료", "SAP자격증", "SAPMM", "C_TS452", "SAP자격증후�
 
 세 가지 원인과, 그 뒤로 바꾼 것을 한 장으로 정리하면 이렇습니다.
 
-![SAP MM 자격증 C_TS452 1차 불합격 원인 3가지를 정리한 표. 기계번역 지침은 영문 지침으로, 한 과제에 몰린 시간은 3분 룰로, 저장 전 대조 부재는 저장 직전 필드 대조로 바꿨다](/images/sap-mm-c-ts452-certification-2-01.jpg)
+![SAP MM 자격증 C_TS452 1차 불합격 원인 3가지를 정리한 표. 기계번역 지침은 영문 지침으로, 한 과제에 몰린 시간은 3분 점검과 반복 연습으로, 저장 전 대조 부재는 저장 직전 필드 대조로 바꿨다](/images/sap-mm-c-ts452-certification-2-01.jpg)
 *그림 1. 1차 31%의 원인과 그 뒤로 바꾼 것*
 
 ## Rabbit의 한 끗
@@ -80,6 +80,7 @@ tags: ["SAP학습자료", "SAP자격증", "SAPMM", "C_TS452", "SAP자격증후�
 **더 읽어보기**
 
 - [SAP MM 자격증 C_TS452 시험 구조, 실습 주방에 들어가기 전에](/blog/sap-mm-c-ts452-certification-1)
+- [SAP MM 자격증 C_TS452 연습 전략, 같은 요리를 빠르고 정확하게](/blog/sap-mm-c-ts452-certification-3)
 - [SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장](/blog/sap-exam-format)
 
-<!-- 관련글: prerequisite=sap-mm-c-ts452-certification-1; related=sap-exam-format; deepens= -->
+<!-- 관련글: prerequisite=sap-mm-c-ts452-certification-1; related=sap-exam-format; deepens=sap-mm-c-ts452-certification-3 -->

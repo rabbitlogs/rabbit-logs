@@ -68,7 +68,7 @@ The failure stung, but it clearly gave me something.
 
 Here are the three causes, and what I changed afterward, on one page.
 
-![Table of the three causes of my first SAP MM certification C_TS452 failure: machine-translated instructions fixed by reading in English, time sunk into one task fixed by a 3-minute rule, and no check before saving fixed by comparing every field before Save](/images/sap-mm-c-ts452-certification-2-01.jpg)
+![Table of the three causes of my first SAP MM certification C_TS452 failure: machine-translated instructions fixed by reading in English, time sunk into one task fixed by a 3-minute check and drilling weak screens, and no check before saving fixed by comparing every field before Save](/images/sap-mm-c-ts452-certification-2-01.jpg)
 *Figure 1. The causes of my 31% first attempt and what I changed afterward*
 
 ## Rabbit's Takeaway
@@ -80,6 +80,7 @@ What I lacked in the first attempt was not MM knowledge. ==What decided the scor
 **Read more**
 
 - [SAP MM certification C_TS452 exam structure: before you step into the practice kitchen](/en/blog/sap-mm-c-ts452-certification-1)
+- [SAP MM certification C_TS452 practice strategy: the same dish, faster and more precisely](/en/blog/sap-mm-c-ts452-certification-3)
 - [SAP certification exams: from a written test to a hands-on kitchen exam room](/en/blog/sap-exam-format)
 
-<!-- Related posts: prerequisite=sap-mm-c-ts452-certification-1; related=sap-exam-format; deepens= -->
+<!-- Related posts: prerequisite=sap-mm-c-ts452-certification-1; related=sap-exam-format; deepens=sap-mm-c-ts452-certification-3 -->
