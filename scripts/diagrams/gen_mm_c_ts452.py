@@ -132,8 +132,85 @@ def build_2_01(lang, out):
     c.save(out)
 
 
+# ---------------------------------------------------------------- 3편
+T_3_01 = {
+    "ko": {
+        "title": "3시간을 어떻게 썼나",
+        "sub": "1차 시험, 연습 리허설, 3차 시험의 시간 배분",
+        "rows": [
+            ("1차 시험", [("한 과제", 100, "berry"), ("나머지 과제", 80, "berry2")], "마지막 과제는 손도 못 댐"),
+            ("R3 리허설", [("과제", 100, "teal"), ("검증", 80, "gold")], "남은 시간은 전부 검증"),
+            ("3차 시험", [("과제", 85, "teal"), ("검증", 35, "gold"), ("남은 시간", 60, "rest")], "약 2시간 만에 제출"),
+        ],
+        "axis": "분",
+    },
+    "en": {
+        "title": "How I spent the 3 hours",
+        "sub": "First attempt, practice rehearsal, and third attempt",
+        "rows": [
+            ("1st attempt", [("One task", 100, "berry"), ("Other tasks", 80, "berry2")], "Never reached the last tasks"),
+            ("R3 rehearsal", [("Tasks", 100, "teal"), ("Check", 80, "gold")], "All spare time went to checking"),
+            ("3rd attempt", [("Tasks", 85, "teal"), ("Check", 35, "gold"), ("Left", 60, "rest")], "Submitted after about 2 hours"),
+        ],
+        "axis": "min",
+    },
+}
+
+
+def build_3_01(lang, out):
+    """3시간(180분) 누적 막대 3줄 — 1차/리허설/3차 시간 배분 비교."""
+    t = T_3_01[lang]
+    pal = {"berry": B.BERRY_S[2], "berry2": B.BERRY_S[4], "teal": B.TEAL_S[2],
+           "gold": B.GOLD_S[2], "rest": B.NEUT_S[5]}
+    txt = {"berry": "#ffffff", "berry2": B.BERRY_S[0], "teal": "#ffffff",
+           "gold": "#ffffff", "rest": B.NEUT_S[2]}
+    W = 800
+    label_w = 150
+    x0 = B.PAD + label_w
+    x1 = W - B.PAD
+    per_min = (x1 - x0) / 180
+    bar_h = 40
+    row_h = 104
+    f_label = B.F("Bold", 19)
+    f_seg = B.F("SemiBold", 16)
+    f_note = B.F("Regular", 16)
+    f_axis = B.F("Medium", 14)
+
+    probe = _Canvas(W, 10)
+    top = _banner_height(probe, t["title"], t["sub"])
+    H = int(top + row_h * len(t["rows"]) + 40)
+    c = _Canvas(W, H)
+    y = B.banner_B(c, t["title"], t["sub"])
+
+    for name, segs, note in t["rows"]:
+        by = y + 8
+        c.text((B.PAD, by + bar_h / 2 - 12), name, f_label, fill=B.TEAL_S[0])
+        x = x0
+        for seg, mins, key in segs:
+            w = mins * per_min
+            c.rect([x, by, x + w - 2, by + bar_h], fill=pal[key], radius=6)
+            lab = f"{seg} {mins}"
+            if c.text_w(lab, f_seg) > w - 12:
+                lab = str(mins)
+            c.center_text(x + w / 2, by + bar_h / 2, lab, f_seg, fill=txt[key])
+            x += w
+        c.text((x0, by + bar_h + 10), note, f_note, fill=B.NEUT_S[1])
+        y += row_h
+
+    # 축 눈금 0 / 60 / 120 / 180
+    ay = y + 2
+    c.line([x0, ay, x1, ay], fill=B.NEUT_S[3], width=1)
+    for m in (0, 60, 120, 180):
+        ax = x0 + m * per_min
+        c.line([ax, ay - 4, ax, ay + 4], fill=B.NEUT_S[3], width=1)
+        c.center_text(ax, ay + 16, f"{m}{t['axis'] if m == 180 else ''}", f_axis, fill=B.MUTE)
+
+    c.save(out)
+
+
 BUILDERS = {
     "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01"),
+    "3-01": (build_3_01, "sap-mm-c-ts452-certification-3-01"),
 }
 
 if __name__ == "__main__":
