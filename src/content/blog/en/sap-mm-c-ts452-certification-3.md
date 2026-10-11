@@ -76,7 +76,7 @@ After that, I graded my notes. I separated **what I had confirmed in the course 
 
 The SyBA exam felt close to open book, in that searching the internet was possible. Thanks to steady practice I never got badly stuck, but when a menu path was confusing I did look up public material.
 
-AI tools and screen captures are a different matter. Communities such as Reddit are divided on whether they are allowed, and some say screen captures are detected. Check the allowed scope yourself in the candidate agreement and SAP's official guidance before you sit the exam. Above all, this exam exists to check whether you can operate the system yourself. In the end, the only thing you can rely on in the exam room is the procedure your hands learned through practice.
+AI tools and screen captures are a different matter. Communities such as Reddit are divided on whether they are allowed, and some say screen captures are detected. Above all, this exam exists to check whether you can operate the system yourself. In the end, the only thing you can rely on in the exam room is the procedure your hands learned through practice.
 
 ## Rabbit's Takeaway
 
