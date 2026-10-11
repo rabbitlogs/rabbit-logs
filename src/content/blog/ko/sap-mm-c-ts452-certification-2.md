@@ -2,7 +2,7 @@
 title: "SAP MM 자격증 C_TS452 1차 불합격, 번역이 틀린 레시피로 만든 첫 요리"
 mapTitle: "SAP MM 자격증 C_TS452 1차 불합격"
 description: "SAP MM 자격증 C_TS452 첫 응시 31.43% 불합격 복기. 3시간이 모자랐던 이유, 기계번역 지침의 함정, 끝냈다고 생각한 과제의 절반이 0점이 된 원인을 정리했습니다."
-pubDate: 2026-10-14
+pubDate: 2026-10-13
 category: "study"
 series: "SAP MM 자격증 도전기"
 level: "beginner"

@@ -2,7 +2,7 @@
 title: "SAP MM certification C_TS452 first attempt failed: cooking from a mistranslated recipe"
 mapTitle: "SAP MM certification C_TS452 first attempt"
 description: "A review of my first SAP MM certification (C_TS452) attempt at 31.43%: why 3 hours ran out, the trap of machine-translated instructions, and why half the tasks I thought I finished scored zero."
-pubDate: 2026-10-14
+pubDate: 2026-10-13
 category: "study"
 series: "SAP MM certification journey"
 level: "beginner"

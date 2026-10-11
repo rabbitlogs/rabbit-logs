@@ -4,7 +4,7 @@
 | 편 | 슬러그 | 발행일 | 상태 |
 |---|---|---|---|
 | 1 | sap-mm-c-ts452-certification-1 | 2026-10-11 | 게시 완료 |
-| 2 | sap-mm-c-ts452-certification-2 | 2026-10-14 | PR 예약 게시 |
+| 2 | sap-mm-c-ts452-certification-2 | 2026-10-13 | PR 예약 게시 (10/13 09:00 KST) |
 | 3 | sap-mm-c-ts452-certification-3 | 2026-10-18 | 한글 초안(drafts/ko) |
 | 4 | sap-mm-c-ts452-certification-4 | 2026-10-21 | 원본만 |
 | 5 | sap-mm-c-ts452-certification-5 | 2026-10-25 | 원본만 |
