@@ -136,20 +136,18 @@ def build_2_01(lang, out):
 T_3_01 = {
     "ko": {
         "title": "3시간을 어떻게 썼나",
-        "sub": "1차 시험, 연습 리허설, 3차 시험의 시간 배분",
+        "sub": "1차 시험과 3차 시험의 시간 배분 (분, 대략치)",
         "rows": [
             ("1차 시험", [("한 과제", 100, "berry"), ("나머지 과제", 80, "berry2")], "마지막 과제는 손도 못 댐"),
-            ("R3 리허설", [("과제", 100, "teal"), ("검증", 80, "gold")], "남은 시간은 전부 검증"),
             ("3차 시험", [("과제", 85, "teal"), ("검증", 35, "gold"), ("남은 시간", 60, "rest")], "약 2시간 만에 제출"),
         ],
         "axis": "분",
     },
     "en": {
         "title": "How I spent the 3 hours",
-        "sub": "First attempt, practice rehearsal, and third attempt",
+        "sub": "First and third attempts (minutes, approximate)",
         "rows": [
             ("1st attempt", [("One task", 100, "berry"), ("Other tasks", 80, "berry2")], "Never reached the last tasks"),
-            ("R3 rehearsal", [("Tasks", 100, "teal"), ("Check", 80, "gold")], "All spare time went to checking"),
             ("3rd attempt", [("Tasks", 85, "teal"), ("Check", 35, "gold"), ("Left", 60, "rest")], "Submitted after about 2 hours"),
         ],
         "axis": "min",
@@ -208,9 +206,65 @@ def build_3_01(lang, out):
     c.save(out)
 
 
+# ---------------------------------------------------------------- 0편(총정리)
+T_0_01 = {
+    "ko": {
+        "title": "세 번의 응시 기록",
+        "sub": "SAP MM 자격증 C_TS452 (합격선 76%)",
+        "cards": [
+            ("1차", "31%", "불합격", "기계번역 지침, 시간 부족, 저장 전 대조 없음", "berry"),
+            ("2차", "25%", "불합격", "시험 시스템 결함 → 응시권 재부여", "gold"),
+            ("3차", "97%", "합격", "영어 지침, 저장 전후 확인, 마지막 전수 검증", "teal"),
+        ],
+    },
+    "en": {
+        "title": "Three exam attempts",
+        "sub": "SAP MM certification C_TS452 (pass mark 76%)",
+        "cards": [
+            ("1st", "31%", "Failed", "Machine translation, no time, no check before saving", "berry"),
+            ("2nd", "25%", "Failed", "Exam system defect, attempt reissued", "gold"),
+            ("3rd", "97%", "Passed", "English instructions, checks around saves, final review", "teal"),
+        ],
+    },
+}
+
+
+def build_0_01(lang, out):
+    """세 번의 응시를 카드 3장으로 나란히(타임라인)."""
+    t = T_0_01[lang]
+    col = {"berry": (B.BERRY_S[2], B.BERRY_S[5]), "gold": (B.GOLD_S[1], B.GOLD_S[5]),
+           "teal": (B.TEAL_S[2], B.TEAL_S[5])}
+    W = 800
+    gap = 18
+    cw = (W - 2 * B.PAD - 2 * gap) / 3
+    f_lab = B.F("Bold", 18)
+    f_score = B.F("Black", 46)
+    f_res = B.F("Bold", 18)
+    f_note = B.F("Regular", 16)
+    probe = _Canvas(W, 10)
+    notes = [_wrap(probe, c[3], f_note, cw - 32) for c in t["cards"]]
+    card_h = 24 + 24 + 64 + 30 + max(len(n) for n in notes) * 24 + 20
+    top = _banner_height(probe, t["title"], t["sub"])
+    H = int(top + card_h + 30)
+    c = _Canvas(W, H)
+    y = B.banner_B(c, t["title"], t["sub"])
+    for i, (lab, score, res, _, key) in enumerate(t["cards"]):
+        x = B.PAD + i * (cw + gap)
+        main, light = col[key]
+        c.rect([x, y, x + cw, y + card_h], fill=light, radius=12)
+        c.rect([x, y, x + cw, y + 6], fill=main, radius=3)
+        c.text((x + 16, y + 22), lab, f_lab, fill=B.NEUT_S[1])
+        c.text((x + 16, y + 48), score, f_score, fill=main)
+        c.text((x + 16, y + 112), res, f_res, fill=main)
+        for j, line in enumerate(notes[i]):
+            c.text((x + 16, y + 142 + j * 24), line, f_note, fill=B.NEUT_S[1])
+    c.save(out)
+
+
 BUILDERS = {
     "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01"),
     "3-01": (build_3_01, "sap-mm-c-ts452-certification-3-01"),
+    "0-01": (build_0_01, "sap-mm-c-ts452-certification-0-01"),
 }
 
 if __name__ == "__main__":

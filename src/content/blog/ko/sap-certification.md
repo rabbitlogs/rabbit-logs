@@ -77,7 +77,7 @@ SAP 제품이 빠르게 바뀌다 보니, 이제 모든 자격증 보유자는 �
 
 반대로 신중해야 할 경우도 있습니다. 경력 많은 현직자라면 자격증보다 프로젝트 성공 경험이 훨씬 강력한 무기입니다. 자격증이 연봉 인상을 보장하지는 않습니다. 비용이 부담되는 분이라면 그 돈으로 다른 기술을 배우거나 실무 경험을 쌓는 편이 나을 수 있습니다.
 
-제가 직접 MM 자격증(C_TS452)에 응시해 세 번 만에 합격한 과정은 [SAP MM 자격증 응시 후기 연재](/blog/sap-mm-c-ts452-certification-1)에 정리했습니다. 실기 시험이 실제로 어떤지 궁금하다면 함께 보세요.
+제가 직접 MM 자격증(C_TS452)에 응시해 세 번 만에 합격한 과정은 [SAP MM 자격증 합격 후기](/blog/sap-mm-c-ts452-certification)에 정리했습니다. 실기 시험이 실제로 어떤지 궁금하다면 함께 보세요.
 
 ## Rabbit의 한 끗
 
@@ -91,6 +91,6 @@ SAP 제품이 빠르게 바뀌다 보니, 이제 모든 자격증 보유자는 �
 
 - [SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장](/blog/sap-exam-format)
 - [SAP 자격증 vs CPIM, 조리법보다 손님 입맛을 먼저 배우는 이유](/blog/sap-cpim)
-- [SAP MM 자격증 C_TS452 시험 구조, 실습 주방에 들어가기 전에](/blog/sap-mm-c-ts452-certification-1)
+- [SAP MM 자격증 C_TS452 합격 후기 총정리, 세 번 들어간 실습 주방](/blog/sap-mm-c-ts452-certification)
 
-<!-- 관련글: prerequisite=; related=sap-mm-c-ts452-certification-1; deepens=sap-exam-format,sap-cpim -->
+<!-- 관련글: prerequisite=; related=sap-mm-c-ts452-certification; deepens=sap-exam-format,sap-cpim -->
