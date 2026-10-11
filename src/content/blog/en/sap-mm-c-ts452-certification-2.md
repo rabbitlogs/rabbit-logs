@@ -13,13 +13,13 @@ Hi, this is Rabbit! 🐰
 
 Have you ever cooked from a foreign cookbook run through a translator? Most of it reads fine, but every now and then "2 teaspoons of sugar" turns into "2 cups of sugar." You follow the recipe exactly, and the dish still falls apart.
 
-On September 14, 2026, I took my first **SAP MM certification, C_TS452** exam. The result was **31.43%**, less than half of the 76% pass mark. When I pressed submit, I had no idea it would be that low. There were tasks I never reached because I ran out of time, but I thought most of what I did finish was correct. Working backward from the score, though, **nearly half of the tasks I thought I had finished scored zero**.
+In September 2026, I took my first **SAP MM certification, C_TS452** exam. The result was **31.43%**, less than half of the 76% pass mark. When I pressed submit, I had no idea it would be that low. There were tasks I never reached because I ran out of time, but I thought most of what I did finish was correct. Working backward from the score, though, **nearly half of the tasks I thought I had finished scored zero**.
 
 In [SAP certification exams](/en/blog/sap-exam-format) I once wrote that "if your practical skills are solid, it's realistically a 40-minute-to-1-hour exam." At least for a module I was learning for the first time, that was not true. Even on my third attempt, after plenty of practice, simply working through the tasks without getting stuck took 80–90 minutes, and with verification before submitting it took about 2 hours. This post is also that correction.
 
 > **Three-line summary**
 > - The first cause was the machine-translated Korean instructions. Places where numbers and structure read differently from the original turned straight into zero points.
-> - I spent about 100 minutes on one configuration-heavy task and never touched the last tasks.
+> - I spent about 100 minutes in unfamiliar configuration screens and never touched the last tasks.
 > - The biggest cause was not checking against the instructions before saving. I lost more points on things I knew than on things I didn't.
 
 [[TOC]]
@@ -38,7 +38,7 @@ As I explained in [Part 1](/en/blog/sap-mm-c-ts452-certification-1), a SyBA exam
 
 Three hours sounds generous. Divide it by the number of sub-exercises, though, and you get **4–5 minutes per item**. Once you start wandering on a single screen, the time drains fast.
 
-In my first attempt I spent **about 100 minutes** on one configuration-heavy group of tasks (configuration means setting the rules for how the system behaves). That is more than half of the total time. Ten minutes to resolve one unfamiliar error message, ten minutes to find one menu path. About 70 minutes disappeared on just a few screens like that. In the end I either never touched the last tasks or skimmed through them in five minutes.
+In my first attempt I spent **about 100 minutes** on a single task, lost in configuration screens (configuration means setting the rules for how the system behaves) that I rarely touched at work. That is more than half of the total time. Ten minutes to resolve one unfamiliar error message, ten minutes to find one menu path. About 70 minutes disappeared on just a few screens like that. In the end I either never touched the last tasks or skimmed through them in five minutes.
 
 ## Cause 3: no check against the instructions before saving
 
@@ -70,8 +70,6 @@ Here are the three causes, and what I changed afterward, on one page.
 
 ![Table of the three causes of my first SAP MM certification C_TS452 failure: machine-translated instructions fixed by reading in English, time sunk into one task fixed by a 3-minute rule, and no check before saving fixed by comparing every field before Save](/images/sap-mm-c-ts452-certification-2-01.jpg)
 *Figure 1. The causes of my 31% first attempt and what I changed afterward*
-
-> In line with the candidate agreement, this series does not cover exam questions or answer values. What I describe here are only my own mistakes and how I prepared.
 
 ## Rabbit's Takeaway
 
