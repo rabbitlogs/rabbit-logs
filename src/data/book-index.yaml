@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-10-11, 총 67개
+# 생성 시각: 2026-10-11, 총 68개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -819,7 +819,7 @@
   - "StayCertified"
   relations:
     prerequisite: []
-    related: [sap-mm-c-ts452-certification-1]
+    related: [sap-mm-c-ts452-certification]
     deepens: [sap-exam-format, sap-cpim]
 
 - slug: sap-exam-format
@@ -1114,8 +1114,8 @@
     deepens: [sap-mm-c-ts452-certification-2]
 
 - slug: sap-mm-c-ts452-certification-2
-  mapTitle: "SAP MM 자격증 C_TS452 1차 불합격"
-  title: "SAP MM 자격증 C_TS452 1차 불합격, 번역이 틀린 레시피로 만든 첫 요리"
+  mapTitle: "SAP MM 자격증 C_TS452 1·2차 불합격"
+  title: "SAP MM 자격증 C_TS452 1·2차 불합격, 틀린 레시피와 고장 난 주방"
   category: study
   status: rebuilt
   pubDate: "2026-10-13"
@@ -1132,8 +1132,8 @@
     deepens: [sap-mm-c-ts452-certification-3]
 
 - slug: sap-mm-c-ts452-certification-3
-  mapTitle: "SAP MM 자격증 C_TS452 연습 전략"
-  title: "SAP MM 자격증 C_TS452 연습 전략, 같은 요리를 빠르고 정확하게"
+  mapTitle: "SAP MM 자격증 C_TS452 연습과 합격"
+  title: "SAP MM 자격증 C_TS452 연습과 합격, 같은 요리를 빠르고 정확하게"
   category: study
   status: rebuilt
   pubDate: "2026-10-15"
@@ -1143,8 +1143,26 @@
   - "SAP자격증"
   - "SAPMM"
   - "C_TS452"
-  - "SAP공부법"
+  - "SAP자격증합격"
   relations:
     prerequisite: [sap-mm-c-ts452-certification-2]
-    related: [sap-mm-c-ts452-certification-1]
+    related: [sap-mm-c-ts452-certification-1, sap-certification]
+    deepens: [sap-mm-c-ts452-certification]
+
+- slug: sap-mm-c-ts452-certification
+  mapTitle: "SAP MM 자격증 C_TS452 합격 후기"
+  title: "SAP MM 자격증 C_TS452 합격 후기 총정리, 세 번 들어간 실습 주방"
+  category: study
+  status: rebuilt
+  pubDate: "2026-10-18"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "SAP자격증"
+  - "SAPMM"
+  - "C_TS452"
+  - "SAP자격증후기"
+  relations:
+    prerequisite: []
+    related: [sap-mm-c-ts452-certification-1, sap-mm-c-ts452-certification-2, sap-mm-c-ts452-certification-3]
     deepens: []

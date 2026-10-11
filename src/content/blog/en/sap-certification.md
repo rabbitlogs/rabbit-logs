@@ -77,7 +77,7 @@ Recommended cases: for job seekers and new grads without hands-on experience, it
 
 On the flip side, there are cases worth being cautious about. For experienced professionals, project success stories are a far stronger asset than a certification. Certification doesn't guarantee a raise. If the cost is a real burden, that money might be better spent learning a different skill or gaining hands-on experience.
 
-I took the MM certification (C_TS452) myself and passed on my third attempt; I wrote up the whole process in [my SAP MM certification exam review series](/en/blog/sap-mm-c-ts452-certification-1). If you want to know what the hands-on exam is really like, read it alongside this one.
+I took the MM certification (C_TS452) myself and passed on my third attempt; I wrote up the whole process in [my SAP MM certification exam review](/en/blog/sap-mm-c-ts452-certification). If you want to know what the hands-on exam is really like, read it alongside this one.
 
 ## Rabbit's Takeaway
 
@@ -91,6 +91,6 @@ So reframe the question, and the decision gets easier. Instead of "should I get 
 
 - [SAP certification exams: from a written test to a hands-on kitchen exam room](/en/blog/sap-exam-format)
 - [SAP certification vs. CPIM: why you learn your customer's palate before the recipe](/en/blog/sap-cpim)
-- [SAP MM certification C_TS452 exam structure: before you step into the practice kitchen](/en/blog/sap-mm-c-ts452-certification-1)
+- [SAP MM certification C_TS452 exam review: three trips into the practice kitchen](/en/blog/sap-mm-c-ts452-certification)
 
-<!-- Related posts: prerequisite=; related=sap-mm-c-ts452-certification-1; deepens=sap-exam-format,sap-cpim -->
+<!-- Related posts: prerequisite=; related=sap-mm-c-ts452-certification; deepens=sap-exam-format,sap-cpim -->

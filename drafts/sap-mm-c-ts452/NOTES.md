@@ -3,12 +3,13 @@
 ## 발행 계획
 | 편 | 슬러그 | 발행일(pubDate) | 상태 |
 |---|---|---|---|
-| 1 | sap-mm-c-ts452-certification-1 | 2026-10-11 | 게시 완료 |
-| 2 | sap-mm-c-ts452-certification-2 | 2026-10-13 | 게시 완료(10/11 운영자 지시로 게시) |
-| 3 | sap-mm-c-ts452-certification-3 | 2026-10-15 | src/content로 이동, PR 미리보기 |
-| 4 | sap-mm-c-ts452-certification-4 | 2026-10-17 | 한글·영문 초안(drafts) |
-| 5 | sap-mm-c-ts452-certification-5 | 2026-10-19 | 한글·영문 초안(drafts) |
-| 0 | sap-mm-c-ts452-certification (총정리) | 2026-10-21 | 원본만, 맨 마지막 |
+| 1 | sap-mm-c-ts452-certification-1 | 2026-10-11 | 시험 구조와 준비 — 게시 |
+| 2 | sap-mm-c-ts452-certification-2 | 2026-10-13 | 1·2차 불합격(구 2·4편 통합) — 게시 |
+| 3 | sap-mm-c-ts452-certification-3 | 2026-10-15 | 연습과 합격(구 3·5편 통합) — 게시 |
+| 0 | sap-mm-c-ts452-certification | 2026-10-18 | 합격 후기 총정리 — 게시 |
+
+10/11 운영자 결정: 연재를 3+0편으로 축소. 구 4·5편 원고(drafts/ko, drafts/en)는 보관용이며 발행하지 않는다.
+개인 서사·공부법 권유를 줄이고 "시험에 대해 알아두면 좋은 것" 위주로 쓴다.
 
 **운영자 지시(10/11): 날짜는 정해 두되, 운영자가 "올려"라고 하기 전까지는 어떤 글도 게시(merge)하지 않는다.**
 
