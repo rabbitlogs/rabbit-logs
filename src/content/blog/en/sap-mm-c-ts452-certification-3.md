@@ -65,7 +65,6 @@ The Learning Hub practice system is a server shared by learners around the world
 - **Names collide**: sometimes the code I wanted to create already existed because someone else made it. I changed the code prefix for each round (for example Y0 → Y1 → Y2) to avoid collisions.
 - **Settings change**: once, someone had changed a system setting, so it behaved differently from the course material. When that happens, the first step is to separate my own mistake from an environment problem.
 - **Dates follow the server**: the server runs on German time, so practicing in the early morning in Korea puts "today" a day off. Tasks involving dates have to be calculated with the system date.
-- **Save your connection time**: closing the browser tab stops the subscription time from counting down. I kept it open only while studying.
 
 ## Doubt your practice notes too
 
@@ -77,7 +76,7 @@ After that, I graded my notes. I separated **what I had confirmed in the course 
 
 The SyBA exam felt close to open book, in that searching the internet was possible. Thanks to steady practice I never got badly stuck, but when a menu path was confusing I did look up public material.
 
-AI tools and screen captures are a different matter. Communities such as Reddit are divided on whether they are allowed, and some say screen captures are detected. Since the exam exists to check whether you can operate the system yourself, **it is safest to assume that help from AI is effectively not allowed**. Check the allowed scope yourself in the candidate agreement and SAP's official guidance before you sit the exam. In the end, the only thing you can rely on in the exam room is the procedure your hands learned through practice.
+AI tools and screen captures are a different matter. Communities such as Reddit are divided on whether they are allowed, and some say screen captures are detected. Check the allowed scope yourself in the candidate agreement and SAP's official guidance before you sit the exam. Above all, this exam exists to check whether you can operate the system yourself. In the end, the only thing you can rely on in the exam room is the procedure your hands learned through practice.
 
 ## Rabbit's Takeaway
 
