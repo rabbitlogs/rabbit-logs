@@ -25,6 +25,7 @@ rabbitlogs.com 블로그 저장소. Astro 4 정적 사이트, Cloudflare Pages�
 - `docs/image-rules-final.md`, `docs/image-choice-guide.md` — 이미지·도식 규칙
 - `docs/site-spec.md` — /map, 헤더, About, 슬러그 변경 시 리다이렉트 규칙
 - `docs/rabbit-logs-brunch.md` — 브런치 크로스포스팅(모드 C)
+- `docs/seo-index-fix-2026-08.md` — 구글 색인(GSC) 문제 진단·조치 기록. SEO·URL·canonical 작업 전에 읽는다.
 
 규칙이 바뀌면 위 문서를 직접 고친다. 이 파일에는 규칙을 중복해서 적지 않는다.
 
