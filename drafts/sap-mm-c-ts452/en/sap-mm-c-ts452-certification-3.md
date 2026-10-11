@@ -2,7 +2,7 @@
 title: "SAP MM certification C_TS452 practice strategy: the same dish, faster and more precisely"
 mapTitle: "SAP MM certification C_TS452 practice strategy"
 description: "How I practiced for my SAP MM certification (C_TS452) retake: switching to English course material, a three-stage practice plan, the 3-minute rule, checking before every save, and working on a shared practice system."
-pubDate: 2026-10-18
+pubDate: 2026-10-15
 category: "study"
 series: "SAP MM certification journey"
 level: "beginner"

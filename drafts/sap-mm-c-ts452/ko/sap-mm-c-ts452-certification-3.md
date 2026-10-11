@@ -2,7 +2,7 @@
 title: "SAP MM 자격증 C_TS452 연습 전략, 같은 요리를 빠르고 정확하게"
 mapTitle: "SAP MM 자격증 C_TS452 연습 전략"
 description: "SAP MM 자격증 C_TS452 재응시를 위한 연습 방법. 영문 교재 전환, 3단계 연습 설계, 3분 룰과 저장 직전 대조, 공유 연습 시스템에서 주의할 점까지 정리했습니다."
-pubDate: 2026-10-18
+pubDate: 2026-10-15
 category: "study"
 series: "SAP MM 자격증 도전기"
 level: "beginner"
