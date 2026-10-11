@@ -93,6 +93,6 @@ Just as an experienced cook's secret is procedure, the secret to 97% was, in the
 
 - [SAP MM certification C_TS452 system defect: a second attempt in a broken kitchen](/en/blog/sap-mm-c-ts452-certification-4)
 - [SAP MM certification C_TS452 practice strategy: the same dish, faster and more precisely](/en/blog/sap-mm-c-ts452-certification-3)
-- [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)
+- [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification)
 
 <!-- Related posts: prerequisite=sap-mm-c-ts452-certification-4; related=sap-mm-c-ts452-certification-3,sap-certification; deepens= -->

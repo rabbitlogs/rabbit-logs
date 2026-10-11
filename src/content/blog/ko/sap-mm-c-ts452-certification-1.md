@@ -101,6 +101,6 @@ tags: ["SAP학습자료", "SAP자격증", "SAPMM", "C_TS452"]
 
 - [SAP 자격증 시험, 필기에서 실습 주방으로 바뀐 시험장](/blog/sap-exam-format)
 - [SAP MM 자격증 C_TS452 1차 불합격, 번역이 틀린 레시피로 만든 첫 요리](/blog/sap-mm-c-ts452-certification-2)
-- [SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법](/blog/sap-certification)
+- [SAP 자격증 종류·비용·응시 방법, 자격증이라는 메뉴판 읽는 법](/blog/sap-certification)
 
 <!-- 관련글: prerequisite=sap-exam-format; related=sap-certification,sap-cpim; deepens=sap-mm-c-ts452-certification-2 -->

@@ -1,12 +1,11 @@
 ---
 // ─────────────────────────────────────────────
-//  애드센스 광고 한 칸 (사각형 반응형)
-//  - rectangle 포맷 유지 (투명 광고 방지)
-//  - PC: max-width 336px (박스 안에 좌우 여백 확보)
-//  - 모바일: max-width 300px
+//  애드센스 광고 한 칸 (인아티클, fluid)
+//  - 본문 폭에 맞춰 늘어나는 콘텐츠 내 광고. 높이는 광고가 스스로 정한다.
+//  - 이전 사각형 광고 단위(3094787370)로 되돌리려면 AD_SLOT과 ins 속성을 바꾼다.
 // ─────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-9488002130804570';
-const AD_SLOT = '3094787370';
+const AD_SLOT = '4432714307';
 const { lang = 'ko' } = Astro.props;
 const adLabel = lang === 'en' ? 'Advertisement' : '광고';
 ---
@@ -15,11 +14,11 @@ const adLabel = lang === 'en' ? 'Advertisement' : '광고';
   <span class="ad-label">{adLabel}</span>
   <ins
     class="adsbygoogle"
-    style="display:block;"
+    style="display:block; text-align:center;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
     data-ad-client={AD_CLIENT}
     data-ad-slot={AD_SLOT}
-    data-ad-format="rectangle"
-    data-full-width-responsive="false"
   ></ins>
 </div>
 
@@ -39,23 +38,10 @@ const adLabel = lang === 'en' ? 'Advertisement' : '광고';
     text-transform: uppercase;
     margin-bottom: 0.75rem;
   }
-  /* PC: 336px로 제한, 가운데 정렬 → 박스 안에 좌우 여백 자연스럽게 생김 */
+  /* 인아티클 광고는 본문 폭을 그대로 쓴다 */
   .ad-slot .adsbygoogle {
     display: block;
-    margin: 0 auto;
-    max-width: 336px;
-  }
-  .ad-slot .adsbygoogle iframe {
-    display: block;
-    margin: 0 auto;
-    max-width: 336px;
-  }
-  /* 모바일: 300px로 제한 */
-  @media (max-width: 640px) {
-    .ad-slot .adsbygoogle,
-    .ad-slot .adsbygoogle iframe {
-      max-width: 300px;
-    }
+    width: 100%;
   }
   /* 광고를 못 채운 칸은 통째로 숨김 */
   .ad-slot:has(ins[data-ad-status="unfilled"]) {

@@ -73,7 +73,7 @@ If you pass, you'll get an email within 2 weeks with instructions for claiming y
 
 Since it's a hands-on exam, memorizing past questions doesn't work anymore, and no sample questions are provided either. So preparation really comes down to one thing: SAP Learning Hub.
 
-The Learning Hub includes a practice server identical to the actual exam environment, along with hands-on guide materials. Repeating the steps in the guide until they're second nature is the most reliable path — you're essentially rehearsing the exact environment you'll face in the exam room. Whether it's worth getting certified at all, and what it costs, is covered in [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification).
+The Learning Hub includes a practice server identical to the actual exam environment, along with hands-on guide materials. Repeating the steps in the guide until they're second nature is the most reliable path — you're essentially rehearsing the exact environment you'll face in the exam room. Whether it's worth getting certified at all, and what it costs, is covered in [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification).
 
 ## Rabbit's Takeaway
 
@@ -85,7 +85,7 @@ It's gone from an exam you pass by memorizing and guessing to one you pass by ha
 
 **Read more**
 
-- [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)
+- [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification)
 - [SAP certification vs. CPIM: why you learn your customer's palate before the recipe](/en/blog/sap-cpim)
 
 <!-- Related posts: prerequisite=sap-certification; related=sap-cpim; deepens= -->

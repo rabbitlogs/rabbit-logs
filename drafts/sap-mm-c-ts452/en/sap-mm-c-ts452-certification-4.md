@@ -85,6 +85,6 @@ When the system misbehaves during an exam, most people suspect their own mistake
 **Read more**
 
 - [SAP MM certification C_TS452 practice strategy: the same dish, faster and more precisely](/en/blog/sap-mm-c-ts452-certification-3)
-- [SAP certification guide: how to actually read the certification menu](/en/blog/sap-certification)
+- [SAP certification types, costs, and how to take the exam: reading the certification menu](/en/blog/sap-certification)
 
 <!-- Related posts: prerequisite=sap-mm-c-ts452-certification-3; related=sap-certification; deepens= -->

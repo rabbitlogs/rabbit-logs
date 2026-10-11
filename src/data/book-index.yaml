@@ -806,8 +806,8 @@
     deepens: []
 
 - slug: sap-certification
-  mapTitle: "SAP 자격증 가이드"
-  title: "SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법"
+  mapTitle: "SAP 자격증 종류·비용"
+  title: "SAP 자격증 종류·비용·응시 방법, 자격증이라는 메뉴판 읽는 법"
   category: study
   status: rebuilt
   pubDate: "2026-04-10"
@@ -819,7 +819,7 @@
   - "StayCertified"
   relations:
     prerequisite: []
-    related: []
+    related: [sap-mm-c-ts452-certification-1]
     deepens: [sap-exam-format, sap-cpim]
 
 - slug: sap-exam-format
@@ -1118,7 +1118,7 @@
   title: "SAP MM 자격증 C_TS452 1차 불합격, 번역이 틀린 레시피로 만든 첫 요리"
   category: study
   status: rebuilt
-  pubDate: "2026-10-14"
+  pubDate: "2026-10-13"
   level: beginner
   tags:
   - "SAP학습자료"

@@ -85,6 +85,6 @@ tags: ["SAP학습자료", "SAP자격증", "SAPMM", "C_TS452", "SAP지원케이�
 **더 읽어보기**
 
 - [SAP MM 자격증 C_TS452 연습 전략, 같은 요리를 빠르고 정확하게](/blog/sap-mm-c-ts452-certification-3)
-- [SAP 자격증 가이드, 자격증이라는 메뉴판 제대로 읽는 법](/blog/sap-certification)
+- [SAP 자격증 종류·비용·응시 방법, 자격증이라는 메뉴판 읽는 법](/blog/sap-certification)
 
 <!-- 관련글: prerequisite=sap-mm-c-ts452-certification-3; related=sap-certification; deepens= -->
