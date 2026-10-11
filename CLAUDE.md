@@ -11,6 +11,8 @@ rabbitlogs.com 블로그 저장소. Astro 4 정적 사이트, Cloudflare Pages�
 1. 작업 브랜치에서 수정한다. `main`에 직접 push하지 않는다.
 2. push 전에 `npm ci`(처음 한 번) 후 `npm run build`로 빌드가 성공하는지 확인한다.
    빌드로 바뀐 `.astro/` 파일은 커밋하지 않는다(`git checkout -- .astro`).
+   새 글을 추가하거나 `<!-- 관련글: ... -->` 주석을 바꿨다면 `python3 scripts/sync-relations.py`를 먼저 실행한다
+   (한글 글의 "더 읽어보기"와 `src/data/book-index.yaml`을 갱신. 영문 "Read more"는 손으로 맞춘다).
 3. 작업 브랜치에 push하고 PR을 만든다.
 4. 운영자에게 변경 요약과 미리보기 링크(PR의 Cloudflare 봇 댓글)를 전달한다.
    미리보기 링크가 없으면 PR 링크와 변경 내용을 채팅으로 보여준다.
@@ -38,4 +40,5 @@ rabbitlogs.com 블로그 저장소. Astro 4 정적 사이트, Cloudflare Pages�
 - 디자인: `src/layouts/`, `src/components/`, `src/pages/`
 - 마크다운 커스텀 플러그인: `src/plugins/markdown.mjs`
 - 리다이렉트: `public/_redirects` (슬러그 변경 시 필수)
+- `drafts/`: 발행 전 원고 보관용(빌드 대상 아님). 날짜를 나눠 발행할 글은 여기에 두고, 발행일에 `src/content/blog/`로 옮긴다.
 - `.obsidian/`은 예전 로컬 Obsidian 설정. 건드리지 않는다.
