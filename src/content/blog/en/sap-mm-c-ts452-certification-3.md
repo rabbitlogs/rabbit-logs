@@ -33,7 +33,7 @@ Repeating the course exercises in English builds two things at once: an eye that
 
 ## Designing C_TS452 practice in three stages
 
-My practice material, from start to finish, was the exercises in the Learning Hub courses. I repeated those exercises, which cover the whole exam scope, with a different goal at each stage.
+My practice material, from start to finish, was the exercises in the Learning Hub courses. There were a lot of them, so I had an AI organize the course outlines and each course's learning objectives, and used that to **pick out the core exercises I needed to master in each course**. I then repeated those exercises with a different goal at each stage.
 
 | Stage | Goal | Method | Pass criteria |
 |---|---|---|---|
