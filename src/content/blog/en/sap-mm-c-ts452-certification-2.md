@@ -50,7 +50,7 @@ This was the most painful cause. Chased by the clock, I filled in a screen, pres
 
 The last one is like adding a seasoning that is not in the recipe because you think the customer will like it. **It is a trap that people who know the system well fall into most easily.**
 
-![Before-and-after comparison of three things I changed after my first SAP MM certification C_TS452 attempt: from machine-translated Korean instructions to the original English, from holding on to one stuck screen to drilling stuck screens separately, and from moving on right after Save to checking before saving and confirming on the display screen after](/images/sap-mm-c-ts452-certification-2-01.jpg)
+![Before-and-after comparison of three things I changed after my first SAP MM certification C_TS452 attempt: from machine-translated Korean instructions to the original English, from holding on to one stuck screen to drilling stuck screens separately, and from moving on right after Save to checking before saving and confirming on the display screen after](/images/sap-mm-c-ts452-certification-2-01-v2.jpg)
 *Figure 1. Three things I changed after the first attempt*
 
 ## C_TS452 second attempt: when the exam system is broken

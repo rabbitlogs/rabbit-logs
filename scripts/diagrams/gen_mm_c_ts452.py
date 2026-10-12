@@ -250,9 +250,9 @@ def build_0_01(lang, out):
 
 
 BUILDERS = {
-    "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01"),
+    "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01-v2"),
     "3-01": (build_3_01, "sap-mm-c-ts452-certification-3-01"),
-    "0-01": (build_0_01, "sap-mm-c-ts452-certification-0-01"),
+    "0-01": (build_0_01, "sap-mm-c-ts452-certification-0-01-v2"),
 }
 
 if __name__ == "__main__":
