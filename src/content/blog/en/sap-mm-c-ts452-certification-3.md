@@ -1,7 +1,7 @@
 ---
 title: "SAP MM certification C_TS452 practice and passing: the same dish, faster and more precisely"
 mapTitle: "SAP MM certification C_TS452 practice and passing"
-description: "How I passed the SAP MM certification (C_TS452) with 97.14% on my third attempt: practicing with English course material, where mistakes tend to happen in a hands-on exam, exam-day order and time allocation, and Stay Certified."
+description: "How I passed the SAP MM certification (C_TS452) on my third attempt: practicing with English course material, where mistakes tend to happen in a hands-on exam, exam-day order and time allocation, and Stay Certified."
 pubDate: 2026-10-15
 category: "study"
 series: "SAP MM certification journey"
@@ -13,12 +13,12 @@ Hi, this is Rabbit! 🐰
 
 The junior cook in a busy restaurant does not repeat the same dish hundreds of times because they don't know the recipe. They do it so that when the lunch rush hits, they can still plate the right amount within the time. Making a dish you already know **quickly and precisely** is a separate skill.
 
-My preparation after the [first two failed attempts](/en/blog/sap-mm-c-ts452-certification-2) went the same way. Rather than piling up knowledge, I focused on executing what I knew, by the instructions, on time. On my third attempt at the **SAP MM certification C_TS452**, I passed with **97.14%**. Everyone studies differently, so I keep my own approach brief here and focus on where mistakes tend to happen in this exam.
+My preparation after the [first two failed attempts](/en/blog/sap-mm-c-ts452-certification-2) went the same way. Rather than piling up knowledge, I focused on executing what I knew, by the instructions, on time. On my third attempt at the **SAP MM certification C_TS452**, I passed. Everyone studies differently, so I keep my own approach brief here and focus on where mistakes tend to happen in this exam.
 
 > **Three-line summary**
 > - I practiced the Learning Hub course exercises in English, timing myself as in the real exam.
 > - The spots where mistakes tend to happen in this exam are checking before saving, confirming after saving, and reusing transactions.
-> - On the third attempt I spent about 85 minutes on tasks and about 35 on verification, submitted after 2 hours, and passed with 97.14%.
+> - On the third attempt I spent about 85 minutes on tasks and about 35 on verification, submitted after 2 hours, and passed.
 
 [[TOC]]
 
@@ -83,7 +83,7 @@ My next goal is my day job, production planning: **PP** (C_TS422). I can now see
 
 ## Rabbit's Takeaway
 
-What three attempts left me with was simple. A hands-on exam tests what you can do, not what you know. Read the instructions in the original, enter values as instructed, and check before and after you save. ==Without the 31% on my first attempt, there would have been no 97% on my third.== There is a reason the junior cook repeats the same dish 😎
+What three attempts left me with was simple. A hands-on exam tests what you can do, not what you know. Read the instructions in the original, enter values as instructed, and check before and after you save. ==Without the failure on my first attempt, there would have been no pass on my third.== There is a reason the junior cook repeats the same dish 😎
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "SAP MM certification C_TS452 first and second attempts failed: a wrong recipe and a broken kitchen"
 mapTitle: "SAP MM certification C_TS452 attempts 1 and 2"
-description: "My SAP MM certification (C_TS452) attempts at 31% and 25%: machine-translated instructions, time allocation, the trap of not checking before saving, and how I filed a support case after an exam system defect and got the attempt back."
+description: "My SAP MM certification (C_TS452) first and second attempts: machine-translated instructions, time allocation, the trap of not checking before saving, and how I filed a support case after an exam system defect and got the attempt back."
 pubDate: 2026-10-13
 category: "study"
 series: "SAP MM certification journey"
@@ -13,7 +13,7 @@ Hi, this is Rabbit! 🐰
 
 Have you ever cooked from a foreign cookbook run through a translator? Most of it reads fine, but every now and then "2 teaspoons of sugar" turns into "2 cups of sugar." You follow the recipe exactly, and the dish still falls apart. And some days, the recipe and your hands are ready, but the kitchen's gas valve is shut.
 
-That is what my first and second **SAP MM certification C_TS452** attempts were like: **31.43%** and then **25.71%**, against a 76% pass mark. This part covers what went wrong in those two failures, focusing on what someone preparing for the same exam can avoid.
+That is what my first and second **SAP MM certification C_TS452** attempts were like: both ended in a fail. This part covers what went wrong in those two failures, focusing on what someone preparing for the same exam can avoid.
 
 > **Three-line summary**
 > - In the first attempt, machine-translated instructions, time sunk into one task, and no check before saving turned half of the tasks I thought I had finished into zeros.
@@ -22,9 +22,9 @@ That is what my first and second **SAP MM certification C_TS452** attempts were 
 
 [[TOC]]
 
-## C_TS452 first attempt: why it scored 31%
+## C_TS452 first attempt: why it failed
 
-I took the first exam in September 2026. When I pressed submit, I had no idea it would be that low. There were tasks I never reached, but I thought most of what I did finish was correct. Working backward from the score, **nearly half of the tasks I thought I had finished scored zero**. There were three causes.
+I took the first exam in September 2026. When I pressed submit, I had no idea it would turn out that way. There were tasks I never reached, but I thought most of what I did finish was correct. Working backward from the score, **nearly half of the tasks I thought I had finished scored zero**. There were three causes.
 
 ### Machine-translated instructions
 
@@ -50,14 +50,14 @@ This was the most painful cause. Chased by the clock, I filled in a screen, pres
 
 The last one is like adding a seasoning that is not in the recipe because you think the customer will like it. **It is a trap that people who know the system well fall into most easily.**
 
-![Table of the three causes of my first SAP MM certification C_TS452 failure: machine-translated instructions fixed by reading in English, time sunk into one task fixed by a 3-minute check and drilling weak screens, and no check before saving fixed by comparing every field before Save](/images/sap-mm-c-ts452-certification-2-01.jpg)
-*Figure 1. The causes of my 31% first attempt and what I changed afterward*
+![Before-and-after comparison of three things I changed after my first SAP MM certification C_TS452 attempt: from machine-translated Korean instructions to the original English, from holding on to one stuck screen to drilling stuck screens separately, and from moving on right after Save to checking before saving and confirming on the display screen after](/images/sap-mm-c-ts452-certification-2-01.jpg)
+*Figure 1. Three things I changed after the first attempt*
 
 ## C_TS452 second attempt: when the exam system is broken
 
 In early October I went into my second attempt. As soon as I started the first task, an odd error appeared. I was trying to do an inventory-related step, and saving was blocked with a message to the effect that **a base setting was missing**, one that should already exist in the exam system. It was not something candidates create.
 
-Many tasks depended on that setting, so **I could not carry out most of them**. I did only what I could, and the result was 25.71%.
+Many tasks depended on that setting, so **I could not carry out most of them**. I did only what I could, and the result was a fail.
 
 ### My mistake, or an exam system defect?
 
@@ -71,14 +71,14 @@ In a hands-on exam, getting an earlier step wrong and blocking a later one is co
 
 ### How to file an SAP support case
 
-After the exam, I filed an <strong class="key">SAP support case</strong> through **Create a case** in the [SAP Learning help center](https://learning.sap.com/helpcenter). This is what I included.
+After the exam, I filed an <strong class="key">SAP support case</strong> through **Create a case** in the [SAP Learning Help Center](https://learning.sap.com/helpcenter). This is what I included.
 
 - The exam code and the date and time of the attempt
 - Where the error happened, the exact message, and a screenshot of the error screen
 - An explanation that the setting was outside the candidate's scope of work
 - Which tasks I could not carry out because of it
 
-Writing the situation precisely in English felt like a burden, so I described it to an AI to produce a draft, then checked it myself for anything inaccurate before submitting. It was handled faster than I expected, and **my attempt was reissued the same day**. A confirmed booking is hard to cancel or change, but when the cause is not the candidate's fault, such as an exam system defect, there is a way to get relief.
+To get the situation across precisely in English, I described it to an AI to produce a draft, then checked it myself for anything inaccurate before submitting. It was handled faster than I expected, and **my attempt was reissued the same day**. When the cause is not the candidate's fault, such as an exam system defect, you can get your attempt back this way.
 
 ### Why I did not retake it right away
 
