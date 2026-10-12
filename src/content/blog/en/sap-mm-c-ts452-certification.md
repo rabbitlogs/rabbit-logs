@@ -24,7 +24,7 @@ I passed the **SAP MM certification C_TS452** on my third attempt. Since it is a
 
 ## Three exam attempts
 
-![Three SAP MM certification C_TS452 attempts: first failed (machine translation, no time, no check before saving), second hit an exam system defect and the attempt was reissued (evidence collected, case filed with the Help Center), third passed (English instructions, checks around saves, final review)](/images/sap-mm-c-ts452-certification-0-01.jpg)
+![Three SAP MM certification C_TS452 attempts: first failed (machine translation, no time, no check before saving), second hit an exam system defect and the attempt was reissued (evidence collected, case filed with the Help Center), third passed (English instructions, checks around saves, final review)](/images/sap-mm-c-ts452-certification-0-01-v2.jpg)
 *Figure 1. Three exam attempts. The exam version was C_TS452_2601, and the pass mark was 76%.*
 
 ## Series contents
