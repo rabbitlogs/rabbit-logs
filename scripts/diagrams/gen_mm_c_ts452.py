@@ -56,79 +56,66 @@ def _wrap(c, text, font, width):
 # ---------------------------------------------------------------- 2편
 T_2_01 = {
     "ko": {
-        "title": "1차 시험이 31%에 그친 이유",
-        "sub": "몰라서가 아니라, 해내지 못해서",
-        "head": ("원인", "무슨 일이 있었나", "그 뒤로 바꾼 것"),
+        "title": "1차 이후 바꾼 세 가지",
+        "sub": "몰라서가 아니라, 해내는 방식이 문제였다",
+        "before": "1차 때", "after": "그 뒤로",
         "rows": [
-            ("기계번역 지침", "번역된 숫자와 구성이 원문과 다르게 읽혔다", "지침은 영어로 읽는다"),
-            ("한 과제에 쏠린 시간", "낯선 설정 화면에서 헤매며 한 과제에 약 100분", "3분 막히면 멈추고 판단, 막힌 화면은 따로 반복"),
-            ("저장 전 대조 없음", "0 하나 더, 필수 필드 누락, 습관대로 한 단계 추가", "Save 전에 지침과 필드를 1:1로 대조한다"),
+            ("지침", "한국어(기계번역) 지침으로 읽었다", "영어 원문 지침으로 읽는다"),
+            ("시간", "막힌 화면 하나를 오래 붙잡았다", "막힌 화면은 따로 모아 반복 연습한다"),
+            ("저장", "Save 후 바로 다음으로 넘어갔다", "저장 전 대조, 저장 후 조회로 확인한다"),
         ],
     },
     "en": {
-        "title": "Why my first attempt scored 31%",
-        "sub": "Not a knowledge gap, but an execution gap",
-        "head": ("Cause", "What happened", "What I changed"),
+        "title": "Three things I changed after the first attempt",
+        "sub": "Not a knowledge gap, but how I executed",
+        "before": "First attempt", "after": "Afterward",
         "rows": [
-            ("Machine-translated instructions",
-             "Numbers and structure read differently from the original",
-             "Read the instructions in English"),
-            ("Time sink",
-             "About 100 minutes lost in unfamiliar configuration screens",
-             "Stuck 3 minutes? Stop and decide; drill weak screens"),
-            ("No check before Save",
-             "An extra zero, a missing field, one step added out of habit",
-             "Compare every field with the instructions before saving"),
+            ("Instructions", "Read the machine-translated Korean version", "Read the original English instructions"),
+            ("Time", "Held on to one stuck screen for too long", "Collect stuck screens and drill them separately"),
+            ("Saving", "Pressed Save and moved straight on", "Check before saving, confirm on display after"),
         ],
     },
 }
 
 
 def build_2_01(lang, out):
-    """1차 31% — 원인 3가지를 '원인 / 무슨 일이 있었나 / 바꾼 것' 미니 표로."""
+    """전/후 비교형 — 1차 때 → 그 뒤로, 항목 3개."""
     t = T_2_01[lang]
-    title, sub, head, rows = t["title"], t["sub"], t["head"], t["rows"]
     W = 800
-    cols = [B.PAD, 250, 520]           # 열 시작 x
-    widths = [cols[1] - cols[0] - 20, cols[2] - cols[1] - 20, W - B.PAD - cols[2]]
+    lab_w = 120 if lang == "en" else 70
+    x_lab = B.PAD
+    x_b = B.PAD + lab_w + 10
+    arrow_w = 34
+    col_w = (W - B.PAD - x_b - arrow_w) / 2
+    x_a = x_b + col_w + arrow_w
     f_head = B.F("Bold", 17)
-    f_cause = B.F("ExtraBold", 19)
-    f_body = B.F("Regular", 17)
+    f_lab = B.F("ExtraBold", 18)
+    f_b = B.F("Regular", 17)
+    f_a = B.F("SemiBold", 17)
     lh = 25
-
     probe = _Canvas(W, 10)
-    wrapped = []
-    for r in rows:
-        cells = [_wrap(probe, r[0], f_cause, widths[0]),
-                 _wrap(probe, r[1], f_body, widths[1]),
-                 _wrap(probe, r[2], B.F("SemiBold", 17), widths[2])]
-        wrapped.append(cells)
-    row_hs = [max(len(x) for x in cells) * lh + 30 for cells in wrapped]
-
-    top = _banner_height(probe, title, sub)
-    head_h = 40
-    H = int(top + head_h + sum(row_hs) + 26)
+    wrapped = [(_wrap(probe, r[1], f_b, col_w - 28), _wrap(probe, r[2], f_a, col_w - 28)) for r in t["rows"]]
+    row_hs = [max(len(b), len(a)) * lh + 28 for b, a in wrapped]
+    top = _banner_height(probe, t["title"], t["sub"])
+    H = int(top + 36 + sum(row_hs) + 12 * len(row_hs) + 20)
     c = _Canvas(W, H)
-    y = B.banner_B(c, title, sub)
-
-    # 헤더
-    for i, h in enumerate(head):
-        col = B.BERRY_S[1] if i == 0 else (B.NEUT_S[1] if i == 1 else B.TEAL_S[1])
-        c.text((cols[i], y + 8), h.upper() if lang == "en" else h, f_head, fill=col)
-    y += head_h
-    c.line([B.PAD, y, W - B.PAD, y], fill=B.NEUT_S[2], width=1.5)
-
-    for (cells, rh) in zip(wrapped, row_hs):
-        ty = y + 15
-        for j, line in enumerate(cells[0]):
-            c.text((cols[0], ty + j * lh), line, f_cause, fill=B.BERRY_S[1])
-        for j, line in enumerate(cells[1]):
-            c.text((cols[1], ty + j * lh), line, f_body, fill=B.NEUT_S[1])
-        for j, line in enumerate(cells[2]):
-            c.text((cols[2], ty + j * lh), line, B.F("SemiBold", 17), fill=B.TEAL_S[1])
-        y += rh
-        c.line([B.PAD, y, W - B.PAD, y], fill=B.NEUT_S[4], width=1)
-
+    y = B.banner_B(c, t["title"], t["sub"])
+    c.text((x_b + 14, y), t["before"], f_head, fill=B.BERRY_S[1])
+    c.text((x_a + 14, y), t["after"], f_head, fill=B.TEAL_S[1])
+    y += 34
+    for (lab, _, _), (bl, al), rh in zip(t["rows"], wrapped, row_hs):
+        c.text((x_lab, y + 14), lab, f_lab, fill=B.NEUT_S[1])
+        c.rect([x_b, y, x_b + col_w, y + rh], fill=B.BERRY_S[5], radius=10)
+        c.rect([x_a, y, x_a + col_w, y + rh], fill=B.TEAL_S[5], radius=10)
+        for j, line in enumerate(bl):
+            c.text((x_b + 14, y + 14 + j * lh), line, f_b, fill=B.BERRY_S[0])
+        for j, line in enumerate(al):
+            c.text((x_a + 14, y + 14 + j * lh), line, f_a, fill=B.TEAL_S[0])
+        ay = y + rh / 2
+        ax0, ax1 = x_b + col_w + 7, x_a - 7
+        c.line([ax0, ay, ax1 - 6, ay], fill=B.NEUT_S[3], width=2)
+        c.polygon([ax1, ay, ax1 - 9, ay - 6, ax1 - 9, ay + 6], fill=B.NEUT_S[3])
+        y += rh + 12
     c.save(out)
 
 
@@ -210,20 +197,20 @@ def build_3_01(lang, out):
 T_0_01 = {
     "ko": {
         "title": "세 번의 응시 기록",
-        "sub": "SAP MM 자격증 C_TS452 (합격선 76%)",
+        "sub": "SAP MM 자격증 C_TS452",
         "cards": [
-            ("1차", "31%", "불합격", "기계번역 지침, 시간 부족, 저장 전 대조 없음", "berry"),
-            ("2차", "25%", "불합격", "시험 시스템 결함 → 응시권 재부여", "gold"),
-            ("3차", "97%", "합격", "영어 지침, 저장 전후 확인, 마지막 전수 검증", "teal"),
+            ("1차", "불합격", "", "기계번역 지침, 시간 부족, 저장 전 대조 없음", "berry"),
+            ("2차", "시스템 결함", "응시권 재부여", "결함 근거 정리 → Help Center에 케이스 접수", "gold"),
+            ("3차", "합격", "", "영어 지침, 저장 전후 확인, 마지막 전수 검증", "teal"),
         ],
     },
     "en": {
         "title": "Three exam attempts",
-        "sub": "SAP MM certification C_TS452 (pass mark 76%)",
+        "sub": "SAP MM certification C_TS452",
         "cards": [
-            ("1st", "31%", "Failed", "Machine translation, no time, no check before saving", "berry"),
-            ("2nd", "25%", "Failed", "Exam system defect, attempt reissued", "gold"),
-            ("3rd", "97%", "Passed", "English instructions, checks around saves, final review", "teal"),
+            ("1st", "Failed", "", "Machine translation, no time, no check before saving", "berry"),
+            ("2nd", "Defect", "Attempt reissued", "Evidence collected, case filed with the Help Center", "gold"),
+            ("3rd", "Passed", "", "English instructions, checks around saves, final review", "teal"),
         ],
     },
 }
@@ -238,12 +225,12 @@ def build_0_01(lang, out):
     gap = 18
     cw = (W - 2 * B.PAD - 2 * gap) / 3
     f_lab = B.F("Bold", 18)
-    f_score = B.F("Black", 46)
+    f_score = B.F("Black", 34)
     f_res = B.F("Bold", 18)
     f_note = B.F("Regular", 16)
     probe = _Canvas(W, 10)
     notes = [_wrap(probe, c[3], f_note, cw - 32) for c in t["cards"]]
-    card_h = 24 + 24 + 64 + 30 + max(len(n) for n in notes) * 24 + 20
+    card_h = 24 + 24 + 50 + 30 + max(len(n) for n in notes) * 24 + 20
     top = _banner_height(probe, t["title"], t["sub"])
     H = int(top + card_h + 30)
     c = _Canvas(W, H)
@@ -255,9 +242,10 @@ def build_0_01(lang, out):
         c.rect([x, y, x + cw, y + 6], fill=main, radius=3)
         c.text((x + 16, y + 22), lab, f_lab, fill=B.NEUT_S[1])
         c.text((x + 16, y + 48), score, f_score, fill=main)
-        c.text((x + 16, y + 112), res, f_res, fill=main)
+        if res:
+            c.text((x + 16, y + 98), res, f_res, fill=main)
         for j, line in enumerate(notes[i]):
-            c.text((x + 16, y + 142 + j * 24), line, f_note, fill=B.NEUT_S[1])
+            c.text((x + 16, y + 128 + j * 24), line, f_note, fill=B.NEUT_S[1])
     c.save(out)
 
 

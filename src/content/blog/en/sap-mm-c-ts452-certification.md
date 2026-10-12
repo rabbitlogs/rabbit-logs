@@ -1,7 +1,7 @@
 ---
 title: "SAP MM certification C_TS452 exam review: three trips into the practice kitchen"
 mapTitle: "SAP MM certification C_TS452 exam review"
-description: "A complete review of passing the SAP MM certification (C_TS452): three attempts at 31%, 25%, and 97%, the exam structure, why I failed, handling an exam system defect, and how I prepared to pass."
+description: "A complete review of passing the SAP MM certification (C_TS452): three attempts, the exam structure, why I failed, handling an exam system defect, and how I prepared to pass."
 pubDate: 2026-10-18
 category: "study"
 series: "SAP MM certification journey"
@@ -13,18 +13,18 @@ Hi, this is Rabbit! 🐰
 
 The same dish feels different the first time you walk into a kitchen and the third time. The recipe has not changed, but you start to see what to take out first and where to taste along the way.
 
-I passed the **SAP MM certification C_TS452** on my third attempt: 31%, 25%, and then 97%. Since it is a hands-on exam where you complete tasks in a real system, there was quite a gap between knowing the material and executing it exactly in the exam room. This post pulls the three-part series together in one place.
+I passed the **SAP MM certification C_TS452** on my third attempt. Since it is a hands-on exam where you complete tasks in a real system, there was quite a gap between knowing the material and executing it exactly in the exam room. This post pulls the three-part series together in one place.
 
 > **Three-line summary**
 > - C_TS452 is a hands-on (SyBA) certification for S/4HANA sourcing and procurement, graded only on whether saved values match the instructions.
 > - I failed the first attempt because of machine-translated instructions and no check before saving, and the second because of an exam system defect.
-> - On the third attempt, English instructions, checks before and after saving, and a final full review got me 97.14%.
+> - On the third attempt, English instructions, checks before and after saving, and a final full review got me a pass.
 
 [[TOC]]
 
 ## Three exam attempts
 
-![Three SAP MM certification C_TS452 attempts: first 31% failed (machine translation, no time, no check before saving), second 25% failed (exam system defect, attempt reissued), third 97% passed (English instructions, checks around saves, final review)](/images/sap-mm-c-ts452-certification-0-01.jpg)
+![Three SAP MM certification C_TS452 attempts: first failed (machine translation, no time, no check before saving), second hit an exam system defect and the attempt was reissued (evidence collected, case filed with the Help Center), third passed (English instructions, checks around saves, final review)](/images/sap-mm-c-ts452-certification-0-01.jpg)
 *Figure 1. Three exam attempts. The exam version was C_TS452_2601, and the pass mark was 76%.*
 
 ## Series contents

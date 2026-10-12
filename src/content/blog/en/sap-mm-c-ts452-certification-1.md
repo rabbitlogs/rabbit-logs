@@ -49,7 +49,7 @@ For a hands-on exam, Learning Hub matters even more.
 ![SAP Certification Hub page for C_TS452, showing a 3-hour System Based Assessment, a maximum of 4 attempts within 12 months, and 3 of 4 attempts left](/images/sap-mm-c-ts452-certification-1-01.jpg)
 *Figure 1. Certification Hub. You can take the same certification up to four times within 12 months.*
 
-Booking a slot does not use up an attempt; one is deducted **the moment you start** the exam at the confirmed date and time. If you are planning several certifications, it is safer to match the number of exams to your attempts first.
+Booking a slot does not use up an attempt; one is deducted **the moment you start** the exam at the confirmed date and time. If you book but cannot take the exam, no attempt is deducted. On my first booking, I could not connect to the exam server and never got to take the exam, and my attempt was still there afterward. If you are planning several certifications, it is safer to match the number of exams to your attempts first.
 
 In my case the practice system mattered especially. At work I had only ever used SAP GUI, so I had barely touched **Fiori** (SAP's web-based interface). The exam uses Fiori apps and GUI transactions together, so I needed an environment where I could freely click through screens I could not practice on at work.
 
