@@ -11,7 +11,7 @@ tags: ["SAPLearning", "SAPCertification", "SAPMM", "C_TS452", "SAPExamReview"]
 
 Hi, this is Rabbit! 🐰
 
-The same dish feels different the first time you walk into a kitchen and the third time. The recipe has not changed, but you start to see what to take out first and where to taste along the way.
+A kitchen feels different the first time you walk in and the third time. You start to see what to take out first and where to taste along the way.
 
 I passed the **SAP MM certification C_TS452** on my third attempt. Since it is a hands-on exam where you complete tasks in a real system, there was quite a gap between knowing the material and executing it exactly in the exam room. This post pulls the three-part series together in one place.
 
@@ -42,7 +42,7 @@ I passed the **SAP MM certification C_TS452** on my third attempt. Since it is a
 
 ## Rabbit's Takeaway
 
-Across three trips into the kitchen, the recipe never changed once. What changed was how I read it and the habit of checking before the plate went out. ==A hands-on exam scores you on what you executed by the instructions, not on how much you know.== I hope this record serves as a small map for anyone preparing for the same exam 😎
+Across three trips into the kitchen, what changed most was not how much I knew. It was how I read the recipe and the habit of checking before the plate went out. ==A hands-on exam scores you on what you executed by the instructions, not on how much you know.== I hope this record serves as a small map for anyone preparing for the same exam 😎
 
 ---
 
