@@ -81,6 +81,8 @@ As I covered in the [SAP certification guide](/en/blog/sap-certification), SAP c
 
 My next goal is my day job, production planning: **PP** (C_TS422). I can now see from the purchasing side how MRP creates a purchase requisition and how it becomes a purchase order through source determination.
 
+If you have already taken C_TS422 in its new hands-on (SyBA) format, I would be very grateful if you could share what helped you with preparation or time allocation at [contact@rabbitlogs.com](mailto:contact@rabbitlogs.com).
+
 ## Rabbit's Takeaway
 
 What three attempts left me with was simple. A hands-on exam tests what you can do, not what you know. Read the instructions in the original, enter values as instructed, and check before and after you save. ==Without the failure on my first attempt, there would have been no pass on my third.== There is a reason the junior cook repeats the same dish 😎
