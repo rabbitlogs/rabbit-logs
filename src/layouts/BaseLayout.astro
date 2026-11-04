@@ -1,6 +1,6 @@
 ---
 import Search from '../components/Search.astro';
-const { title, description, lang = 'ko', showAds = false } = Astro.props;
+const { title, description, lang = 'ko', showAds = false, noindex = false } = Astro.props;
 
 const nav = {
   ko: {
@@ -43,10 +43,16 @@ const enUrl = new URL(enPath, Astro.site).href;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="naver-site-verification" content="5ae106a19220bcd3114005c35125285f1c4e4b70" />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="ko" href={koUrl} />
-    <link rel="alternate" hreflang="en" href={enUrl} />
-    <link rel="alternate" hreflang="x-default" href={koUrl} />
+    {noindex ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="ko" href={koUrl} />
+        <link rel="alternate" hreflang="en" href={enUrl} />
+        <link rel="alternate" hreflang="x-default" href={koUrl} />
+      </>
+    )}
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="alternate" type="application/rss+xml" title="Rabbit Logs RSS" href={t.rssHref} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -67,3 +67,9 @@ ko 64개 + en 64개가 짝을 이루는데 관계 표시가 없어 구글이 중
 - robots.txt에 `Disallow: /cdn-cgi/` 추가 — 크롤링 예산 영향 미미
 - `/en/` 페이지의 한국어 UI 잔여물(내비게이션, 목차 안내) 영문화
   — 목차·광고 라벨은 커밋 8b95acd에서 영문화 완료. 나머지 잔여물은 미확인.
+
+## 2026-11 추가: 404 페이지 신설
+
+`src/pages/404.astro`가 없어 Cloudflare Pages가 없는 경로에 홈페이지를 200으로 돌려주고 있었다(SPA 모드, 소프트 404).
+Lighthouse 에이전트형 브라우징 검사에서 `/.well-known/ai-catalog.json`이 HTML로 응답해 "Malformed JSON" 오류로 드러남.
+404 페이지(`noindex`, canonical·hreflang 없음)를 추가해 없는 경로는 404 상태로 응답하게 했다. 지우지 말 것.
