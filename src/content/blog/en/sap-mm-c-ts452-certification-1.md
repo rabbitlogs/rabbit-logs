@@ -61,8 +61,6 @@ Of the two exam types introduced in [SAP certification exams](/en/blog/sap-exam-
 - **Structure**: a few large tasks, each followed by a chain of sub-exercises. Later steps use data created in earlier ones, so one mistake early on brings down everything after it. Skipping a step just because you are stuck can cost you the later tasks that depend on it too.
 - **Time**: 3 hours. It sounds generous, but divided across the sub-exercises it is tighter than it looks.
 - **Grading**: ==it does not check whether you reached the last screen, but whether the saved values match the instructions exactly.== One wrong quantity or date means zero points.
-- **Instruction language**: you can choose the language of the instructions at the start. The Korean instructions are machine-translated, so English is the safer choice. More on that in the [next part](/en/blog/sap-mm-c-ts452-certification-2).
-
 > ⚠️ **Caution**: the `Confirm completion` button at the bottom submits the entire exam, not a single task. Press it only at the very end, after finishing every exercise.
 
 ## Why a PP practitioner started with MM

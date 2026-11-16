@@ -56,21 +56,19 @@ def _wrap(c, text, font, width):
 # ---------------------------------------------------------------- 2편
 T_2_01 = {
     "ko": {
-        "title": "1차 이후 바꾼 세 가지",
+        "title": "1차 이후 바꾼 두 가지",
         "sub": "몰라서가 아니라, 해내는 방식이 문제였다",
         "before": "1차 때", "after": "그 뒤로",
         "rows": [
-            ("지침", "한국어(기계번역) 지침으로 읽었다", "영어 원문 지침으로 읽는다"),
             ("시간", "막힌 화면 하나를 오래 붙잡았다", "막힌 화면은 따로 모아 반복 연습한다"),
             ("저장", "Save 후 바로 다음으로 넘어갔다", "저장 전 대조, 저장 후 조회로 확인한다"),
         ],
     },
     "en": {
-        "title": "Three things I changed after the first attempt",
+        "title": "Two things I changed after the first attempt",
         "sub": "Not a knowledge gap, but how I executed",
         "before": "First attempt", "after": "Afterward",
         "rows": [
-            ("Instructions", "Read the machine-translated Korean version", "Read the original English instructions"),
             ("Time", "Held on to one stuck screen for too long", "Collect stuck screens and drill them separately"),
             ("Saving", "Pressed Save and moved straight on", "Check before saving, confirm on display after"),
         ],
@@ -199,18 +197,18 @@ T_0_01 = {
         "title": "세 번의 응시 기록",
         "sub": "SAP MM 자격증 C_TS452",
         "cards": [
-            ("1차", "불합격", "", "기계번역 지침, 시간 부족, 저장 전 대조 없음", "berry"),
+            ("1차", "불합격", "", "시간 부족, 저장 전 대조 없음", "berry"),
             ("2차", "시스템 결함", "응시권 재부여", "결함 근거 정리 → Help Center에 케이스 접수", "gold"),
-            ("3차", "합격", "", "영어 지침, 저장 전후 확인, 마지막 전수 검증", "teal"),
+            ("3차", "합격", "", "반복 연습, 저장 전후 확인, 마지막 전수 검증", "teal"),
         ],
     },
     "en": {
         "title": "Three exam attempts",
         "sub": "SAP MM certification C_TS452",
         "cards": [
-            ("1st", "Failed", "", "Machine translation, no time, no check before saving", "berry"),
+            ("1st", "Failed", "", "No time, no check before saving", "berry"),
             ("2nd", "Defect", "Attempt reissued", "Evidence collected, case filed with the Help Center", "gold"),
-            ("3rd", "Passed", "", "English instructions, checks around saves, final review", "teal"),
+            ("3rd", "Passed", "", "Repeated practice, checks around saves, final review", "teal"),
         ],
     },
 }
@@ -250,9 +248,9 @@ def build_0_01(lang, out):
 
 
 BUILDERS = {
-    "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01-v2"),
+    "2-01": (build_2_01, "sap-mm-c-ts452-certification-2-01-v3"),
     "3-01": (build_3_01, "sap-mm-c-ts452-certification-3-01"),
-    "0-01": (build_0_01, "sap-mm-c-ts452-certification-0-01-v2"),
+    "0-01": (build_0_01, "sap-mm-c-ts452-certification-0-01-v3"),
 }
 
 if __name__ == "__main__":
