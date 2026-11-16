@@ -7,7 +7,6 @@ const nav = {
     project: 'SAP 프로젝트', projectShort: '프로젝트',
     operations: 'SAP 실무운영', operationsShort: '실무운영',
     study: 'SAP 학습자료', studyShort: '학습자료',
-    stats: '통계·데이터', statsShort: '통계·데이터',
     about: '소개 & 문의', other: 'EN', otherHref: '/en/', privacy: '개인정보처리방침', terms: '이용약관',
     mapLabel: '글 지도', rssLabel: 'RSS 피드', mapHref: '/map/', rssHref: '/rss.xml',
   },
@@ -15,7 +14,6 @@ const nav = {
     project: 'SAP Projects', projectShort: 'Projects',
     operations: 'SAP Operations', operationsShort: 'Operations',
     study: 'SAP Study Notes', studyShort: 'Study Notes',
-    stats: 'Stats & Data', statsShort: 'Stats & Data',
     about: 'About & Contact', other: 'KO', otherHref: '/', privacy: 'Privacy Policy', terms: 'Terms of Use',
     mapLabel: 'Site map', rssLabel: 'RSS feed', mapHref: '/en/map/', rssHref: '/en/rss.xml',
   },
@@ -107,7 +105,6 @@ const enUrl = new URL(enPath, Astro.site).href;
           <a href={`${home}category/project/`}><span class="lbl-full">{t.project}</span><span class="lbl-short">{t.projectShort}</span></a>
           <a href={`${home}category/operations/`}><span class="lbl-full">{t.operations}</span><span class="lbl-short">{t.operationsShort}</span></a>
           <a href={`${home}category/study/`}><span class="lbl-full">{t.study}</span><span class="lbl-short">{t.studyShort}</span></a>
-          <a href={`${home}category/stats/`}><span class="lbl-full">{t.stats}</span><span class="lbl-short">{t.statsShort}</span></a>
           <a href={`${home}about/`}>{t.about}</a>
         </nav>
       </div>
@@ -265,7 +262,6 @@ const enUrl = new URL(enPath, Astro.site).href;
       .prose-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; --tk-border: #cfe3de; }
       .prose-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; --tk-border: #cddced; }
       .prose-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; --tk-border: #f0dbb3; }
-      .prose-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; --tk-border: #eccfd9; }
 
       /* 목차 */
       .prose .toc { margin: 2rem 0; padding: 1.1rem 1.4rem; background: var(--color-bg-soft); border: 1px solid var(--line); border-radius: 10px; }

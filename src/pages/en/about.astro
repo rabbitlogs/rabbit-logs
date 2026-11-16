@@ -15,7 +15,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     <p class="lead">After a production PI project and an SAP PP build and stabilization,<br />I'm still working today as a practitioner who <strong>actually uses SAP</strong> on the job.</p>
 
-    <p class="lead">I record what I learn on the job, in the language of someone doing the job.<br />And I'm sharing the journey of widening that view with data, too.</p>
+    <p class="lead">I record what I learn on the job, in the language of someone doing the job.</p>
 
     <ul class="timeline">
       <li><div class="tl-body">
@@ -58,10 +58,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <a href="/en/category/study/" class="cat-card cat-study">
         <p class="cat-name">SAP Study Notes</p>
         <p class="cat-desc">Concepts at a beginner's eye level</p>
-      </a>
-      <a href="/en/category/stats/" class="cat-card cat-stats">
-        <p class="cat-name">Stats &amp; Data</p>
-        <p class="cat-desc">Rereading the work through numbers</p>
       </a>
     </div>
 
@@ -180,7 +176,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     /* ── Category cards ── */
-    .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin: 0; }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin: 0; }
     .cat-card {
       display: block; text-decoration: none; color: inherit;
       background: var(--tk-bg); border: 1px solid var(--tk-border);
@@ -194,7 +190,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .cat-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; --tk-border: #cfe3de; }
     .cat-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; --tk-border: #cddced; }
     .cat-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; --tk-border: #f0dbb3; }
-    .cat-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; --tk-border: #eccfd9; }
 
     /* ── Contact + subscribe CTA ── */
     .cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 0; }

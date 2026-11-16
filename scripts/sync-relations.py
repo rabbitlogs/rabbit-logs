@@ -41,7 +41,6 @@ CATEGORY_REQUIRED_TAG = {
     "project": "SAP프로젝트",
     "operations": "SAP실무운영",
     "study": "SAP학습자료",
-    "stats": "통계·데이터",
 }
 
 

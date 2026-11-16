@@ -8,7 +8,7 @@ const PER_PAGE = 8;
 
 export async function getStaticPaths({ paginate }) {
   const PER_PAGE = 8;
-  const cats = ['project', 'operations', 'study', 'stats'];
+  const cats = ['project', 'operations', 'study'];
   const all = (await getCollection('blog')).filter((p) => p.id.startsWith('ko/'));
   return cats.flatMap((cat) => {
     const posts = all
@@ -23,7 +23,7 @@ export async function getStaticPaths({ paginate }) {
 const { cat } = Astro.params;
 const { page } = Astro.props;
 
-const catName = { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', stats: '통계·데이터' };
+const catName = { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' };
 const catDesc = {
   project: [
     'SAP를 처음 도입하고 구축하는 과정의 기록입니다.',
@@ -36,10 +36,6 @@ const catDesc = {
   study: [
     'SAP를 공부하는 사람을 위한 기초 개념과 자격증 가이드입니다.',
     '입문자가 막막해하는 지점을 실무자 관점에서 풀어냅니다.',
-  ],
-  stats: [
-    'SAP 실무를 하다 보면 결국 데이터를 보는 눈이 필요해집니다.',
-    '통계와 데이터 분석을 공부하며 남기는 기록입니다.',
   ],
 };
 

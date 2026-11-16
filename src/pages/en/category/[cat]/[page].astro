@@ -8,7 +8,7 @@ const PER_PAGE = 8;
 
 export async function getStaticPaths({ paginate }) {
   const PER_PAGE = 8;
-  const cats = ['project', 'operations', 'study', 'stats'];
+  const cats = ['project', 'operations', 'study'];
   const all = (await getCollection('blog')).filter((p) => p.id.startsWith('en/'));
   return cats.flatMap((cat) => {
     const posts = all
@@ -23,7 +23,7 @@ export async function getStaticPaths({ paginate }) {
 const { cat } = Astro.params;
 const { page } = Astro.props;
 
-const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' };
+const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes' };
 const catDesc = {
   project: [
     'A record of the process of first adopting and implementing SAP.',
@@ -36,10 +36,6 @@ const catDesc = {
   study: [
     'Foundational concepts and certification guides for anyone learning SAP.',
     'Explaining the parts beginners find confusing, from a practitioner’s point of view.',
-  ],
-  stats: [
-    'Working with SAP eventually means you need an eye for data, too.',
-    'Notes from studying statistics and data analysis alongside SAP work.',
   ],
 };
 
