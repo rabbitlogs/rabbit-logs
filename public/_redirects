@@ -185,6 +185,10 @@
 /sap-activity-cnf/   /blog/sap-activity-cnf/   301
 
 # ── 기타 ──
+# ADsP 글 (2026-11 통계 카테고리 삭제 때 학습자료로 옮겨 새 주소로 재발행)
+/blog/stats-adsp/   /blog/adsp-certification/   301
+/en/blog/stats-adsp/   /en/blog/adsp-certification/   301
+
 # 포괄 규칙(/sap-* → /)은 소프트 404를 유발해 2026-08-10 삭제함.
 # 매칭 안 되는 예전 주소는 404로 응답하는 것이 검색엔진에 더 명확한 신호.
 # 새 글을 발행하면 위쪽 정밀 연결 영역에 한 줄씩 추가할 것.

@@ -2,3 +2,9 @@ node_modules/
 dist/
 .astro/
 .obsidian/photothumb.db
+
+# 윈도우/맥이 폴더에 자동으로 만드는 썸네일·설정 캐시 (공개 폴더에 올라가지 않게)
+photothumb.db
+Thumbs.db
+desktop.ini
+.DS_Store
