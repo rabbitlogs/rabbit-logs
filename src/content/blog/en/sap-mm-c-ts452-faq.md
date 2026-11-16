@@ -18,7 +18,7 @@ After I posted my <strong class="key">SAP MM certification C_TS452</strong> [exa
 > **Three-line summary**
 > - C_TS452 is a hands-on exam in a real system, so the hard part is time and accuracy, not knowledge.
 > - The surest preparation is repeating the official Learning Hub exercises in the practice system, as one continuous flow.
-> - Practice volume matters more than years of experience, and with four attempts you can let go of the pressure to pass on the first try.
+> - Practice volume matters more than years of SAP experience, and you can let go of the pressure to pass on the first try.
 
 [[TOC]]
 
@@ -124,13 +124,7 @@ I have about five years of SAP experience, mainly on PP in an implementation pro
 
 Yes. ==In this exam, practice volume decides the result more than years with SAP.== If you can practice every day, a few months is enough.
 
-A Learning Hub subscription includes four exam attempts within 12 months. I failed my first attempt, could not complete my second because of an exam system problem, and passed my third with 97.14%. You can let go of the pressure to pass on the first try.
-
-## Questions I cannot answer
-
-### Can you share past exam questions or similar tasks
-
-I cannot. Not the actual questions, and not tasks reconstructed from memory either; both fall under the SAP certification non-disclosure agreement. The official exercises already do that job. Repeating them carefully is the best preparation there is.
+I failed my first attempt, could not complete my second because of an exam system problem, and passed my third with 97.14%. You can let go of the pressure to pass on the first try.
 
 ## Rabbit's Takeaway
 
