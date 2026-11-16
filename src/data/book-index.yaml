@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-11-16, 총 61개
+# 생성 시각: 2026-11-16, 총 62개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -888,6 +888,23 @@
   relations:
     prerequisite: [sap-data-types]
     related: [sap-tcode-basics]
+    deepens: []
+
+- slug: adsp-certification
+  mapTitle: "ADsP 합격 공부법"
+  title: "ADsP 합격 공부법, 감으로 간 보던 주방장이 계량컵을 든 2주"
+  category: study
+  status: rebuilt
+  pubDate: "2026-06-25"
+  level: beginner
+  tags:
+  - "SAP학습자료"
+  - "ADsP"
+  - "데이터자격증"
+  - "직장인공부법"
+  relations:
+    prerequisite: []
+    related: [sap-certification, sap-cpim]
     deepens: []
 
 - slug: sap-now-ai-tour-korea-2026

@@ -43,6 +43,7 @@ REF_EXT = _ref_ext()
 DIAGRAMS = [
     ("gen_activity_cnf", "sap-activity-cnf-01"),
     ("gen_mrp_flow",     "sap-mrp-flow"),
+    ("gen_adsp",         "adsp-certification-01"),
 ]
 
 
