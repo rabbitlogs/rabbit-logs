@@ -1,7 +1,7 @@
 # Rabbit Logs 마스터 인덱스 (자동 생성 — 직접 수정하지 마세요)
 # 이 파일은 scripts/sync-relations.py 가 src/content/blog/ko/*.md 를 스캔해 매번 새로 만듭니다.
 # 관계를 바꾸려면 각 md 파일의 <!-- 관련글: ... --> 주석을 고친 뒤 스크립트를 다시 실행하세요.
-# 생성 시각: 2026-10-11, 총 68개
+# 생성 시각: 2026-11-16, 총 60개
 
 - slug: sap-what-is-sap
   mapTitle: "SAP 입문"
@@ -890,125 +890,6 @@
     related: [sap-tcode-basics]
     deepens: []
 
-- slug: stats-why-back-to-school
-  mapTitle: "다시 학생이 된 이유"
-  title: "다시 학생이 된 이유, 감으로 말하던 것들을 데이터로 말하고 싶어서"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-06-22"
-  level: beginner
-  tags:
-  - "통계·데이터"
-  - "방통대"
-  - "편입"
-  - "데이터분석"
-  - "직장인공부"
-  relations:
-    prerequisite: []
-    related: [sap-mrp, sap-build-project-difficulty]
-    deepens: []
-
-- slug: stats-adsp
-  mapTitle: "ADsP"
-  title: "ADsP 합격, 직장인의 2주 공부법"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-06-25"
-  level: beginner
-  tags:
-  - "통계·데이터"
-  - "ADsP"
-  - "데이터자격증"
-  - "직장인공부법"
-  relations:
-    prerequisite: []
-    related: [stats-why-back-to-school, stats-descriptive-basics]
-    deepens: []
-
-- slug: stats-descriptive-basics
-  mapTitle: "기술통계"
-  title: "기술통계, 데이터를 처음 마주할 때 제일 먼저 하는 일"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-06-28"
-  level: beginner
-  tags:
-  - "통계·데이터"
-  - "기술통계"
-  - "통계개념"
-  relations:
-    prerequisite: [stats-why-back-to-school]
-    related: []
-    deepens: [stats-mean-trap-kpi, stats-correlation-vs-causation]
-
-- slug: stats-mean-trap-kpi
-  mapTitle: "평균의 함정"
-  title: "평균의 함정, KPI 숫자가 목표를 달성했다는 착각"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-01"
-  level: intermediate
-  tags:
-  - "통계·데이터"
-  - "KPI분석"
-  - "이상치"
-  - "기술통계"
-  relations:
-    prerequisite: [stats-descriptive-basics]
-    related: [stats-sap-inventory-variance]
-    deepens: []
-
-- slug: stats-correlation-vs-causation
-  mapTitle: "상관관계 vs 인과관계"
-  title: "상관관계는 인과관계가 아니다, 데이터가 말하는 것과 말하지 않는 것"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-04"
-  level: intermediate
-  tags:
-  - "통계·데이터"
-  - "상관관계"
-  - "인과관계"
-  - "통계개념"
-  relations:
-    prerequisite: [stats-descriptive-basics]
-    related: [stats-mean-trap-kpi]
-    deepens: []
-
-- slug: stats-sap-inventory-variance
-  mapTitle: "재고 편차"
-  title: "재고 편차, 숫자가 맞는데 현장이 다른 이유"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-07"
-  level: intermediate
-  tags:
-  - "통계·데이터"
-  - "재고편차"
-  - "기술통계"
-  - "SAP실무"
-  relations:
-    prerequisite: [stats-descriptive-basics]
-    related: [stats-mean-trap-kpi, sap-mrp]
-    deepens: []
-
-- slug: stats-excel-powerquery-pivot
-  mapTitle: "파워쿼리 → 피벗"
-  title: "SAP 데이터를 엑셀에서 제대로 쓰는 법, 파워쿼리에서 피벗까지"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-10"
-  level: beginner
-  tags:
-  - "통계·데이터"
-  - "SAP실무"
-  - "엑셀파워쿼리"
-  - "피벗테이블"
-  relations:
-    prerequisite: []
-    related: [stats-sap-inventory-variance, stats-descriptive-basics]
-    deepens: []
-
 - slug: sap-now-ai-tour-korea-2026
   mapTitle: "SAP NOW AI Tour 2026"
   title: "SAP NOW AI Tour 2026 Korea, 현장에서 확인한 자율형 기업"
@@ -1025,24 +906,6 @@
   relations:
     prerequisite: []
     related: [sap-now-ai-tour-2025, sap-joule-clean-core]
-    deepens: []
-
-- slug: stats-junior-first-semester
-  mapTitle: "방송대 편입 3학년 1학기"
-  title: "방송대 편입 3학년 1학기, 과제와 기말시험으로 보낸 첫 학기"
-  category: stats
-  status: rebuilt
-  pubDate: "2026-07-16"
-  level: beginner
-  tags:
-  - "통계·데이터"
-  - "방송통신대학교"
-  - "편입"
-  - "학교여정"
-  - "직장인공부"
-  relations:
-    prerequisite: [stats-why-back-to-school]
-    related: [stats-adsp]
     deepens: []
 
 - slug: sap-mrp-no-planned-order

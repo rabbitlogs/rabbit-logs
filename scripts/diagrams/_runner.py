@@ -4,7 +4,7 @@
 
 사용법:
     python3 scripts/diagrams/_runner.py            # 전체 생성
-    python3 scripts/diagrams/_runner.py mrp adsp   # 이름에 해당 문자열이 포함된 것만
+    python3 scripts/diagrams/_runner.py mrp wip   # 이름에 해당 문자열이 포함된 것만
 
 출력 규칙(검수용 _new):
     public/images/<슬러그>_new.jpg       ← 신규 국문
@@ -43,16 +43,13 @@ REF_EXT = _ref_ext()
 DIAGRAMS = [
     ("gen_activity_cnf", "sap-activity-cnf-01"),
     ("gen_mrp_flow",     "sap-mrp-flow"),
-    ("gen_adsp",         "stats-adsp-01"),
-    ("gen_stats_descriptive", "stats-descriptive-basics-01"),
-    ("gen_stats_correlation", "stats-correlation-vs-causation-01"),
 ]
 
 
 # 여러 도식을 BUILDERS 딕셔너리로 묶어 제공하는 모듈들(템플릿 기반)
 # gen_v2_shapes가 마지막에 오는 이유: 같은 슬러그를 정의하면 v2가 이긴다.
 # (§9 관계→형태 대응표에 따라 카드형에서 곡선·순환·계층·허브·타임라인으로 교체한 것들)
-BATCH_MODULES = ["gen_batch1", "gen_batch2", "gen_batch3", "gen_batch4", "gen_charts",
+BATCH_MODULES = ["gen_batch1", "gen_batch2", "gen_batch3", "gen_batch4",
                  "gen_v2_shapes", "gen_v2_flowtable", "gen_v2_stack", "gen_v2_fitgap",
                  "gen_v2_ppmaster", "gen_v2_mesif", "gen_v2_datatypes", "gen_v2_gigrcnf",
                  "gen_v2_integtest", "gen_v2_pptcode", "gen_v2_wip", "gen_v2_mesrole",

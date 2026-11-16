@@ -9,8 +9,8 @@ import AdSense from '../components/AdSense.astro';
 const { title, description, pubDate, category, lang = 'ko', tags = [], slug, thumbnail, essay = false } = Astro.props;
 
 const catName = {
-  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료', stats: '통계·데이터' },
-  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' },
+  ko: { project: 'SAP 프로젝트', operations: 'SAP 실무운영', study: 'SAP 학습자료' },
+  en: { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes' },
 };
 const miniMapText = {
   ko: { label: '🗺️ 이 글과 연결된 글', allLink: '전체 지도 보기 →', mapHref: '/map/', prerequisite: '선행', related: '관련', deepens: '심화' },
@@ -59,7 +59,7 @@ const jsonLd = {
 // ── 1-hop 미니맵: book-index.yaml(ko 슬러그 기준 관계)에서 이 글과 직접 연결된 글만 모은다 ──
 // en 글은 슬러그를 ko와 동일하게 쓰므로 관계 그래프는 그대로 재사용하고,
 // "실제로 그 언어의 번역이 존재하는 슬러그"만 이웃으로 남긴다.
-const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441', stats: '#a8516e' };
+const catColor = { project: '#2c5f57', operations: '#3b6ea5', study: '#d99441' };
 let miniMap = null;
 if (slug) {
   try {

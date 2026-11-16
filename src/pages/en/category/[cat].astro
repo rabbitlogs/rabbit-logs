@@ -11,12 +11,11 @@ export async function getStaticPaths() {
     { params: { cat: 'project' } },
     { params: { cat: 'operations' } },
     { params: { cat: 'study' } },
-    { params: { cat: 'stats' } },
   ];
 }
 
 const { cat } = Astro.params;
-const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes', stats: 'Stats & Data' };
+const catName = { project: 'SAP Projects', operations: 'SAP Operations', study: 'SAP Study Notes' };
 const catDesc = {
   project: [
     'A record of the process of first adopting and implementing SAP.',
@@ -29,10 +28,6 @@ const catDesc = {
   study: [
     'Foundational concepts and certification guides for anyone learning SAP.',
     'Explaining the parts beginners find confusing, from a practitioner’s point of view.',
-  ],
-  stats: [
-    'Working with SAP eventually means you need an eye for data, too.',
-    'Notes from studying statistics and data analysis alongside SAP work.',
   ],
 };
 

@@ -279,7 +279,7 @@ def hierarchy(title, sub, levels, out, axis="teal", footer_items=None, footer_ti
 
 
 # =========================================================
-# 5. 숫자/차트형 (수평 편차 바 + 통계 해설 카드)
+# 5. 숫자/차트형 (수평 편차 바 + 해설 카드)
 # =========================================================
 def variance_bars(title, sub, rows, out, pos_axis="teal", neg_axis="berry",
                   stat_cards=None):
@@ -572,7 +572,7 @@ def flow_before_after(title, sub, before_label, before, after_label, after, foot
 
 
 # =========================================================
-# 11. 3열 카드 + 메타줄 + 하단 강조 바 (ADsP 등)
+# 11. 3열 카드 + 메타줄 + 하단 강조 바
 # =========================================================
 def three_col_cards(title, meta, tags, names, items_list, foot_title, foot_sub, out):
     W = B.W; PAD = B.PAD

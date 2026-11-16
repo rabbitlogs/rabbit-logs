@@ -15,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <p class="lead">생산 PI와 SAP PP 구축, 안정화 프로젝트를 거쳐,<br />지금도 SAP를 <strong>'사용하는' 현업 실무자</strong>로 일하고 있습니다.</p>
 
-    <p class="lead">일하면서 배운 것을, 일하는 사람의 언어로 기록합니다.<br />그리고 데이터로 시야를 넓혀가는 과정도 함께 남깁니다.</p>
+    <p class="lead">일하면서 배운 것을, 일하는 사람의 언어로 기록합니다.</p>
 
     <ul class="timeline">
       <li><div class="tl-body">
@@ -58,10 +58,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a href="/category/study/" class="cat-card cat-study">
         <p class="cat-name">SAP 학습자료</p>
         <p class="cat-desc">처음 배우는 눈높이의 개념 정리</p>
-      </a>
-      <a href="/category/stats/" class="cat-card cat-stats">
-        <p class="cat-name">통계·데이터</p>
-        <p class="cat-desc">숫자로 업무를 다시 보는 연습</p>
       </a>
     </div>
 
@@ -180,7 +176,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     /* ── 카테고리 카드 ── */
-    .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin: 0; }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin: 0; }
     .cat-card {
       display: block; text-decoration: none; color: inherit;
       background: var(--tk-bg); border: 1px solid var(--tk-border);
@@ -194,7 +190,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .cat-project   { --tk-bg: #eef4f2; --tk-line: #2c5f57; --tk-fg: #234b45; --tk-border: #cfe3de; }
     .cat-operations{ --tk-bg: #eef2f7; --tk-line: #3b6ea5; --tk-fg: #2f5885; --tk-border: #cddced; }
     .cat-study     { --tk-bg: #fbf3e6; --tk-line: #d99441; --tk-fg: #a8701f; --tk-border: #f0dbb3; }
-    .cat-stats     { --tk-bg: #f7eef1; --tk-line: #a8516e; --tk-fg: #8a4159; --tk-border: #eccfd9; }
 
     /* ── 문의 + 구독 CTA ── */
     .cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 0; }
