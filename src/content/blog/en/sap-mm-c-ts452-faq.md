@@ -118,7 +118,7 @@ Whether you can use tools such as AI during the exam is not something I can answ
 
 It took about 2–3 months. On weekdays I studied for less than an hour whenever I had time, and on weekends I picked one day and put in 5–6 hours.
 
-I have about five years of SAP experience, mainly on PP in an implementation project. I had only seen MM from the side. Because the exam is hands-on, I spent most of my study time on practice.
+My day job is PP, so I had only seen MM from the side. Because the exam is hands-on, I spent most of my study time on practice.
 
 ### Is it possible with only a little SAP experience
 
