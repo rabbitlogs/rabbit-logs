@@ -17,27 +17,25 @@ I passed the **SAP MM certification C_TS452** on my third attempt. Since it is a
 
 > **Three-line summary**
 > - C_TS452 is a hands-on (SyBA) certification for S/4HANA sourcing and procurement, graded only on whether saved values match the instructions.
-> - I failed the first attempt because of machine-translated instructions and no check before saving, and the second because of an exam system defect.
-> - On the third attempt, English instructions, checks before and after saving, and a final full review got me a pass.
+> - I failed the first attempt because of poor time allocation and no check before saving, and the second because of an exam system defect.
+> - On the third attempt, repeated practice, checks before and after saving, and a final full review got me a pass.
 
 [[TOC]]
 
 ## Three exam attempts
 
-![Three SAP MM certification C_TS452 attempts: first failed (machine translation, no time, no check before saving), second hit an exam system defect and the attempt was reissued (evidence collected, case filed with the Help Center), third passed (English instructions, checks around saves, final review)](/images/sap-mm-c-ts452-certification-0-01-v2.jpg)
+![Three SAP MM certification C_TS452 attempts: first failed (no time, no check before saving), second hit an exam system defect and the attempt was reissued (evidence collected, case filed with the Help Center), third passed (repeated practice, checks around saves, final review)](/images/sap-mm-c-ts452-certification-0-01-v3.jpg)
 *Figure 1. Three exam attempts. The exam version was C_TS452_2601, and the pass mark was 76%.*
 
 ## Series contents
 
 1. **[Exam structure and preparation](/en/blog/sap-mm-c-ts452-certification-1)**: what C_TS452 covers, how to get eligibility and a practice system through Learning Hub, how the hands-on SyBA exam works, and why a PP practitioner started with MM
-2. **[First and second attempts failed](/en/blog/sap-mm-c-ts452-certification-2)**: machine-translated instructions and time allocation, the trap of not checking before saving, and how I filed a support case after an exam system defect and got the attempt back
-3. **[Practice and passing](/en/blog/sap-mm-c-ts452-certification-3)**: how I practiced with English course material, where mistakes tend to happen in a hands-on exam, exam-day order and time allocation, and Stay Certified
+2. **[First and second attempts failed](/en/blog/sap-mm-c-ts452-certification-2)**: time allocation, the trap of not checking before saving, and how I filed a support case after an exam system defect and got the attempt back
+3. **[Practice and passing](/en/blog/sap-mm-c-ts452-certification-3)**: how I practiced with Learning Hub course material, where mistakes tend to happen in a hands-on exam, exam-day order and time allocation, and Stay Certified
 
 ## What three attempts left me with
 
-- **Execution decides the score, not knowledge.** I missed the first attempt not because I didn't know, but because I didn't check against the instructions before saving.
-- **Read the instructions in English.** The Korean instructions are machine-translated, and some numbers and structure read differently from the original.
-- **Check before and after saving.** Later tasks use the output of earlier ones, so one mistake spreads across several tasks.
+- **Execution decides the score, not knowledge.** I missed the first attempt not because I didn't know, but because I didn't check against the instructions before saving.- **Check before and after saving.** Later tasks use the output of earlier ones, so one mistake spreads across several tasks.
 - **If the system misbehaves, keep evidence.** If it is a defect that is not the candidate's fault, a support case can get your attempt back.
 
 My next goal is my day job, PP (C_TS422). If you have already taken C_TS422 in its new hands-on (SyBA) format, I would be very grateful if you could share what helped you with preparation or time allocation at [contact@rabbitlogs.com](mailto:contact@rabbitlogs.com).

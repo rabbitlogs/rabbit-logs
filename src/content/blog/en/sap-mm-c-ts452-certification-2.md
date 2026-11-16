@@ -1,7 +1,7 @@
 ---
 title: "SAP MM certification C_TS452 first and second attempts failed: a wrong recipe and a broken kitchen"
 mapTitle: "SAP MM certification C_TS452 attempts 1 and 2"
-description: "My SAP MM certification (C_TS452) first and second attempts: machine-translated instructions, time allocation, the trap of not checking before saving, and how I filed a support case after an exam system defect and got the attempt back."
+description: "My SAP MM certification (C_TS452) first and second attempts: time allocation, the trap of not checking before saving, and how I filed a support case after an exam system defect and got the attempt back."
 pubDate: 2026-10-13
 category: "study"
 series: "SAP MM certification journey"
@@ -11,12 +11,12 @@ tags: ["SAPLearning", "SAPCertification", "SAPMM", "C_TS452", "SAPExamReview"]
 
 Hi, this is Rabbit! 🐰
 
-Have you ever cooked from a foreign cookbook run through a translator? Most of it reads fine, but every now and then "2 teaspoons of sugar" turns into "2 cups of sugar." You follow the recipe exactly, and the dish still falls apart. And some days, the recipe and your hands are ready, but the kitchen's gas valve is shut.
+Have you ever cooked from habit without checking the recipe to the end? Most of the time it works out, but every now and then "2 teaspoons of sugar" turns into "2 cups of sugar." The recipe was right, and the dish still falls apart. And some days, the recipe and your hands are ready, but the kitchen's gas valve is shut.
 
 That is what my first and second **SAP MM certification C_TS452** attempts were like: both ended in a fail. This part covers what went wrong in those two failures, focusing on what someone preparing for the same exam can avoid.
 
 > **Three-line summary**
-> - In the first attempt, machine-translated instructions, time sunk into one task, and no check before saving turned half of the tasks I thought I had finished into zeros.
+> - In the first attempt, time sunk into one task and no check before saving turned half of the tasks I thought I had finished into zeros.
 > - In the second attempt, a base setting was missing from the exam system, so I could not carry out most of the tasks.
 > - I filed a support case with evidence and got the attempt back the same day.
 
@@ -24,15 +24,7 @@ That is what my first and second **SAP MM certification C_TS452** attempts were 
 
 ## C_TS452 first attempt: why it failed
 
-I took the first exam in September 2026. When I pressed submit, I had no idea it would turn out that way. There were tasks I never reached, but I thought most of what I did finish was correct. Working backward from the score, **nearly half of the tasks I thought I had finished scored zero**. There were three causes.
-
-### Machine-translated instructions
-
-You can choose the language of the task instructions at the start. The Korean instructions are machine-translated, and **some of the numbers and structure that the grading depends on read differently from the original**. Reordered sentences made it unclear which value went where.
-
-A SyBA exam checks whether the saved values match the instructions exactly. If the translation is wrong, you score zero even when you follow it, and because later tasks use the output of earlier ones, an entire group of tasks can fall apart.
-
-> 💡 **Key point**: in [SAP certification exams](/en/blog/sap-exam-format) I said to turn off your browser's auto-translate. For the same reason, it is safer to choose **English for the instruction language** too. In a system whose menus and field names are in English, English instructions are also faster to compare against.
+I took the first exam in September 2026. When I pressed submit, I had no idea it would turn out that way. There were tasks I never reached, but I thought most of what I did finish was correct. Working backward from the score, **nearly half of the tasks I thought I had finished scored zero**. There were two causes.
 
 ### Time sucked into one task
 
@@ -50,8 +42,8 @@ This was the most painful cause. Chased by the clock, I filled in a screen, pres
 
 The last one is like adding a seasoning that is not in the recipe because you think the customer will like it. **It is a trap that people who know the system well fall into most easily.**
 
-![Before-and-after comparison of three things I changed after my first SAP MM certification C_TS452 attempt: from machine-translated Korean instructions to the original English, from holding on to one stuck screen to drilling stuck screens separately, and from moving on right after Save to checking before saving and confirming on the display screen after](/images/sap-mm-c-ts452-certification-2-01-v2.jpg)
-*Figure 1. Three things I changed after the first attempt*
+![Before-and-after comparison of two things I changed after my first SAP MM certification C_TS452 attempt: from holding on to one stuck screen to drilling stuck screens separately, and from moving on right after Save to checking before saving and confirming on the display screen after](/images/sap-mm-c-ts452-certification-2-01-v3.jpg)
+*Figure 1. Two things I changed after the first attempt*
 
 ## C_TS452 second attempt: when the exam system is broken
 
