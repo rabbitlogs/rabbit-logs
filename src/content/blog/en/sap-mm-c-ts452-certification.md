@@ -35,7 +35,8 @@ I passed the **SAP MM certification C_TS452** on my third attempt. Since it is a
 
 ## What three attempts left me with
 
-- **Execution decides the score, not knowledge.** I missed the first attempt not because I didn't know, but because I didn't check against the instructions before saving.- **Check before and after saving.** Later tasks use the output of earlier ones, so one mistake spreads across several tasks.
+- **Execution decides the score, not knowledge.** I missed the first attempt not because I didn't know, but because I didn't check against the instructions before saving.
+- **Check before and after saving.** Later tasks use the output of earlier ones, so one mistake spreads across several tasks.
 - **If the system misbehaves, keep evidence.** If it is a defect that is not the candidate's fault, a support case can get your attempt back.
 
 My next goal is my day job, PP (C_TS422).
